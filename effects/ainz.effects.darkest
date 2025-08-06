@@ -57,25 +57,25 @@ effect: .name "Ainz Grasp Heart 5" .target "target" .curio_result_type "negative
 // Grasp Heart Corpse - Kill corpses
 effect: .name "Ainz Grasp Heart Corpse" .target "target" .chance 100% .kill_enemy_types corpse .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
 
-// True Stun X - Only when target is not killed
-effect: .name "Ainz True Stun 1" .target "target" .curio_result_type "negative" .chance 90% .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun 2" .target "target" .curio_result_type "negative" .chance 95% .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun 3" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun 4" .target "target" .curio_result_type "negative" .chance 110% .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun 5" .target "target" .curio_result_type "negative" .chance 120% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+// True Stun X - Only when target is not killed (when instant kill fails)
+effect: .name "Ainz True Stun 1" .target "target" .curio_result_type "negative" .chance 90% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 2" .target "target" .curio_result_type "negative" .chance 95% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 3" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 4" .target "target" .curio_result_type "negative" .chance 110% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 5" .target "target" .curio_result_type "negative" .chance 120% .stun 1 .on_hit true .on_miss false .queue true .has_description false
 
-// True Bleed X - Only when target is not killed  
-effect: .name "Ainz True Bleed 1" .target "target" .curio_result_type "negative" .chance 90% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Bleed 2" .target "target" .curio_result_type "negative" .chance 95% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Bleed 3" .target "target" .curio_result_type "negative" .chance 100% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Bleed 4" .target "target" .curio_result_type "negative" .chance 110% .bleed 4 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Bleed 5" .target "target" .curio_result_type "negative" .chance 120% .bleed 4 .on_hit false .on_miss true .queue true .has_description false
+// True Bleed X - Only when target is not killed (when instant kill fails) - 2 rounds duration
+effect: .name "Ainz True Bleed 1" .target "target" .curio_result_type "negative" .chance 90% .bleed 3 .duration 2 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Bleed 2" .target "target" .curio_result_type "negative" .chance 95% .bleed 3 .duration 2 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Bleed 3" .target "target" .curio_result_type "negative" .chance 100% .bleed 3 .duration 2 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Bleed 4" .target "target" .curio_result_type "negative" .chance 110% .bleed 4 .duration 2 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Bleed 5" .target "target" .curio_result_type "negative" .chance 120% .bleed 4 .duration 2 .on_hit true .on_miss false .queue true .has_description false
 
 // Debuff Target - Guaranteed debuffs
 effect: .name "Ainz Grasp Heart Debuff" .target "target" .curio_result_type "negative" .chance 100% .buff_ids "Ainz Bleed Resistance Debuff" "Ainz Stun Resistance Debuff" .buff_duration_type round .duration 1 .on_hit true .on_miss true .queue true .has_description false
 
-// Self Buff - Heal and stress reduction
-effect: .name "Ainz Grasp Heart Self Buff" .target "performer" .curio_result_type "positive" .chance 100% .health_heal_amount 7 .stress_heal_amount 10 .on_hit true .on_miss true .queue true .has_description false
+// Self Buff - Heal and stress reduction - Always triggers
+effect: .name "Ainz Grasp Heart Self Buff" .target "performer" .curio_result_type "positive" .chance 100% .health_heal_amount 7 .stress_heal_amount 10 .on_hit true .on_miss true .can_apply_on_death true .queue true .has_description false
 
 // Tooltip effects
 effect: .name "Ainz Tooltip Grasp Heart 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 1" .on_hit false .on_miss false .queue false
