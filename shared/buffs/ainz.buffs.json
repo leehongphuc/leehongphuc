@@ -228,6 +228,22 @@
       },
 
 	  {
+         "id" : "Ainz Grasp Heart HP Range Disable",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill_target_hpabove",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.3,
+            "string" : "bloodlet"
+         }
+      },
+	  {
          "id" : "Ainz Grasp Heart NO HP Range",
          "stat_type" : "combat_stat_add",
          "stat_sub_type" : "attack_rating",
@@ -1186,7 +1202,7 @@
          "id" : "Ainz Bleed Resistance Debuff",
          "stat_type" : "bleed_chance",
          "stat_sub_type" : "",
-         "amount" : -20.0,
+         "amount" : -2.0,
          "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
          "rule_type" : "always",
@@ -1201,7 +1217,7 @@
          "id" : "Ainz Stun Resistance Debuff",
          "stat_type" : "stun_chance",
          "stat_sub_type" : "",
-         "amount" : -20.0,
+         "amount" : -2.0,
          "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
          "rule_type" : "always",
