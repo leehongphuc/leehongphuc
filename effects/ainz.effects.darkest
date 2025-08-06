@@ -45,51 +45,44 @@ effect: .name "Ainz Undead Passive" .target "performer" .chance 100% .disease "a
 
 
 
-//Grasp Heart 心脏掌握
+//Grasp Heart (Sacrificial Stab) 心脏掌握（献祭之刺）
 
-effect: .name "Ainz Tooltip Unconcerned" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Unconcerned" .on_hit false .on_miss false .queue false
+// Grasp Heart X - Instant Kill Effect
+effect: .name "Ainz Grasp Heart 1" .target "target" .curio_result_type "negative" .chance 5% .kill 1 .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 2" .target "target" .curio_result_type "negative" .chance 6% .kill 1 .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 3" .target "target" .curio_result_type "negative" .chance 7% .kill 1 .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 4" .target "target" .curio_result_type "negative" .chance 8% .kill 1 .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 5" .target "target" .curio_result_type "negative" .chance 10% .kill 1 .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
 
-effect: .name "Ainz Grasp Heart HP Range 1" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 1" .on_hit true .on_miss true .has_description false
-effect: .name "Ainz Grasp Heart HP Range 2" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 2" .on_hit true .on_miss true .has_description false
-effect: .name "Ainz Grasp Heart HP Range 3" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 3" .on_hit true .on_miss true .has_description false
-effect: .name "Ainz Grasp Heart HP Range 4" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 4" .on_hit true .on_miss true .has_description false
-effect: .name "Ainz Grasp Heart HP Range 5" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 5" .on_hit true .on_miss true .has_description false
+// Grasp Heart Corpse - Kill corpses
+effect: .name "Ainz Grasp Heart Corpse" .target "target" .chance 100% .kill_enemy_types corpse .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
 
-effect: .name "Ainz Grasp Heart 1" .target "target" .curio_result_type "negative" .chance 20% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
-effect: .name "Ainz Grasp Heart 2" .target "target" .curio_result_type "negative" .chance 25% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
-effect: .name "Ainz Grasp Heart 3" .target "target" .curio_result_type "negative" .chance 30% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
-effect: .name "Ainz Grasp Heart 4" .target "target" .curio_result_type "negative" .chance 35% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
-effect: .name "Ainz Grasp Heart 5" .target "target" .curio_result_type "negative" .chance 40% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+// True Stun X - Only when target is not killed
+effect: .name "Ainz True Stun 1" .target "target" .curio_result_type "negative" .chance 90% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun 2" .target "target" .curio_result_type "negative" .chance 95% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun 3" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun 4" .target "target" .curio_result_type "negative" .chance 110% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun 5" .target "target" .curio_result_type "negative" .chance 120% .stun 1 .on_hit false .on_miss true .queue true .has_description false
 
-//effect: .name "Ainz Grasp Heart Corpse" .target "target" .chance 100% .kill_enemy_types corpse .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+// True Bleed X - Only when target is not killed  
+effect: .name "Ainz True Bleed 1" .target "target" .curio_result_type "negative" .chance 90% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Bleed 2" .target "target" .curio_result_type "negative" .chance 95% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Bleed 3" .target "target" .curio_result_type "negative" .chance 100% .bleed 3 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Bleed 4" .target "target" .curio_result_type "negative" .chance 110% .bleed 4 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Bleed 5" .target "target" .curio_result_type "negative" .chance 120% .bleed 4 .on_hit false .on_miss true .queue true .has_description false
 
-effect: .name "Ainz True Stun Miss 1" .target "target" .curio_result_type "negative" .chance 80%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun Miss 2" .target "target" .curio_result_type "negative" .chance 85%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun Miss 3" .target "target" .curio_result_type "negative" .chance 90%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun Miss 4" .target "target" .curio_result_type "negative" .chance 95%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
-effect: .name "Ainz True Stun Miss 5" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+// Debuff Target - Guaranteed debuffs
+effect: .name "Ainz Grasp Heart Debuff" .target "target" .curio_result_type "negative" .chance 100% .buff_ids "Ainz Bleed Resistance Debuff" "Ainz Stun Resistance Debuff" .buff_duration_type round .duration 1 .on_hit true .on_miss true .queue true .has_description false
 
-effect: .name "Ainz True Stun 1" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit true .on_miss false .queue true .has_description false
-effect: .name "Ainz True Stun 2" .target "target" .curio_result_type "negative" .chance 112% .stun 1 .on_hit true .on_miss false .queue true .has_description false
-effect: .name "Ainz True Stun 3" .target "target" .curio_result_type "negative" .chance 125% .stun 1 .on_hit true .on_miss false .queue true .has_description false
-effect: .name "Ainz True Stun 4" .target "target" .curio_result_type "negative" .chance 138% .stun 1 .on_hit true .on_miss false .queue true .has_description false
-effect: .name "Ainz True Stun 5" .target "target" .curio_result_type "negative" .chance 150% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+// Self Buff - Heal and stress reduction
+effect: .name "Ainz Grasp Heart Self Buff" .target "performer" .curio_result_type "positive" .chance 100% .health_heal_amount 7 .stress_heal_amount 10 .on_hit true .on_miss true .queue true .has_description false
 
-effect: .name "Ainz Tooltip Grasp Heart Miss 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 1" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Grasp Heart Miss 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 2" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Grasp Heart Miss 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 3" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Grasp Heart Miss 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 4" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Grasp Heart Miss 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 5" .on_hit false .on_miss false .queue false
-
+// Tooltip effects
 effect: .name "Ainz Tooltip Grasp Heart 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 1" .on_hit false .on_miss false .queue false
 effect: .name "Ainz Tooltip Grasp Heart 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 2" .on_hit false .on_miss false .queue false
 effect: .name "Ainz Tooltip Grasp Heart 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 3" .on_hit false .on_miss false .queue false
 effect: .name "Ainz Tooltip Grasp Heart 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 4" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Grasp Heart 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 5" .on_hit false .on_miss false .queue false
-
-//effect: .name "Ainz Tooltip NoCorpse" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip NoCorpse" .on_hit false .on_miss false .queue false
-
-//effect: .name "Ainz target low HP always crit" .target "performer" .curio_result_type "positive" .chance 100% .skill_instant true .buff_ids "Ainz target low HP always crit" .on_hit true .on_miss true 
+effect: .name "Ainz Tooltip Grasp Heart 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 5" .on_hit false .on_miss false .queue false 
 
 
 

@@ -1255,6 +1255,36 @@
             "float" : 0,
             "string" : "stars_permanent_passive"
          }
+      },
+      {
+         "id" : "Ainz Bleed Resistance Debuff",
+         "stat_type" : "bleed_chance",
+         "stat_sub_type" : "",
+         "amount" : -20.0,
+         "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "is_clear_debuff_valid": true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Stun Resistance Debuff",
+         "stat_type" : "stun_chance",
+         "stat_sub_type" : "",
+         "amount" : -20.0,
+         "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "is_clear_debuff_valid": true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
       }
    ]
 }
