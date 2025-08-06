@@ -11,11 +11,11 @@ Note:
 This mod shares same ID of vanilla version "Overlord class mod". Don't enable both at the same time, and better not switch between them when your save file is in dungeons (do it when you currently in the town), otherwise there might be some skill bugs unless you return to the town.
 
 Language:
-English / ¼òÌåÖÐÎÄ / §²§å§ã§ã§Ü§Ú§Û
-¼òÌåÖÐÎÄ is translated by foxical.
-§²§å§ã§ã§Ü§Ú§Û is translated by CHuSkH and Narrator.
+English / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü§Ú§ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ is translated by foxical.
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü§Ú§ï¿½ is translated by CHuSkH and Narrator.
 Other languages only shown as English right now.
-The English dialogue is translated by Ê×Ï¯ºº»¯Ê¦°®µÂ»ª[afdian.net]
+The English dialogue is translated by ï¿½ï¿½Ï¯ï¿½ï¿½ï¿½ï¿½Ê¦ï¿½ï¿½ï¿½Â»ï¿½[afdian.net]
 
 Enhance Detail:
 - Fix joints on walk / idle / combat animation. Fix some old bugs.
@@ -49,10 +49,10 @@ The Goal of All Life is Death (Cooldown: 15 rds)
 - Won't kill other heroes directly. Won't influence heroes who's already at death's door.
 - Metamagic: Next Grasp Heart or Cry of the Banshee ignore HP range.
 
-Time Stop (Cooldown: 20 rds)
-- Delay round of everyone else. Grant Overlord 1/2/3/4/5 extra rounds (Lv1-Lv5).
+Time Stop (Cooldown: 5 rds)
+- Delay round of everyone else. Grant Overlord 2 extra rounds (all levels).
 - When active, all skills ignore dodge, bypass stealth and guard, immune to most hostile effects.
-- Greatly increase all other hero's stress when casted. Greatly lower speed on overlord himself after casted.
+- Heal stress for all allies (20-50 stress reduction based on level). No speed penalty on Overlord.
 - Accelerate other skill cooldowns immediately.
 
 Gate
