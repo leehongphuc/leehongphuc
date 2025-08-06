@@ -415,11 +415,11 @@ effect: .name "Ainz Tooltip Time Stop Extra Debuff 5" .target "performer" .skill
 
 
 
-effect: .name "Ainz Tooltip Time Stop Stress Heal 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 1" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Stress Heal 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 2" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Stress Heal 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 3" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Stress Heal 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 4" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Stress Heal 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 5" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 1" .on_hit false .on_miss false .queue false .has_description false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 2" .on_hit false .on_miss false .queue false .has_description false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 3" .on_hit false .on_miss false .queue false .has_description false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 4" .on_hit false .on_miss false .queue false .has_description false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 5" .on_hit false .on_miss false .queue false .has_description false
 
 effect: .name "Ainz Time Stop Accelerate Cooldown" .target "performer" .chance 10000% .steal_buff_source_type bsrc_town .on_hit true .on_miss true .queue true .apply_once true .has_description false
 
