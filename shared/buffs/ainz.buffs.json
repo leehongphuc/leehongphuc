@@ -1193,6 +1193,7 @@
          "rule_type" : "always",
          "is_false_rule" : false,
          "is_clear_debuff_valid": true,
+         "has_description": true,
          "rule_data" : {
             "float" : 0,
             "string" : ""
@@ -1208,6 +1209,7 @@
          "rule_type" : "always",
          "is_false_rule" : false,
          "is_clear_debuff_valid": true,
+         "has_description": true,
          "rule_data" : {
             "float" : 0,
             "string" : ""

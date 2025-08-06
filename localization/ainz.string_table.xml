@@ -198,6 +198,10 @@ Immune to Instant Kill]]></entry>
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Necromancy Immune Wail of the Banshee Tooltip"><![CDATA[{colour_start|comet}Wail of the Banshee{colour_end}:
 Immune to Damage]]></entry>
 		
+        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Bleed Resistance Debuff"><![CDATA[{colour_start|debuff}Grasp Heart{colour_end}: -20%% Bleed Resistance]]></entry>
+		
+        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Stun Resistance Debuff"><![CDATA[{colour_start|debuff}Grasp Heart{colour_end}: -20%% Stun Resistance]]></entry>
+		
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Wail of the Banshee Stun 1"><![CDATA[All Enemies:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(150%% base){colour_end}]]></entry>
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Wail of the Banshee Stun 2"><![CDATA[All Enemies:

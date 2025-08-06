@@ -72,7 +72,7 @@ effect: .name "Ainz True Bleed 4" .target "target" .curio_result_type "negative"
 effect: .name "Ainz True Bleed 5" .target "target" .curio_result_type "negative" .chance 120% .bleed 4 .duration 2 .on_hit true .on_miss false .queue true .has_description false
 
 // Debuff Target - Guaranteed debuffs
-effect: .name "Ainz Grasp Heart Debuff" .target "target" .curio_result_type "negative" .chance 100% .buff_ids "Ainz Bleed Resistance Debuff" "Ainz Stun Resistance Debuff" .buff_duration_type round .duration 1 .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Grasp Heart Debuff" .target "target" .curio_result_type "negative" .chance 100% .buff_ids "Ainz Bleed Resistance Debuff" "Ainz Stun Resistance Debuff" .buff_duration_type round .duration 1 .on_hit true .on_miss true .queue true .has_description true
 
 // Self Buff - Heal and stress reduction - Always triggers
 effect: .name "Ainz Grasp Heart Self Buff" .target "performer" .curio_result_type "positive" .chance 100% .health_heal_amount 7 .stress_heal_amount 10 .on_hit true .on_miss true .can_apply_on_death true .queue true .has_description false
