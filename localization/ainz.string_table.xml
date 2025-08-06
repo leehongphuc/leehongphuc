@@ -336,15 +336,15 @@ Ignore DODGE (+500 ACC)]]></entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Debuff 5"><![CDATA[Immune to {colour_start|specificclass}Damage{colour_end} / {colour_start|stun}Stun{colour_end} / {colour_start|move}Move{colour_end} / {colour_start|debuff}Debuff{colour_end}]]></entry>
 
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Timestress 1"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -20]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Stress Heal 1"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -20]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Timestress 2"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -30]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Stress Heal 2"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -30]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Timestress 3"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -40]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Stress Heal 3"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -40]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Timestress 4"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -45]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Stress Heal 4"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -45]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Timestress 5"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -50]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Stress Heal 5"><![CDATA[{colour_start|buff}Stress Heal Allies:{colour_end} -50]]></entry>
 		
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Defensive 1"><![CDATA[{colour_start|buff}Buff Self{colour_end}

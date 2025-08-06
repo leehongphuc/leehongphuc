@@ -381,11 +381,11 @@ effect: .name "Ainz+Stars Easter Egg" .target "performer_group_other" .curio_res
 
 effect: .name "Ainz Enemy Timestop" .target "target_enemy_group" .curio_result_type "negative" .chance 100% .initiative_change -9 .on_hit true .on_miss true .apply_once true .can_apply_on_death true .queue true .has_description false
 
-effect: .name "Ainz Ally Timestop 1" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress -20 .on_hit true .on_miss true .apply_once true .queue true .has_description false
-effect: .name "Ainz Ally Timestop 2" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress -30 .on_hit true .on_miss true .apply_once true .queue true .has_description false
-effect: .name "Ainz Ally Timestop 3" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress -40 .on_hit true .on_miss true .apply_once true .queue true .has_description false
-effect: .name "Ainz Ally Timestop 4" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress -45 .on_hit true .on_miss true .apply_once true .queue true .has_description false
-effect: .name "Ainz Ally Timestop 5" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress -50 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 1" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress_heal 20 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 2" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress_heal 30 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 3" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress_heal 40 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 4" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress_heal 45 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 5" .target "performer_group_other" .curio_result_type "positive" .chance 100% .initiative_change -9 .stress_heal 50 .on_hit true .on_miss true .apply_once true .queue true .has_description false
 
 effect: .name "Ainz Self Timebuff 1" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 2 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
 effect: .name "Ainz Self Timebuff 2" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 2 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
@@ -419,11 +419,11 @@ effect: .name "Ainz Self Timestress 3" .target "performer" .curio_result_type "n
 effect: .name "Ainz Self Timestress 4" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 3 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
 effect: .name "Ainz Self Timestress 5" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 4 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
 
-effect: .name "Ainz Tooltip Time Stop Timestress 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 1" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Timestress 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 2" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Timestress 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 3" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Timestress 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 4" .on_hit false .on_miss false .queue false
-effect: .name "Ainz Tooltip Time Stop Timestress 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 5" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Stress Heal 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Stress Heal 5" .on_hit false .on_miss false .queue false
 
 effect: .name "Ainz Time Stop Accelerate Cooldown" .target "performer" .chance 10000% .steal_buff_source_type bsrc_town .on_hit true .on_miss true .queue true .apply_once true .has_description false
 

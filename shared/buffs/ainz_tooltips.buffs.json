@@ -914,9 +914,9 @@
          }
       },
       {
-         "id" : "Ainz Tooltip Time Stop Timestress 1",
+         "id" : "Ainz Tooltip Time Stop Stress Heal 1",
          "stat_type" : "upgrade_discount",
-         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 1",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Stress Heal 1",
          "amount" : 0,
 		 "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
@@ -928,9 +928,9 @@
          }
       },
       {
-         "id" : "Ainz Tooltip Time Stop Timestress 2",
+         "id" : "Ainz Tooltip Time Stop Stress Heal 2",
          "stat_type" : "upgrade_discount",
-         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 2",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Stress Heal 2",
          "amount" : 0,
 		 "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
@@ -942,9 +942,9 @@
          }
       },
       {
-         "id" : "Ainz Tooltip Time Stop Timestress 3",
+         "id" : "Ainz Tooltip Time Stop Stress Heal 3",
          "stat_type" : "upgrade_discount",
-         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 3",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Stress Heal 3",
          "amount" : 0,
 		 "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
@@ -956,9 +956,9 @@
          }
       },
       {
-         "id" : "Ainz Tooltip Time Stop Timestress 4",
+         "id" : "Ainz Tooltip Time Stop Stress Heal 4",
          "stat_type" : "upgrade_discount",
-         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 4",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Stress Heal 4",
          "amount" : 0,
 		 "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
@@ -970,9 +970,9 @@
          }
       },
       {
-         "id" : "Ainz Tooltip Time Stop Timestress 5",
+         "id" : "Ainz Tooltip Time Stop Stress Heal 5",
          "stat_type" : "upgrade_discount",
-         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 5",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Stress Heal 5",
          "amount" : 0,
 		 "remove_on_battle_complete" : true,
          "remove_if_not_active" : false,
