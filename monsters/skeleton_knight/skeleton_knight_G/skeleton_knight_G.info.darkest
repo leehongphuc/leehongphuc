@@ -1,0 +1,24 @@
+display: .size 1
+
+enemy_type: .id "unholy"
+
+stats: .hp 20 .def 0% .prot 0.5 .spd 20 .stun_resist 200% .poison_resist 0% .bleed_resist 200% .debuff_resist 0% .move_resist 50%
+
+skill: .id "AINZ_SN_guard" .type "ranged" .atk 500% .dmg 0 .crit 0% .launch 4321 .target 1234 .move 3 0 .effect "Clear Guarded Target" "Clear Guard Target" "AINZ SK Guard" .is_user_selected_targets true .can_be_riposted false .ignore_guard true .ignore_stealth true .canmiss false
+skill: .id "AINZ_SN_Shout" .type "ranged" .atk 100% .dmg 0 .crit 0%  .launch 4321 .target ~@1234 .move 3 0 .effect "AINZ SK Shout" .can_be_riposted false .ignore_guard true .ignore_stealth true
+skill: .id "AINZ_SN_Attack" .type "melee"  .atk 100% .dmg 0 .crit 0% .launch 4321 .target @1234 .move 3 0 .effect "AINZ SK Mark" "AINZ SK Stun" "AINZ SK Damage" .can_be_riposted false .ignore_guard true .ignore_stealth true
+
+personality: .prefskill -1
+
+initiative: .number_of_turns_per_round 1
+monster_brain: .id ainz_skeleton_knight
+battle_modifier: .accelerate_stall_penalty False .disable_stall_penalty True .can_surprise True .can_be_surprised True .always_surprise False .always_be_surprised False .can_be_random_target False .is_valid_friendly_target False .can_relieve_stress_from_killing_blow False .can_be_summon_rank False 
+battle_modifier: .does_count_as_monster_size_for_monster_brain False .does_count_as_guardable_for_monster_brain False .does_count_towards_stall_penalty False .can_relieve_stress_from_crit False .can_be_missed False .can_be_guarded False 
+skill_reaction: .was_killed_by_hero_effects 
+
+life_time: .alive_round_limit 2 .does_check_for_loot false
+additional_effect: .is_valid_trinket_target true .is_valid_trinket_attacker true
+crit: .is_valid_effects_target false
+wave_spawning: .prefers_front True
+
+mode: .id summoned .is_raid_default true .is_targetable false

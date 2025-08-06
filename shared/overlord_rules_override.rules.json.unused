@@ -1,0 +1,5 @@
+{
+	"health_damage_blocks_max" : 3,
+	"cutoffAlwaysHit": 1.0,
+	"stress_dmg_buff_min": 0.0
+}

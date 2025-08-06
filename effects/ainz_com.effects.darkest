@@ -1,0 +1,42 @@
+//Overlord
+//-------------------------
+///TRINKETS
+
+effect: .name "Ainz Blight Hit" .target "target"  .buff_source_type bsrc_trinket_additional_effect .chance 100% .dotPoison 4 .duration 1 .on_hit true .on_miss false .queue true .crit_doesnt_apply_to_roll true .apply_once false
+
+effect: .name "Ainz amaterasu tsukuyomi healstress" .target "performer" .chance 100% .healstress 3 .on_hit true .on_miss false .queue true .apply_once true
+
+effect: .name "Ainz amaterasu tsukuyomi clearDotStress" .target "performer" .chance 50% .clearDotStress 1 .on_hit true .on_miss false .queue true .apply_once true
+
+effect: .name "Ainz female sensei iron fist wraith" .target "target" .chance 100% .push 2 .on_hit true .on_miss false .queue true .apply_once false
+
+effect: .name "Ainz houyi bow" .target "performer" .chance 100% .duration 2 .buff_ids "Ainz houyi bow precise buff on miss" .on_hit false .on_miss true .queue true .apply_once true
+
+effect: .name "Ainz suck blood eat flesh hit" .target "performer" .chance 100% .heal 3 .on_hit true .on_miss false .queue true .apply_once true .can_apply_on_death false 
+effect: .name "Ainz suck blood eat flesh miss" .target "performer" .chance 100% .health_damage 3 .on_hit false .on_miss true .queue true .apply_once true .can_apply_on_death false 
+
+effect: .name "Ainz takemikazuchi mk 8" .target "target" .chance 100% .duration 3 .buff_ids "Ainz takemikazuchi mk 8 prot break" .on_hit true .on_miss false .queue true .apply_once false
+
+//effect: .name "Ainz avarice generosity XP gain" .target "performer" .chance 100% .buff_duration_type quest_end .duration 1 .buff_ids "Ainz avarice generosity XP gain" .on_hit true .on_miss false .queue true .apply_once false .can_apply_on_death false 
+effect: .name "Ainz avarice generosity XP gain" .target "target" .chance 100% .on_hit true .on_miss false .queue true .apply_once false .can_apply_on_death false .summon_count 1 .summon_can_spawn_loot true .summon_monsters ainz_soul_essence_loot_G .summon_chances 1.0 .summon_ranks 1 .summon_does_roll_initiatives 1 .summon_rank_is_previous_monster_class false .summon_limits 4 .has_description false
+
+effect: .name "Ainz Tooltip Avarice Generosity XP Absorb" .target "performer_group" .combat_stat_buff 1 .duration 1 .buff_ids "Ainz Tooltip Avarice Generosity XP Absorb" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz depiction nature society DNS_ARMOURPIERCING_BUFF" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_ARMOURPIERCING_BUFF" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_DEF_BUFF" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_DEF_BUFF" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_PROT_BUFF" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_PROT_BUFF" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_DMGL_BUFF" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_DMGL_BUFF" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_DMGH_BUFF" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_DMGH_BUFF" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_Crit" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_Crit" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+effect: .name "Ainz depiction nature society DNS_ACC" .target "performer" .chance 100% .duration 16 .buff_ids "Ainz depiction nature society DNS_ACC" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+
+effect: .name "Ainz Accursed Orb Lower Resistance Bleed" .target "target" .chance 150% .duration 3 .buff_ids "Ainz Accursed Orb Lower Resistance Bleed" .on_hit true .on_miss false .queue true .apply_once false .has_description false
+effect: .name "Ainz Accursed Orb Lower Resistance Blight" .target "target" .chance 150% .duration 3 .buff_ids "Ainz Accursed Orb Lower Resistance Blight" .on_hit true .on_miss false .queue true .apply_once false .has_description false
+effect: .name "Ainz Accursed Orb Lower Resistance Stun" .target "target" .chance 150% .duration 3 .buff_ids "Ainz Accursed Orb Lower Resistance Stun" .on_hit true .on_miss false .queue true .apply_once false .has_description false
+effect: .name "Ainz Accursed Orb Lower Resistance Move" .target "target" .chance 150% .duration 3 .buff_ids "Ainz Accursed Orb Lower Resistance Move" .on_hit true .on_miss false .queue true .apply_once false .has_description false
+effect: .name "Ainz Accursed Orb Lower Resistance Debuff" .target "target" .chance 150% .duration 3 .buff_ids "Ainz Accursed Orb Lower Resistance Debuff" .on_hit true .on_miss false .queue true .apply_once false .has_description false
+
+effect: .name "Ainz Accursed Orb Pretended Weakness" .target "target" .chance 100% .duration 3 .buff_ids "Ainz Accursed Orb Pretended Weakness" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+
+effect: .name "Ainz Hamusuke Neutralize Aura Of Horror Non-Crit"  .target "performer_group_other" .curio_result_type "negative" .chance 100% .buff_duration_type round .duration -1 .buff_ids "ainz_skill_negative_dotstress_crit" .on_hit true .on_miss true .queue false .apply_once true .has_description false .can_apply_on_death true
+effect: .name "Ainz Hamusuke Neutralize Aura Of Horror Crit" .target "performer_group_other" .curio_result_type "negative" .chance 100% .buff_duration_type round .duration -1 .buff_ids "ainz_skill_negative_dotstress_1" .on_hit true .on_miss true .queue false .apply_once true .has_description false .can_apply_on_death true

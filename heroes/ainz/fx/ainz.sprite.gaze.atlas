@@ -1,0 +1,13 @@
+
+ainz.sprite.gaze.png
+size: 853,853
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gaze
+  rotate: false
+  xy: 10, 10
+  size: 823, 823
+  orig: 823, 823
+  offset: 0, 0
+  index: -1

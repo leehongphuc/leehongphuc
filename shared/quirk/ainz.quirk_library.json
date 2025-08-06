@@ -1,0 +1,110 @@
+{
+   "quirks":
+   [
+      {
+         "id" : "ainz_undead_passive",
+         "show_explicit_buff_description" : false,
+         "show_flavor_description" : true,
+         "show_explicit_curio_tag_description" : false,
+         "random_chance" : 0.0,
+         "is_positive" : false,
+         "is_disease" : true,
+         "classification" : "physical",
+         "incompatible_quirks" : 
+         [
+            "disease_vampire_passive", "disease_vampire_crave", "disease_vampire_wasting", "disease_vampire_blood_lust"
+         ],
+         "curio_tag" : "",
+         "curio_tag_chance" : 0.0,
+         "keep_loot" : false,
+         "buffs" : 
+         [
+			"AINZ_NZR_PASSIVE_No_Need_Food",
+			"AINZ_NZR_PASSIVE_No_Heal_From_Food",
+			"AINZ_NZR_PASSIVE_No_Starving_Damage",
+			"AINZ_NZR_PASSIVE_No_Starving_Stress",
+			"AINZ_NZR_PASSIVE_No_Heart_Attack",
+			"AINZ_NZR_PASSIVE_No_Persistent_Virtue",
+			"AINZ_NZR_PASSIVE_disease_resist",
+			"AINZ_NZR_PASSIVE_siren_song"
+         ],
+         "can_modify_in_activity" : false,
+         "can_remove_with_camping_skill" : false,
+         "can_be_replaced_by_new_quirk" : false,
+         "slot_size" : 3,
+         "use_item_dungeon_effects":
+         [
+            {
+               "item_type" : "supply",
+               "item_id" : "holy_water",
+               "effect" : "use_holy_water_ainz_undead_passive"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_CMU",
+               "effect" : "ainz_CMU_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_DT",
+               "effect" : "ainz_DT_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_EB",
+               "effect" : "ainz_EB_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_F",
+               "effect" : "ainz_F_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_I",
+               "effect" : "ainz_I_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_TMM",
+               "effect" : "ainz_TMM_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_AT",
+               "effect" : "ainz_fake_AT_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_FSIFW",
+               "effect" : "ainz_fake_FSIFW_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_HB",
+               "effect" : "ainz_fake_HB_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_SBEF",
+               "effect" : "ainz_fake_SBEF_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_TM8",
+               "effect" : "ainz_fake_TM8_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_AG",
+               "effect" : "ainz_fake_AG_A"
+            },
+            {
+               "item_type" : "supply",
+               "item_id" : "ainz_fake_DNS",
+               "effect" : "ainz_fake_DNS_A"
+            }
+         ]
+      }
+   ]
+}

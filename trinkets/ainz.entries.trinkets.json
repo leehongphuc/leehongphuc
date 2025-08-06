@@ -1,0 +1,293 @@
+{
+   "entries":
+   [
+      {
+         "id" : "ainz_minor_healing_potion",
+         "buffs" : 
+         [
+            "MHP_Healing_Recieved",
+			"MHP_Stress_Healing_Recieved"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "rarity" : "common",
+         "price" : 7500,
+         "limit" : 0,
+         "origin_dungeon" : ""
+      },
+      {
+         "id" : "ainz_mirror_remote_viewing",
+         "buffs" : 
+         [
+            "MRV_ACC",
+            "MRV_Scouting_Chance"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "rarity" : "uncommon",
+         "price" : 10000,
+         "limit" : 0,
+         "origin_dungeon" : ""
+      },
+      {
+         "id" : "ainz_ultimate_shooting_star_super",
+         "buffs" : 
+         [
+            "USSS_ARMOURPIERCING_BUFF",
+            "USSS_Crit"			
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "rarity" : "rare",
+         "price" : 15000,
+         "limit" : 1,
+         "origin_dungeon" : ""
+      },	  
+	  {
+         "id" : "ainz_amaterasu_tsukuyomi",
+         "buffs" : 
+         [
+            "AT_DMGL_BUFF_UHL",
+            "AT_DMGH_BUFF_UHL",
+			"AT_Crit_UHL",
+			"AT_SPD_BUFF_UHL",
+			"AT_DEF_DEBUFF",
+			"AT_PROT_DEBUFF"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+		 "set_id" : "relic_ainz",
+         "rarity" : "very_rare",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "",
+         "attack_skill_additional_effects":
+         [
+		 	"Ainz amaterasu tsukuyomi healstress",
+			"Ainz amaterasu tsukuyomi clearDotStress"
+         ]
+      },
+	  {
+         "id" : "ainz_female_sensei_iron_fist_wraith",
+         "buffs" : 
+         [
+            "FSIFW_DMGL_MELEE_BUFF",
+            "FSIFW_DMGH_MELEE_BUFF",
+			"FSIFW_ARMOURPIERCING_BUFF",
+			"FSIFW_PROT_BUFF"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+		 "set_id" : "relic_ainz",
+         "rarity" : "very_rare",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "",
+         "melee_attack_skill_additional_effects":
+         [
+		 	"Ainz female sensei iron fist wraith"
+         ]
+      },
+	  {
+         "id" : "ainz_houyi_bow",
+         "buffs" : 
+         [
+            "HB_ACC",
+			"HB_Crit"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+		 "set_id" : "relic_ainz",
+         "rarity" : "very_rare",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "",
+         "ranged_attack_skill_additional_effects":
+         [
+		 	"Ainz houyi bow"
+         ]
+      },
+	  {
+         "id" : "ainz_suck_blood_eat_flesh",
+         "buffs" : 
+         [
+            "SBEF_DMGL_BUFF",
+            "SBEF_DMGH_BUFF",
+			"SBEF_ACC",
+			"SBEF_SPD_DEBUFF",
+			"SBEF_DEF_BUFF"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+		 "set_id" : "relic_ainz",
+         "rarity" : "very_rare",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "",
+         "attack_skill_additional_effects":
+         [
+		 	"Ainz suck blood eat flesh hit",
+			"Ainz suck blood eat flesh miss"
+         ]
+      },
+	  {
+         "id" : "ainz_takemikazuchi_mk_8",
+         "buffs" : 
+         [
+            "TMK8_ARMOURPIERCING_BUFF",
+			"TMK8_DMGL_BUFF",
+			"TMK8_DMGH_BUFF"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "set_id" : "relic_ainz",
+         "rarity" : "very_rare",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "",
+         "attack_crit_additional_effects":
+         [
+		 	"Ainz takemikazuchi mk 8"
+         ]
+      },
+	  {
+         "id" : "ainz_avarice_generosity",
+         "buffs" : 
+         [
+			"AC_DEATHRESIST_BUFF",
+			"AC_DEBUFF_RESIST_BUFF",
+			"AC_STUN_RESIST_BUFF",
+			"AC_MOVE_RESIST_BUFF",
+			"Ainz Tooltip Avarice Generosity XP Release",
+			"Ainz Tooltip Avarice Generosity XP Absorb 1",
+			"Ainz Tooltip Avarice Generosity XP Absorb 2"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "set_id" : "cc_ainz",
+         "rarity" : "crimson_court",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "courtyard",
+         "kill_performer_additional_effects":
+         [
+		 	"Ainz avarice generosity XP gain"
+         ]
+      },
+      {
+         "id" : "ainz_depiction_nature_society",
+         "buffs" : 
+         [
+			"DNS_SPD_BUFF",
+			"Ainz Tooltip Depiction Nature Society",
+			"Ainz Tooltip Depiction Nature Society Title",
+			"Ainz Tooltip Depiction Nature Society Buff 1",
+			"Ainz Tooltip Depiction Nature Society Buff 2",
+			"Ainz Tooltip Depiction Nature Society Buff 3",
+			"Ainz Tooltip Depiction Nature Society Buff 4",
+			"Ainz Tooltip Depiction Nature Society Buff 5",
+			"Ainz Tooltip Depiction Nature Society Buff 6"
+         ],
+         "hero_class_requirements":
+         [
+         ],
+         "set_id" : "cc_ainz",
+         "rarity" : "crimson_court",
+         "price" : 50000,
+         "limit" : 1,
+         "origin_dungeon" : "courtyard",
+         "attack_skill_additional_effects":
+         [
+		 	"Ainz depiction nature society DNS_ARMOURPIERCING_BUFF",
+			"Ainz depiction nature society DNS_DEF_BUFF",
+			"Ainz depiction nature society DNS_PROT_BUFF",
+			"Ainz depiction nature society DNS_DMGL_BUFF",
+			"Ainz depiction nature society DNS_DMGH_BUFF",
+			"Ainz depiction nature society DNS_Crit",
+			"Ainz depiction nature society DNS_ACC"
+         ]
+      },
+      {
+         "id" : "com_ainz_accursed_orb",
+         "buffs" : 
+         [
+            "AINZ_AO_DEATHRESIST_BUFF",
+            "AINZ_AO_CRIT_BUFF",
+            "AINZ_AO_DMGL_BUFF",
+		    "AINZ_AO_DMGH_BUFF",
+		    "AINZ_AO_DMGL_DEBUFF",
+		    "AINZ_AO_DMGH_DEBUFF",
+		    "AINZ_AO_SPD_BUFF",
+		    "AINZ_AO_SPD_DEBUFF",
+			"Ainz Tooltip Accursed Orb Lower Resistance 1",
+			"Ainz Tooltip Accursed Orb Lower Resistance 2",
+			"Ainz Tooltip Accursed Orb Pretended Weakness 1",
+			"Ainz Tooltip Accursed Orb Pretended Weakness 2"
+         ],
+         "hero_class_requirements":
+         [
+            "ainz"
+         ],
+         "set_id" : "cc_ainz",
+         "rarity" : "comet",
+         "shard" : 160,
+         "limit" : 1,
+         "origin_dungeon" : "",
+		 "was_hit_additional_effects":
+         [
+		 	"Ainz Accursed Orb Pretended Weakness"
+         ],
+         "attack_skill_additional_effects":
+         [
+		 	"Ainz Accursed Orb Lower Resistance Bleed",
+		 	"Ainz Accursed Orb Lower Resistance Blight",
+		 	"Ainz Accursed Orb Lower Resistance Stun",
+		 	"Ainz Accursed Orb Lower Resistance Move",
+		 	"Ainz Accursed Orb Lower Resistance Debuff"
+         ]
+      },
+      {
+         "id" : "ainz_hamusuke",
+         "buffs" : 
+         [
+		 	"Ainz Tooltip Hamusuke Food",
+			"Ainz Hamusuke Food Neutralize No_Need_Food",
+			"Ainz Hamusuke Food Neutralize No_Heal_From_Food",
+			"Ainz Hamusuke Food Neutralize No_Starving_Damage",
+			"Ainz Hamusuke Food Neutralize No_Starving_Stress",
+			"Ainz Tooltip Hamusuke Rider",
+			"Ainz Hamusuke SPD",
+			"Ainz Hamusuke Stress",
+			"Ainz Tooltip Hamusuke Neutralize Aura Of Horror 1",
+			"Ainz Tooltip Hamusuke Neutralize Aura Of Horror 2",
+			"Ainz Hamusuke Time Stop Half Stress"
+         ],
+         "hero_class_requirements":
+         [
+            "ainz"
+         ],
+         "visual_rarity" : "hamusuke",
+         "rarity" : "comet",
+         "shard" : 160,
+         "limit" : 1,
+         "origin_dungeon" : "",
+		 "attack_skill_additional_effects":
+         [
+		 	"Ainz Hamusuke Neutralize Aura Of Horror Non-Crit"
+         ],
+         "attack_crit_additional_effects":
+         [
+		 	"Ainz Hamusuke Neutralize Aura Of Horror Crit"
+         ]
+      }
+   ]
+}

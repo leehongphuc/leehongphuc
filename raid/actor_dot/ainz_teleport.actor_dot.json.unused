@@ -1,0 +1,3912 @@
+{
+    "entries":
+    [
+        {
+            "id": "ainz_teleport",
+            "update_duration_type": "after_turn_friendly",
+            "duration_elements": 
+            [
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+{
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+{
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                },
+                {
+                    "completion_chance": 0.0,
+                    "completion_effects":
+                    [
+
+                    ],
+                    "increment_effects":
+                    [
+                        "ainz_teleport_addturn",
+						"ainz_teleport_switch",
+						"ainz_teleport_cooldown"
+                    ]
+                }
+            ]
+        }
+    ]
+}

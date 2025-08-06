@@ -1,0 +1,3 @@
+{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5} event:/general/char/Cathelia_empty_sound
+{42a6f6bf-988f-442d-aa39-dfe5c8dc565e} event:/general/char/Cathelia_test_wardrum_ogre
+{a9fe7b6d-c7b2-4aca-8fcc-b0a29ef5dd83} bank:/Cathelia_empty_sound

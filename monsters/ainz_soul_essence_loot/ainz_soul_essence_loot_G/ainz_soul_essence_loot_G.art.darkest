@@ -1,0 +1,3 @@
+commonfx: .deathfx death_small
+defending_area_pos_offset: .offset 0 50
+display_modifier: .disable_halos true .show_spawn_fx false .disabled_popup_text_types resist

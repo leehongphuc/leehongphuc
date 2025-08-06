@@ -1,0 +1,39 @@
+inventory_item: .type "supply"		.id "ainz_CMU"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0			.sequential_use_effects ainz_CMU ainz_CMU_repeat .wait_for_item_use_to_finish true
+inventory_item: .type "supply"		.id "ainz_DT"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_EB"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_F"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_I"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_TMM"			.base_stack_limit 10		.purchase_gold_value 5000		.sell_gold_value 0
+
+inventory_item: .type "supply"		.id "ainz_DT_XP"		.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0			.sequential_use_effects ainz_DT_XP ainz_DT_XP_repeat .wait_for_item_use_to_finish true
+inventory_item: .type "supply"		.id "ainz_EB_XP"		.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0			.sequential_use_effects ainz_EB_XP ainz_EB_XP_repeat .wait_for_item_use_to_finish true
+inventory_item: .type "supply"		.id "ainz_F_XP"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0			.sequential_use_effects ainz_F_XP ainz_F_XP_repeat .wait_for_item_use_to_finish true
+inventory_item: .type "supply"		.id "ainz_I_XP"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0			.sequential_use_effects ainz_I_XP ainz_I_XP_repeat .wait_for_item_use_to_finish true
+inventory_item: .type "supply"		.id "ainz_TMM_XP"		.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0			.sequential_use_effects ainz_TMM_XP ainz_TMM_XP_repeat .wait_for_item_use_to_finish true
+
+inventory_item: .type "supply"		.id "ainz_DT_E"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_EB_E"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_F_E"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_I_E"			.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_TMM_E"		.base_stack_limit 10		.purchase_gold_value 0		.sell_gold_value 0
+
+inventory_item: .type "supply"		.id "ainz_fake_AT"				.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_FSIFW"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_HB"				.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_SBEF"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_TM8"				.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_AG"				.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_DNS"				.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+
+//inventory_item: .type "supply"		.id "ainz_fake_AT_E"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+//inventory_item: .type "supply"		.id "ainz_fake_FSIFW_E"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+//inventory_item: .type "supply"		.id "ainz_fake_HB_E"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+//inventory_item: .type "supply"		.id "ainz_fake_SBEF_E"	       	.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+//inventory_item: .type "supply"		.id "ainz_fake_TM8_E"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+//inventory_item: .type "supply"		.id "ainz_fake_AG_E"			.base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+inventory_item: .type "supply"		.id "ainz_fake_DNS_E"		    .base_stack_limit 1			.purchase_gold_value 0		.sell_gold_value 0
+
+
+
+
+

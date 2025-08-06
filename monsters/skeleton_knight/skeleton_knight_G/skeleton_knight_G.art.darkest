@@ -1,0 +1,8 @@
+commonfx: .deathfx death_medium
+
+skill: .id "AINZ_SN_guard"	.anim "attack_ranged" .fx "defender" .can_display_performer_selection_after_turn false .can_display_skill_name false
+skill: .id "AINZ_SN_Shout"	.anim "attack_shout" .fx "bellow" .targchestfx "blood_splatter" .area_pos_offset 100 0 .target_area_pos_offset -125 0 .can_display_performer_selection_after_turn false
+skill: .id "AINZ_SN_Attack"	.anim "attack_mace" .fx "crush" .targchestfx "blood_splatter" .can_display_performer_selection_after_turn false
+
+health_bar: .type "corpse"
+display_modifier: .disable_halos true .disabled_popup_text_types resist

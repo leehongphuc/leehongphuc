@@ -1,0 +1,27 @@
+
+ainz.sprite.ainz_teleport.png
+size: 796,1364
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+motes
+  rotate: false
+  xy: 593, 5
+  size: 193, 976
+  orig: 193, 976
+  offset: 0, 0
+  index: -1
+god_rays01
+  rotate: false
+  xy: 5, 5
+  size: 284, 1349
+  orig: 284, 1349
+  offset: 0, 0
+  index: -1
+god_rays02
+  rotate: false
+  xy: 299, 5
+  size: 284, 1348
+  orig: 284, 1348
+  offset: 0, 0
+  index: -1

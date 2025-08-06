@@ -1,0 +1,2162 @@
+{
+   "buffs":
+   [
+	  {
+         "id" : "Ainz Necromancy Immune Grasp Heart Tooltip",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Necromancy Immune Grasp Heart Tooltip",
+         "amount" : 1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Necromancy Immune Wail of the Banshee Tooltip",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Necromancy Immune Wail of the Banshee Tooltip",
+         "amount" : 1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip spellbook 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip spellbook 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip spellbook 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip spellbook 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Greater Teleportation",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Greater Teleportation",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Astral Project 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Astral Project 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Astral Project 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Astral Project 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Astral Project 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Astral Project 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Unconcerned",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Unconcerned",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip NoCorpse",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip NoCorpse",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart Miss 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart Miss 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart Miss 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart Miss 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart Miss 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart Miss 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart Miss 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart Miss 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Grasp Heart Miss 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Grasp Heart Miss 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Black Hole 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Black Hole 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Black Hole 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Black Hole 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Black Hole 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Black Hole 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Black Hole 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Black Hole 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Black Hole 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Black Hole 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun Friendly 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun Friendly 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun Friendly 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun Friendly 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun Friendly 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun Friendly 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun Friendly 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun Friendly 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Stun Friendly 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Stun Friendly 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill Friendly 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill Friendly 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill Friendly 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill Friendly 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill Friendly 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill Friendly 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill Friendly 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill Friendly 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Wail of the Banshee Kill Friendly 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Wail of the Banshee Kill Friendly 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Friendly Blight 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Friendly Blight 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Friendly Blight 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Friendly Blight 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Friendly Blight 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Friendly Blight 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Friendly Blight 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Friendly Blight 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Friendly Blight 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Friendly Blight 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Buff 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Buff 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Buff 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Buff 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Buff 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Buff 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Buff 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Buff 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Buff 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Buff 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Debuff 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Debuff 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Debuff 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Debuff 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Debuff 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Debuff 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Debuff 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Debuff 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Extra Debuff 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Extra Debuff 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Timestress 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Timestress 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Timestress 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Timestress 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Time Stop Timestress 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Time Stop Timestress 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal No Cure",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal No Cure",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Necromancy Enhance",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Necromancy Enhance",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Necromancy Enhance Self",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Necromancy Enhance Self",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Necromancy Enhance Ally",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Necromancy Enhance Ally",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip The Goal 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip The Goal 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Defensive 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Defensive 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Defensive 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Defensive 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Defensive 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Defensive 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Reality Slash Bleed Even Miss",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Reality Slash Bleed Even Miss",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Gravity Maelstrom Pull Even Miss",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Gravity Maelstrom Pull Even Miss",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Skill Negative Dotstress Tooltip 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Skill Negative Dotstress Tooltip 1",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Skill Negative Dotstress Tooltip 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Skill Negative Dotstress Tooltip 2",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Tag Disable Cooldown",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Tag Disable Cooldown",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Blight Disable Cooldown",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Blight Disable Cooldown",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Buff Disable Cooldown",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Buff Disable Cooldown",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Heal Disable Cooldown",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Heal Disable Cooldown",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 1_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 1_1",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 1_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 1_2",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 1_3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 1_3",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 1_4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 1_4",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 1_5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 1_5",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 2_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 2_1",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 2_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 2_2",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 2_3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 2_3",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 2_4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 2_4",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 2_5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 2_5",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 3_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 3_1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 3_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 3_2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 3_3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 3_3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 3_4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 3_4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Skill Cannot Refresh 3_5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Skill Cannot Refresh 3_5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Avarice Generosity XP Release",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Avarice Generosity XP Release",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Avarice Generosity XP Absorb 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Avarice Generosity XP Absorb 1",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Avarice Generosity XP Absorb 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Avarice Generosity XP Absorb 2",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Depiction Nature Society",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Depiction Nature Society Title",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Title",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Tooltip Depiction Nature Society Buff 6",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Depiction Nature Society Buff 6",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Accursed Orb Lower Resistance 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Accursed Orb Lower Resistance 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Accursed Orb Lower Resistance 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Accursed Orb Lower Resistance 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Accursed Orb Pretended Weakness 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Accursed Orb Pretended Weakness 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Accursed Orb Pretended Weakness 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Accursed Orb Pretended Weakness 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_tooltip_Scroll_Cooldown_CMU",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_CMU",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_tooltip_Scroll_Cooldown_DT",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_DT",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_tooltip_Scroll_Cooldown_EB",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_EB",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_tooltip_Scroll_Cooldown_F",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_F",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_tooltip_Scroll_Cooldown_I",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_I",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_tooltip_Scroll_Cooldown_TMM",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "ainz_tooltip_Scroll_Cooldown_TMM",
+         "amount" : -1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Hamusuke Food",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Hamusuke Food",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Hamusuke Rider",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Hamusuke Rider",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Hamusuke Neutralize Aura Of Horror 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Hamusuke Neutralize Aura Of Horror 1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tooltip Hamusuke Neutralize Aura Of Horror 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz Tooltip Hamusuke Neutralize Aura Of Horror 2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Tooltip 1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz+Stars Easter Egg Tooltip 1",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Tooltip 2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz+Stars Easter Egg Tooltip 2",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_A_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_A_1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_A_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_A_2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_A_Negative_Dotstress_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_A_Negative_Dotstress_1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_A_Negative_Dotstress_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_A_Negative_Dotstress_2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_3a",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_3a",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_3b",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_3b",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_3c",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_3c",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_6",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_6",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_B_7",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_B_7",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_1",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_1",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_2",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_2",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_3",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_3",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_4",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_4",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_5",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_5",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz_Tooltip_spellnote_C_6",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "Ainz_Tooltip_spellnote_C_6",
+         "amount" : 0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      }
+	]
+}

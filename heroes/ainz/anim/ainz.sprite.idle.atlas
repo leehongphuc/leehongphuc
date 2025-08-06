@@ -1,0 +1,103 @@
+ainz.sprite.idle.png
+size: 600,2066
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PC-RIGHT-BOOT-BROWN
+  rotate: true
+  xy: 265, 25
+  size: 68, 200
+  orig: 68, 200
+  offset: 0, 0
+  index: -1
+astronomer-arm1
+  rotate: false
+  xy: 2, 267
+  size: 200, 486
+  orig: 200, 486
+  offset: 0, 0
+  index: -1
+astronomer-arm2
+  rotate: true
+  xy: 204, 333
+  size: 125, 389
+  orig: 125, 389
+  offset: 0, 0
+  index: -1
+astronomer-book
+  rotate: true
+  xy: 265, 95
+  size: 173, 139
+  orig: 173, 139
+  offset: 0, 0
+  index: -1
+astronomer-cloak1
+  rotate: false
+  xy: 453, 650
+  size: 144, 450
+  orig: 144, 450
+  offset: 0, 0
+  index: -1
+astronomer-hand
+  rotate: false
+  xy: 401, 666
+  size: 48, 87
+  orig: 48, 87
+  offset: 0, 0
+  index: -1
+astronomer-head
+  rotate: false
+  xy: 406, 119
+  size: 137, 149
+  orig: 137, 149
+  offset: 0, 0
+  index: -1
+astronomer-hood
+  rotate: true
+  xy: 2, 2
+  size: 263, 261
+  orig: 263, 261
+  offset: 0, 0
+  index: -1
+astronomer-robe
+  rotate: true
+  xy: 2, 755
+  size: 345, 449
+  orig: 345, 449
+  offset: 0, 0
+  index: -1
+astronomer-token
+  rotate: false
+  xy: 467, 33
+  size: 69, 84
+  orig: 69, 84
+  offset: 0, 0
+  index: -1
+astronomer-tunic
+  rotate: true
+  xy: 204, 460
+  size: 293, 195
+  orig: 293, 195
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 401, 470
+  size: 197, 178
+  orig: 197, 178
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 204, 270
+  size: 357, 61
+  orig: 357, 61
+  offset: 0, 0
+  index: -1
+staff
+  rotate: false
+  xy: 2, 1102
+  size: 591, 962
+  orig: 591, 962
+  offset: 0, 0
+  index: -1

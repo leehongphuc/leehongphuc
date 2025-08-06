@@ -1,0 +1,20 @@
+{
+   "sets":
+   [
+
+      {
+         "id" : "cc_ainz",
+         "buffs" : 
+         [
+		    "AINZ_Set_Penalty_Stress_Received_world"
+         ]
+      },
+      {
+         "id" : "relic_ainz",
+         "buffs" : 
+         [
+		    "AINZ_Set_Penalty_Stress_Received_relic"
+         ]
+      }
+   ]
+}

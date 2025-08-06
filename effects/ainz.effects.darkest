@@ -1,0 +1,633 @@
+//Overlord
+//-------------------------
+
+// Necromancy Immunity Check (e.g. unholy monsters are immune to Grasp Heart) 死灵系法术免疫检定（如邪秽怪物免疫心脏掌握）
+
+effect: .name "Ainz Necromancy Immune Debuff Chance" .target "performer" .chance 10000% .duration 1 .buff_duration_type round .buff_ids "Ainz NICDC Negative" "Ainz NICDC Positive 1" "Ainz NICDC Positive 2" "Ainz NICDC Positive 3" "Ainz NICDC Positive 4" "Ainz NICDC Positive 5" "Ainz NICDC Positive 6" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .has_description false
+
+effect: .name "Ainz Necromancy Immune Debuff Chance II" .target "performer" .chance 10000% .duration 1 .buff_duration_type round .buff_ids "Ainz NICDC Positive 7" "Ainz NICDC Positive 8" "Ainz NICDC Positive 9" "Ainz NICDC Positive 10" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .has_description false
+
+effect: .name "Ainz Necromancy Immune Buff Target" .target "target" .chance 100% .duration 1 .buff_duration_type before_turn .buff_ids "Ainz Necromancy Immune Grasp Heart" "Ainz Necromancy Immune Wail of the Banshee" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .has_description false
+
+effect: .name "Ainz Necromancy Immune Buff Target Tooltip" .target "target" .chance 100% .buff_ids "Ainz Necromancy Immune Grasp Heart Tooltip" "Ainz Necromancy Immune Wail of the Banshee Tooltip" .duration -1 .buff_source_type bsrc_town_event .on_hit true .on_miss true .queue false .has_description false
+
+effect: .name "Ainz Necromancy Immune Steal" .target "target" .curio_result_type "positive" .chance 10000% .steal_buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Necromancy Immune Dispel" .target "performer" .curio_result_type "positive" .chance 10000% .steal_buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue true .has_description false
+
+
+
+
+//Passive Descriptions 被动描述
+
+effect: .name "Ainz_Tooltip_spellnote_A" .target "performer" .skill_instant true .buff_ids "Ainz_Tooltip_spellnote_A_1" "Ainz_Tooltip_spellnote_A_Negative_Dotstress_2" "Ainz_Tooltip_spellnote_A_2" "Ainz_Tooltip_spellnote_A_Negative_Dotstress_1" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz_Tooltip_spellnote_B" .target "performer" .skill_instant true .buff_ids "Ainz_Tooltip_spellnote_B_1" "Ainz_Tooltip_spellnote_B_2" "Ainz_Tooltip_spellnote_B_4" "Ainz_Tooltip_spellnote_B_3a" "Ainz_Tooltip_spellnote_B_3b" "Ainz_Tooltip_spellnote_B_3c" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz_Tooltip_spellnote_B2" .target "performer" .skill_instant true .buff_ids "Ainz_Tooltip_spellnote_B_5" "Ainz_Tooltip_spellnote_B_6" "Ainz_Tooltip_spellnote_B_7" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz_Tooltip_spellnote_C" .target "performer" .skill_instant true .buff_ids "Ainz_Tooltip_spellnote_C_1" "Ainz_Tooltip_spellnote_C_2" "Ainz_Tooltip_spellnote_C_3" "Ainz_Tooltip_spellnote_C_4" "Ainz_Tooltip_spellnote_C_5" "Ainz_Tooltip_spellnote_C_6" .on_hit false .on_miss false .queue false
+
+
+
+
+//Switch 法术翻页
+
+effect: .name "Ainz Switch A" .target "performer" .set_mode spellbookA .chance 100% .remove_vampire 1 .on_hit true .on_miss true .queue false .has_description false
+effect: .name "Ainz Switch B" .target "performer" .set_mode spellbookB .chance 100% .remove_vampire 1 .on_hit true .on_miss true .queue false .has_description false
+
+effect: .name "Ainz Tooltip spellbook 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip spellbook 1" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip spellbook 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip spellbook 2" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Undead Passive" .target "performer" .chance 100% .disease "ainz_undead_passive" .on_hit true .on_miss true .queue true .has_description false
+
+
+
+
+//Grasp Heart 心脏掌握
+
+effect: .name "Ainz Tooltip Unconcerned" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Unconcerned" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Grasp Heart HP Range 1" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 1" .on_hit true .on_miss true .has_description false
+effect: .name "Ainz Grasp Heart HP Range 2" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 2" .on_hit true .on_miss true .has_description false
+effect: .name "Ainz Grasp Heart HP Range 3" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 3" .on_hit true .on_miss true .has_description false
+effect: .name "Ainz Grasp Heart HP Range 4" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 4" .on_hit true .on_miss true .has_description false
+effect: .name "Ainz Grasp Heart HP Range 5" .target "performer" .chance 100% .skill_instant true .buff_ids "Ainz Grasp Heart HP Range 5" .on_hit true .on_miss true .has_description false
+
+effect: .name "Ainz Grasp Heart 1" .target "target" .curio_result_type "negative" .chance 20% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 2" .target "target" .curio_result_type "negative" .chance 25% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 3" .target "target" .curio_result_type "negative" .chance 30% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 4" .target "target" .curio_result_type "negative" .chance 35% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Grasp Heart 5" .target "target" .curio_result_type "negative" .chance 40% .health_damage 50 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .crit_doesnt_apply_to_roll true
+
+//effect: .name "Ainz Grasp Heart Corpse" .target "target" .chance 100% .kill_enemy_types corpse .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+
+effect: .name "Ainz True Stun Miss 1" .target "target" .curio_result_type "negative" .chance 80%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun Miss 2" .target "target" .curio_result_type "negative" .chance 85%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun Miss 3" .target "target" .curio_result_type "negative" .chance 90%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun Miss 4" .target "target" .curio_result_type "negative" .chance 95%  .stun 1 .on_hit false .on_miss true .queue true .has_description false
+effect: .name "Ainz True Stun Miss 5" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit false .on_miss true .queue true .has_description false
+
+effect: .name "Ainz True Stun 1" .target "target" .curio_result_type "negative" .chance 100% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 2" .target "target" .curio_result_type "negative" .chance 112% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 3" .target "target" .curio_result_type "negative" .chance 125% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 4" .target "target" .curio_result_type "negative" .chance 138% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz True Stun 5" .target "target" .curio_result_type "negative" .chance 150% .stun 1 .on_hit true .on_miss false .queue true .has_description false
+
+effect: .name "Ainz Tooltip Grasp Heart Miss 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart Miss 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart Miss 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart Miss 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart Miss 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart Miss 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Grasp Heart 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Grasp Heart 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Grasp Heart 5" .on_hit false .on_miss false .queue false
+
+//effect: .name "Ainz Tooltip NoCorpse" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip NoCorpse" .on_hit false .on_miss false .queue false
+
+//effect: .name "Ainz target low HP always crit" .target "performer" .curio_result_type "positive" .chance 100% .skill_instant true .buff_ids "Ainz target low HP always crit" .on_hit true .on_miss true 
+
+
+
+
+//Black Hole 黑洞
+
+//effect: .name "Ainz Clear Stealth" .target "target" .curio_result_type "negative" .chance 50% .unstealth 1 .on_hit true .on_miss false .apply_once true .queue true .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+
+effect: .name "Ainz Shuffle 1" .target "target" .curio_result_type "negative" .chance 500% .shuffleparty .on_hit true .on_miss false .apply_once true .can_apply_on_death true
+effect: .name "Ainz Shuffle 2" .target "target" .curio_result_type "negative" .chance 500% .shuffleparty .on_hit true .on_miss false .apply_once true .can_apply_on_death true
+effect: .name "Ainz Shuffle 3" .target "target" .curio_result_type "negative" .chance 500% .shuffleparty .on_hit true .on_miss false .apply_once true .can_apply_on_death true
+effect: .name "Ainz Shuffle 4" .target "target" .curio_result_type "negative" .chance 500% .shuffleparty .on_hit true .on_miss false .apply_once true .can_apply_on_death true
+effect: .name "Ainz Shuffle 5" .target "target" .curio_result_type "negative" .chance 500% .shuffleparty .on_hit true .on_miss false .apply_once true .can_apply_on_death true
+
+effect: .name "Ainz Tooltip Black Hole 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Black Hole 1" .on_hit false .on_miss false
+effect: .name "Ainz Tooltip Black Hole 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Black Hole 2" .on_hit false .on_miss false
+effect: .name "Ainz Tooltip Black Hole 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Black Hole 3" .on_hit false .on_miss false
+effect: .name "Ainz Tooltip Black Hole 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Black Hole 4" .on_hit false .on_miss false
+effect: .name "Ainz Tooltip Black Hole 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Black Hole 5" .on_hit false .on_miss false
+
+
+
+
+//Reality Slash 现世斩
+
+effect: .name "Ainz Ignore Protection" .target "performer" .curio_result_type "positive" .chance 100% .skill_instant true .buff_ids "Ainz ignore protection" .on_hit true .on_miss true
+
+effect: .name "Ainz True Bleeding 1" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .dotBleed 2 .on_hit true .on_miss false
+effect: .name "Ainz True Bleeding 2" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .dotBleed 2 .on_hit true .on_miss false
+effect: .name "Ainz True Bleeding 3" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .dotBleed 3 .on_hit true .on_miss false
+effect: .name "Ainz True Bleeding 4" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .dotBleed 3 .on_hit true .on_miss false
+effect: .name "Ainz True Bleeding 5" .target "target" .curio_result_type "negative" .chance 140% .duration 3 .dotBleed 4 .on_hit true .on_miss false
+
+effect: .name "Ainz True Bleeding Miss 1" .target "target" .curio_result_type "negative" .chance 100% .duration 1 .dotBleed 2 .on_hit false .on_miss true .has_description false
+effect: .name "Ainz True Bleeding Miss 2" .target "target" .curio_result_type "negative" .chance 110% .duration 1 .dotBleed 2 .on_hit false .on_miss true .has_description false
+effect: .name "Ainz True Bleeding Miss 3" .target "target" .curio_result_type "negative" .chance 120% .duration 1 .dotBleed 3 .on_hit false .on_miss true .has_description false
+effect: .name "Ainz True Bleeding Miss 4" .target "target" .curio_result_type "negative" .chance 130% .duration 1 .dotBleed 3 .on_hit false .on_miss true .has_description false
+effect: .name "Ainz True Bleeding Miss 5" .target "target" .curio_result_type "negative" .chance 140% .duration 1 .dotBleed 4 .on_hit false .on_miss true .has_description false
+
+effect: .name "Ainz Tooltip Reality Slash Bleed Even Miss" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Reality Slash Bleed Even Miss" .on_hit false .on_miss false .queue false
+
+
+
+
+//Body of Effulgent Beryl (Remade into Spell Scroll) 光辉翠绿体（已重制为法术卷轴）
+
+effect: .name "Ainz Defensive Block 1" .target "performer" .curio_result_type "positive" .chance 100% .health_damage_blocks 1 .on_hit true .queue true
+effect: .name "Ainz Defensive Block 2" .target "performer" .curio_result_type "positive" .chance 100% .health_damage_blocks 1 .on_hit true .queue true
+effect: .name "Ainz Defensive Block 3" .target "performer" .curio_result_type "positive" .chance 100% .health_damage_blocks 2 .on_hit true .queue true
+effect: .name "Ainz Defensive Block 4" .target "performer" .curio_result_type "positive" .chance 100% .health_damage_blocks 2 .on_hit true .queue true
+effect: .name "Ainz Defensive Block 5" .target "performer" .curio_result_type "positive" .chance 100% .health_damage_blocks 3 .on_hit true .queue true
+
+effect: .name "Ainz Defensive Buff 1" .target "performer" .curio_result_type "positive" .chance 100% .duration 3 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true .has_description false
+effect: .name "Ainz Defensive Buff 2" .target "performer" .curio_result_type "positive" .chance 100% .duration 3 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true .has_description false
+effect: .name "Ainz Defensive Buff 3" .target "performer" .curio_result_type "positive" .chance 100% .duration 4 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true .has_description false
+effect: .name "Ainz Defensive Buff 4" .target "performer" .curio_result_type "positive" .chance 100% .duration 4 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true .has_description false
+effect: .name "Ainz Defensive Buff 5" .target "performer" .curio_result_type "positive" .chance 100% .duration 5 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true .has_description false
+
+effect: .name "Ainz Defensive Debuff 1" .target "performer" .curio_result_type "negative" .chance 100% .duration 3 .stress 6 .on_hit true .queue true
+effect: .name "Ainz Defensive Debuff 2" .target "performer" .curio_result_type "negative" .chance 100% .duration 3 .stress 6 .on_hit true .queue true
+effect: .name "Ainz Defensive Debuff 3" .target "performer" .curio_result_type "negative" .chance 100% .duration 4 .stress 7 .on_hit true .queue true
+effect: .name "Ainz Defensive Debuff 4" .target "performer" .curio_result_type "negative" .chance 100% .duration 4 .stress 7 .on_hit true .queue true
+effect: .name "Ainz Defensive Debuff 5" .target "performer" .curio_result_type "negative" .chance 100% .duration 5 .stress 8 .on_hit true .queue true
+
+effect: .name "Ainz Defensive Miss" .target "performer" .curio_result_type "negative" .chance 200% .duration 3 .stress 3 .on_miss true .queue true 
+
+effect: .name "Ainz Tooltip Defensive 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Defensive 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Defensive 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Defensive 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Defensive 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Defensive 3" .on_hit false .on_miss false .queue false
+
+
+
+
+//Gravity Maelstrom 重力旋涡
+
+//effect: .name "Ainz Clear Guarded" .target "target" .curio_result_type "negative" .chance 100% .clearguarded 1 .on_hit true .on_miss false .queue true
+
+effect: .name "Ainz Pull A" .target "target" .curio_result_type "negative" .pull 2 .chance 100% .on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Ainz Pull B" .target "target" .curio_result_type "negative" .pull 2 .chance 110% .on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Ainz Pull C" .target "target" .curio_result_type "negative" .pull 2 .chance 120% .on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Ainz Pull D" .target "target" .curio_result_type "negative" .pull 2 .chance 130% .on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Ainz Pull E" .target "target" .curio_result_type "negative" .pull 2 .chance 140% .on_hit true .on_miss false .can_apply_on_death true
+
+effect: .name "Ainz Pull miss A" .target "target" .curio_result_type "negative" .pull 1 .chance 100% .on_hit false .on_miss true .can_apply_on_death true .has_description false
+effect: .name "Ainz Pull miss B" .target "target" .curio_result_type "negative" .pull 1 .chance 100% .on_hit false .on_miss true .can_apply_on_death true .has_description false
+effect: .name "Ainz Pull miss C" .target "target" .curio_result_type "negative" .pull 1 .chance 100% .on_hit false .on_miss true .can_apply_on_death true .has_description false
+effect: .name "Ainz Pull miss D" .target "target" .curio_result_type "negative" .pull 1 .chance 100% .on_hit false .on_miss true .can_apply_on_death true .has_description false
+effect: .name "Ainz Pull miss E" .target "target" .curio_result_type "negative" .pull 1 .chance 100% .on_hit false .on_miss true .can_apply_on_death true .has_description false
+
+effect: .name "Ainz Tooltip Gravity Maelstrom Pull Even Miss" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Gravity Maelstrom Pull Even Miss" .on_hit false .on_miss false .queue false
+
+
+
+
+//Cry of the Banshee 女妖之嚎
+
+effect: .name "Ainz Stun 1" .target "target" .curio_result_type "negative" .chance 150% .stun 1 .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Stun 2" .target "target" .curio_result_type "negative" .chance 162% .stun 1 .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Stun 3" .target "target" .curio_result_type "negative" .chance 175% .stun 1 .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Stun 4" .target "target" .curio_result_type "negative" .chance 188% .stun 1 .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Stun 5" .target "target" .curio_result_type "negative" .chance 200% .stun 1 .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Stun Friendly 1" .target "performer_group_other" .curio_result_type "negative" .chance 50%  .stun 1 .on_hit true .on_miss true .queue true .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Stun Friendly 2" .target "performer_group_other" .curio_result_type "negative" .chance 62%  .stun 1 .on_hit true .on_miss true .queue true .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Stun Friendly 3" .target "performer_group_other" .curio_result_type "negative" .chance 75%  .stun 1 .on_hit true .on_miss true .queue true .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Stun Friendly 4" .target "performer_group_other" .curio_result_type "negative" .chance 88%  .stun 1 .on_hit true .on_miss true .queue true .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Stun Friendly 5" .target "performer_group_other" .curio_result_type "negative" .chance 100% .stun 1 .on_hit true .on_miss true .queue true .apply_once true .has_description false .individual_target_actor_rolls true
+
+effect: .name "Ainz Banshee Kill 1" .target "target" .curio_result_type "negative" .chance 20% .health_damage 99 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Banshee Kill 2" .target "target" .curio_result_type "negative" .chance 25% .health_damage 99 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Banshee Kill 3" .target "target" .curio_result_type "negative" .chance 30% .health_damage 99 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Banshee Kill 4" .target "target" .curio_result_type "negative" .chance 35% .health_damage 99 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Banshee Kill 5" .target "target" .curio_result_type "negative" .chance 40% .health_damage 99 .damage_type reflect .damage_source_type reflect .on_hit true .on_miss false .queue true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+
+effect: .name "Ainz Kill Friendly deathdoor protect" .target "performer_group_other" .curio_result_type "positive" .chance 500% .duration 1 .buff_ids "Ainz Kill Friendly deathdoor protect" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false
+
+effect: .name "Ainz Kill Friendly chance hpabove 1" .target "performer_group_other" .curio_result_type "positive" .chance 99%    .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpabove 1" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpabove 2" .target "performer_group_other" .curio_result_type "positive" .chance 98.75% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpabove 2" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpabove 3" .target "performer_group_other" .curio_result_type "positive" .chance 98.5%  .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpabove 3" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpabove 4" .target "performer_group_other" .curio_result_type "positive" .chance 98.25% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpabove 4" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpabove 5" .target "performer_group_other" .curio_result_type "positive" .chance 98%    .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpabove 5" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+
+effect: .name "Ainz Kill Friendly chance hpbelow 1" .target "performer_group_other" .curio_result_type "positive" .chance 80% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpbelow 1" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpbelow 2" .target "performer_group_other" .curio_result_type "positive" .chance 75% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpbelow 2" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpbelow 3" .target "performer_group_other" .curio_result_type "positive" .chance 70% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpbelow 3" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpbelow 4" .target "performer_group_other" .curio_result_type "positive" .chance 65% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpbelow 4" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+effect: .name "Ainz Kill Friendly chance hpbelow 5" .target "performer_group_other" .curio_result_type "positive" .chance 60% .duration 1 .buff_ids "Ainz Kill Friendly kill chance protect hpbelow 5" .buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue false .apply_once true .has_description false .individual_target_actor_rolls true
+
+effect: .name "Ainz Kill Friendly" .target "performer_group_other" .curio_result_type "negative" .chance 500% .health_damage 999 .on_hit true .on_miss true .queue true .apply_once true .has_description false
+
+effect: .name "Ainz Kill Friendly dispel target" .target "performer_group_other" .curio_result_type "positive" .chance 500% .steal_buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue true .apply_once true .has_description false
+
+effect: .name "Ainz Kill Friendly dispel self" .target "performer" .curio_result_type "positive" .chance 500% .steal_buff_source_type bsrc_last_hero .on_hit true .on_miss true .queue true .apply_once true .has_description false
+
+//effect: .name "Ainz Lower Friendly DD Resist" .target "performer_group_other" .curio_result_type "negative" .chance 500% .duration 3 .buff_ids "Ainz Lower Friendly DD Resist" .on_hit true .on_miss false .queue true .apply_once true .has_description false
+
+//effect: .name "Ainz Debuff 1" .target "target" .curio_result_type "negative" .chance 90%  .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+//effect: .name "Ainz Debuff 2" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+//effect: .name "Ainz Debuff 3" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+//effect: .name "Ainz Debuff 4" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+//effect: .name "Ainz Debuff 5" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+
+//effect: .name "Ainz Stun Crit Weakness" .target "target" .curio_result_type "negative" .chance 500%  .duration 3 .buff_ids "Ainz Stun Crit Weakness" .on_hit true .on_miss false .queue true
+
+//effect: .name "Ainz SPD Debuff 1" .target "target" .curio_result_type "negative" .chance 90%  .duration 3 .buff_ids "SPD-1" .on_hit true .on_miss false
+//effect: .name "Ainz SPD Debuff 2" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .buff_ids "SPD-1" .on_hit true .on_miss false
+//effect: .name "Ainz SPD Debuff 3" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .buff_ids "SPD-2" .on_hit true .on_miss false
+//effect: .name "Ainz SPD Debuff 4" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .buff_ids "SPD-2" .on_hit true .on_miss false
+//effect: .name "Ainz SPD Debuff 5" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .buff_ids "SPD-3" .on_hit true .on_miss false
+
+effect: .name "Ainz Tooltip Wail of the Banshee Stun 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Wail of the Banshee Kill 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Wail of the Banshee Stun Friendly 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun Friendly 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun Friendly 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun Friendly 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun Friendly 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun Friendly 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun Friendly 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun Friendly 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Stun Friendly 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Stun Friendly 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Wail of the Banshee Kill Friendly 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill Friendly 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill Friendly 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill Friendly 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill Friendly 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill Friendly 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill Friendly 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill Friendly 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Wail of the Banshee Kill Friendly 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Wail of the Banshee Kill Friendly 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Wail of the Banshee Tag" .target "performer" .curio_result_type "negative" .chance 0% .tag 1 .duration 3 .on_hit false .on_miss false .has_description false
+
+effect: .name "Ainz Tag Disable Cooldown 1" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 15 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown 2" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 14 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown 3" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 13 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown 4" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 12 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown 5" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 11 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+
+effect: .name "Ainz Tag Disable Cooldown TS1" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 5 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown TS2" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 4 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown TS3" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 3 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown TS4" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 2 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Tag Disable Cooldown TS5" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 1 .buff_ids "Ainz Tag Disable Cooldown" "Ainz Tooltip Tag Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+
+effect: .name "Ainz Tooltip Skill Cannot Refresh 1_1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 1_1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 1_2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 1_2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 1_3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 1_3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 1_4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 1_4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 1_5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 1_5" .on_hit false .on_miss false .queue false
+
+
+
+
+//The Goal of All Life is Death 万象死终
+
+//effect: .name "Ainz Death Is Debuff 1" .target "performer_group" .curio_result_type "negative" .chance 100% .health_damage 1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+//effect: .name "Ainz Death Is Debuff 2" .target "performer_group" .curio_result_type "negative" .chance 100% .health_damage 1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+//effect: .name "Ainz Death Is Debuff 3" .target "performer_group" .curio_result_type "negative" .chance 100% .health_damage 2 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+//effect: .name "Ainz Death Is Debuff 4" .target "performer_group" .curio_result_type "negative" .chance 100% .health_damage 2 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+//effect: .name "Ainz Death Is Debuff 5" .target "performer_group" .curio_result_type "negative" .chance 100% .health_damage 3 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+
+//effect: .name "Ainz Death Is SPD 1" .target "performer_group" .curio_result_type "negative" .chance 200% .buff_duration_type combat_end .buff_ids "ainz_undispelable_SPD-1" .duration 1 .buff_is_clear_debuff_valid false .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true
+//effect: .name "Ainz Death Is SPD 2" .target "performer_group" .curio_result_type "negative" .chance 200% .buff_duration_type combat_end .buff_ids "ainz_undispelable_SPD-1" .duration 1 .buff_is_clear_debuff_valid false .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true
+//effect: .name "Ainz Death Is SPD 3" .target "performer_group" .curio_result_type "negative" .chance 200% .buff_duration_type combat_end .buff_ids "ainz_undispelable_SPD-1" .duration 1 .buff_is_clear_debuff_valid false .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true
+//effect: .name "Ainz Death Is SPD 4" .target "performer_group" .curio_result_type "negative" .chance 200% .buff_duration_type combat_end .buff_ids "ainz_undispelable_SPD-2" .duration 1 .buff_is_clear_debuff_valid false .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true
+//effect: .name "Ainz Death Is SPD 5" .target "performer_group" .curio_result_type "negative" .chance 200% .buff_duration_type combat_end .buff_ids "ainz_undispelable_SPD-2" .duration 1 .buff_is_clear_debuff_valid false .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true
+
+effect: .name "Ainz Death Is Goal 1" .target "target" .curio_result_type "negative" .chance 500% .dotPoison 4  .duration -1 .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+effect: .name "Ainz Death Is Goal 2" .target "target" .curio_result_type "negative" .chance 500% .dotPoison 5  .duration -1 .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+effect: .name "Ainz Death Is Goal 3" .target "target" .curio_result_type "negative" .chance 500% .dotPoison 7  .duration -1 .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+effect: .name "Ainz Death Is Goal 4" .target "target" .curio_result_type "negative" .chance 500% .dotPoison 8  .duration -1 .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+effect: .name "Ainz Death Is Goal 5" .target "target" .curio_result_type "negative" .chance 500% .dotPoison 10 .duration -1 .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+
+effect: .name "Ainz Death Is Friendly 1" .target "performer_group_other" .curio_result_type "negative" .chance 500% .buff_ids "Ainz Friendly Blight 1" "Ainz+Stars Easter Egg Neutralize Blight 1" .duration -1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+effect: .name "Ainz Death Is Friendly 2" .target "performer_group_other" .curio_result_type "negative" .chance 500% .buff_ids "Ainz Friendly Blight 2" "Ainz+Stars Easter Egg Neutralize Blight 2" .duration -1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+effect: .name "Ainz Death Is Friendly 3" .target "performer_group_other" .curio_result_type "negative" .chance 500% .buff_ids "Ainz Friendly Blight 3" "Ainz+Stars Easter Egg Neutralize Blight 3" .duration -1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+effect: .name "Ainz Death Is Friendly 4" .target "performer_group_other" .curio_result_type "negative" .chance 500% .buff_ids "Ainz Friendly Blight 4" "Ainz+Stars Easter Egg Neutralize Blight 4" .duration -1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+effect: .name "Ainz Death Is Friendly 5" .target "performer_group_other" .curio_result_type "negative" .chance 500% .buff_ids "Ainz Friendly Blight 5" "Ainz+Stars Easter Egg Neutralize Blight 5" .duration -1 .on_hit true .on_miss false .apply_once true .queue true .has_description false
+
+effect: .name "Ainz Tooltip The Goal 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip The Goal 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip The Goal 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip The Goal 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip The Goal 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Friendly Blight 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Friendly Blight 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Friendly Blight 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Friendly Blight 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Friendly Blight 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Friendly Blight 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Friendly Blight 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Friendly Blight 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Friendly Blight 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Friendly Blight 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz No Blight Cure Ally"  .target "performer_group_other" .curio_result_type "negative" .chance 500% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz No Blight Cure Ally" .on_hit true .on_miss false .apply_once true .can_apply_on_death true .queue true .has_description false
+
+effect: .name "Ainz No Blight Cure Monster" .target "target" .curio_result_type "negative" .chance 500% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz No Blight Cure Monster" .on_hit true .on_miss false .can_apply_on_death true .queue true .has_description false
+
+effect: .name "Ainz Tooltip The Goal No Cure" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip The Goal No Cure" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz The Goal Bark" .target "performer" .bark Ainz_thegoalofalllifeisdeath_bark .on_hit true .on_miss true .queue ture .apply_once true .has_description false
+
+effect: .name "Ainz Blight Disable Cooldown 1" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 20 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown 2" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 19 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown 3" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 18 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown 4" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 17 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown 5" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 16 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .has_description false
+
+effect: .name "Ainz Blight Disable Cooldown TS1" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 10 .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown TS2" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 9  .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown TS3" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 8  .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown TS4" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 7  .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+effect: .name "Ainz Blight Disable Cooldown TS5" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 6  .buff_ids "Ainz Blight Disable Cooldown" "Ainz Tooltip Blight Disable Cooldown" .buff_source_type bsrc_item .on_hit true .on_miss true .apply_once true .has_description false
+
+effect: .name "Ainz Tooltip Skill Cannot Refresh 2_1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 2_1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 2_2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 2_2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 2_3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 2_3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 2_4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 2_4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 2_5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 2_5" .on_hit false .on_miss false .queue false
+
+//Metamagic Mechanism
+effect: .name "Ainz Necromancy Enhance Enable" .target "performer" .chance 500% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Grasp Heart NO HP Range" "Ainz Wail of the Banshee NO HP Range" "Ainz Grasp Heart Ignore Monster Type" "Ainz Wail of the Banshee Ignore Monster Type" .buff_source_type bsrc_companion .on_hit true .on_miss true .has_description false
+
+effect: .name "Ainz Necromancy Enhance Enable Ally 1" .target "performer_group_other" .chance 20% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Wail of the Banshee NO HP Range Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .apply_once true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Necromancy Enhance Enable Ally 2" .target "performer_group_other" .chance 25% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Wail of the Banshee NO HP Range Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .apply_once true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Necromancy Enhance Enable Ally 3" .target "performer_group_other" .chance 30% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Wail of the Banshee NO HP Range Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .apply_once true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Necromancy Enhance Enable Ally 4" .target "performer_group_other" .chance 35% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Wail of the Banshee NO HP Range Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .apply_once true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+effect: .name "Ainz Necromancy Enhance Enable Ally 5" .target "performer_group_other" .chance 40% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Wail of the Banshee NO HP Range Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .apply_once true .has_description false .individual_target_actor_rolls true .crit_doesnt_apply_to_roll true
+
+effect: .name "Ainz Tooltip Necromancy Enhance" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Necromancy Enhance" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Necromancy Enhance Indicator Self" .target "performer" .chance 500% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Tooltip Necromancy Enhance Self" .buff_source_type bsrc_companion .on_hit true .on_miss true .has_description false
+
+effect: .name "Ainz Tooltip Necromancy Enhance Indicator Ally" .target "performer_group_other" .chance 500% .duration 1 .buff_duration_type combat_end .buff_ids "Ainz Tooltip Necromancy Enhance Ally" .buff_source_type bsrc_companion .on_hit true .on_miss true .has_description false
+
+effect: .name "Ainz Necromancy Enhance Steal" .target "performer_group_other" .curio_result_type "positive" .chance 10000% .steal_buff_source_type bsrc_companion .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Necromancy Enhance Dispel" .target "performer" .curio_result_type "positive" .chance 10000% .steal_buff_source_type bsrc_companion .on_hit true .on_miss true .queue true .has_description false
+
+
+//Easter Egg with Stars Class Mod - no blight damage & max blight resist
+effect: .name "Ainz+Stars Easter Egg" .target "performer_group_other" .curio_result_type "positive" .chance 500% .buff_ids "Ainz+Stars Easter Egg Max Blight Resist" "Ainz+Stars Easter Egg Tooltip 1" "Ainz+Stars Easter Egg Tooltip 2" .duration 1 .buff_duration_type combat_end .on_hit true .on_miss false .apply_once true .queue true .has_description false
+
+
+
+
+//Time Stop 时间停止
+
+effect: .name "Ainz Enemy Timestop" .target "target_enemy_group" .curio_result_type "negative" .chance 100% .initiative_change -9 .on_hit true .on_miss true .apply_once true .can_apply_on_death true .queue true .has_description false
+
+effect: .name "Ainz Ally Timestop 1" .target "performer_group_other" .curio_result_type "negative" .chance 100% .initiative_change -9 .stress 18 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 2" .target "performer_group_other" .curio_result_type "negative" .chance 100% .initiative_change -9 .stress 26 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 3" .target "performer_group_other" .curio_result_type "negative" .chance 100% .initiative_change -9 .stress 34 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 4" .target "performer_group_other" .curio_result_type "negative" .chance 100% .initiative_change -9 .stress 42 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Ally Timestop 5" .target "performer_group_other" .curio_result_type "negative" .chance 100% .initiative_change -9 .stress 50 .on_hit true .on_miss true .apply_once true .queue true .has_description false
+
+effect: .name "Ainz Self Timebuff 1" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 1 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timebuff 2" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 1 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timebuff 3" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 1 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timebuff 4" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 1 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timebuff 5" .target "performer" .curio_result_type "positive" .chance 500% .buff_source_type bsrc_item .buff_ids "ainz_invincible" "ainz_ignore_steath" "ainz_ignore_guard" "ainz_ignore_dodge" "ainz_max_dodge" "ainz_max_resistance_stun" "ainz_max_resistance_move" "ainz_max_resistance_debuff" .duration 1 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Self Timedebuff 1" .target "performer" .curio_result_type "negative" .chance 500% .buff_ids "ainz_undispelable_SPD-100" .duration 2 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timedebuff 2" .target "performer" .curio_result_type "negative" .chance 500% .buff_ids "ainz_undispelable_SPD-100" .duration 3 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timedebuff 3" .target "performer" .curio_result_type "negative" .chance 500% .buff_ids "ainz_undispelable_SPD-100" .duration 4 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timedebuff 4" .target "performer" .curio_result_type "negative" .chance 500% .buff_ids "ainz_undispelable_SPD-100" .duration 5 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+effect: .name "Ainz Self Timedebuff 5" .target "performer" .curio_result_type "negative" .chance 500% .buff_ids "ainz_undispelable_SPD-100" .duration 6 .buff_duration_type after_round .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Tooltip Time Stop 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Time Stop Extra Buff 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Buff 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Buff 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Buff 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Buff 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Buff 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Buff 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Buff 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Buff 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Buff 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Time Stop Extra Debuff 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Debuff 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Debuff 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Debuff 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Debuff 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Debuff 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Debuff 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Debuff 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Extra Debuff 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Extra Debuff 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Self Timestress 1" .target "performer" .curio_result_type "negative" .chance 100% .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz Self Timestress 2" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 1 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz Self Timestress 3" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 2 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz Self Timestress 4" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 3 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
+effect: .name "Ainz Self Timestress 5" .target "performer" .curio_result_type "negative" .chance 100% .initiative_change 4 .bark Ainz_Time_Stop_Bark .on_hit true .on_miss false .queue true .has_description false
+
+effect: .name "Ainz Tooltip Time Stop Timestress 1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Timestress 2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Timestress 3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Timestress 4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Time Stop Timestress 5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Time Stop Timestress 5" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Time Stop Accelerate Cooldown" .target "performer" .chance 10000% .steal_buff_source_type bsrc_town .on_hit true .on_miss true .queue true .apply_once true .has_description false
+
+effect: .name "Ainz Buff Disable Cooldown 1" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 24 .buff_ids "Ainz Buff Disable Cooldown" "Ainz Tooltip Buff Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Buff Disable Cooldown 2" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 23 .buff_ids "Ainz Buff Disable Cooldown" "Ainz Tooltip Buff Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Buff Disable Cooldown 3" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 22 .buff_ids "Ainz Buff Disable Cooldown" "Ainz Tooltip Buff Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Buff Disable Cooldown 4" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 21 .buff_ids "Ainz Buff Disable Cooldown" "Ainz Tooltip Buff Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .queue true .has_description false
+effect: .name "Ainz Buff Disable Cooldown 5" .target "performer" .curio_result_type "negative" .chance 10000% .buff_duration_type after_round .duration 20 .buff_ids "Ainz Buff Disable Cooldown" "Ainz Tooltip Buff Disable Cooldown" .buff_source_type bsrc_town .on_hit true .on_miss true .apply_once true .queue true .has_description false
+
+effect: .name "Ainz Tooltip Skill Cannot Refresh 3_1" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 3_1" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 3_2" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 3_2" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 3_3" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 3_3" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 3_4" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 3_4" .on_hit false .on_miss false .queue false
+effect: .name "Ainz Tooltip Skill Cannot Refresh 3_5" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Skill Cannot Refresh 3_5" .on_hit false .on_miss false .queue false
+
+
+
+
+//Greater Teleportation 高阶传送
+
+effect: .name "ainz_teleport_instant_shuffle" .target "performer" .chance 10000% .instant_shuffle 1 .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "ainz_teleport_astral_project" .target "performer" .chance 10000% .stealth 1 .duration 1 .buff_duration_type round .buff_ids "ainz_teleport_astral_project" .on_hit true .on_miss true .queue true .has_description false
+
+effect: .name "Ainz Tooltip Greater Teleportation" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Greater Teleportation" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Tooltip Astral Project" .target "performer" .skill_instant true .buff_ids "Ainz Tooltip Astral Project 1" "Ainz Tooltip Astral Project 2" "Ainz Tooltip Astral Project 3" .on_hit false .on_miss false .queue false
+
+
+
+
+//Crit effects self
+//effect: .name "Ainz On Crit Self"  .target "performer" .curio_result_type "positive" .chance 100% .buff_source_type bsrc_crit .buff_duration_type before_turn .duration 1 .buff_ids "ainz_on_crit_self_buff" .on_hit true .on_miss false .queue true .apply_once true
+
+//Crit effects friendly (due to crit, duration 1 infact is 1*1.5=2 rds)
+//effect: .name "Ainz On Crit Friendly"  .target "performer_group_other" .curio_result_type "negative" .chance 100% .dotStress 1 .duration 1 .on_hit true .on_miss true .queue true .apply_once true
+//effect: .name "Ainz On Crit Friendly"  .target "performer_group_other" .curio_result_type "negative" .chance 100% .clearDotStress 1 .on_hit true .on_miss true .queue true .apply_once true
+effect: .name "Ainz On Crit Friendly" .target "performer_group_other" .curio_result_type "negative" .chance 100% .buff_duration_type round .duration -1 .buff_ids "ainz_skill_negative_dotstress_crit" .buff_source_type bsrc_skill .on_hit true .on_miss true .queue false .apply_once true .has_description false .can_apply_on_death true
+
+
+
+
+//Skill Negative DotStress
+effect: .name "Ainz Skill Negative DotStress 1"  .target "performer_group_other" .curio_result_type "negative" .chance 100% .buff_duration_type round .duration -1 .buff_ids "ainz_skill_negative_dotstress_1" .on_hit true .on_miss true .queue false .apply_once true .has_description false .can_apply_on_death true
+
+effect: .name "Ainz Skill Negative DotStress 2"  .target "performer_group_other" .curio_result_type "negative" .chance 100% .buff_duration_type round .duration -1 .buff_ids "ainz_skill_negative_dotstress_2" .on_hit true .on_miss true .queue false .apply_once true .has_description false .can_apply_on_death true
+
+effect: .name "Ainz Skill Negative Dotstress Tooltip 1" .target "performer" .combat_stat_buff 1 .duration 1 .buff_ids "Ainz Skill Negative Dotstress Tooltip 1" .on_hit false .on_miss false .queue false
+
+effect: .name "Ainz Skill Negative Dotstress Tooltip 2" .target "performer" .combat_stat_buff 1 .duration 1 .buff_ids "Ainz Skill Negative Dotstress Tooltip 2" .on_hit false .on_miss false .queue false
+
+
+
+
+//scroll cooldown
+effect: .name "ainz_CMU" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost" .summon_count 1 .summon_can_spawn_loot false .summon_monsters skeleton_knight_G .summon_chances 1.0 .summon_ranks 4 .summon_does_roll_initiatives 1 .summon_rank_is_previous_monster_class false .summon_limits 1 
+effect: .name "ainz_CMU_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost" .summon_count 1 .summon_can_spawn_loot false .summon_monsters skeleton_knight_G .summon_chances 1.0 .summon_ranks 4 .summon_does_roll_initiatives 1 .summon_rank_is_previous_monster_class false .summon_limits 1 
+
+effect: .name "ainz_DT" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_DT_XP .buff_duration_type after_turn .duration 1 .buff_ids "ainz_tooltip_Scroll_Cooldown_DT"
+
+effect: .name "ainz_EB" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_EB_XP .buff_duration_type after_turn .duration 4 .buff_ids "ainz_tooltip_Scroll_Cooldown_EB"
+
+effect: .name "ainz_F" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_F_XP .buff_duration_type after_turn .duration 2 .buff_ids "ainz_tooltip_Scroll_Cooldown_F"
+
+effect: .name "ainz_I" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_I_XP .buff_duration_type after_turn .duration 3 .buff_ids "ainz_tooltip_Scroll_Cooldown_I"
+
+effect: .name "ainz_TMM" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_TMM_XP .buff_duration_type after_turn .duration 1 .buff_ids "ainz_tooltip_Scroll_Cooldown_TMM"
+
+
+
+
+//scroll XP cost Non-Overlord
+effect: .name "ainz_DT_XP" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_DT_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+effect: .name "ainz_DT_XP_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_DT_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+
+effect: .name "ainz_EB_XP" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_EB_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+effect: .name "ainz_EB_XP_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_EB_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+
+effect: .name "ainz_F_XP" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_F_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+effect: .name "ainz_F_XP_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_F_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+
+effect: .name "ainz_I_XP" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_I_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+effect: .name "ainz_I_XP_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_I_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+
+effect: .name "ainz_TMM_XP" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_TMM_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+effect: .name "ainz_TMM_XP_repeat" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_TMM_E .buff_duration_type quest_end .duration 1 .buff_ids "ainz_NonOverlordUsingXPCost"
+
+
+
+
+//scroll cast effect
+effect: .name "ainz_DT_E" .target "performer_group" .item 1 .chance 10000% .on_hit true .on_miss true .initiative_change -1 .buff_ids "ainz_Scroll_of_Delay_Teleportation_Stealth" "ainz_Scroll_of_Delay_Teleportation_Dodge" "ainz_Scroll_of_Delay_Teleportation_Shuffle_Dot" "ainz_Scroll_of_Delay_Teleportation_Speed"
+
+effect: .name "ainz_EB_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .health_damage_blocks 2 .buff_duration_type after_turn .duration 4 .buff_ids "ainz_Scroll_of_Effulgent_Beryl_DMG_Reflect" 
+
+effect: .name "ainz_F_E" .target "performer_group" .item 1 .chance 10000% .on_hit true .on_miss true .unstun 1 .unimmobilize 1 .buff_duration_type after_turn .duration 2 .buff_ids "ainz_Scroll_of_Freedom_Immune_Stun" "ainz_Scroll_of_Freedom_Immune_Move" 
+
+effect: .name "ainz_I_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_duration_type after_turn .duration 3 .buff_ids "ainz_Scroll_of_Indomitability_Immune_Damage_Direct" "ainz_Scroll_of_Indomitability_Immune_Damage_Stress" 
+
+effect: .name "ainz_TMM_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .stun 1 .buff_duration_type after_turn .duration 1 .buff_ids "ainz_Scroll_of_Triplet_Maximize_Magic_DMGL" "ainz_Scroll_of_Triplet_Maximize_Magic_DMGH"
+
+
+
+
+//counterfeit cost Non-Overlord
+//Be ware there can be ONLY 8 buffs within a single effect, thus fake_DNS which contains 9 buffs must be written in two items (item-matryoshka)
+effect: .name "ainz_fake_AT" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AT_DMGL_BUFF_UHL" "Fake_AT_DMGH_BUFF_UHL" "Fake_AT_Crit_UHL" "Fake_AT_SPD_BUFF_UHL" "Fake_AT_DEF_DEBUFF" "Fake_AT_PROT_DEBUFF" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_FSIFW" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_FSIFW_DMGL_MELEE_BUFF" "Fake_FSIFW_DMGH_MELEE_BUFF" "Fake_FSIFW_ARMOURPIERCING_BUFF" "Fake_FSIFW_PROT_BUFF" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_HB" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_HB_ACC" "Fake_HB_Crit" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_SBEF" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_SBEF_DMGL_BUFF" "Fake_SBEF_DMGH_BUFF" "Fake_SBEF_ACC" "Fake_SBEF_SPD_DEBUFF" "Fake_SBEF_DEF_BUFF" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_TM8" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_TMK8_ARMOURPIERCING_BUFF" "Fake_TMK8_DMGL_BUFF" "Fake_TMK8_DMGH_BUFF" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_AG" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AC_DEATHRESIST_BUFF" "Fake_AC_DEBUFF_RESIST_BUFF" "Fake_AC_STUN_RESIST_BUFF" "Fake_AC_MOVE_RESIST_BUFF" "Fake_AC_XP_BONUS" "ainz_NonOverlordUsingStress"
+
+effect: .name "ainz_fake_DNS" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "ainz_NonOverlordUsingStress" .use_item_type supply .use_item_id ainz_fake_DNS_E
+
+
+
+
+//counterfeit use effect
+//Abandoned to vacate some item space in case for Overflow of Trinkets / Overflow of Items
+//effect: .name "ainz_fake_AT_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AT_DMGL_BUFF_UHL" "Fake_AT_DMGH_BUFF_UHL" "Fake_AT_Crit_UHL" "Fake_AT_SPD_BUFF_UHL" "Fake_AT_DEF_DEBUFF" "Fake_AT_PROT_DEBUFF"
+
+//effect: .name "ainz_fake_FSIFW_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_FSIFW_DMGL_MELEE_BUFF" "Fake_FSIFW_DMGH_MELEE_BUFF" "Fake_FSIFW_ARMOURPIERCING_BUFF" "Fake_FSIFW_PROT_BUFF"
+
+//effect: .name "ainz_fake_HB_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_HB_ACC" "Fake_HB_Crit"
+
+//effect: .name "ainz_fake_SBEF_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_SBEF_DMGL_BUFF" "Fake_SBEF_DMGH_BUFF" "Fake_SBEF_ACC" "Fake_SBEF_SPD_DEBUFF" "Fake_SBEF_DEF_BUFF"
+
+//effect: .name "ainz_fake_TM8_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_TMK8_ARMOURPIERCING_BUFF" "Fake_TMK8_DMGL_BUFF" "Fake_TMK8_DMGH_BUFF"
+
+//effect: .name "ainz_fake_AG_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AC_DEATHRESIST_BUFF" "Fake_AC_DEBUFF_RESIST_BUFF" "Fake_AC_STUN_RESIST_BUFF" "Fake_AC_MOVE_RESIST_BUFF" "Fake_AC_XP_BONUS"
+
+effect: .name "ainz_fake_DNS_E" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_DNS_ARMOURPIERCING_BUFF" "Fake_DNS_DEF_BUFF" "Fake_DNS_PROT_BUFF" "Fake_DNS_DMGL_BUFF" "Fake_DNS_DMGH_BUFF" "Fake_DNS_Crit" "Fake_DNS_ACC" "Fake_DNS_SPD_BUFF"
+
+
+
+
+//summon - skeleton_knight_G
+effect: .name "AINZ SK Shout" .target "target" .curio_result_type "positive" .chance 200% .combat_stat_buff 1 .defense_rating_add -10% .attack_rating_add -10% .duration 3 .on_hit true .on_miss false .queue true
+
+effect: .name "AINZ SK Guard" .target "target" .curio_result_type "positive" .chance 100% .guard 1 .duration -1 .on_hit true .on_miss true
+
+effect: .name "AINZ SK Mark" .target "target" .curio_result_type "positive" .chance 100% .tag 1 .duration 3	.on_hit true .on_miss true
+
+effect: .name "AINZ SK Stun" .target "target" .curio_result_type "positive" .chance 100% .stun 1 .on_hit true .on_miss false 
+
+effect: .name "AINZ SK Damage" .target "target" .curio_result_type "positive" .chance 100% .health_damage 5 .on_hit true .on_miss false 
+
+
+
+
+//use_holy_water_ainz_undead_passive
+effect: .name "use_holy_water_ainz_undead_passive" .target "performer" .curio_result_type "negative" .chance 10000% .stress 10 .health_damage 2 .combat_stat_buff 1 .speed_rating_add -8 .defense_rating_add -10%  .on_hit true .on_miss true .queue true
+
+
+
+
+//use scroll ainz_undead_passive
+effect: .name "ainz_CMU_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .summon_count 1 .summon_can_spawn_loot false .summon_monsters skeleton_knight_G .summon_chances 1.0 .summon_ranks 4 .summon_does_roll_initiatives 1 .summon_rank_is_previous_monster_class false .summon_limits 1
+
+effect: .name "ainz_DT_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_DT_E .buff_duration_type after_turn .duration 1 .buff_ids "ainz_tooltip_Scroll_Cooldown_DT"
+
+effect: .name "ainz_EB_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_EB_E .buff_duration_type after_turn .duration 4 .buff_ids "ainz_tooltip_Scroll_Cooldown_EB"
+
+effect: .name "ainz_F_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_F_E .buff_duration_type after_turn .duration 2 .buff_ids "ainz_tooltip_Scroll_Cooldown_F"
+
+effect: .name "ainz_I_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_I_E .buff_duration_type after_turn .duration 3 .buff_ids "ainz_tooltip_Scroll_Cooldown_I"
+
+effect: .name "ainz_TMM_A" .target "performer" .item 1 .chance 10000% .on_hit true .on_miss true .use_item_type supply .use_item_id ainz_TMM_E .buff_duration_type after_turn .duration 1 .buff_ids "ainz_tooltip_Scroll_Cooldown_TMM"
+
+
+
+
+//use counterfeit ainz_undead_passive
+effect: .name "ainz_fake_AT_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AT_DMGL_BUFF_UHL" "Fake_AT_DMGH_BUFF_UHL" "Fake_AT_SPD_BUFF_UHL" "Fake_AT_Crit_UHL" "Fake_AT_DEF_DEBUFF" "Fake_AT_PROT_DEBUFF"
+
+effect: .name "ainz_fake_FSIFW_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_FSIFW_DMGL_MELEE_BUFF" "Fake_FSIFW_DMGH_MELEE_BUFF" "Fake_FSIFW_ARMOURPIERCING_BUFF" "Fake_FSIFW_PROT_BUFF"
+
+effect: .name "ainz_fake_HB_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_HB_ACC" "Fake_HB_Crit"
+
+effect: .name "ainz_fake_SBEF_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_SBEF_DMGL_BUFF" "Fake_SBEF_DMGH_BUFF" "Fake_SBEF_ACC" "Fake_SBEF_SPD_DEBUFF" "Fake_SBEF_DEF_BUFF"
+
+effect: .name "ainz_fake_TM8_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_TMK8_ARMOURPIERCING_BUFF" "Fake_TMK8_DMGL_BUFF" "Fake_TMK8_DMGH_BUFF"
+
+effect: .name "ainz_fake_AG_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_AC_DEATHRESIST_BUFF" "Fake_AC_DEBUFF_RESIST_BUFF" "Fake_AC_STUN_RESIST_BUFF" "Fake_AC_MOVE_RESIST_BUFF" "Fake_AC_XP_BONUS"
+
+effect: .name "ainz_fake_DNS_A" .target "performer" .curio_result_type "positive" .chance 10000% .on_hit true .on_miss true .buff_source_type bsrc_campingskill .buff_duration_type combat_end .duration 1 .buff_ids "Fake_DNS_ARMOURPIERCING_BUFF" "Fake_DNS_DEF_BUFF" "Fake_DNS_PROT_BUFF" "Fake_DNS_DMGL_BUFF" "Fake_DNS_DMGH_BUFF" "Fake_DNS_Crit" "Fake_DNS_ACC" "Fake_DNS_SPD_BUFF"
+
+
+
+
+//soul essence
+effect: .name "ainz_kill_soul" .target "performer" .chance 100% .kill_enemy_types ainz_soul_essence .on_hit true .on_miss true .queue true .can_apply_on_death true
+
+effect: .name "ainz_soul_essence" .target "performer" .chance 10000% .on_hit true .on_miss true .duration 1 .buff_amount 0.1 .buff_type resolve_xp_bonus_percent .buff_duration_type quest_end
+effect: .name "ainz_soul_essence_repeat" .target "performer" .chance 10000% .on_hit true .on_miss true .duration 1 .buff_amount 0.1 .buff_type resolve_xp_bonus_percent .buff_duration_type quest_end
+
+

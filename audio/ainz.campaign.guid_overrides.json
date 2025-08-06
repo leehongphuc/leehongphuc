@@ -1,0 +1,105 @@
+{
+    "event_guid_overrides":
+    [
+        {"event_id": "event:/char/ally/ainz_bloodlet_spellbookA",								"guid_override":"{a99ab721-29e5-4068-8793-11a94e0fdc70}"},
+        {"event_id": "event:/char/ally/ainz_bloodlet_miss_spellbookA",							"guid_override":"{a99ab721-29e5-4068-8793-11a94e0fdc70}"},
+        {"event_id": "event:/char/ally/ainz_abyssal_artillery_spellbookA",						"guid_override":"{17c2d8e7-3b18-4521-adda-d31b64fd4fab}"},
+        {"event_id": "event:/char/ally/ainz_abyssal_artillery_miss_spellbookA",					"guid_override":"{404b86ef-8559-4221-8696-63b6893925c2}"},
+        {"event_id": "event:/char/ally/ainz_weakening_curse_spellbookA",						"guid_override":"{da0522e7-a649-4b59-ab5e-4375918a911c}"},
+        {"event_id": "event:/char/ally/ainz_weakening_curse_miss_spellbookA",					"guid_override":"{a9134b46-abad-4193-b6c7-5c5cb39a6166}"},
+        {"event_id": "event:/char/ally/ainz_disruptive_curse_spellbookA",						"guid_override":"{2943f606-8cff-4adf-9135-bc156be87f73}"},
+        {"event_id": "event:/char/ally/ainz_disruptive_curse_miss_spellbookA",					"guid_override":"{3b35e023-6ddd-4ca3-91ec-d467963853a7}"},
+
+        {"event_id": "event:/char/ally/ainz_hands_from_abyss_spellbookB",						"guid_override":"{5c9b11b1-8588-4f72-bfbc-f1b38118e121}"},
+        {"event_id": "event:/char/ally/ainz_hands_from_abyss_miss_spellbookB",					"guid_override":"{5c9b11b1-8588-4f72-bfbc-f1b38118e121}"},
+        {"event_id": "event:/char/ally/ainz_daemons_pull_spellbookB", 							"guid_override":"{41882872-24ea-4d2c-b0d8-1b6cfcd8805d}"},
+        {"event_id": "event:/char/ally/ainz_daemons_pull_miss_spellbookB",						"guid_override":"{1255ea3a-aa40-4105-a220-586a5d62c08b}"},
+        {"event_id": "event:/char/ally/ainz_time_stop_spellbookB",								"guid_override":"{67176dff-85ff-4003-ac82-ca0cadd35452}"},
+        {"event_id": "event:/char/ally/ainz_time_stop_miss_spellbookB",							"guid_override":"{4aec1903-75aa-468c-9405-2f66e7042883}"},
+        {"event_id": "event:/char/ally/ainz_greater_teleportation_spellbookB",					"guid_override":"{a28718bb-8e06-4f4f-ad67-5e9999eac123}"},
+        {"event_id": "event:/char/ally/ainz_greater_teleportation_miss_spellbookB",				"guid_override":"{a28718bb-8e06-4f4f-ad67-5e9999eac123}"},
+		
+        {"event_id": "event:/char/ally/ainz_wyrd_reconstruction", 								"guid_override":"{5daab2a7-d659-40ed-9dc0-6b367e29651b}"},
+        {"event_id": "event:/char/ally/ainz_wyrd_reconstruction_miss",							"guid_override":"{e752c468-9afb-4b40-b2ce-c9de6216b2dc}"},
+		
+        {"event_id": "event:/char/ally/ainz_spellbook_spellbookA",								"guid_override":"{2f4e8368-8542-4789-96ef-f2fd3cb052f8}"},
+        {"event_id": "event:/char/ally/ainz_spellbook_spellbookB",								"guid_override":"{2f4e8368-8542-4789-96ef-f2fd3cb052f8}"},
+        {"event_id": "event:/char/ally/ainz_spellbook_spellnote",								"guid_override":"{2f4e8368-8542-4789-96ef-f2fd3cb052f8}"},
+
+		{"event_id": "event:/_spellbookA",														"guid_override":"{2f4e8368-8542-4789-96ef-f2fd3cb052f8}"},
+		{"event_id": "event:/_spellbookB",														"guid_override":"{2f4e8368-8542-4789-96ef-f2fd3cb052f8}"},
+		
+		{"event_id": "event:/camp/skill/ainz_world_domination",									"guid_override":"{d87739db-a2ac-46d4-950b-71c694a5ab68}"},
+		{"event_id": "event:/camp/skill/ainz_aura_of_despair",									"guid_override":"{0fc8c1e8-0801-4c6d-aa4b-458c08ab7a2f}"},
+		{"event_id": "event:/camp/skill/ainz_scribe_scrolls",									"guid_override":"{1bd01bd3-0dd8-46c6-8ae5-a97227e9584c}"},
+		{"event_id": "event:/camp/skill/ainz_paid_props",										"guid_override":"{1d0f073a-50a4-4634-8613-5a6dcf32040c}"},
+		
+		{"event_id": "event:/general/items/ainz_CMU",											"guid_override":"{c26f080b-cef0-4cff-8522-ac2e8b213c1c}"},
+		{"event_id": "event:/general/items/ainz_DT",											"guid_override":"{0a9b397f-6dad-4890-9e59-ea699bb9b9f1}"},
+		{"event_id": "event:/general/items/ainz_EB",											"guid_override":"{2a4e04c3-8dc7-4b95-84bc-db85891aa159}"},
+		{"event_id": "event:/general/items/ainz_F",												"guid_override":"{2a3df6d8-4341-4d2f-99cf-0f42bd39590e}"},
+		{"event_id": "event:/general/items/ainz_I",												"guid_override":"{20a0e0ff-1267-48f6-910d-1dd199df6d72}"},
+		{"event_id": "event:/general/items/ainz_TMM",											"guid_override":"{8a6f74bd-b50a-4100-bed9-912308dca483}"},
+		
+		{"event_id": "event:/general/items/ainz_fake_AT",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		{"event_id": "event:/general/items/ainz_fake_FSIFW",									"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		{"event_id": "event:/general/items/ainz_fake_HB",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		{"event_id": "event:/general/items/ainz_fake_SBEF",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		{"event_id": "event:/general/items/ainz_fake_TM8",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		{"event_id": "event:/general/items/ainz_fake_AG",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"}, 
+		{"event_id": "event:/general/items/ainz_fake_DNS",										"guid_override":"{438bf6f1-172a-40ae-9fa7-30dd450b3280}"},
+		
+		{"event_id": "event:/general/items/ainz_soul_essence",									"guid_override":"{0a9b397f-6dad-4890-9e59-ea699bb9b9f1}"},
+		
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_guard",							"guid_override":"{576b4fd9-77d0-4d3f-a8bd-73bef7b80515}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_guard_miss",					"guid_override":"{5cf6e64f-ce2a-484f-b983-5468ce990f37}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_Shout",							"guid_override":"{4db8f822-43a6-40c5-9699-157b8b1a0504}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_Shout_miss",					"guid_override":"{9f6dfda1-faab-4a43-921d-efc92865c98d}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_Attack",						"guid_override":"{882be93d-4dd7-4c95-a8c3-08c8912ceb05}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_AINZ_SN_Attack_miss",					"guid_override":"{975f6e9f-b535-4b79-859f-aeb259f6b14b}"},
+		
+		{"event_id": "event:/char/enemy/skeleton_knight_vo_aggro",								"guid_override":"{c26f080b-cef0-4cff-8522-ac2e8b213c1c}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_vo_crit",								"guid_override":"{1d267860-a3f6-4f20-bd44-149dcce75e3a}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_vo_death",								"guid_override":"{d63a3c16-c97d-4728-893d-13995afb6891}"},
+		{"event_id": "event:/char/enemy/skeleton_knight_vo_hurt",								"guid_override":"{7b4b3f50-fec3-45fe-b21a-95e8717ac4ef}"},
+		
+		{"event_id": "event:/char/enemy/ainz_soul_essence_loot_vo_death",						"guid_override":"{6547dbcf-4663-4729-9c8e-74e014e10509}"},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{"event_id": "event:/general/items/ainz_CMU_XP",										"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_DT_XP",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_EB_XP",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_F_XP",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_I_XP",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_TMM_XP",										"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+
+		{"event_id": "event:/general/items/ainz_CMU_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_DT_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_EB_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_F_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_I_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_TMM_E",											"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		
+		{"event_id": "event:/general/items/ainz_fake_AT_E",										"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_FSIFW_E",									"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_HB_E",										"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_SBEF_E",									"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_TM8_E",									"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_AG_E",										"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/general/items/ainz_fake_DNS_E",									"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		
+		{"event_id": "event:/char/enemy/ainz_soul_essence_loot_vo_aggro",						"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/char/enemy/ainz_soul_essence_loot_vo_crit",						"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		{"event_id": "event:/char/enemy/ainz_soul_essence_loot_vo_hurt",						"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"},
+		
+		{"event_id": "event:/general/status/buff_fx_map_radar_onset",							"guid_override":"{aad52e24-c2b3-49b4-9bdc-94229b7bf5f5}"}
+    ]
+}

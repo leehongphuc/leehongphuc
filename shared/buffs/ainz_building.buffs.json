@@ -1,0 +1,209 @@
+{
+   "buffs":
+   [
+	  {
+         "id" : "AINZ_NZR_DMGL_HM",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "man"
+         }
+      },
+      {
+         "id" : "AINZ_NZR_DMGH_HM",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "man"
+         }
+      },	  
+      {
+         "id" : "AINZ_NZR_Healing_Recieved",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_Stress_Healing_Recieved",
+         "stat_type" : "stress_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_NZR_Virtual_Chance",
+         "stat_type" : "resolve_check_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.0,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Need_Food",
+         "stat_type" : "food_consumption_percent",
+         "stat_sub_type" : "",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Heal_From_Food",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "eat",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Starving_Damage",
+         "stat_type" : "starving_damage_percent",
+         "stat_sub_type" : "",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Starving_Stress",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "hunger",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Persistent_Virtue",
+         "stat_type" : "stress_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "virtued",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_NZR_PASSIVE_No_Heart_Attack",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "afflicted",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_NZR_PASSIVE_Tooltip",
+         "stat_type" : "upgrade_discount",
+         "stat_sub_type" : "AINZ_NZR_PASSIVE_Tooltip",
+         "amount" : 0,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_NZR_PASSIVE_disease_resist",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "disease",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_NZR_PASSIVE_siren_song",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 5,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "siren_song"
+         }
+      }
+   ]
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+town_event_first_overlord.sprite.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 176, 773
+  size: 421, 86
+  orig: 421, 86
+  offset: 0, 0
+  index: -1
+ainz
+  rotate: false
+  xy: 1, 1
+  size: 328, 409
+  orig: 388, 429
+  offset: 28, 8
+  index: -1
+hamsuke
+  rotate: false
+  xy: 1, 762
+  size: 173, 251
+  orig: 207, 268
+  offset: 9, 6
+  index: -1
+nabelX
+  rotate: false
+  xy: 220, 412
+  size: 163, 359
+  orig: 197, 400
+  offset: 19, 17
+  index: -1
+yaerbeide
+  rotate: false
+  xy: 1, 412
+  size: 217, 348
+  orig: 271, 384
+  offset: 29, 24
+  index: -1
+demi
+  rotate: false
+  xy: 331, 1
+  size: 137, 402
+  orig: 194, 422
+  offset: 24, 20
+  index: -1

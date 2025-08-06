@@ -1,0 +1,55 @@
+
+ainz.sprite.judgement.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ring
+  rotate: false
+  xy: 1, 247
+  size: 219, 212
+  orig: 219, 212
+  offset: 0, 0
+  index: -1
+mace_glow
+  rotate: false
+  xy: 1, 1
+  size: 242, 244
+  orig: 242, 244
+  offset: 0, 0
+  index: -1
+particles
+  rotate: false
+  xy: 1, 461
+  size: 52, 42
+  orig: 52, 42
+  offset: 0, 0
+  index: -1
+particle_glow
+  rotate: false
+  xy: 222, 247
+  size: 191, 177
+  orig: 191, 182
+  offset: 0, 5
+  index: -1
+burst_large
+  rotate: false
+  xy: 245, 1
+  size: 133, 134
+  orig: 133, 134
+  offset: 0, 0
+  index: -1
+burst01
+  rotate: false
+  xy: 222, 426
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1
+burst02
+  rotate: false
+  xy: 299, 426
+  size: 75, 75
+  orig: 75, 75
+  offset: 0, 0
+  index: -1

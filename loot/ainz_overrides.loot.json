@@ -1,0 +1,43 @@
+{
+   "loot_tables" :
+   [
+      {
+         "id" : "ainz_PaidProps_Random",
+         "difficulty" : 0,
+         "dungeon" : "",
+         "entries" :
+         [
+            { "type" : "item", "chances" : 75, "data" : { "type" : "supply", "id" : "ainz_fake_AT", "amount" : 1 }},
+            { "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_FSIFW", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_HB", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_SBEF", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_TM8", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_AG", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_fake_DNS", "amount" : 1 }}
+         ]
+      },
+      {
+         "id" : "ainz_PrepareScrolls_Random",
+         "difficulty" : 0,
+         "dungeon" : "",
+         "entries" :
+         [
+            { "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_CMU", "amount" : 1 }},
+            { "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_DT", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_EB", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_F", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_I", "amount" : 1 }},
+			{ "type" : "item", "chances" : 100, "data" : { "type" : "supply", "id" : "ainz_TMM", "amount" : 1 }}
+         ]
+      },
+      {
+         "id" : "ainz_soul_essence_loot",
+         "difficulty" : 0,
+         "dungeon" : "",
+         "entries" :
+         [
+            { "type" : "item", "chances" : 100, "data" : { "type" : "estate", "id" : "ainz_soul_essence", "amount" : 1 }}
+         ]
+      }
+   ]
+}

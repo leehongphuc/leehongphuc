@@ -1,0 +1,83 @@
+
+ainz.sprite.walk.png
+size: 1015,897
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shadow
+  rotate: false
+  xy: 521, 641
+  size: 357, 61
+  orig: 357, 61
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 723, 461
+  size: 197, 178
+  orig: 197, 178
+  offset: 0, 0
+  index: -1
+astronomer-head
+  rotate: false
+  xy: 521, 487
+  size: 122, 142
+  orig: 122, 142
+  offset: 0, 0
+  index: -1
+astronomer-robe
+  rotate: false
+  xy: 1, 1
+  size: 343, 449
+  orig: 343, 449
+  offset: 0, 0
+  index: -1
+astronomer-tunic
+  rotate: false
+  xy: 723, 264
+  size: 290, 195
+  orig: 290, 195
+  offset: 0, 0
+  index: -1
+astronomer-arm1
+  rotate: false
+  xy: 521, 1
+  size: 200, 484
+  orig: 200, 484
+  offset: 0, 0
+  index: -1
+astronomer-arm2
+  rotate: false
+  xy: 128, 452
+  size: 121, 385
+  orig: 121, 385
+  offset: 0, 0
+  index: -1
+astronomer-cloak1
+  rotate: false
+  xy: 1, 452
+  size: 125, 443
+  orig: 125, 443
+  offset: 0, 0
+  index: -1
+astronomer-hood
+  rotate: false
+  xy: 723, 1
+  size: 263, 261
+  orig: 263, 261
+  offset: 0, 0
+  index: -1
+astronomer-hand
+  rotate: false
+  xy: 251, 452
+  size: 44, 81
+  orig: 44, 81
+  offset: 0, 0
+  index: -1
+staff
+  rotate: false
+  xy: 346, 1
+  size: 173, 857
+  orig: 173, 857
+  offset: 0, 0
+  index: -1

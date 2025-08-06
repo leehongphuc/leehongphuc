@@ -1,0 +1,1260 @@
+{
+   "buffs":
+   [
+	  {
+         "id" : "Ainz NICDC Negative",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : -10.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 0",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 20.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "corpse"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 1",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 20.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "unholy"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 2",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 20.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stonework"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 3",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 20.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "husk"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 4",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "carpentry"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 5",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "cauldron"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 6",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "ironwork"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 7",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "thatchery"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 8",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 20.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "unfortunate_soul"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 9",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "pyre"
+         }
+      },
+	  {
+         "id" : "Ainz NICDC Positive 10",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : 500.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "body"
+         }
+      },
+	  {
+         "id" : "Ainz Necromancy Immune Grasp Heart",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "bloodlet"
+         }
+      },
+	  {
+         "id" : "Ainz Necromancy Immune Wail of the Banshee",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "hands_from_abyss"
+         }
+      },
+	  {
+         "id" : "Ainz target low HP always crit",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.2,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart HP Range 1",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.30,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart HP Range 2",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.35,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart HP Range 3",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.40,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart HP Range 4",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.45,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart HP Range 5",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "target_hpbelow",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0.50,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart NO HP Range",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "bloodlet"
+         }
+      },
+	  {
+         "id" : "Ainz Wail of the Banshee NO HP Range",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 13.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "hands_from_abyss"
+         }
+      },
+	  {
+         "id" : "Ainz Wail of the Banshee NO HP Range Ally",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 10.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "hands_from_abyss"
+         }
+      },
+	  {
+         "id" : "Ainz Grasp Heart Ignore Monster Type",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : -200.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "bloodlet"
+         }
+      },
+	  {
+         "id" : "Ainz Wail of the Banshee Ignore Monster Type",
+         "stat_type" : "debuff_chance",
+         "stat_sub_type" : "",
+         "amount" : -200.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "hands_from_abyss"
+         }
+      },
+	  {
+         "id" : "ainz_ref_dmg",
+         "stat_type" : "damage_reflect_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_debuff_resist",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "debuff",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_move_resist",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "move",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_undispelable_SPD-1",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_undispelable_SPD-2",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : -2,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_undispelable_SPD-100",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : -100,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_invincible",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         },
+		 "fx": "map_radar"
+      },
+	  {
+         "id" : "ainz_ignore_steath",
+         "stat_type" : "ignore_stealth",
+         "stat_sub_type" : "",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_ignore_dodge",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_ignore_guard",
+         "stat_type" : "ignore_guard",
+         "stat_sub_type" : "",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_max_dodge",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_max_resistance_stun",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "stun",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_max_resistance_move",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "move",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "ainz_max_resistance_debuff",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "debuff",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz ignore protection",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.5,
+         "remove_if_not_active" : false,
+         "rule_type" : "actorStatus",
+         "is_false_rule" : false,
+		 "is_clear_debuff_valid": false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "tagged"
+         }
+      },
+      {
+         "id" : "ainz_on_crit_self_buff",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -0.5,
+         "duration" : 2,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_skill_negative_dotstress_1",
+         "stat_type" : "stress_dot",
+         "stat_sub_type" : "",
+         "amount" : 1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": true,
+		 "has_description": true,
+         "rule_type" : "afflicted",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_skill_negative_dotstress_2",
+         "stat_type" : "stress_dot",
+         "stat_sub_type" : "",
+         "amount" : 2,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": true,
+		 "has_description": true,
+         "rule_type" : "afflicted",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_skill_negative_dotstress_crit",
+         "stat_type" : "stress_dot",
+         "stat_sub_type" : "",
+         "amount" : -1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": true,
+		 "has_description": true,
+         "rule_type" : "afflicted",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_camp_virtual_chance",
+         "stat_type" : "resolve_check_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.25,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_camp_damage_received_percent",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.05,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_camp_stress_dmg_received_percent",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.05,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_camp_stress_heal_received_percent",
+         "stat_type" : "stress_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.05,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_campingPartySurprise",
+         "stat_type" : "party_surprise_chance",
+         "stat_sub_type" : "",
+         "amount" : 0.4,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+         "rule_type" : "lightabove",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 50,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_campingMonstersSurprise",
+         "stat_type" : "monsters_surprise_chance",
+         "stat_sub_type" : "",
+         "amount" : 0.4,
+         "duration_type" : "combat_end",
+         "duration" : 4,
+         "remove_if_not_active" : false,
+         "rule_type" : "lightbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 50,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Tag Disable Cooldown",
+         "stat_type" : "disable_combat_skill_attribute",
+         "stat_sub_type" : "tag",
+         "amount" : 1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Blight Disable Cooldown",
+         "stat_type" : "disable_combat_skill_attribute",
+         "stat_sub_type" : "poison",
+         "amount" : 1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Buff Disable Cooldown",
+         "stat_type" : "disable_combat_skill_attribute",
+         "stat_sub_type" : "stress",
+         "amount" : 1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Heal Disable Cooldown",
+         "stat_type" : "disable_combat_skill_attribute",
+         "stat_sub_type" : "heal",
+         "amount" : 1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Lower Friendly DD Resist",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "death_blow",
+         "amount" : -1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.99,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly deathdoor protect",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -100.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpabove 1",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0.3,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpabove 2",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0.35,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpabove 3",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0.4,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpabove 4",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0.45,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpabove 5",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0.5,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpbelow 1",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.3,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpbelow 2",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.35,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpbelow 3",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.4,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpbelow 4",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.45,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Kill Friendly kill chance protect hpbelow 5",
+         "stat_type" : "damage_received_percent",
+         "stat_sub_type" : "",
+         "amount" : -5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.5,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Stun Crit Weakness",
+         "stat_type" : "crit_received_chance",
+         "stat_sub_type" : "",
+         "amount" : 1.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "is_actor_status",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stunned"
+         }
+      },
+      {
+         "id" : "Ainz Friendly Blight 1",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : 3,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Friendly Blight 2",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : 3,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Friendly Blight 3",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : 4,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Friendly Blight 4",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : 4,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz Friendly Blight 5",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : 5,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz No Blight Cure Monster",
+         "stat_type" : "cure_poison_received_chance",
+         "stat_sub_type" : "",
+         "amount" : -1000000.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz No Blight Cure Ally",
+         "stat_type" : "cure_poison_received_chance",
+         "stat_sub_type" : "",
+         "amount" : -1000000.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "at_deaths_door",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "ainz_teleport_astral_project",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 5.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "is_stealthed",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Neutralize Blight 1",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : -3,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Neutralize Blight 2",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : -3,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Neutralize Blight 3",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : -4,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Neutralize Blight 4",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : -4,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Neutralize Blight 5",
+         "stat_type" : "hp_dot_poison",
+         "stat_sub_type" : "",
+         "amount" : -5,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      },
+      {
+         "id" : "Ainz+Stars Easter Egg Max Blight Resist",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "poison",
+         "amount" : 10.0,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : true,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "stars_permanent_passive"
+         }
+      }
+   ]
+}

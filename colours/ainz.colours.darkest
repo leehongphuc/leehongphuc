@@ -1,0 +1,6 @@
+colour: .id "cyan"								.rgba #00ffff
+colour: .id "purple"							.rgba #a020f0
+colour: .id "magenta"							.rgba #ff00ff
+colour: .id "springgreen"						.rgba #00fa9a
+
+colour:	.id "hamusuke"	.rgba	200 0 225  200

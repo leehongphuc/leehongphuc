@@ -1,0 +1,1062 @@
+{
+   "buffs":
+   [
+	  {
+         "id" : "MHP_Healing_Recieved",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.10,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "MHP_Stress_Healing_Recieved",
+         "stat_type" : "stress_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.20,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "MRV_ACC",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 0.08,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "MRV_Healing_Recieved",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "MRV_Scouting_Chance",
+         "stat_type" : "scouting_chance",
+         "stat_sub_type" : "",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "USSS_ARMOURPIERCING_BUFF",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },	 
+	  {
+         "id" : "USSS_Crit",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.04,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+		 "id" : "AT_DMGL_BUFF_UHL",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "unholy"
+         }
+      },
+      {
+         "id" : "AT_DMGH_BUFF_UHL",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "unholy"
+         }
+      },
+	  {
+         "id" : "AT_SPD_BUFF_UHL",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : 6,
+         "remove_if_not_active" : false,
+         "rule_type" : "monster_type_count_min",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 1,
+            "string" : "unholy"
+         }
+      },
+	  {
+         "id" : "AT_Crit_UHL",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.06,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "unholy"
+         }
+      },
+	  {
+         "id" : "AT_DEF_DEBUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : -0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AT_PROT_DEBUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "protection_rating",
+         "amount" : -0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+		 "id" : "FSIFW_DMGL_MELEE_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "meleeonly",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "FSIFW_DMGH_MELEE_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "meleeonly",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "FSIFW_ARMOURPIERCING_BUFF",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.3,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "FSIFW_PROT_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "protection_rating",
+         "amount" : 0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "HB_ACC",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "HB_Crit",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "SBEF_DMGL_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.5,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+	  {
+         "id" : "SBEF_DMGH_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.5,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+	  {
+         "id" : "SBEF_ACC",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : -0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "SBEF_SPD_DEBUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : -10,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "SBEF_DEF_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "TMK8_ARMOURPIERCING_BUFF",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.5,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "TMK8_DMGL_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+	  {
+         "id" : "TMK8_DMGH_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.15,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+      {
+         "id" : "AC_DEATHRESIST_BUFF",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "death_blow",
+         "amount" : 0.06,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AC_DEBUFF_RESIST_BUFF",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "debuff",
+         "amount" : 0.3,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AC_STUN_RESIST_BUFF",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "stun",
+         "amount" : 0.3,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AC_MOVE_RESIST_BUFF",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "move",
+         "amount" : 0.3,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AC_XP_BONUS",
+         "stat_type" : "resolve_xp_bonus_percent",
+         "stat_sub_type" : "",
+         "amount" : 1.0,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_DEF_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_PROT_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "protection_rating",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_DMGL_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+	  {
+         "id" : "DNS_DMGH_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+      {
+         "id" : "DNS_ARMOURPIERCING_BUFF",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_Crit",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_ACC",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "DNS_SPD_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "SetWI_Healing_Received",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.4,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "SetWI_Stress_Healing_Received",
+         "stat_type" : "stress_heal_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "hpbelow",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0.4,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_AO_DEATHRESIST_BUFF",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "death_blow",
+         "amount" : 0.12,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+      {
+         "id" : "AINZ_AO_DMGL_BUFF_HM",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "man"
+         }
+      },
+      {
+         "id" : "AINZ_AO_DMGH_BUFF_HM",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "monsterType",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "man"
+         }
+      },
+	  {
+         "id" : "AINZ_AO_CRIT_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.05,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_AO_DMGL_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "torch"
+         }
+      },
+      {
+         "id" : "AINZ_AO_DMGH_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.2,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "torch"
+         }
+      },
+	  	  {
+         "id" : "AINZ_AO_DMGL_DEBUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : -0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "torch"
+         }
+      },
+      {
+         "id" : "AINZ_AO_DMGH_DEBUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : -0.1,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "torch"
+         }
+      },
+	  {
+         "id" : "AINZ_AO_SPD_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : 3,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "holy_water"
+         }
+      },
+	  {
+         "id" : "AINZ_AO_SPD_DEBUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : -1,
+         "remove_if_not_active" : false,
+         "rule_type" : "has_item_id",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "holy_water"
+         }
+      },
+	  {
+         "id" : "AINZ_Set_Penalty_Stress_Received_world",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.50,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "AINZ_Set_Penalty_Stress_Received_relic",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.25,
+         "remove_if_not_active" : false,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz houyi bow precise buff on miss",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 0.15,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "rangedonly",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz takemikazuchi mk 8 prot break",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "protection_rating",
+         "amount" : -0.5,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz avarice generosity XP gain",
+         "stat_type" : "resolve_xp_bonus_percent",
+         "stat_sub_type" : "",
+         "amount" : 0.1,
+		 "remove_on_battle_complete" : false,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz depiction nature society DNS_DEF_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "defense_rating",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz depiction nature society DNS_PROT_BUFF",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "protection_rating",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz depiction nature society DNS_DMGL_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_low",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+	  {
+         "id" : "Ainz depiction nature society DNS_DMGH_BUFF",
+         "stat_type" : "combat_stat_multiply",
+         "stat_sub_type" : "damage_high",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+		}
+	  },
+      {
+         "id" : "Ainz depiction nature society DNS_ARMOURPIERCING_BUFF",
+         "stat_type" : "ignore_protection",
+         "stat_sub_type" : "",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz depiction nature society DNS_Crit",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "crit_chance",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz depiction nature society DNS_ACC",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : 0.01,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Lower Resistance Bleed",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "bleed",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Lower Resistance Blight",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "poison",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Lower Resistance Stun",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "stun",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Lower Resistance Move",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "move",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Lower Resistance Debuff",
+         "stat_type" : "resistance",
+         "stat_sub_type" : "debuff",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Accursed Orb Pretended Weakness",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "attack_rating",
+         "amount" : -0.1,
+		 "remove_on_battle_complete" : true,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": true,
+         "rule_type" : "always",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke SPD",
+         "stat_type" : "combat_stat_add",
+         "stat_sub_type" : "speed_rating",
+         "amount" : 10,
+         "remove_if_not_active" : false,
+         "rule_type" : "firstroundonly",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Stress",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "",
+         "amount" : 1.0,
+         "remove_if_not_active" : false,
+         "rule_type" : "afflicted",
+         "is_false_rule" : true,
+         "rule_data" : {
+            "float" : 0,
+            "string" : ""
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Food Neutralize No_Need_Food",
+         "stat_type" : "food_consumption_percent",
+         "stat_sub_type" : "",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "ainz_undead_passive"
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Food Neutralize No_Heal_From_Food",
+         "stat_type" : "hp_heal_received_percent",
+         "stat_sub_type" : "eat",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "ainz_undead_passive"
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Food Neutralize No_Starving_Damage",
+         "stat_type" : "starving_damage_percent",
+         "stat_sub_type" : "",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "ainz_undead_passive"
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Food Neutralize No_Starving_Stress",
+         "stat_type" : "stress_dmg_received_percent",
+         "stat_sub_type" : "hunger",
+         "amount" : 5,
+         "remove_if_not_active" : false,
+		 "is_clear_debuff_valid": false,
+		 "has_description": false,
+         "rule_type" : "has_quirk",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "ainz_undead_passive"
+         }
+      },
+	  {
+         "id" : "Ainz Hamusuke Time Stop Half Stress",
+         "stat_type" : "stress_dmg_percent",
+         "stat_sub_type" : "effect",
+         "amount" : -0.33,
+         "remove_if_not_active" : false,
+         "rule_type" : "skill",
+         "is_false_rule" : false,
+         "rule_data" : {
+            "float" : 0,
+            "string" : "time_stop"
+         }
+      }
+   ]
+}

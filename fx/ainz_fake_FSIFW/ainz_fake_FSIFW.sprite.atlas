@@ -1,0 +1,27 @@
+
+ainz_fake_FSIFW.sprite.png
+size: 755,946
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+sword_right
+  rotate: false
+  xy: 10, 10
+  size: 329, 525
+  orig: 329, 525
+  offset: 0, 0
+  index: -1
+sword_left
+  rotate: false
+  xy: 359, 10
+  size: 314, 516
+  orig: 314, 516
+  offset: 0, 0
+  index: -1
+skull_shadow
+  rotate: false
+  xy: 359, 546
+  size: 376, 380
+  orig: 376, 380
+  offset: 0, 0
+  index: -1

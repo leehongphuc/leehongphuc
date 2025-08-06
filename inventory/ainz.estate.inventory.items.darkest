@@ -1,0 +1,1 @@
+inventory_item: .type "estate" .id "ainz_soul_essence" .base_stack_limit 20 .purchase_gold_value 0 .sell_gold_value 0 .estate_can_be_provision true .fx_bone_override fxhead .sequential_use_effects ainz_soul_essence ainz_soul_essence_repeat .wait_for_item_use_to_finish true

@@ -1,0 +1,41 @@
+
+ainz.sprite.weakening_curse_target.png
+size: 1356,900
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ring_shadow
+  rotate: false
+  xy: 1, 1
+  size: 552, 553
+  orig: 552, 553
+  offset: 0, 0
+  index: -1
+outer_ring
+  rotate: false
+  xy: 555, 1
+  size: 474, 473
+  orig: 474, 473
+  offset: 0, 0
+  index: -1
+pyramid
+  rotate: false
+  xy: 1025, 476
+  size: 329, 295
+  orig: 329, 295
+  offset: 0, 0
+  index: -1
+pyramid_rim
+  rotate: false
+  xy: 1, 556
+  size: 363, 322
+  orig: 363, 322
+  offset: 0, 0
+  index: -1
+stress_crown
+  rotate: false
+  xy: 555, 476
+  size: 468, 422
+  orig: 468, 422
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,35 @@
+commonfx: .deathfx death_medium
+
+weapon: .name "ainz_weapon_0" .icon "eqp_weapon_0.png"
+weapon: .name "ainz_weapon_1" .icon "eqp_weapon_1.png"
+weapon: .name "ainz_weapon_2" .icon "eqp_weapon_2.png"
+weapon: .name "ainz_weapon_3" .icon "eqp_weapon_3.png"
+weapon: .name "ainz_weapon_4" .icon "eqp_weapon_4.png"
+
+armour: .name "ainz_armour_0" .icon "eqp_armour_0.png"
+armour: .name "ainz_armour_1" .icon "eqp_armour_1.png"
+armour: .name "ainz_armour_2" .icon "eqp_armour_2.png"
+armour: .name "ainz_armour_3" .icon "eqp_armour_3.png"
+armour: .name "ainz_armour_4" .icon "eqp_armour_4.png"
+
+combat_skill: .id "bloodlet" .icon "one" .anim "attack_melee" .fx "bloodlet" .targchestfx "shout_target" .misstargchestfx "shout_target" .area_pos_offset 0 10 .nil true .condensed_tooltip_stats true .condensed_tooltip_effects false
+combat_skill: .id "abyssal_artillery" .icon "two" .anim "attack_stomp" .fx "flashbang" .targfx "flashbang_target" .misstargfx "flashbang_target" .area_pos_offset 100 10 .condensed_tooltip_stats true .condensed_tooltip_effects false
+combat_skill: .id "weakening_curse" .icon "three" .anim "attack_stomp" .fx "poison_dart" .targfx "rage" .misstargfx "rage" .area_pos_offset 0 10 .condensed_tooltip_stats true .condensed_tooltip_effects false
+combat_skill: .id "disruptive_curse" .icon "five" .anim "attack_stomp" .fx "weakening_curse" .targchestfx "detonate_target" .misstargchestfx "detonate_target" .area_pos_offset 0 10 .condensed_tooltip_stats true .condensed_tooltip_effects false
+
+combat_skill: .id "hands_from_abyss" .icon "six" .anim "attack_gore" .fx "shadow_fade" .targfx "plague_grenade_target" .misstargfx "plague_grenade_target" .area_pos_offset 0 10 .nil true .condensed_tooltip_stats true
+combat_skill: .id "daemons_pull" .icon "seven" .anim "attack_gore" .fx "judgement" .targheadfx "drum_fear_target" .area_pos_offset 0 10 .condensed_tooltip_stats true
+combat_skill: .id "time_stop" .icon "eight" .anim "attack_gore" .targheadfx "weakening_curse_target" .area_pos_offset 0 10
+combat_skill: .id "greater_teleportation" .icon "nine" .anim "combat" .targfx "gaze" .area_pos_offset 0 10
+
+combat_move_skill: .id "spellbook" .icon "ten" .anim "combat"
+
+combat_skill: .id "spellnote_A" .icon "noteA" .anim "combat" .nil true
+combat_skill: .id "spellnote_B" .icon "noteB" .anim "combat" .nil true
+combat_skill: .id "spellnote_C" .icon "noteC" .anim "combat" .nil true
+
+//combat_skill: .id "wyrd_reconstruction" .icon "four" .anim "attack_flex" .fx "cleanse" .targfx "battlefield_medicine_target"
+
+act_out_display: .attack_friendly_anim "attack_melee" .attack_friendly_fx "bloodlet" .attack_friendly_targchestfx "blood_splatter" .attack_friendly_sfx "/char/ally/ainz_bloodlet"
+
+health_bar: .type "corpse"

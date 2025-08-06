@@ -1,0 +1,13 @@
+
+ainz.sprite.poison_dart.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+throw_trail
+  rotate: false
+  xy: 1, 1
+  size: 560, 110
+  orig: 560, 110
+  offset: 0, 0
+  index: -1
