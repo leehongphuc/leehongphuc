@@ -159,35 +159,35 @@ Astral Project]]></entry>
 If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(90%% base){colour_end}
 {colour_start|bleed}Bleed 3 for 2 rounds{colour_end} {colour_start|skill_unselectable}(90%% base){colour_end}
-{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed Resistance, -20%% Stun Resistance
 {colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 		
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 2"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 6%%
 If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(95%% base){colour_end}
 {colour_start|bleed}Bleed 3 for 2 rounds{colour_end} {colour_start|skill_unselectable}(95%% base){colour_end}
-{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed Resistance, -20%% Stun Resistance
 {colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 3"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 7%%
 If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
 {colour_start|bleed}Bleed 3 for 2 rounds{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
-{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed Resistance, -20%% Stun Resistance
 {colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 4"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 8%%
 If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(110%% base){colour_end}
 {colour_start|bleed}Bleed 4 for 2 rounds{colour_end} {colour_start|skill_unselectable}(110%% base){colour_end}
-{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed Resistance, -20%% Stun Resistance
 {colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 5"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 10%%
 If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(120%% base){colour_end}
 {colour_start|bleed}Bleed 4 for 2 rounds{colour_end} {colour_start|skill_unselectable}(120%% base){colour_end}
-{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed Resistance, -20%% Stun Resistance
 {colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 		
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip NoCorpse"><![CDATA[Kill: {colour_start|specificclass}Np Corpse{colour_end} (100%%)]]></entry>

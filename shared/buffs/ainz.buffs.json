@@ -1185,7 +1185,7 @@
       },
       {
          "id" : "Ainz Bleed Resistance Debuff",
-         "stat_type" : "bleed_chance",
+         "stat_type" : "bleed_resist",
          "stat_sub_type" : "",
          "amount" : -0.2,
          "remove_on_battle_complete" : true,
@@ -1200,7 +1200,7 @@
       },
       {
          "id" : "Ainz Stun Resistance Debuff",
-         "stat_type" : "stun_chance",
+         "stat_type" : "stun_resist",
          "stat_sub_type" : "",
          "amount" : -0.2,
          "remove_on_battle_complete" : true,
