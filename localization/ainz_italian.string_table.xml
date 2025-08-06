@@ -280,31 +280,31 @@ Necromancy Spell Ignore HP Range & Immunity (1 Cast)]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop 1"><![CDATA[All Enemies / Other Heroes:
 Delay {colour_start|notable}Round{colour_end}
-+18 {colour_start|stress}Stress{colour_end}
+-20 {colour_start|stress}Stress{colour_end}
 {colour_start|buff}Buff Self:{colour_end}]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop 2"><![CDATA[All Enemies / Other Heroes:
 Delay {colour_start|notable}Round{colour_end}
-+26 {colour_start|stress}Stress{colour_end}
+-30 {colour_start|stress}Stress{colour_end}
 {colour_start|buff}Buff Self:{colour_end}]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop 3"><![CDATA[All Enemies / Other Heroes:
 Delay {colour_start|notable}Round{colour_end}
-+34 {colour_start|stress}Stress{colour_end}
+-40 {colour_start|stress}Stress{colour_end}
 {colour_start|buff}Buff Self:{colour_end}]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop 4"><![CDATA[All Enemies / Other Heroes:
 Delay {colour_start|notable}Round{colour_end}
-+42 {colour_start|stress}Stress{colour_end}
+-45 {colour_start|stress}Stress{colour_end}
 {colour_start|buff}Buff Self:{colour_end}]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop 5"><![CDATA[All Enemies / Other Heroes:
 Delay {colour_start|notable}Round{colour_end}
-+50 {colour_start|stress}Stress{colour_end}
+-50 {colour_start|stress}Stress{colour_end}
 {colour_start|buff}Buff Self:{colour_end}]]></entry>
 
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 1"><![CDATA[+1 {colour_start|notable}Turn{colour_end}
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 1"><![CDATA[+2 {colour_start|notable}Turns{colour_end}
 Bypass {colour_start|stealth}Stealth{colour_end} / {colour_start|guard}Guard{colour_end}
 Ignore DODGE (+500 ACC)]]></entry>
 
@@ -312,15 +312,15 @@ Ignore DODGE (+500 ACC)]]></entry>
 Bypass {colour_start|stealth}Stealth{colour_end} / {colour_start|guard}Guard{colour_end}
 Ignore DODGE (+500 ACC)]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 3"><![CDATA[+3 {colour_start|notable}Turns{colour_end}
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 3"><![CDATA[+2 {colour_start|notable}Turns{colour_end}
 Bypass {colour_start|stealth}Stealth{colour_end} / {colour_start|guard}Guard{colour_end}
 Ignore DODGE (+500 ACC)]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 4"><![CDATA[+4 {colour_start|notable}Turns{colour_end}
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 4"><![CDATA[+2 {colour_start|notable}Turns{colour_end}
 Bypass {colour_start|stealth}Stealth{colour_end} / {colour_start|guard}Guard{colour_end}
 Ignore DODGE (+500 ACC)]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 5"><![CDATA[+5 {colour_start|notable}Turns{colour_end}
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Time Stop Extra Buff 5"><![CDATA[+2 {colour_start|notable}Turns{colour_end}
 Bypass {colour_start|stealth}Stealth{colour_end} / {colour_start|guard}Guard{colour_end}
 Ignore DODGE (+500 ACC)]]></entry>
 		
@@ -392,15 +392,15 @@ Ignore DODGE (+500 ACC)]]></entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 2_4"><![CDATA[{colour_start|comet}Cooldown: 16 rds{colour_end}]]></entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 2_5"><![CDATA[{colour_start|comet}Cooldown: 15 rds{colour_end}]]></entry>
 		
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_1"><![CDATA[{colour_start|comet}Cooldown: 24 rds
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_1"><![CDATA[{colour_start|comet}Cooldown: 5 rds
 -10 Other Skills Remaining Cooldown{colour_end}]]></entry>
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_2"><![CDATA[{colour_start|comet}Cooldown: 23 rds
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_2"><![CDATA[{colour_start|comet}Cooldown: 5 rds
 -10 Other Skills Remaining Cooldown{colour_end}]]></entry>
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_3"><![CDATA[{colour_start|comet}Cooldown: 22 rds
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_3"><![CDATA[{colour_start|comet}Cooldown: 5 rds
 -10 Other Skills Remaining Cooldown{colour_end}]]></entry>
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_4"><![CDATA[{colour_start|comet}Cooldown: 21 rds
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_4"><![CDATA[{colour_start|comet}Cooldown: 5 rds
 -10 Other Skills Remaining Cooldown{colour_end}]]></entry>
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_5"><![CDATA[{colour_start|comet}Cooldown: 20 rds
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Skill Cannot Refresh 3_5"><![CDATA[{colour_start|comet}Cooldown: 5 rds
 -10 Other Skills Remaining Cooldown{colour_end}]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Tag Disable Cooldown"><![CDATA[{colour_start|comet}Cry of the Banshee{colour_end} Cooldown]]></entry>
