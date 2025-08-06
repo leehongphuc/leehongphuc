@@ -37,7 +37,7 @@ As a master of PVP, Ainz Ooal Gown will prepare as much as possible before jumpi
 {colour_start|stun}- Cash Shop Item -{colour_end}
 As the Leader of Nazarick, Ainz Ooal Gown can make counterfeits of the "World Items" and weapons belong to other Supreme Beings through Cash Shop Item.]]></entry>
 
-		<entry id="combat_skill_name_ainz_bloodlet"><![CDATA[Grasp Heart]]></entry>
+		<entry id="combat_skill_name_ainz_bloodlet"><![CDATA[Sacrificial Stab]]></entry>
 		<entry id="combat_skill_name_ainz_abyssal_artillery"><![CDATA[Black Hole]]></entry>
 		<entry id="combat_skill_name_ainz_weakening_curse"><![CDATA[Reality Slash]]></entry>
 		<entry id="combat_skill_name_ainz_wyrd_reconstruction"><![CDATA[Body of Effulgent Beryl]]></entry>
@@ -51,7 +51,7 @@ As the Leader of Nazarick, Ainz Ooal Gown can make counterfeits of the "World It
 		<entry id="combat_skill_name_ainz_spellnote_B"><![CDATA[{colour_start|stun}Passive Skill: Necromancy Spell{colour_end}]]></entry>
 		<entry id="combat_skill_name_ainz_spellnote_C"><![CDATA[{colour_start|stun}Passive Skill: Cooldown Mechanism{colour_end}]]></entry>
 		
-		<entry id="upgrade_tree_name_ainz.bloodlet"><![CDATA[Grasp Heart]]></entry>
+		<entry id="upgrade_tree_name_ainz.bloodlet"><![CDATA[Sacrificial Stab]]></entry>
 		<entry id="upgrade_tree_name_ainz.abyssal_artillery"><![CDATA[Black Hole]]></entry>
 		<entry id="upgrade_tree_name_ainz.weakening_curse"><![CDATA[Reality Slash]]></entry>
 		<entry id="upgrade_tree_name_ainz.wyrd_reconstruction"><![CDATA[Body of Effulgent Beryl]]></entry>
@@ -66,7 +66,7 @@ As the Leader of Nazarick, Ainz Ooal Gown can make counterfeits of the "World It
 		<entry id="upgrade_tree_name_ainz_spellnote_C"><![CDATA[{colour_start|stun}Passive Skill: Cooldown Mechanism{colour_end}]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz_Tooltip_spellnote_A_1"><![CDATA[
-{colour_start|notable}Grasp Heart / Cry of the Banshee / The Goal of All Life is Death{colour_end}]]></entry>
+{colour_start|notable}Sacrificial Stab / Cry of the Banshee / The Goal of All Life is Death{colour_end}]]></entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz_Tooltip_spellnote_A_2"><![CDATA[
 {colour_start|notable}Black Hole / Reality Slash / Gravity Maelstrom{colour_end}]]></entry>
 		
@@ -77,7 +77,7 @@ As the Leader of Nazarick, Ainz Ooal Gown can make counterfeits of the "World It
 1 {colour_start|stress}Stress{colour_end}/rd (1 battle) until {colour_start|afflicted}Afflicted{colour_end}]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz_Tooltip_spellnote_B_1"><![CDATA[
-{colour_start|notable}Grasp Heart / Cry of the Banshee{colour_end}]]></entry>
+{colour_start|notable}Sacrificial Stab / Cry of the Banshee{colour_end}]]></entry>
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz_Tooltip_spellnote_B_2"><![CDATA[{colour_start|red}The following Enemy Types are Immune to Necromancy Damage:{colour_end}]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz_Tooltip_spellnote_B_3a"><![CDATA[Unholy / Stonework / Husk / Bloodbag]]></entry>
@@ -155,50 +155,45 @@ Astral Project]]></entry>
 
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Unconcerned"><![CDATA[{colour_start|red}Unconcerned with Hit / Miss{colour_end}]]></entry>
 		
-        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart Miss 1"><![CDATA[Target HP above 30%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(80%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (1%%)]]></entry>
-		
-        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart Miss 2"><![CDATA[Target HP above 35%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(85%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (1.25%%)]]></entry>
-
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart Miss 3"><![CDATA[Target HP above 40%%:
+        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 1"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 5%%
+If failed:
 {colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(90%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (1.5%%)]]></entry>
-
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart Miss 4"><![CDATA[Target HP above 45%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(95%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (1.75%%)]]></entry>
-
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart Miss 5"><![CDATA[Target HP above 50%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (2%%)]]></entry>
-
-        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 1"><![CDATA[Target HP below 30%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (20%%)]]></entry>
+{colour_start|bleed}Bleed 3{colour_end} {colour_start|skill_unselectable}(90%% base){colour_end}
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 		
-        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 2"><![CDATA[Target HP below 35%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(112%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (25%%)]]></entry>
+        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 2"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 6%%
+If failed:
+{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(95%% base){colour_end}
+{colour_start|bleed}Bleed 3{colour_end} {colour_start|skill_unselectable}(95%% base){colour_end}
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 3"><![CDATA[Target HP below 40%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(125%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (30%%)]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 3"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 7%%
+If failed:
+{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
+{colour_start|bleed}Bleed 3{colour_end} {colour_start|skill_unselectable}(100%% base){colour_end}
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 4"><![CDATA[Target HP below 45%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(138%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (35%%)]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 4"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 8%%
+If failed:
+{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(110%% base){colour_end}
+{colour_start|bleed}Bleed 4{colour_end} {colour_start|skill_unselectable}(110%% base){colour_end}
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 5"><![CDATA[Target HP below 50%%:
-{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(150%% base){colour_end}
-{colour_start|bleed}Lost 50 HP{colour_end} (40%%)]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Grasp Heart 5"><![CDATA[{colour_start|red}Instant Kill{colour_end}: 10%%
+If failed:
+{colour_start|stun}Stun{colour_end} {colour_start|skill_unselectable}(120%% base){colour_end}
+{colour_start|bleed}Bleed 4{colour_end} {colour_start|skill_unselectable}(120%% base){colour_end}
+{colour_start|debuff}Debuff{colour_end}: -20%% Bleed/Stun Resist
+{colour_start|heal}Self{colour_end}: +7 HP, -10 Stress]]></entry>
 		
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip NoCorpse"><![CDATA[Kill: {colour_start|specificclass}Np Corpse{colour_end} (100%%)]]></entry>
 		
-        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Necromancy Immune Grasp Heart Tooltip"><![CDATA[{colour_start|comet}Grasp Heart{colour_end}:
-Immune to Damage]]></entry>
+        <entry id="buff_stat_tooltip_upgrade_discount_Ainz Necromancy Immune Grasp Heart Tooltip"><![CDATA[{colour_start|comet}Sacrificial Stab{colour_end}:
+Immune to Instant Kill]]></entry>
 		
         <entry id="buff_stat_tooltip_upgrade_discount_Ainz Necromancy Immune Wail of the Banshee Tooltip"><![CDATA[{colour_start|comet}Wail of the Banshee{colour_end}:
 Immune to Damage]]></entry>
@@ -274,7 +269,7 @@ Force Enter {colour_start|deathdoor}Death's Door{colour_end} (2%% | 40%%)]]></en
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Necromancy Enhance"><![CDATA[{colour_start|trap}Necromancy Metamagic:{colour_end}
 Necromancy Spell Ignore HP Range & Immunity (1 Cast)]]></entry>
 
-		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Necromancy Enhance Self"><![CDATA[{colour_start|trap}Metamagic (1 Cast){colour_end}: Grasp Heart / Cry of the Banshee: Ignore HP Range & Immunity ]]></entry>
+		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Necromancy Enhance Self"><![CDATA[{colour_start|trap}Metamagic (1 Cast){colour_end}: Sacrificial Stab / Cry of the Banshee: Ignore Immunity & Enhanced Effects ]]></entry>
 		
 		<entry id="buff_stat_tooltip_upgrade_discount_Ainz Tooltip Necromancy Enhance Ally"><![CDATA[{colour_start|trap}Metamagic (1 Cast){colour_end}: Cry of the Banshee: Ignore Ally HP Range ]]></entry>
 		
