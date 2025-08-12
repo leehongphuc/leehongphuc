@@ -1,0 +1,8 @@
+//Overlord
+//-------------------------
+///TRINKETS
+
+effect: .name "Ainz Blight Hit" .target "target"  .buff_source_type bsrc_trinket_additional_effect .chance 100% .dotPoison 4 .duration 1 .on_hit true .on_miss false .queue true .crit_doesnt_apply_to_roll true .apply_once true
+
+
+------------------------------------

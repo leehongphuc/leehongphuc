@@ -1,0 +1,78 @@
+//Overlord
+//-------------------------
+
+//Sacrificial Stab
+
+effect: .name "Grasp Heart 1" .target "target" .curio_result_type "negative" .chance 13%  .kill 1 .on_hit true .on_miss false .queue true
+effect: .name "Grasp Heart 2" .target "target" .curio_result_type "negative" .chance 14%  .kill 1 .on_hit true .on_miss false .queue true
+effect: .name "Grasp Heart 3" .target "target" .curio_result_type "negative" .chance 15%  .kill 1 .on_hit true .on_miss false .queue true
+effect: .name "Grasp Heart 4" .target "target" .curio_result_type "negative" .chance 16%  .kill 1 .on_hit true .on_miss false .queue true
+effect: .name "Grasp Heart 5" .target "target" .curio_result_type "negative" .chance 17%  .kill 1 .on_hit true .on_miss false .queue true
+
+effect: .name "Grasp Heart Corpse" .target "target" .chance 100% .kill_enemy_types corpse .on_hit true .on_miss false .can_apply_on_death true .queue false .has_description false
+
+effect: .name "True Stun 1" .target "target" .curio_result_type "negative" .chance 80%  .stun 1	.on_hit false .on_miss true .queue true 
+effect: .name "True Stun 2" .target "target" .curio_result_type "negative" .chance 85%  .stun 1	.on_hit false .on_miss true .queue true 
+effect: .name "True Stun 3" .target "target" .curio_result_type "negative" .chance 90%  .stun 1	.on_hit false .on_miss true .queue true 
+effect: .name "True Stun 4" .target "target" .curio_result_type "negative" .chance 100%  .stun 1 .on_hit false .on_miss true .queue true 
+effect: .name "True Stun 5" .target "target" .curio_result_type "negative" .chance 110%  .stun 1 .on_hit false .on_miss true .queue true 
+
+//Abyssal Artillery
+
+//Weakening Curse
+effect: .name "True Bleeding 1" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .dotBleed 2 .on_hit true .on_miss true
+effect: .name "True Bleeding 2" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .dotBleed 2  .on_hit true .on_miss true
+effect: .name "True Bleeding 3" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .dotBleed 3  .on_hit true .on_miss true
+effect: .name "True Bleeding 4" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .dotBleed 3  .on_hit true .on_miss true
+effect: .name "True Bleeding 5" .target "target" .curio_result_type "negative" .chance 140% .duration 3 .dotBleed 4  .on_hit true .on_miss true
+
+//Wyrd Reconstruction
+effect: .name "Defensive Buff 1" .target "performer" .curio_result_type "positive" .chance 80% .duration 3 .health_damage_blocks 1 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true
+effect: .name "Defensive Buff 2" .target "performer" .curio_result_type "positive" .chance 90% .duration 3 .health_damage_blocks 1 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true
+effect: .name "Defensive Buff 3" .target "performer" .curio_result_type "positive" .chance 100% .duration 4 .health_damage_blocks 2 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true
+effect: .name "Defensive Buff 4" .target "performer" .curio_result_type "positive" .chance 110% .duration 4 .health_damage_blocks 2 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true
+effect: .name "Defensive Buff 5" .target "performer" .curio_result_type "positive" .chance 120% .duration 5 .health_damage_blocks 3 .buff_duration_type combat_end .buff_ids "ainz_debuff_resist" "ainz_move_resist" "ainz_ref_dmg" .on_hit true .queue true
+
+effect: .name "Defensive Debuff 1" .target "performer" .curio_result_type "negative" .chance 80% .duration 3 .stress 3 .on_hit true .queue true
+effect: .name "Defensive Debuff 2" .target "performer" .curio_result_type "negative" .chance 90% .duration 3 .stress 3 .on_hit true .queue true
+effect: .name "Defensive Debuff 3" .target "performer" .curio_result_type "negative" .chance 100% .duration 4 .stress 4 .on_hit true .queue true
+effect: .name "Defensive Debuff 4" .target "performer" .curio_result_type "negative" .chance 110% .duration 4 .stress 4 .on_hit true .queue true
+effect: .name "Defensive Debuff 5" .target "performer" .curio_result_type "negative" .chance 120% .duration 5 .stress 5 .on_hit true .queue true
+
+effect: .name "Defensive Miss" .target "performer" .curio_result_type "negative" .chance 200% .duration 3 .stress 3 .on_miss true .queue true
+//Vulnerability Hex
+
+//Hands from the Abyss
+effect: .name "Ainz Stun" .target "target" .curio_result_type "negative" .chance 200% .stun 1	.on_hit true .on_miss false .queue true
+
+effect: .name "Ainz Debuff 1" .target "target" .curio_result_type "negative" .chance 90% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+effect: .name "Ainz Debuff 2" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+effect: .name "Ainz Debuff 3" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+effect: .name "Ainz Debuff 4" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+effect: .name "Ainz Debuff 5" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .buff_type crit_received_chance .buff_amount 4% .on_hit true .on_miss false .queue true
+
+effect: .name "Ainz SPD Debuff 1" .target "target" .curio_result_type "negative" .chance 90% .duration 3 .buff_ids "SPD-1"  .on_hit true .on_miss false
+effect: .name "Ainz SPD Debuff 2" .target "target" .curio_result_type "negative" .chance 100% .duration 3 .buff_ids "SPD-1"  .on_hit true .on_miss false
+effect: .name "Ainz SPD Debuff 3" .target "target" .curio_result_type "negative" .chance 110% .duration 3 .buff_ids "SPD-2"  .on_hit true .on_miss false
+effect: .name "Ainz SPD Debuff 4" .target "target" .curio_result_type "negative" .chance 120% .duration 3 .buff_ids "SPD-2"  .on_hit true .on_miss false
+effect: .name "Ainz SPD Debuff 5" .target "target" .curio_result_type "negative" .chance 130% .duration 3 .buff_ids "SPD-3"  .on_hit true .on_miss false
+//Daemon's Pull
+effect: .name "Death is Debuff 1" .target "performer_group" .curio_result_type "negative" .chance 120% .health_damage 1 .stress 1 .on_hit true .on_miss false .apply_once
+effect: .name "Death is Debuff 2" .target "performer_group" .curio_result_type "negative" .chance 130% .health_damage 1 .stress 1 .on_hit true .on_miss false .apply_once
+effect: .name "Death is Debuff 3" .target "performer_group" .curio_result_type "negative" .chance 130% .health_damage 2 .stress 2 .on_hit true .on_miss false .apply_once
+effect: .name "Death is Debuff 4" .target "performer_group" .curio_result_type "negative" .chance 140% .health_damage 2 .stress 2 .on_hit true .on_miss false .apply_once
+effect: .name "Death is Debuff 5" .target "performer_group" .curio_result_type "negative" .chance 150% .health_damage 2 .stress 2 .on_hit true .on_miss false .apply_once
+
+effect: .name "Death is Goal 1" .target "target" .curio_result_type "negative" .chance 120%  .dotPoison 6 .duration 6	.on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Death is Goal 2" .target "target" .curio_result_type "negative" .chance 130%  .dotPoison 7 .duration 6	.on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Death is Goal 3" .target "target" .curio_result_type "negative" .chance 130%  .dotPoison 8 .duration 6	.on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Death is Goal 4" .target "target" .curio_result_type "negative" .chance 140%  .dotPoison 9 .duration 6	.on_hit true .on_miss false .can_apply_on_death true
+effect: .name "Death is Goal 5" .target "target" .curio_result_type "negative" .chance 150%  .dotPoison 11 .duration 6	.on_hit true .on_miss false .can_apply_on_death true
+
+effect: .name "Death is SPD 1" .target "performer_group" .curio_result_type "negative" .chance 120%  .buff_ids "SPD-1" .duration 6 .on_hit true .on_miss false .apply_once .can_apply_on_death true
+effect: .name "Death is SPD 2" .target "performer_group" .curio_result_type "negative" .chance 130%  .buff_ids "SPD-1" .duration 6 .on_hit true .on_miss false .apply_once .can_apply_on_death true
+effect: .name "Death is SPD 3" .target "performer_group" .curio_result_type "negative" .chance 130%  .buff_ids "SPD-1" .duration 6 .on_hit true .on_miss false .apply_once .can_apply_on_death true
+effect: .name "Death is SPD 4" .target "performer_group" .curio_result_type "negative" .chance 140%  .buff_ids "SPD-1" .duration 6 .on_hit true .on_miss false .apply_once .can_apply_on_death true
+effect: .name "Death is SPD 5" .target "performer_group" .curio_result_type "negative" .chance 150%  .buff_ids "SPD-2" .duration 6 .on_hit true .on_miss false .apply_once .can_apply_on_death true
+
+------------------------------------

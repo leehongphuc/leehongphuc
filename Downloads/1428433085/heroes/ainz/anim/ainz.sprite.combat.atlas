@@ -1,0 +1,103 @@
+ainz.sprite.combat.png
+size: 1582,804
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PC-RIGHT-BOOT-BROWN
+  rotate: false
+  xy: 1512, 339
+  size: 68, 200
+  orig: 68, 200
+  offset: 0, 0
+  index: -1
+astronomer-arm1
+  rotate: true
+  xy: 2, 9
+  size: 200, 486
+  orig: 200, 486
+  offset: 0, 0
+  index: -1
+astronomer-arm2
+  rotate: true
+  xy: 966, 226
+  size: 125, 389
+  orig: 125, 389
+  offset: 0, 0
+  index: -1
+astronomer-book-open
+  rotate: false
+  xy: 1261, 64
+  size: 274, 156
+  orig: 274, 156
+  offset: 0, 0
+  index: -1
+astronomer-cloak1
+  rotate: true
+  xy: 490, 65
+  size: 144, 450
+  orig: 144, 450
+  offset: 0, 0
+  index: -1
+astronomer-hand
+  rotate: true
+  xy: 849, 15
+  size: 48, 87
+  orig: 48, 87
+  offset: 0, 0
+  index: -1
+astronomer-head
+  rotate: true
+  xy: 1357, 222
+  size: 137, 149
+  orig: 137, 149
+  offset: 0, 0
+  index: -1
+astronomer-hood
+  rotate: false
+  xy: 1313, 541
+  size: 263, 261
+  orig: 263, 261
+  offset: 0, 0
+  index: -1
+astronomer-robe
+  rotate: false
+  xy: 966, 353
+  size: 345, 449
+  orig: 345, 449
+  offset: 0, 0
+  index: -1
+astronomer-token
+  rotate: false
+  xy: 1508, 253
+  size: 69, 84
+  orig: 69, 84
+  offset: 0, 0
+  index: -1
+astronomer-tunic
+  rotate: false
+  xy: 966, 29
+  size: 293, 195
+  orig: 293, 195
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 1313, 361
+  size: 197, 178
+  orig: 197, 178
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 490, 2
+  size: 357, 61
+  orig: 357, 61
+  offset: 0, 0
+  index: -1
+staff
+  rotate: true
+  xy: 2, 211
+  size: 591, 962
+  orig: 591, 962
+  offset: 0, 0
+  index: -1

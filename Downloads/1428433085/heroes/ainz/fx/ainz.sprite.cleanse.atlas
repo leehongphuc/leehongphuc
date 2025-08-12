@@ -1,0 +1,89 @@
+ainz.sprite.cleanse.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Circle 1 BG
+  rotate: false
+  xy: 713, 732
+  size: 141, 140
+  orig: 141, 140
+  offset: 0, 0
+  index: -1
+Circle 1 Light
+  rotate: true
+  xy: 904, 879
+  size: 131, 116
+  orig: 131, 116
+  offset: 0, 0
+  index: -1
+Circle 2 BG
+  rotate: false
+  xy: 2, 102
+  size: 205, 261
+  orig: 205, 261
+  offset: 0, 0
+  index: -1
+Circle 2 Light
+  rotate: false
+  xy: 564, 563
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+Circle 2 Waves
+  rotate: false
+  xy: 713, 874
+  size: 189, 136
+  orig: 189, 136
+  offset: 0, 0
+  index: -1
+Circle 3 BG
+  rotate: false
+  xy: 326, 369
+  size: 128, 124
+  orig: 128, 124
+  offset: 0, 0
+  index: -1
+Circle 3 Light
+  rotate: false
+  xy: 2, 2
+  size: 98, 98
+  orig: 98, 98
+  offset: 0, 0
+  index: -1
+Circle 4 BG
+  rotate: true
+  xy: 713, 587
+  size: 143, 133
+  orig: 143, 133
+  offset: 0, 0
+  index: -1
+Circle 4 Light
+  rotate: false
+  xy: 209, 271
+  size: 89, 92
+  orig: 89, 92
+  offset: 0, 0
+  index: -1
+Mist
+  rotate: false
+  xy: 326, 712
+  size: 385, 298
+  orig: 385, 298
+  offset: 0, 0
+  index: -1
+Rimlight
+  rotate: false
+  xy: 326, 495
+  size: 236, 215
+  orig: 236, 215
+  offset: 0, 0
+  index: -1
+Shadow
+  rotate: false
+  xy: 2, 365
+  size: 322, 645
+  orig: 322, 645
+  offset: 0, 0
+  index: -1
