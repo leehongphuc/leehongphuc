@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trò Chơi Tu Tiên</title>
+  <script src="p5.min.js"></script>
+  <style>
+    body { 
+      margin: 0; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      background-color: #000000; 
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    canvas { display: block; }
+    #start-screen { display: block; }
+    #game-screen { display: none; text-align: center; }
+    .icon { 
+      margin: 20px; 
+      display: inline-block; 
+      text-align: center; 
+      cursor: pointer;
+    }
+    .icon img { 
+      width: 100px; 
+      height: 100px; 
+    }
+  </style>
+</head>
+<body>
+  <div id="start-screen">
+    <canvas id="canvas"></canvas>
+  </div>
+  <div id="game-screen">
+    <h1>Trò Chơi Tu Tiên - Màn Chơi</h1>
+    <div class="icon" onclick="window.location.href='nhanvat.html'">
+      <img src="images/nhan_vat.png" alt="Nhân vật" onerror="this.style.display='none';this.nextElementSibling.style.backgroundColor='red';">
+      <p style="background-color: transparent;">Nhân vật</p>
+    </div>
+    <div class="icon">
+      <img src="images/tui_do.png" alt="Túi đồ" onerror="this.style.display='none';this.nextElementSibling.style.backgroundColor='green';">
+      <p style="background-color: transparent;">Túi đồ</p>
+    </div>
+    <div class="icon">
+      <img src="images/cua_hang.png" alt="Cửa hàng" onerror="this.style.display='none';this.nextElementSibling.style.backgroundColor='blue';">
+      <p style="background-color: transparent;">Cửa hàng</p>
+    </div>
+  </div>
+  <script src="sketch.js"></script>
+</body>
+</html>
