@@ -952,7 +952,17 @@
 .hp-bar-fill[style*="width: 7%"],
 .hp-bar-fill[style*="width: 8%"],
 .hp-bar-fill[style*="width: 9%"],
-.hp-bar-fill[style*="width: 10%"] {
+.hp-bar-fill[style*="width: 10%"],
+.hp-bar-fill[style*="width: 11%"],
+.hp-bar-fill[style*="width: 12%"],
+.hp-bar-fill[style*="width: 13%"],
+.hp-bar-fill[style*="width: 14%"],
+.hp-bar-fill[style*="width: 15%"],
+.hp-bar-fill[style*="width: 16%"],
+.hp-bar-fill[style*="width: 17%"],
+.hp-bar-fill[style*="width: 18%"],
+.hp-bar-fill[style*="width: 19%"],
+.hp-bar-fill[style*="width: 20%"] {
     background: #000000 !important;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
 }
@@ -1042,39 +1052,39 @@
 
 /* Giao diện thông tin nhân vật mới - giống giao diện vật phẩm */
 .character-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    text-align: center;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
 }
 
 .stat-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .stat-info {
-    flex: 1;
-    min-width: 0;
+    width: 100%;
 }
 
 .stat-name {
     color: #cccccc;
-    font-size: 0.8rem;
-    margin-bottom: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
     font-weight: 500;
 }
 
@@ -1082,7 +1092,6 @@
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .character-image {
