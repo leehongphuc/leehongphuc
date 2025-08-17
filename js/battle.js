@@ -141,145 +141,37 @@ function updateBattleDisplay() {
     console.log('📊 Current status - Player HP:', player.hp, '/', player.maxHp, 'Enemy HP:', enemy.hp, '/', enemy.maxHp);
 }
 
-// Battle loop function
-function battleLoop() {
-    console.log('🔄 Battle loop called, battleActive:', battleActive, 'player:', !!player, 'enemy:', !!enemy);
+// Show damage number on screen
+function showDamageNumber(damage, x, y, isCrit, type) {
+    const damageDiv = document.createElement('div');
+    damageDiv.className = 'damage-number';
+    damageDiv.style.cssText = `
+        position: absolute;
+        left: ${x}px;
+        top: ${y}px;
+        color: ${isCrit ? '#ff0000' : (type === 'enemy' ? '#ffff00' : '#ff6666')};
+        font-size: ${isCrit ? '28px' : '20px'};
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        z-index: 1000;
+        pointer-events: none;
+        animation: damageFloat 2s ease-out forwards;
+    `;
     
-    if (!battleActive || !player || !enemy) {
-        console.log('❌ Battle loop stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
-        return;
-    }
+    damageDiv.textContent = `-${damage}${isCrit ? ' CRIT!' : ''}`;
     
-    console.log('⚔️ Current turn:', currentTurn, 'Player HP:', player.hp, 'Enemy HP:', enemy.hp);
-    
-    if (currentTurn === 'player') {
-        console.log('👤 Player turn - calculating damage...');
-        // Player's turn
-        const damage = calculateDamage(player, enemy);
-        enemy.hp = Math.max(0, enemy.hp - damage.damage);
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(damageDiv);
         
-        // Add damage display
-        damageDisplay.push({
-            damage: damage.damage,
-            x: 250, // Center of battle scene
-            y: 150, // Above enemy
-            time: 2,
-            isCrit: damage.isCrit,
-            type: 'enemy'
-        });
-        
-        // Show damage number on screen
-        showDamageNumber(damage.damage, 250, 150, damage.isCrit, 'enemy');
-        
-        // Enemy shake effect
-        enemyShake = true;
-        const enemyElement = document.querySelector('.battle-enemy');
-        if (enemyElement) {
-            enemyElement.classList.add('shake');
-            setTimeout(() => { 
-                enemyElement.classList.remove('shake');
-                enemyShake = false; 
-            }, 500);
-        }
-        
-        battleLog.push({ 
-            text: `Bạn gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho ${enemy.name}!`, 
-            type: 'player' 
-        });
-        
-        currentTurn = 'enemy';
-        
-        // Check if enemy is defeated
-        if (enemy.hp <= 0) {
-            endBattle(true);
-            return;
-        }
-        
-        // Enemy's turn after a delay
-        console.log('⏰ Scheduling enemy turn in 1 second...');
+        // Remove after animation
         setTimeout(() => {
-            if (battleActive) {
-                console.log('👹 Executing scheduled enemy turn...');
-                enemyTurn();
-            } else {
-                console.log('❌ Battle no longer active, enemy turn cancelled');
+            if (damageDiv.parentNode) {
+                damageDiv.remove();
             }
-        }, 1000);
-        
-    } else {
-        // Enemy's turn
-        console.log('👹 Executing immediate enemy turn...');
-        enemyTurn();
+        }, 2000);
     }
-    
-    // Update display
-    updateBattleDisplay();
-    console.log('🔄 Battle loop completed, updating display...');
-}
-
-// Enemy turn function
-function enemyTurn() {
-    console.log('👹 Enemy turn - calculating damage...');
-    if (!battleActive || !player || !enemy) {
-        console.log('❌ Enemy turn stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
-        return;
-    }
-    
-    const damage = calculateDamage(enemy, player);
-    player.hp = Math.max(0, player.hp - damage.damage);
-    
-            // Add damage display
-        damageDisplay.push({
-            damage: damage.damage,
-            x: 250, // Center of battle scene
-            y: 500, // Above player
-            time: 2,
-            isCrit: damage.isCrit,
-            type: 'player'
-        });
-        
-        // Show damage number on screen
-        showDamageNumber(damage.damage, 250, 500, damage.isCrit, 'player');
-    
-            // Player shake effect
-        playerShake = true;
-        const playerElement = document.querySelector('.battle-player');
-        if (playerElement) {
-            playerElement.classList.add('shake');
-            setTimeout(() => { 
-                playerElement.classList.remove('shake');
-                playerShake = false; 
-            }, 500);
-        }
-    
-    battleLog.push({ 
-        text: `${enemy.name} gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho bạn!`, 
-        type: 'enemy' 
-    });
-    
-    currentTurn = 'player';
-    
-    // Check if player is defeated
-    if (player.hp <= 0) {
-        console.log('💀 Player defeated, ending battle...');
-        endBattle(false);
-        return;
-    }
-    
-    // Schedule next player turn
-    console.log('⏰ Scheduling next player turn in 1 second...');
-    setTimeout(() => {
-        if (battleActive) {
-            console.log('👤 Executing scheduled player turn...');
-            battleLoop();
-        } else {
-            console.log('❌ Battle no longer active, player turn cancelled');
-        }
-    }, 1000);
-    
-    // Update display
-    updateBattleDisplay();
-    console.log('👹 Enemy turn completed, next turn scheduled...');
 }
 
 // Show material drop popup
@@ -488,6 +380,147 @@ function loadBattleAssets() {
     enemy2HTMLImg.src = 'images/dungeon_2.png';
 }
 
+// Battle loop function
+function battleLoop() {
+    console.log('🔄 Battle loop called, battleActive:', battleActive, 'player:', !!player, 'enemy:', !!enemy);
+    
+    if (!battleActive || !player || !enemy) {
+        console.log('❌ Battle loop stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
+        return;
+    }
+    
+    console.log('⚔️ Current turn:', currentTurn, 'Player HP:', player.hp, 'Enemy HP:', enemy.hp);
+    
+    if (currentTurn === 'player') {
+        console.log('👤 Player turn - calculating damage...');
+        // Player's turn
+        const damage = calculateDamage(player, enemy);
+        enemy.hp = Math.max(0, enemy.hp - damage.damage);
+        
+        // Add damage display
+        damageDisplay.push({
+            damage: damage.damage,
+            x: 250, // Center of battle scene
+            y: 150, // Above enemy
+            time: 2,
+            isCrit: damage.isCrit,
+            type: 'enemy'
+        });
+        
+        // Show damage number on screen
+        showDamageNumber(damage.damage, 250, 150, damage.isCrit, 'enemy');
+        
+        // Enemy shake effect
+        enemyShake = true;
+        const enemyElement = document.querySelector('.battle-enemy');
+        if (enemyElement) {
+            enemyElement.classList.add('shake');
+            setTimeout(() => { 
+                enemyElement.classList.remove('shake');
+                enemyShake = false; 
+            }, 500);
+        }
+        
+        battleLog.push({ 
+            text: `Bạn gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho ${enemy.name}!`, 
+            type: 'player' 
+        });
+        
+        currentTurn = 'enemy';
+        
+        // Check if enemy is defeated
+        if (enemy.hp <= 0) {
+            endBattle(true);
+            return;
+        }
+        
+        // Enemy's turn after a delay
+        console.log('⏰ Scheduling enemy turn in 1 second...');
+        setTimeout(() => {
+            if (battleActive) {
+                console.log('👹 Executing scheduled enemy turn...');
+                enemyTurn();
+            } else {
+                console.log('❌ Battle no longer active, enemy turn cancelled');
+            }
+        }, 1000);
+        
+    } else {
+        // Enemy's turn
+        console.log('👹 Executing immediate enemy turn...');
+        enemyTurn();
+    }
+    
+    // Update display
+    updateBattleDisplay();
+    console.log('🔄 Battle loop completed, updating display...');
+}
+
+// Enemy turn function
+function enemyTurn() {
+    console.log('👹 Enemy turn - calculating damage...');
+    if (!battleActive || !player || !enemy) {
+        console.log('❌ Enemy turn stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
+        return;
+    }
+    
+    const damage = calculateDamage(enemy, player);
+    player.hp = Math.max(0, player.hp - damage.damage);
+    
+    // Add damage display
+    damageDisplay.push({
+        damage: damage.damage,
+        x: 250, // Center of battle scene
+        y: 500, // Above player
+        time: 2,
+        isCrit: damage.isCrit,
+        type: 'player'
+    });
+    
+    // Show damage number on screen
+    showDamageNumber(damage.damage, 250, 500, damage.isCrit, 'player');
+    
+    // Player shake effect
+    playerShake = true;
+    const playerElement = document.querySelector('.battle-player');
+    if (playerElement) {
+        playerElement.classList.add('shake');
+        setTimeout(() => { 
+            playerElement.classList.remove('shake');
+            playerShake = false; 
+        }, 500);
+    }
+    
+    battleLog.push({ 
+        text: `${enemy.name} gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho bạn!`, 
+        type: 'enemy' 
+    });
+    
+    currentTurn = 'player';
+    
+    // Check if player is defeated
+    if (player.hp <= 0) {
+        console.log('💀 Player defeated, ending battle...');
+        endBattle(false);
+        return;
+    }
+    
+    // Schedule next player turn
+    console.log('⏰ Scheduling next player turn in 1 second...');
+    setTimeout(() => {
+        if (battleActive) {
+            console.log('👤 Executing scheduled player turn...');
+            battleLoop();
+        } else {
+            console.log('❌ Battle no longer active, player turn cancelled');
+        }
+    }, 1000);
+    
+    // Update display
+    updateBattleDisplay();
+    console.log('👹 Enemy turn completed, next turn scheduled...');
+}
+
 // Start battle function
 function startBattle(index, locationType) {
     console.log('Bắt đầu chiến đấu với quái:', index, 'tại địa điểm:', locationType);
@@ -616,7 +649,8 @@ function showEnemyInfoInBattle() {
                     <span class="stat-label">Tấn công Phép Thuật:</span>
                     <span class="stat-value">${enemy.magicDamage}</span>
                 </div>
-                <div class="stat-label">Chí mạng:</span>
+                <div class="stat-row">
+                    <span class="stat-label">Chí mạng:</span>
                     <span class="stat-value">${enemy.criticalChance}%</span>
                 </div>
                 <div class="stat-row">
@@ -741,130 +775,6 @@ function closePlayerInfoInBattle() {
 
 function closeItemRewardPopup() {
     console.log('Close item reward popup - placeholder');
-}
-
-// Show damage number on screen
-function showDamageNumber(damage, x, y, isCrit, type) {
-    const damageDiv = document.createElement('div');
-    damageDiv.className = 'damage-number';
-    damageDiv.style.cssText = `
-        position: absolute;
-        left: ${x}px;
-        top: ${y}px;
-        color: ${isCrit ? '#ff0000' : (type === 'enemy' ? '#ffff00' : '#ff6666')};
-        font-size: ${isCrit ? '28px' : '20px'};
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        z-index: 1000;
-        pointer-events: none;
-        animation: damageFloat 2s ease-out forwards;
-    `;
-    
-    damageDiv.textContent = `-${damage}${isCrit ? ' CRIT!' : ''}`;
-    
-    // Add to battle section
-    const battleSection = document.getElementById('battle-section');
-    if (battleSection) {
-        battleSection.appendChild(damageDiv);
-        
-            // Remove after animation
-    setTimeout(() => {
-        if (damageDiv.parentNode) {
-            damageDiv.remove();
-        }
-    }, 2000);
-}
-
-// Show material drop popup
-function showMaterialDropPopup(materialName, amount) {
-    const popupDiv = document.createElement('div');
-    popupDiv.className = 'material-drop-popup';
-    
-    let materialImage = '';
-    if (materialName === 'Huyền Thiết') {
-        materialImage = 'images/huyen_thiet.png';
-    } else if (materialName === 'Vàng') {
-        materialImage = 'images/vang.png';
-    } else if (materialName === 'Kinh Nghiệm') {
-        materialImage = 'images/exp.png';
-    }
-    
-    popupDiv.innerHTML = `
-        <div class="material-drop-content">
-            <div class="material-image">
-                <img src="${materialImage}" alt="${materialName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${materialName}';">
-                <div class="material-amount">+${amount}</div>
-            </div>
-            <div class="material-name">${materialName}</div>
-        </div>
-    `;
-    
-    // Remove existing popup
-    const existingPopup = document.querySelector('.material-drop-popup');
-    if (existingPopup) {
-        existingPopup.remove();
-    }
-    
-    // Add to battle section
-    const battleSection = document.getElementById('battle-section');
-    if (battleSection) {
-        battleSection.appendChild(popupDiv);
-        
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-            if (popupDiv.parentNode) {
-                popupDiv.remove();
-            }
-        }, 3000);
-    }
-}
-
-// Show reward summary
-function showRewardSummary(enemy) {
-    const summaryDiv = document.createElement('div');
-    summaryDiv.className = 'reward-summary';
-    
-    let materialText = '';
-    if (enemy.materialDrop && enemy.materialDrop.name) {
-        materialText = `<div class="reward-item">
-            <span class="reward-label">Vật phẩm:</span>
-            <span class="reward-value">${enemy.materialDrop.name} x${enemy.materialDrop.amount}</span>
-        </div>`;
-    }
-    
-    summaryDiv.innerHTML = `
-        <div class="reward-summary-content">
-            <h3>🎉 Chiến Thắng!</h3>
-            <div class="reward-list">
-                <div class="reward-item">
-                    <span class="reward-label">Kinh nghiệm:</span>
-                    <span class="reward-value">+${enemy.expReward || 50}</span>
-                </div>
-                <div class="reward-item">
-                    <span class="reward-label">Kim tệ:</span>
-                    <span class="reward-value">+${enemy.goldReward || 100}</span>
-                </div>
-                <div class="reward-item">
-                    <span class="reward-label">Linh thạch:</span>
-                    <span class="reward-value">+${enemy.spiritStonesReward || 50}</span>
-                </div>
-                ${materialText}
-            </div>
-            <button class="reward-close-btn" onclick="this.parentElement.parentElement.remove()">Đóng</button>
-        </div>
-    `;
-    
-    // Remove existing summary
-    const existingSummary = document.querySelector('.reward-summary');
-    if (existingSummary) {
-        existingSummary.remove();
-    }
-    
-    // Add to battle section
-    const battleSection = document.getElementById('battle-section');
-    if (battleSection) {
-        battleSection.appendChild(summaryDiv);
-    }
 }
 
 // Export functions to window
