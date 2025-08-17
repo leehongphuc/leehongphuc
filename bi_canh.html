@@ -12,9 +12,9 @@
         <div class="nav-bar">
             <a href="index.html" class="back-button">Trang chủ</a>
         </div>
-        <h1>Bí Cảnh - Tu Tiên</h1>
+        <h1 id="main-title">Bí Cảnh - Tu Tiên</h1>
         
-        <div class="stats-display">
+        <div class="stats-display" id="stats-display">
             <div class="stats-row">
                 <span>Cấp độ: <span id="level-display">Luyện Khí Tầng 1 (Cấp 1)</span></span>
                 <span>Kinh nghiệm: <span id="exp-display">0/100</span></span>
@@ -168,6 +168,15 @@
                 window.loadBattleAssets();
             } else {
                 console.error('loadBattleAssets function not found');
+            }
+            
+            // Additional check for startBattle function
+            if (typeof window.startBattle === 'function') {
+                console.log('✅ startBattle function is available and ready');
+            } else {
+                console.warn('⚠️ startBattle function not yet available, will retry...');
+                // Retry after a short delay
+                setTimeout(checkScriptLoadStatus, 500);
             }
         }
 

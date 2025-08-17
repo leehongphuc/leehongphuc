@@ -123,7 +123,7 @@ function startBattle(index, locationType) {
     if (typeof window.getEnemies !== 'function') {
         console.error('getEnemies function not available, waiting for main.js...');
         // Retry after a short delay
-        setTimeout(() => startBattle(index, locationType), 100);
+        setTimeout(() => startBattle(index, locationType), 200);
         return;
     }
     
@@ -961,3 +961,10 @@ window.closeItemRewardPopup = closeItemRewardPopup;
 console.log('✅ Enhanced battle.js loaded successfully');
 console.log('🔧 startBattle function exported:', typeof window.startBattle === 'function');
 console.log('🎯 All battle functions ready for use');
+
+// Ensure startBattle is immediately available
+if (typeof window.startBattle === 'function') {
+    console.log('🚀 startBattle function is ready and available');
+} else {
+    console.error('❌ startBattle function failed to export properly');
+}

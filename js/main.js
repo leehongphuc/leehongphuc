@@ -286,6 +286,13 @@ function backToEnemySelect() {
     }
     
     selectedEnemyIndex = null;
+    
+    // Show title and stats again when returning from battle
+    const mainTitle = document.getElementById('main-title');
+    const statsDisplay = document.getElementById('stats-display');
+    if (mainTitle) mainTitle.style.display = 'block';
+    if (statsDisplay) statsDisplay.style.display = 'block';
+    
     console.log('Returned to enemy selection');
 }
 
@@ -315,6 +322,13 @@ function backToLocationSelect() {
     
     selectedLocation = null;
     selectedEnemyIndex = null;
+    
+    // Show title and stats again when returning to location selection
+    const mainTitle = document.getElementById('main-title');
+    const statsDisplay = document.getElementById('stats-display');
+    if (mainTitle) mainTitle.style.display = 'block';
+    if (statsDisplay) statsDisplay.style.display = 'block';
+    
     console.log('Returned to location selection');
 }
 
@@ -348,6 +362,12 @@ function startAttack() {
         }, 800);
     }
     
+    // Hide title and stats when entering battle
+    const mainTitle = document.getElementById('main-title');
+    const statsDisplay = document.getElementById('stats-display');
+    if (mainTitle) mainTitle.style.display = 'none';
+    if (statsDisplay) statsDisplay.style.display = 'none';
+    
     // Start enhanced battle with canvas - with retry mechanism
     console.log('Attempting to start battle, checking startBattle availability...');
     console.log('window.startBattle type:', typeof window.startBattle);
@@ -356,13 +376,33 @@ function startAttack() {
         if (typeof window.startBattle === 'function') {
             console.log('startBattle found, starting battle...');
             window.startBattle(selectedEnemyIndex, selectedLocation);
-        } else if (retryCount < 10) {
-            console.log(`startBattle not ready, retrying... (${retryCount + 1}/10)`);
-            setTimeout(() => tryStartBattle(retryCount + 1), 100);
+        } else if (retryCount < 20) { // Increased retry count
+            console.log(`startBattle not ready, retrying... (${retryCount + 1}/20)`);
+            setTimeout(() => tryStartBattle(retryCount + 1), 200); // Increased delay
         } else {
             console.error('startBattle function not available after retries');
-            alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
-            backToEnemySelect();
+            // Try to load battle.js dynamically if not available
+            if (!document.querySelector('script[src*="battle.js"]')) {
+                console.log('Attempting to load battle.js dynamically...');
+                const script = document.createElement('script');
+                script.src = 'js/battle.js';
+                script.onload = () => {
+                    if (typeof window.startBattle === 'function') {
+                        window.startBattle(selectedEnemyIndex, selectedLocation);
+                    } else {
+                        alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
+                        backToEnemySelect();
+                    }
+                };
+                script.onerror = () => {
+                    alert('Lỗi: Không thể tải chức năng chiến đấu!');
+                    backToEnemySelect();
+                };
+                document.head.appendChild(script);
+            } else {
+                alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
+                backToEnemySelect();
+            }
         }
     }
     
