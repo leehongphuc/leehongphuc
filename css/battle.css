@@ -1044,11 +1044,13 @@
 
 .stat-item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat-item:last-child {
@@ -1061,21 +1063,16 @@
     padding-right: 10px;
 }
 
-.stat-info {
-    width: 100%;
-}
-
 .stat-name {
-    color: #cccccc;
+    font-weight: 600;
     font-size: 0.9rem;
-    margin-bottom: 2px;
-    font-weight: 500;
+    color: #e0e0e0;
 }
 
 .stat-value {
+    font-weight: 600;
+    font-size: 0.9rem;
     color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: bold;
 }
 
 .character-image {
