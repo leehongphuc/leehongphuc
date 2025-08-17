@@ -966,8 +966,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: transparent;
-    border: none;
+    background: #232136;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 20px;
     max-width: 400px;
@@ -975,8 +975,8 @@
     max-height: 80vh;
     overflow-y: auto;
     z-index: 1000;
-    backdrop-filter: none;
-    box-shadow: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     animation: popupSlideIn 0.3s ease-out;
 }
 
