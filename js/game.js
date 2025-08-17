@@ -554,8 +554,52 @@ function resetGame() {
     }
 }
 
+// Kiểm tra và xử lý level up
+function checkAndProcessLevelUp(gameState) {
+    while (gameState.exp >= gameState.maxExp) {
+        // Level up
+        gameState.level++;
+        gameState.exp -= gameState.maxExp;
+        gameState.potentialPoints += 5; // Tăng điểm tiềm năng
+        
+        // Tính maxExp mới
+        gameState.maxExp = Math.floor(gameState.maxExp * 1.2);
+        
+        // Cập nhật level tier và sub tier
+        if (gameState.level <= 10) {
+            gameState.levelTier = "Luyện Khí";
+            gameState.levelSubTier = `Tầng ${gameState.level}`;
+        } else if (gameState.level <= 20) {
+            gameState.levelTier = "Trúc Cơ";
+            gameState.levelSubTier = `Tầng ${gameState.level - 10}`;
+        } else if (gameState.level <= 30) {
+            gameState.levelTier = "Kim Đan";
+            gameState.levelSubTier = `Tầng ${gameState.level - 20}`;
+        } else if (gameState.level <= 40) {
+            gameState.levelTier = "Nguyên Anh";
+            gameState.levelSubTier = `Tầng ${gameState.level - 30}`;
+        } else {
+            gameState.levelTier = "Hóa Thần";
+            gameState.levelSubTier = `Tầng ${gameState.level - 40}`;
+        }
+        
+        // Tăng stats cơ bản
+        gameState.stats.hp.base += 100;
+        gameState.stats.physicalDamage.base += 10;
+        gameState.stats.magicDamage.base += 10;
+        gameState.stats.physicalDefense.base += 2;
+        gameState.stats.magicDefense.base += 2;
+        
+        console.log(`🎉 Level up! Đạt cấp ${gameState.level} - ${gameState.levelTier} ${gameState.levelSubTier}`);
+        console.log(`⭐ Nhận được 5 điểm tiềm năng. Tổng: ${gameState.potentialPoints}`);
+    }
+}
+
 function updateDisplay() {
     const gameState = initializeGameState();
+    
+    // Kiểm tra và xử lý level up
+    checkAndProcessLevelUp(gameState);
     
     const levelDisplay = document.getElementById('level-display');
     if (levelDisplay) {
@@ -584,7 +628,7 @@ function updateDisplay() {
     
     const expProgress = document.getElementById('exp-progress');
     if (expProgress) {
-        const percentage = (gameState.exp / gameState.maxExp) * 100;
+        const percentage = Math.min((gameState.exp / gameState.maxExp) * 100, 100);
         expProgress.style.width = `${percentage}%`;
     }
     

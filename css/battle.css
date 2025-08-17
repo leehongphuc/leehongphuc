@@ -920,10 +920,23 @@
 
 .hp-bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, #ff4444, #00ff00);
+    background: linear-gradient(90deg, #00ff00, #ffff00, #ff8800, #ff4444);
     border-radius: 10px;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Thanh máu quái - màu xanh dương */
+.enemy-hp-bar .hp-bar-fill {
+    background: linear-gradient(90deg, #00ffff, #0088ff, #0044ff, #0000ff);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Thanh máu người chơi - màu xanh lá */
+.player-hp-bar .hp-bar-fill {
+    background: linear-gradient(90deg, #00ff00, #88ff00, #ffff00, #ff8800);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .hp-text {

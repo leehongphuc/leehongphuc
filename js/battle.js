@@ -116,9 +116,18 @@ function updateBattleDisplay() {
     }
     
     if (enemyHpFill && enemyHpText) {
-        const enemyHpPercent = (enemy.hp / enemy.maxHp) * 100;
+        const enemyHpPercent = Math.max(0, (enemy.hp / enemy.maxHp) * 100);
         enemyHpFill.style.width = enemyHpPercent + '%';
         enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}`;
+        
+        // Ẩn thanh máu khi quái chết
+        if (enemy.hp <= 0) {
+            enemyHpFill.style.display = 'none';
+            enemyHpText.textContent = `${enemy.name}: Đã chết`;
+        } else {
+            enemyHpFill.style.display = 'block';
+        }
+        
         console.log('✅ Enemy HP updated:', enemyHpPercent + '%');
     } else {
         console.log('❌ Enemy HP elements not found');
@@ -129,9 +138,18 @@ function updateBattleDisplay() {
     const playerHpText = document.getElementById('player-hp-text');
     
     if (playerHpFill && playerHpText) {
-        const playerHpPercent = (player.hp / player.maxHp) * 100;
+        const playerHpPercent = Math.max(0, (player.hp / player.maxHp) * 100);
         playerHpFill.style.width = playerHpPercent + '%';
         playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}`;
+        
+        // Ẩn thanh máu khi người chơi chết
+        if (player.hp <= 0) {
+            playerHpFill.style.display = 'none';
+            playerHpText.textContent = `Người chơi: Đã chết`;
+        } else {
+            playerHpFill.style.display = 'block';
+        }
+        
         console.log('✅ Player HP updated:', playerHpPercent + '%');
     } else {
         console.log('❌ Player HP elements not found');
@@ -145,10 +163,28 @@ function updateBattleDisplay() {
 function showDamageNumber(damage, x, y, isCrit, type) {
     const damageDiv = document.createElement('div');
     damageDiv.className = 'damage-number';
+    
+    // Tính toán vị trí hiển thị sát thương dựa trên loại (enemy/player)
+    let displayX, displayY;
+    if (type === 'enemy') {
+        // Sát thương lên quái: hiển thị ở giữa màn hình, phía trên
+        displayX = '50%';
+        displayY = '30%';
+    } else if (type === 'player') {
+        // Sát thương lên người chơi: hiển thị ở giữa màn hình, phía dưới
+        displayX = '50%';
+        displayY = '70%';
+    } else {
+        // Vị trí mặc định
+        displayX = `${x}px`;
+        displayY = `${y}px`;
+    }
+    
     damageDiv.style.cssText = `
         position: absolute;
-        left: ${x}px;
-        top: ${y}px;
+        left: ${displayX};
+        top: ${displayY};
+        transform: translate(-50%, -50%);
         color: ${isCrit ? '#ff0000' : (type === 'enemy' ? '#ffff00' : '#ff6666')};
         font-size: ${isCrit ? '28px' : '20px'};
         font-weight: bold;
@@ -156,6 +192,8 @@ function showDamageNumber(damage, x, y, isCrit, type) {
         z-index: 1000;
         pointer-events: none;
         animation: damageFloat 2s ease-out forwards;
+        text-align: center;
+        min-width: 80px;
     `;
     
     damageDiv.textContent = `-${damage}${isCrit ? ' CRIT!' : ''}`;
