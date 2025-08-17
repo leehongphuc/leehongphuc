@@ -743,37 +743,61 @@ function showEnemyInfoInBattle() {
                 <img src="${enemy.image}" alt="${enemy.name}" onerror="this.style.display='none'; this.parentNode.innerHTML='${enemy.name}';">
             </div>
             <div class="character-stats">
-                <div class="stat-row">
-                    <span class="stat-label">Tấn công Vật Lý:</span>
-                    <span class="stat-value">${enemy.physicalDamage}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚔️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Vật Lý</div>
+                        <div class="stat-value">${enemy.physicalDamage}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Tấn công Phép Thuật:</span>
-                    <span class="stat-value">${enemy.magicDamage}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🔮</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Phép Thuật</div>
+                        <div class="stat-value">${enemy.magicDamage}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Chí mạng:</span>
-                    <span class="stat-value">${enemy.criticalChance}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">💥</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Chí mạng</div>
+                        <div class="stat-value">${enemy.criticalChance}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Sát thương chí mạng:</span>
-                    <span class="stat-value">${enemy.criticalDamage}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Sát thương chí mạng</div>
+                        <div class="stat-value">${enemy.criticalDamage}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Sinh lực:</span>
-                    <span class="stat-value">${Math.floor(enemy.hp)}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Sinh lực</div>
+                        <div class="stat-value">${Math.floor(enemy.hp)}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Phòng thủ Vật Lý:</span>
-                    <span class="stat-value">${Math.round((enemy.physicalDefense / (enemy.physicalDefense + 100)) * 100)}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Phòng thủ Vật Lý</div>
+                        <div class="stat-value">${Math.round((enemy.physicalDefense / (enemy.physicalDefense + 100)) * 100)}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
-                    <span class="stat-value">${Math.round((enemy.magicDefense / (enemy.magicDefense + 100)) * 100)}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Phòng thủ Phép Thuật</div>
+                        <div class="stat-value">${Math.round((enemy.magicDefense / (enemy.magicDefense + 100)) * 100)}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Nhanh nhẹn:</span>
-                    <span class="stat-value">${enemy.agility}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Nhanh nhẹn</div>
+                        <div class="stat-value">${enemy.agility}</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -810,37 +834,61 @@ function showPlayerInfoInBattle() {
                 <img src="images/player_1.png" alt="Người chơi" onerror="this.style.display='none'; this.parentNode.innerHTML='Người chơi';">
             </div>
             <div class="character-stats">
-                <div class="stat-row">
-                    <span class="stat-label">Tấn công Vật Lý:</span>
-                    <span class="stat-value">${player.physicalDamage || 100}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚔️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Vật Lý</div>
+                        <div class="stat-value">${player.physicalDamage || 100}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Tấn công Phép Thuật:</span>
-                    <span class="stat-value">${player.magicDamage || 50}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🔮</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Phép Thuật</div>
+                        <div class="stat-value">${player.magicDamage || 50}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Chí mạng:</span>
-                    <span class="stat-value">${player.criticalChance || 10}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">💥</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Chí mạng</div>
+                        <div class="stat-value">${player.criticalChance || 10}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Sát thương chí mạng:</span>
-                    <span class="stat-value">${player.criticalDamage || 200}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Sát thương chí mạng</div>
+                        <div class="stat-value">${player.criticalDamage || 200}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Sinh lực:</span>
-                    <span class="stat-value">${Math.floor(player.hp)}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Sinh lực</div>
+                        <div class="stat-value">${Math.floor(player.hp)}</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Phòng thủ Vật Lý:</span>
-                    <span class="stat-value">${Math.round(((player.physicalDefense || 20) / ((player.physicalDefense || 20) + 100)) * 100)}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Phòng thủ Vật Lý</div>
+                        <div class="stat-value">${Math.round(((player.physicalDefense || 20) / ((player.physicalDefense || 20) + 100)) * 100)}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
-                    <span class="stat-value">${Math.round(((player.magicDefense || 15) / ((player.magicDefense || 15) + 100)) * 100)}%</span>
+                <div class="stat-item">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Phòng thủ Phép Thuật</div>
+                        <div class="stat-value">${Math.round(((player.magicDefense || 15) / ((player.magicDefense || 15) + 100)) * 100)}%</div>
+                    </div>
                 </div>
-                <div class="stat-row">
-                    <span class="stat-label">Nhanh nhẹn:</span>
-                    <span class="stat-value">${player.agility || 1.0}</span>
+                <div class="stat-item">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Nhanh nhẹn</div>
+                        <div class="stat-value">${player.agility || 1.0}</div>
+                    </div>
                 </div>
             </div>
         </div>

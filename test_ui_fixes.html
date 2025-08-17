@@ -151,6 +151,62 @@
             text-align: center;
             font-style: italic;
         }
+        
+        /* Giao diện thông tin nhân vật mới */
+        .character-stats-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            background: rgba(0, 0, 0, 0.7);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .stat-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+        
+        .stat-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .stat-name {
+            color: #cccccc;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        
+        .stat-value {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -167,6 +223,9 @@
                 <br><strong>Vấn đề 5:</strong> Thông tin nhân vật sinh lực hiển thị HP gốc - Đã sửa để hiển thị HP hiện tại
                 <br><strong>Vấn đề 6:</strong> Trong túi đồ có "nguyên liệu là kinh nghiệm" - Đã loại bỏ kinh nghiệm khỏi nguyên liệu
                 <br><strong>Vấn đề 7:</strong> Vật phẩm cần tên và số lượng (chữ nhỏ) - Đã cải thiện giao diện
+                <br><strong>Vấn đề 8:</strong> Thanh máu màu đỏ khi bị trừ phần bị trừ sẽ mất màu luôn - Đã sửa để giữ màu đỏ
+                <br><strong>Vấn đề 9:</strong> Số lượng sẽ hiện "Số lượng: 700" chứ không phải chỉ hiện "700" - Đã thêm chữ "Số lượng:" và màu trắng
+                <br><strong>Vấn đề 10:</strong> Phần hiển thị thông tin người chơi giống phần giao diện hiển thị vật phẩm - Đã cải thiện giao diện
             </div>
         </div>
 
@@ -179,6 +238,9 @@
                 <li><strong>Sửa logic đóng popup:</strong> Thêm hàm closeMaterialDropPopup() và export ra window</li>
                 <li><strong>Loại bỏ kinh nghiệm:</strong> Kinh nghiệm không còn hiển thị trong nguyên liệu</li>
                 <li><strong>Cải thiện giao diện vật phẩm:</strong> Tên rõ ràng, số lượng chữ nhỏ và đẹp mắt</li>
+                <li><strong>Sửa thanh máu mất màu:</strong> Thêm CSS để giữ màu đỏ khi HP thấp</li>
+                <li><strong>Cải thiện hiển thị số lượng:</strong> Thêm chữ "Số lượng:" và đổi màu trắng</li>
+                <li><strong>Giao diện thông tin nhân vật:</strong> Thiết kế mới giống giao diện vật phẩm với icon và layout đẹp</li>
             </ul>
         </div>
 
@@ -224,7 +286,7 @@
                     <div class="inventory-image">🗡️</div>
                     <div class="inventory-info">
                         <div class="inventory-name">Dạ Phiến</div>
-                        <div class="inventory-amount">1</div>
+                        <div class="inventory-amount">Số lượng: 1</div>
                     </div>
                 </div>
                 
@@ -232,7 +294,7 @@
                     <div class="inventory-image">💎</div>
                     <div class="inventory-info">
                         <div class="inventory-name">Huyền Thiết</div>
-                        <div class="inventory-amount">150</div>
+                        <div class="inventory-amount">Số lượng: 150</div>
                     </div>
                 </div>
                 
@@ -240,7 +302,7 @@
                     <div class="inventory-image">💰</div>
                     <div class="inventory-info">
                         <div class="inventory-name">Vàng</div>
-                        <div class="inventory-amount">500</div>
+                        <div class="inventory-amount">Số lượng: 500</div>
                     </div>
                 </div>
                 
@@ -249,6 +311,45 @@
                     <div class="inventory-info">
                         <div class="inventory-name">Rương Quà</div>
                         <div class="inventory-type">Rương</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Test Giao Diện Thông Tin Nhân Vật</h2>
+            <p>Giao diện thông tin nhân vật mới - giống giao diện vật phẩm:</p>
+            
+            <div class="character-stats-demo">
+                <div class="stat-item">
+                    <div class="stat-icon">⚔️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Vật Lý</div>
+                        <div class="stat-value">150</div>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">🔮</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Tấn công Phép Thuật</div>
+                        <div class="stat-value">80</div>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">❤️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Sinh lực</div>
+                        <div class="stat-value">1200</div>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">🛡️</div>
+                    <div class="stat-info">
+                        <div class="stat-name">Phòng thủ Vật Lý</div>
+                        <div class="stat-value">25%</div>
                     </div>
                 </div>
             </div>
@@ -305,6 +406,29 @@
                 <li>Thêm CSS cho inventory-amount với chữ nhỏ, màu xanh lá</li>
                 <li>Thêm CSS cho inventory-type với chữ nhỏ, màu xám</li>
                 <li>Giao diện vật phẩm đẹp mắt và dễ đọc hơn</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 8: Thanh Máu Mất Màu Khi HP Thấp</h3>
+            <ul class="feature-list">
+                <li>Thêm CSS để giữ màu đỏ khi HP thấp (0-5%)</li>
+                <li>Sử dụng !important để đảm bảo màu đỏ được áp dụng</li>
+                <li>Thêm transition cho thanh máu để mượt mà hơn</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 9: Hiển Thị Số Lượng</h3>
+            <ul class="feature-list">
+                <li>Thay đổi từ chỉ hiển thị số lượng thành "Số lượng: X"</li>
+                <li>Đổi màu từ xanh lá thành trắng để dễ đọc hơn</li>
+                <li>Thay đổi background và border thành màu trắng</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 10: Giao Diện Thông Tin Nhân Vật</h3>
+            <ul class="feature-list">
+                <li>Thay đổi từ stat-row thành stat-item với layout mới</li>
+                <li>Thêm icon cho từng thuộc tính (⚔️, 🔮, ❤️, 🛡️, v.v.)</li>
+                <li>Sử dụng grid layout để hiển thị đẹp mắt</li>
+                <li>Thêm hiệu ứng hover và transition</li>
+                <li>Giao diện giống giao diện vật phẩm với icon và layout đẹp</li>
             </ul>
         </div>
 

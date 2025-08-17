@@ -931,12 +931,25 @@
 .enemy-hp-bar .hp-bar-fill {
     background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transition: width 0.3s ease;
 }
 
 /* Thanh máu người chơi - màu đỏ */
 .player-hp-bar .hp-bar-fill {
     background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transition: width 0.3s ease;
+}
+
+/* Thanh máu khi HP thấp - giữ màu đỏ */
+.hp-bar-fill[style*="width: 0%"],
+.hp-bar-fill[style*="width: 1%"],
+.hp-bar-fill[style*="width: 2%"],
+.hp-bar-fill[style*="width: 3%"],
+.hp-bar-fill[style*="width: 4%"],
+.hp-bar-fill[style*="width: 5%"] {
+    background: #ff0000 !important;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8) !important;
 }
 
 .hp-text {
@@ -1020,6 +1033,62 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+}
+
+/* Giao diện thông tin nhân vật mới - giống giao diện vật phẩm */
+.character-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.stat-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.stat-name {
+    color: #cccccc;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .character-image {

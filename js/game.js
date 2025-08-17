@@ -928,7 +928,7 @@ function updateInventoryDisplay() {
                 </div>
                 <div class="inventory-info">
                     <div class="inventory-name" ${qualityStyle}>${name}</div>
-                    <div class="inventory-amount">${count}</div>
+                    <div class="inventory-amount">Số lượng: ${count}</div>
                 </div>
             `;
             materialsGrid.appendChild(materialItem);
