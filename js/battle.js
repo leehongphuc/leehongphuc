@@ -76,12 +76,20 @@ function calculateDamage(attacker, defender, useMagic = false) {
 function startBattle(index, locationType) {
     console.log('Bắt đầu chiến đấu với quái:', index, 'tại địa điểm:', locationType);
     
+    // Check if dependencies are available
+    if (typeof window.getEnemies !== 'function') {
+        console.error('getEnemies function not available, waiting for main.js...');
+        // Retry after a short delay
+        setTimeout(() => startBattle(index, locationType), 100);
+        return;
+    }
+    
     // Get enemies from main.js based on location
     let enemies;
-    if (typeof window.getEnemies === 'function') {
+    try {
         enemies = window.getEnemies(locationType);
-    } else {
-        console.error('getEnemies function not available');
+    } catch (error) {
+        console.error('Error getting enemies:', error);
         alert('Lỗi: Không thể tải thông tin quái vật!');
         return;
     }
@@ -915,7 +923,7 @@ function getTurnOrder(playerAgility, enemyAgility) {
 
 // Export functions to window
 window.startBattle = startBattle;
-window.returnToSelection = returnToSelection;
+// window.returnToSelection = returnToSelection; // REMOVED: Function no longer exists
 window.loadBattleAssets = loadBattleAssets;
 window.preload = preload;
 window.setup = setup;
@@ -923,3 +931,4 @@ window.draw = draw;
 window.battleActive = () => battleActive;
 
 console.log('Enhanced battle.js loaded successfully');
+console.log('startBattle function exported:', typeof window.startBattle === 'function');

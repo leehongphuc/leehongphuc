@@ -412,8 +412,8 @@ function initializeClickEvents() {
 function checkRequiredFunctions() {
     const requiredFunctions = [
         'initializeGameState', 
-        'updateDisplay',
-        'startBattle'
+        'updateDisplay'
+        // 'startBattle' // Removed from required check as it's loaded from battle.js
     ];
     const missingFunctions = [];
     const availableFunctions = [];
