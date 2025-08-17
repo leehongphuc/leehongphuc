@@ -348,8 +348,10 @@ function endBattle(playerWon) {
             });
         }
         
-        // Show reward summary
-        showRewardSummary(enemy);
+        // Chỉ hiển thị popup vật phẩm rớt ra, không hiển thị bảng phần thưởng
+        if (enemy.materialDrop && enemy.materialDrop.name) {
+            showMaterialDropPopup(enemy.materialDrop.name, enemy.materialDrop.amount);
+        }
     } else {
         console.log('💀 Player lost the battle!');
         battleLog.push({ 

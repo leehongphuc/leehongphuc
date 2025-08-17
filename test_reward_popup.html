@@ -77,7 +77,7 @@
             <h2>🎯 Mục Tiêu Thay Đổi</h2>
             <div class="description">
                 <strong>Trước:</strong> Hiển thị dòng "Vật phẩm: Vàng x257" trong bảng phần thưởng
-                <br><strong>Sau:</strong> Hiển thị bảng popup đẹp mắt với danh sách vật phẩm và nút X để đóng
+                <br><strong>Sau:</strong> Chỉ hiển thị popup "🎁 Vật Phẩm Rớt Ra!" với nút X để đóng
             </div>
         </div>
 
@@ -85,8 +85,8 @@
             <h2>🔧 Các Thay Đổi Đã Thực Hiện</h2>
             <ul class="feature-list">
                 <li>Bỏ dòng "Vật phẩm: Vàng x257" khỏi bảng phần thưởng</li>
-                <li>Tạo bảng popup toàn màn hình với giao diện đẹp mắt</li>
-                <li>Phân chia rõ ràng: "Phần Thưởng Cơ Bản" và "Vật Phẩm Rớt Ra"</li>
+                <li>Bỏ hoàn toàn popup "🎉 Chiến Thắng!"</li>
+                <li>Chỉ hiển thị popup "🎁 Vật Phẩm Rớt Ra!" khi có vật phẩm</li>
                 <li>Thêm nút X (đỏ) để đóng popup</li>
                 <li>Không tự động biến mất - người chơi phải click X để đóng</li>
                 <li>Hiển thị icon và thông tin vật phẩm rõ ràng</li>
@@ -94,33 +94,16 @@
         </div>
 
         <div class="test-section">
-            <h2>🧪 Test Các Popup</h2>
-            <p>Click vào các nút bên dưới để test giao diện popup:</p>
-            
-            <button class="test-button" onclick="testRewardSummary()">
-                🎉 Test Bảng Phần Thưởng Chiến Thắng
-            </button>
+            <h2>🧪 Test Popup</h2>
+            <p>Click vào nút bên dưới để test giao diện popup vật phẩm rớt ra:</p>
             
             <button class="test-button" onclick="testMaterialDrop()">
                 🎁 Test Popup Vật Phẩm Rớt Ra
-            </button>
-            
-            <button class="test-button" onclick="testBothPopups()">
-                🚀 Test Cả Hai Popup Cùng Lúc
             </button>
         </div>
 
         <div class="test-section">
             <h2>📋 Chi Tiết Giao Diện Mới</h2>
-            
-            <h3>🎉 Bảng Phần Thưởng Chiến Thắng:</h3>
-            <ul class="feature-list">
-                <li>Header với tiêu đề "🎉 Chiến Thắng!" và nút X đỏ</li>
-                <li>Phần "Phần Thưởng Cơ Bản" với icon emoji</li>
-                <li>Phần "Vật Phẩm Rớt Ra" (nếu có)</li>
-                <li>Giao diện card đẹp mắt với hover effects</li>
-                <li>Không tự động biến mất</li>
-            </ul>
             
             <h3>🎁 Popup Vật Phẩm Rớt Ra:</h3>
             <ul class="feature-list">
@@ -129,6 +112,7 @@
                 <li>Thông tin tên và số lượng vật phẩm</li>
                 <li>Giao diện popup toàn màn hình</li>
                 <li>Không tự động biến mất</li>
+                <li>Chỉ hiển thị khi có vật phẩm rớt ra</li>
             </ul>
         </div>
 
@@ -146,65 +130,6 @@
     </div>
 
     <script>
-        // Test function cho bảng phần thưởng
-        function testRewardSummary() {
-            const summaryDiv = document.createElement('div');
-            summaryDiv.className = 'reward-summary';
-            
-            summaryDiv.innerHTML = `
-                <div class="reward-summary-content">
-                    <div class="reward-header">
-                        <h3>🎉 Chiến Thắng!</h3>
-                        <button class="reward-close-btn" onclick="this.closest('.reward-summary').remove()">×</button>
-                    </div>
-                    
-                    <div class="reward-section">
-                        <h4>Phần Thưởng Cơ Bản</h4>
-                        <div class="reward-list">
-                            <div class="reward-item">
-                                <div class="reward-icon">📚</div>
-                                <div class="reward-info">
-                                    <div class="reward-label">Kinh nghiệm</div>
-                                    <div class="reward-value">+75</div>
-                                </div>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-icon">💰</div>
-                                <div class="reward-info">
-                                    <div class="reward-label">Kim tệ</div>
-                                    <div class="reward-value">+150</div>
-                                </div>
-                            </div>
-                            <div class="reward-item">
-                                <div class="reward-icon">💎</div>
-                                <div class="reward-info">
-                                    <div class="reward-label">Linh thạch</div>
-                                    <div class="reward-value">+75</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="reward-section">
-                        <h4>Vật Phẩm Rớt Ra</h4>
-                        <div class="material-drops">
-                            <div class="material-drop-item">
-                                <div class="material-icon">
-                                    <img src="images/vang.png" alt="Vàng" onerror="this.style.display='none'; this.parentNode.innerHTML='Vàng';">
-                                </div>
-                                <div class="material-info">
-                                    <div class="material-name">Vàng</div>
-                                    <div class="material-amount">+257</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            document.body.appendChild(summaryDiv);
-        }
-
         // Test function cho popup vật phẩm rơi ra
         function testMaterialDrop() {
             const popupDiv = document.createElement('div');
@@ -231,16 +156,8 @@
             document.body.appendChild(popupDiv);
         }
 
-        // Test function cho cả hai popup
-        function testBothPopups() {
-            testRewardSummary();
-            setTimeout(() => {
-                testMaterialDrop();
-            }, 500);
-        }
-
-        console.log('🧪 Test Reward Popup loaded successfully');
-        console.log('Click các nút test để xem giao diện popup mới');
+        console.log('🧪 Test Material Drop Popup loaded successfully');
+        console.log('Click nút test để xem giao diện popup vật phẩm rớt ra');
     </script>
 </body>
 </html>
