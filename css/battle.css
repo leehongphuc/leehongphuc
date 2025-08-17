@@ -927,18 +927,34 @@
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-/* Thanh máu quái - màu đen */
+/* Thanh máu quái - màu đỏ */
 .enemy-hp-bar .hp-bar-fill {
-    background: #000000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     transition: width 0.3s ease;
 }
 
-/* Thanh máu người chơi - màu đen */
+/* Thanh máu người chơi - màu đỏ */
 .player-hp-bar .hp-bar-fill {
-    background: #000000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
     transition: width 0.3s ease;
+}
+
+/* Thanh máu khi HP bị trừ - chuyển thành màu đen */
+.hp-bar-fill[style*="width: 0%"],
+.hp-bar-fill[style*="width: 1%"],
+.hp-bar-fill[style*="width: 2%"],
+.hp-bar-fill[style*="width: 3%"],
+.hp-bar-fill[style*="width: 4%"],
+.hp-bar-fill[style*="width: 5%"],
+.hp-bar-fill[style*="width: 6%"],
+.hp-bar-fill[style*="width: 7%"],
+.hp-bar-fill[style*="width: 8%"],
+.hp-bar-fill[style*="width: 9%"],
+.hp-bar-fill[style*="width: 10%"] {
+    background: #000000 !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
 }
 
 .hp-text {
