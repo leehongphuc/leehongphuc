@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sửa Đổi - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            color: white;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .test-button {
+            background: linear-gradient(45deg, #4ecdc4, #44e08f);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .status.success { background: rgba(0, 255, 0, 0.2); }
+        .status.error { background: rgba(255, 0, 0, 0.2); }
+        .status.info { background: rgba(0, 150, 255, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test Các Sửa Đổi - Tu Tiên</h1>
+        
+        <div class="test-section">
+            <h2>✅ Đã Sửa Các Vấn Đề:</h2>
+            <ul>
+                <li><strong>Trang bị đồ:</strong> Sửa lỗi khi trang bị đồ thì bị trang bị</li>
+                <li><strong>Xóa vật phẩm:</strong> Sửa vấn đề không thể xóa vật phẩm khỏi túi</li>
+                <li><strong>Giao diện vật phẩm:</strong> Cập nhật giao diện thông tin nhân vật và quái giống giao diện khi ấn vào vật phẩm</li>
+                <li><strong>Bí cảnh:</strong> Sau khi đánh quái xong, nhấn dấu X ở phần class="close-btn" trong chiến đấu bí cảnh sẽ tự thoát ra</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Các Cải Tiến Đã Thực Hiện:</h2>
+            <ul>
+                <li><strong>Hàm equipItem:</strong> Cải thiện logic trang bị, tránh trùng lặp</li>
+                <li><strong>Hàm deleteItem:</strong> Cải thiện logic xóa vật phẩm</li>
+                <li><strong>Hàm showItemDetails:</strong> Hiển thị thông tin chi tiết hơn với giao diện đẹp</li>
+                <li><strong>Nút close trong bí cảnh:</strong> Thêm logic thoát về màn hình chọn quái</li>
+                <li><strong>CSS:</strong> Cải thiện giao diện túi đồ và modal vật phẩm</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Kiểm Tra Chức Năng:</h2>
+            <button class="test-button" onclick="testGameState()">Kiểm Tra Game State</button>
+            <button class="test-button" onclick="testInventory()">Kiểm Tra Túi Đồ</button>
+            <button class="test-button" onclick="testEquipment()">Kiểm Tra Trang Bị</button>
+            <button class="test-button" onclick="testItemDetails()">Kiểm Tra Chi Tiết Vật Phẩm</button>
+        </div>
+
+        <div id="test-results"></div>
+
+        <div class="test-section">
+            <h2>📱 Cách Sử Dụng:</h2>
+            <ol>
+                <li><strong>Trang bị đồ:</strong> Vào túi đồ → chọn vật phẩm → nhấn "Mang"</li>
+                <li><strong>Xóa vật phẩm:</strong> Vào túi đồ → nhấn nút 🗑️ → xác nhận xóa</li>
+                <li><strong>Xem chi tiết:</strong> Nhấn vào ảnh vật phẩm để xem thông tin chi tiết</li>
+                <li><strong>Bí cảnh:</strong> Sau khi đánh quái → nhấn X để thoát về chọn quái</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h2>🔗 Liên Kết:</h2>
+            <a href="index.html" class="test-button">Trang Chủ</a>
+            <a href="tui_do.html" class="test-button">Túi Đồ</a>
+            <a href="nhanvat.html" class="test-button">Nhân Vật</a>
+            <a href="bi_canh.html" class="test-button">Bí Cảnh</a>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+    <script>
+        function showStatus(message, type = 'info') {
+            const results = document.getElementById('test-results');
+            const status = document.createElement('div');
+            status.className = `status ${type}`;
+            status.textContent = message;
+            results.appendChild(status);
+            
+            // Tự động xóa sau 5 giây
+            setTimeout(() => {
+                status.remove();
+            }, 5000);
+        }
+
+        function testGameState() {
+            try {
+                if (typeof window.initializeGameState === 'function') {
+                    const gameState = window.initializeGameState();
+                    showStatus(`✅ Game State khởi tạo thành công! Level: ${gameState.level}, Gold: ${gameState.gold}`, 'success');
+                } else {
+                    showStatus('❌ Không thể khởi tạo Game State', 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Lỗi khi kiểm tra Game State: ${error.message}`, 'error');
+            }
+        }
+
+        function testInventory() {
+            try {
+                if (typeof window.updateInventoryDisplay === 'function') {
+                    showStatus('✅ Hàm updateInventoryDisplay có sẵn', 'success');
+                } else {
+                    showStatus('❌ Hàm updateInventoryDisplay không có sẵn', 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Lỗi khi kiểm tra Inventory: ${error.message}`, 'error');
+            }
+        }
+
+        function testEquipment() {
+            try {
+                if (typeof window.updateEquipmentDisplay === 'function') {
+                    showStatus('✅ Hàm updateEquipmentDisplay có sẵn', 'success');
+                } else {
+                    showStatus('❌ Hàm updateEquipmentDisplay không có sẵn', 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Lỗi khi kiểm tra Equipment: ${error.message}`, 'error');
+            }
+        }
+
+        function testItemDetails() {
+            try {
+                if (typeof window.showItemDetails === 'function') {
+                    showStatus('✅ Hàm showItemDetails có sẵn', 'success');
+                } else {
+                    showStatus('❌ Hàm showItemDetails không có sẵn', 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Lỗi khi kiểm tra Item Details: ${error.message}`, 'error');
+            }
+        }
+
+        // Tự động kiểm tra khi trang load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                showStatus('🚀 Trang test đã sẵn sàng! Hãy kiểm tra các chức năng.', 'info');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

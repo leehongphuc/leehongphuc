@@ -276,37 +276,79 @@ function showItemDetails(index, isEquipped = false, fromCharacterEquip = false) 
         alert('Lỗi: Không tìm thấy modal!');
         return;
     }
-    let statsText = item.type === 'giftBag' ? 'Rương: Chứa trang bị ngẫu nhiên' : item.type === 'material' ? 'Nguyên liệu: Dùng để chế tạo trang bị' : '';
-    if (item.type !== 'giftBag' && item.type !== 'material') {
-        statsText = Object.entries(item.stats).map(([stat, value]) => {
-            const statName = stat === 'physicalDamage' ? 'Tấn công Vật Lý' :
-                stat === 'magicDamage' ? 'Tấn công Phép Thuật' :
-                stat === 'criticalChance' ? 'Chí mạng' :
-                stat === 'criticalDamage' ? 'Sát thương chí mạng' :
-                stat === 'hp' ? 'Sinh lực' :
-                stat === 'physicalDefense' ? 'Phòng thủ vật lý' :
-                stat === 'magicDefense' ? 'Phòng thủ phép thuật' : 'Nhanh nhẹn';
-            return `${statName}: ${value}${['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat) ? '%' : stat === 'agility' ? '' : ''}`;
-        }).join('<br>');
+    
+    // Tạo thông tin chi tiết hơn
+    let statsText = '';
+    let actionButtons = '';
+    
+    if (item.type === 'giftBag') {
+        statsText = '<div class="item-description">Rương: Chứa trang bị ngẫu nhiên</div>';
+        if (!isEquipped) {
+            actionButtons = `<button class="open-gift-btn" onclick="openGiftBag(${index})">Mở Rương</button>`;
+        }
+    } else if (item.type === 'material') {
+        statsText = '<div class="item-description">Nguyên liệu: Dùng để chế tạo trang bị trong Lò Rèn</div>';
+    } else {
+        // Hiển thị thống kê chi tiết cho trang bị
+        const statNames = {
+            'physicalDamage': 'Tấn công Vật Lý',
+            'magicDamage': 'Tấn công Phép Thuật',
+            'criticalChance': 'Chí mạng',
+            'criticalDamage': 'Sát thương chí mạng',
+            'hp': 'Sinh lực',
+            'physicalDefense': 'Phòng thủ Vật Lý',
+            'magicDefense': 'Phòng thủ Phép Thuật',
+            'agility': 'Nhanh nhẹn'
+        };
+        
+        statsText = '<div class="item-stats-title">Chỉ số trang bị:</div>';
+        if (item.stats && Object.keys(item.stats).length > 0) {
+            statsText += Object.entries(item.stats).map(([stat, value]) => {
+                const statName = statNames[stat] || stat;
+                const unit = ['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat) ? '%' : 
+                           stat === 'agility' ? '' : '';
+                return `<div class="stat-row"><span class="stat-label">${statName}:</span><span class="stat-value">${value}${unit}</span></div>`;
+            }).join('');
+        } else {
+            statsText += '<div class="no-stats">Không có chỉ số đặc biệt</div>';
+        }
+        
+        // Thêm nút hành động
+        if (!isEquipped) {
+            if (fromCharacterEquip) {
+                actionButtons = `<button class="equip-btn" onclick="equipItem(${index})">Mang</button>`;
+            } else {
+                actionButtons = `
+                    <button class="equip-btn" onclick="equipItem(${index})">Mang</button>
+                    <button class="unequip-btn" onclick="unequip('${item.type}')">Tháo</button>
+                `;
+            }
+        } else {
+            actionButtons = `<button class="unequip-btn" onclick="unequip('${item.type}')">Tháo</button>`;
+        }
     }
-    let actionButton = '';
-    if (item.type === 'giftBag' && !isEquipped) {
-        actionButton = `<button class="open-gift-btn" onclick="openGiftBag(${index})">Mở Rương</button>`;
-    } else if (!isEquipped && item.type !== 'giftBag' && item.type !== 'material' && fromCharacterEquip) {
-        actionButton = `<button class="equip-btn" onclick="equipItem(${index})">Mang</button>`;
-    }
+    
     const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
+    const typeName = typeNames[item.type] || item.type;
+    
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
         <div class="item-detail">
-            <img src="${item.image}" alt="${item.name}" style="width:85px;height:85px;" onerror="this.src='images/placeholder.png'">
+            <div class="item-image">
+                <img src="${item.image}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
+            </div>
             <div class="item-info">
                 <div class="item-name" ${qualityStyle}>${item.name}</div>
+                <div class="item-type">Loại: ${typeName}</div>
                 <div class="item-tier">Cấp bậc: ${item.tier}</div>
                 <div class="item-quality">Phẩm chất: <span ${qualityStyle}>${item.quality}</span></div>
-                ${item.type !== 'giftBag' && item.type !== 'material' ? `<div class="item-enhance">Tinh Luyện: ${item.enhanceLevel} lần</div>` : ''}
-                <div class="item-stats">${statsText}</div>
-                ${actionButton}
+                ${item.type !== 'giftBag' && item.type !== 'material' ? `<div class="item-enhance">Tinh Luyện: +${item.enhanceLevel}</div>` : ''}
+                <div class="item-stats-container">
+                    ${statsText}
+                </div>
+                <div class="item-actions">
+                    ${actionButtons}
+                </div>
             </div>
         </div>
     `;
@@ -340,12 +382,17 @@ function equipItem(index) {
     console.log('Trang bị vật phẩm:', JSON.stringify(item, null, 2));
     console.log('Trang bị hiện tại trước:', JSON.stringify(gameState.equipment[item.type], null, 2));
 
-    if (gameState.equipment[item.type].equipped) {
+    // Kiểm tra và tháo trang bị hiện tại nếu có
+    if (gameState.equipment[item.type] && gameState.equipment[item.type].equipped) {
         const currentItem = { ...gameState.equipment[item.type] };
         delete currentItem.equipped;
-        gameState.inventory.push(currentItem);
+        // Đảm bảo không bị trùng lặp
+        if (!gameState.inventory.some(invItem => invItem.name === currentItem.name && invItem.type === currentItem.type)) {
+            gameState.inventory.push(currentItem);
+        }
     }
 
+    // Trang bị vật phẩm mới
     gameState.equipment[item.type] = {
         name: item.name,
         equipped: true,
@@ -356,16 +403,29 @@ function equipItem(index) {
         stats: { ...item.stats },
         enhanceLevel: item.enhanceLevel || 0
     };
+    
+    // Xóa vật phẩm khỏi túi đồ
     gameState.inventory.splice(index, 1);
 
     saveGameState();
     updateEquipmentBonuses();
 
+    // Cập nhật giao diện
     const equipmentGrid = document.getElementById('equipment-grid');
-    if (equipmentGrid) updateEquipmentDisplay();
-    else window.location.href = 'nhanvat.html';
+    if (equipmentGrid) {
+        updateEquipmentDisplay();
+    } else {
+        // Nếu đang ở trang nhân vật, chuyển về đó
+        if (window.location.pathname.includes('nhanvat.html')) {
+            window.location.href = 'nhanvat.html';
+        }
+    }
 
-    if (!equipmentGrid) updateInventoryDisplay();
+    // Cập nhật túi đồ nếu đang ở đó
+    if (window.location.pathname.includes('tui_do.html')) {
+        updateInventoryDisplay();
+    }
+    
     closeItemDetails();
     closeModal();
 
@@ -902,15 +962,29 @@ function deleteItem(index) {
     if (confirm('Bạn có chắc muốn xóa vật phẩm này?')) {
         const item = gameState.inventory[index];
         if (item && !item.locked) {
-            if (gameState.equipment[item.type] && gameState.equipment[item.type].equipped && gameState.equipment[item.type].name === item.name) {
+            // Kiểm tra xem vật phẩm có đang được trang bị không
+            if (gameState.equipment[item.type] && gameState.equipment[item.type].equipped && 
+                gameState.equipment[item.type].name === item.name) {
                 alert('Lỗi: Vật phẩm đang được trang bị, vui lòng tháo trước khi xóa!');
                 return;
             }
+            
+            // Xóa vật phẩm khỏi túi đồ
             gameState.inventory.splice(index, 1);
             saveGameState();
-            updateInventoryDisplay();
+            
+            // Cập nhật giao diện
+            if (window.location.pathname.includes('tui_do.html')) {
+                updateInventoryDisplay();
+            } else if (window.location.pathname.includes('nhanvat.html')) {
+                updateEquipmentDisplay();
+            }
+            
+            console.log('Đã xóa vật phẩm:', item.name, 'Túi đồ còn lại:', gameState.inventory.length);
         } else if (item && item.locked) {
             alert('Lỗi: Vật phẩm đã bị khóa, không thể xóa!');
+        } else if (!item) {
+            alert('Lỗi: Không tìm thấy vật phẩm để xóa!');
         }
     }
 }

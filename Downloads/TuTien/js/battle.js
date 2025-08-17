@@ -430,7 +430,7 @@ function showEnemyInfoInBattle() {
     infoDiv.innerHTML = `
         <div class="character-info-header">
             <h4>${enemy.name}</h4>
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closeEnemyInfo()">×</button>
         </div>
         <div class="character-info-content">
             <div class="character-image">
@@ -495,7 +495,7 @@ function showPlayerInfoInBattle() {
     infoDiv.innerHTML = `
         <div class="character-info-header">
             <h4>Thông Tin Người Chơi</h4>
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closePlayerInfo()">×</button>
         </div>
         <div class="character-info-content">
             <div class="character-image">
@@ -573,7 +573,7 @@ function showItemRewardPopup(itemType, amount) {
     
     popupDiv.innerHTML = `
         <div class="item-reward-content">
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closeRewardPopup()">×</button>
             <div class="item-image">
                 <img src="${itemImage}" alt="${itemName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${itemName}';">
                 <div class="item-amount">${amount}</div>
@@ -891,6 +891,46 @@ function getTurnOrder(playerAgility, enemyAgility) {
     return playerAgility >= enemyAgility ? 'player' : 'enemy';
 }
 
+// Functions to handle closing info panels and returning to selection
+function closeEnemyInfo() {
+    const enemyInfo = document.querySelector('.battle-character-info');
+    if (enemyInfo) {
+        enemyInfo.remove();
+    }
+    // Return to enemy selection after closing
+    if (typeof window.backToEnemySelect === 'function') {
+        window.backToEnemySelect();
+    } else {
+        returnToSelection();
+    }
+}
+
+function closePlayerInfo() {
+    const playerInfo = document.querySelector('.battle-character-info');
+    if (playerInfo) {
+        playerInfo.remove();
+    }
+    // Return to enemy selection after closing
+    if (typeof window.backToEnemySelect === 'function') {
+        window.backToEnemySelect();
+    } else {
+        returnToSelection();
+    }
+}
+
+function closeRewardPopup() {
+    const rewardPopup = document.querySelector('.item-reward-popup');
+    if (rewardPopup) {
+        rewardPopup.remove();
+    }
+    // Return to enemy selection after closing reward popup
+    if (typeof window.backToEnemySelect === 'function') {
+        window.backToEnemySelect();
+    } else {
+        returnToSelection();
+    }
+}
+
 // Export functions to window
 window.startBattle = startBattle;
 window.returnToSelection = returnToSelection;
@@ -899,5 +939,8 @@ window.preload = preload;
 window.setup = setup;
 window.draw = draw;
 window.battleActive = () => battleActive;
+window.closeEnemyInfo = closeEnemyInfo;
+window.closePlayerInfo = closePlayerInfo;
+window.closeRewardPopup = closeRewardPopup;
 
 console.log('Enhanced battle.js loaded successfully');

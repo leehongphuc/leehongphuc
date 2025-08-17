@@ -81,16 +81,190 @@
     opacity: 0.5;
 }
 
-/* Đảm bảo item-detail căn giữa */
-.item-detail {
+/* Enhanced inventory item display */
+.inventory-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
-.item-info {
-    text-align: center;
+.inventory-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.inventory-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4ecdc4, #44e08f);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.inventory-item:hover::before {
+    opacity: 1;
+}
+
+.inventory-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 15px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.inventory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.inventory-item:hover .inventory-image img {
+    transform: scale(1.1);
+}
+
+.inventory-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.inventory-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.inventory-status {
+    color: #cccccc;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.inventory-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.lock-btn, .delete-btn, .open-gift-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    min-width: 40px;
+}
+
+.lock-btn {
+    background: linear-gradient(45deg, #feca57, #ff9ff3);
+    color: #ffffff;
+}
+
+.lock-btn:hover {
+    background: linear-gradient(45deg, #e5b547, #e58fe3);
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: #ffffff;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(45deg, #e55a5a, #d44a42);
+    transform: translateY(-1px);
+}
+
+.open-gift-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+.open-gift-btn:hover {
+    background: linear-gradient(45deg, #3db8b0, #3bc87e);
+    transform: translateY(-1px);
+}
+
+/* Tab container improvements */
+.tab-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.tab-button.active {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3);
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Định nghĩa màu cho các phẩm chất */

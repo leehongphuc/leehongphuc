@@ -6,6 +6,156 @@
     width: 100%;
 }
 
+/* Enhanced Item Details Modal */
+.item-detail {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.item-image {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.item-type, .item-tier, .item-quality, .item-enhance {
+    font-size: 1rem;
+    color: #cccccc;
+    padding: 4px 0;
+}
+
+.item-stats-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-stats-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4ecdc4;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: #4ecdc4;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.no-stats {
+    color: #888888;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+.item-description {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 10px;
+}
+
+.item-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.equip-btn, .unequip-btn, .open-gift-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.equip-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+}
+
+.equip-btn:hover {
+    background: linear-gradient(45deg, #3db8b0, #3bc87e);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+.unequip-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+    color: #ffffff;
+}
+
+.unequip-btn:hover {
+    background: linear-gradient(45deg, #e55a5a, #d44a42);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.open-gift-btn {
+    background: linear-gradient(45deg, #feca57, #ff9ff3);
+    color: #ffffff;
+}
+
+.open-gift-btn:hover {
+    background: linear-gradient(45deg, #e5b547, #e58fe3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(254, 202, 87, 0.4);
+}
+
 .equipment-item {
     display: flex;
     align-items: center;
