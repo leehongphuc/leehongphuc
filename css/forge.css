@@ -81,57 +81,38 @@
 }
 
 .item-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.item-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    object-fit: contain;
 }
 
 .item-basic-info {
-    flex: 1;
+    text-align: center;
 }
 
 .item-name {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     color: #ffffff;
 }
 
-.item-quality, .item-tier {
-    font-size: 1rem;
-    color: #cccccc;
-    margin-bottom: 5px;
-}
-
-.item-stats-section {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.item-stats-section h4 {
-    color: #4ecdc4;
-    margin-bottom: 15px;
+.item-tier, .item-quality {
     font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 8px;
 }
 
 .item-stats {
     color: #ffffff;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.stat-line {
+    margin-bottom: 5px;
 }
 
 .craft-materials-section {
@@ -149,19 +130,22 @@
 
 .craft-materials {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .material-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.3s ease;
+    min-width: 80px;
 }
 
 .material-item.insufficient {
@@ -170,25 +154,17 @@
 }
 
 .material-image {
-    width: 40px;
-    height: 40px;
-    border-radius: 6px;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
     object-fit: contain;
 }
 
-.material-info {
-    flex: 1;
-}
-
-.material-name {
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 5px;
-}
-
 .material-amount {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: #00ff00;
+    text-align: center;
 }
 
 .material-amount.insufficient {
@@ -232,27 +208,42 @@
     }
     
     .item-header {
-        flex-direction: column;
         text-align: center;
-        gap: 15px;
+        padding: 15px;
     }
     
-    .item-image {
-        width: 60px;
-        height: 60px;
+    .item-name {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    .item-tier, .item-quality {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .item-stats {
+        font-size: 0.9rem;
+        margin-top: 10px;
     }
     
     .craft-materials {
-        gap: 10px;
+        gap: 20px;
+        justify-content: center;
     }
     
     .material-item {
         padding: 10px;
-        gap: 10px;
+        gap: 8px;
+        min-width: 60px;
     }
     
     .material-image {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .material-amount {
+        font-size: 0.9rem;
     }
 }
