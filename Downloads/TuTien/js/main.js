@@ -1,55 +1,183 @@
-// main.js - Enhanced initialization with detailed enemy stats
+// main.js - Enhanced initialization with 3 locations and 8 enemy levels
 
 console.log('main.js được tải');
 
 // Global variables
 let gameInitialized = false;
 let selectedEnemyIndex = null;
+let selectedLocation = null;
 let initializationTimeout = null;
 
-// Enhanced enemy data with detailed stats
-function getEnemies() {
-    return window.battleEnemies || [
-        { 
-            name: 'Quái Vật Cấp 1', 
-            image: 'images/dungeon_1.png',
-            hp: 800, 
-            maxHp: 800, 
-            physicalDamage: 80, 
-            magicDamage: 40, 
-            criticalChance: 5, 
-            criticalDamage: 150, 
-            physicalDefense: 15, 
-            magicDefense: 12, 
-            agility: 0.8,
-            expReward: 50,
-            goldReward: 100,
-            spiritStonesReward: 50,
-            materialDrop: { name: 'Huyền Thiết', chance: 0.5, amount: 10 }
-        },
-        { 
-            name: 'Quái Vật Cấp 2', 
-            image: 'images/dungeon_2.png',
-            hp: 1200, 
-            maxHp: 1200, 
-            physicalDamage: 120, 
-            magicDamage: 65, 
-            criticalChance: 8, 
-            criticalDamage: 180, 
-            physicalDefense: 20, 
-            magicDefense: 18, 
-            agility: 1.2,
-            expReward: 100,
-            goldReward: 150,
-            spiritStonesReward: 75,
-            materialDrop: { name: 'Huyền Thiết', chance: 0.7, amount: 15 }
+// Location data
+const locations = {
+    huyen_thiet: {
+        name: 'Cổ Mạch Khoáng',
+        image: 'images/huyen_thiet.png',
+        rewardType: 'Huyền Thiết',
+        rewardBase: 8, // Cấp 1 = 8 huyền thiết
+        rewardIncrement: 1 // Mỗi cấp tăng 1
+    },
+    vang: {
+        name: 'Kim Long Bảo Tàng',
+        image: 'images/vang.png',
+        rewardType: 'Vàng',
+        rewardBase: 100, // Cấp 1 = 100 vàng
+        rewardIncrement: 157 // Mỗi cấp tăng 157 (cấp 8 = 1200)
+    },
+    exp: {
+        name: 'Thông Thiên Tháp',
+        image: 'images/exp.png',
+        rewardType: 'Kinh Nghiệm',
+        rewardBase: 100, // Cấp 1 = 100 exp
+        rewardIncrement: 100 // Mỗi cấp tăng 100 (cấp 8 = 800)
+    }
+};
+
+// Enhanced enemy data with 8 levels for each location
+function getEnemies(locationType) {
+    const location = locations[locationType];
+    if (!location) return [];
+    
+    const enemies = [];
+    for (let level = 1; level <= 8; level++) {
+        const baseHP = 800 + (level - 1) * 400; // HP tăng dần
+        const baseDamage = 80 + (level - 1) * 40; // Damage tăng dần
+        const baseDefense = 15 + (level - 1) * 5; // Defense tăng dần
+        
+        const reward = location.rewardBase + (level - 1) * location.rewardIncrement;
+        
+        enemies.push({
+            name: `Quái Vật Cấp ${level}`,
+            image: `images/dungeon_${level}.png`,
+            hp: baseHP,
+            maxHp: baseHP,
+            physicalDamage: baseDamage,
+            magicDamage: Math.floor(baseDamage * 0.5),
+            criticalChance: 5 + (level - 1) * 2,
+            criticalDamage: 150 + (level - 1) * 10,
+            physicalDefense: baseDefense,
+            magicDefense: Math.floor(baseDefense * 0.8),
+            agility: 0.8 + (level - 1) * 0.2,
+            expReward: 50 + (level - 1) * 25,
+            goldReward: 100 + (level - 1) * 50,
+            spiritStonesReward: 50 + (level - 1) * 25,
+            materialDrop: { 
+                name: location.rewardType, 
+                chance: 0.5 + (level - 1) * 0.05, 
+                amount: reward 
+            }
+        });
+    }
+    
+    return enemies;
+}
+
+// Show location selection
+function showLocationSelection() {
+    const locationSection = document.getElementById('select-location-section');
+    const enemySection = document.getElementById('select-enemy-section');
+    
+    if (locationSection) {
+        locationSection.classList.add('active');
+        locationSection.classList.add('screen-transition');
+    }
+    
+    if (enemySection) {
+        enemySection.classList.remove('active');
+        enemySection.classList.add('screen-transition');
+    }
+    
+    // Remove animation class after animation completes
+    setTimeout(() => {
+        if (locationSection && locationSection.classList) {
+            locationSection.classList.remove('screen-transition');
         }
-    ];
+        if (enemySection && enemySection.classList) {
+            enemySection.classList.remove('screen-transition');
+        }
+    }, 500);
+    
+    selectedLocation = null;
+    selectedEnemyIndex = null;
+    console.log('Showing location selection');
+}
+
+// Show enemy selection for specific location
+function showEnemySelection(locationType) {
+    selectedLocation = locationType;
+    const location = locations[locationType];
+    
+    if (!location) {
+        console.error('Invalid location type:', locationType);
+        return;
+    }
+    
+    // Update location title
+    const titleElement = document.getElementById('location-title');
+    if (titleElement) {
+        titleElement.textContent = `Chọn Quái Vật - ${location.name}`;
+    }
+    
+    // Generate enemy options
+    const enemies = getEnemies(locationType);
+    const enemyContainer = document.getElementById('enemy-container');
+    
+    if (enemyContainer) {
+        enemyContainer.innerHTML = '';
+        
+        enemies.forEach((enemy, index) => {
+            const enemyElement = document.createElement('div');
+            enemyElement.className = 'enemy-option';
+            enemyElement.id = `enemy-${index}`;
+            enemyElement.onclick = () => showEnemyInfo(index);
+            
+            enemyElement.innerHTML = `
+                <div class="enemy-img">
+                    <img src="${enemy.image}" alt="${enemy.name}" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon ${index + 1}';">
+                </div>
+                <span>${enemy.name}</span>
+                <div class="enemy-stats">HP: ${enemy.hp} | Vật lý: ${enemy.physicalDamage} | Phép thuật: ${enemy.magicDamage}</div>
+            `;
+            
+            enemyContainer.appendChild(enemyElement);
+        });
+    }
+    
+    // Switch sections
+    const locationSection = document.getElementById('select-location-section');
+    const enemySection = document.getElementById('select-enemy-section');
+    
+    if (locationSection) {
+        locationSection.classList.remove('active');
+        locationSection.classList.add('screen-transition');
+    }
+    
+    if (enemySection) {
+        enemySection.classList.add('active');
+        enemySection.classList.add('screen-transition');
+    }
+    
+    // Remove animation class after animation completes
+    setTimeout(() => {
+        if (locationSection && locationSection.classList) {
+            locationSection.classList.remove('screen-transition');
+        }
+        if (enemySection && enemySection.classList) {
+            enemySection.classList.remove('screen-transition');
+        }
+    }, 500);
+    
+    console.log('Showing enemy selection for location:', locationType);
 }
 
 // Enhanced show enemy info with detailed stats
 function showEnemyInfo(index) {
-    const enemies = getEnemies();
+    if (selectedLocation === null) {
+        console.error('No location selected');
+        return;
+    }
+    
+    const enemies = getEnemies(selectedLocation);
     
     if (index < 0 || index >= enemies.length) {
         console.error('Invalid enemy index:', index);
@@ -75,14 +203,38 @@ function showEnemyInfo(index) {
     const statsDiv = document.getElementById('selected-enemy-stats');
     if (statsDiv) {
         statsDiv.innerHTML = `
-            <p>Sinh lực: <span>${enemy.hp}/${enemy.maxHp}</span></p>
-            <p>Tấn công Vật Lý: <span>${enemy.physicalDamage}</span></p>
-            <p>Tấn công Phép Thuật: <span>${enemy.magicDamage}</span></p>
-            <p>Tỷ lệ Chí mạng: <span>${enemy.criticalChance}%</span></p>
-            <p>Sát thương Chí mạng: <span>${enemy.criticalDamage}%</span></p>
-            <p>Phòng thủ Vật Lý: <span>${enemy.physicalDefense}</span></p>
-            <p>Phòng thủ Phép Thuật: <span>${enemy.magicDefense}</span></p>
-            <p>Tốc độ: <span>${enemy.agility}</span></p>
+            <div class="stat-row">
+                <span class="stat-label">Tấn công Vật Lý:</span>
+                <span class="stat-value">${enemy.physicalDamage}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Tấn công Phép Thuật:</span>
+                <span class="stat-value">${enemy.magicDamage}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Chí mạng:</span>
+                <span class="stat-value">${enemy.criticalChance}%</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Sát thương chí mạng:</span>
+                <span class="stat-value">${enemy.criticalDamage}%</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Sinh lực:</span>
+                <span class="stat-value">${enemy.hp}</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Phòng thủ Vật Lý:</span>
+                <span class="stat-value">${enemy.physicalDefense}%</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                <span class="stat-value">${enemy.magicDefense}%</span>
+            </div>
+            <div class="stat-row">
+                <span class="stat-label">Nhanh nhẹn:</span>
+                <span class="stat-value">${enemy.agility}</span>
+            </div>
         `;
     }
     
@@ -109,28 +261,10 @@ function showEnemyInfo(index) {
     console.log('Showing enhanced enemy info for index:', index, 'Enemy:', enemy);
 }
 
-// Enhanced enemy selection display
-function updateEnemySelectionDisplay() {
-    const enemies = getEnemies();
-    
-    enemies.forEach((enemy, index) => {
-        const enemyElement = document.getElementById(`enemy-${index === 0 ? '0' : '2'}`);
-        if (enemyElement) {
-            // Update enemy stats in selection screen
-            const statsDiv = enemyElement.querySelector('.enemy-stats');
-            if (statsDiv) {
-                statsDiv.innerHTML = `
-                    HP: ${enemy.hp} | Vật lý: ${enemy.physicalDamage} | Phép thuật: ${enemy.magicDamage}
-                `;
-            }
-        }
-    });
-}
-
-// Back to selection with animation
-function backToSelect() {
+// Back to enemy selection
+function backToEnemySelect() {
     const sections = ['enemy-info-section', 'battle-section'];
-    const selectSection = document.getElementById('select-enemy-section');
+    const enemySection = document.getElementById('select-enemy-section');
     
     sections.forEach(sectionId => {
         const section = document.getElementById(sectionId);
@@ -140,13 +274,13 @@ function backToSelect() {
         }
     });
     
-    if (selectSection) {
-        selectSection.classList.add('active');
-        selectSection.classList.add('screen-transition');
+    if (enemySection) {
+        enemySection.classList.add('active');
+        enemySection.classList.add('screen-transition');
         // Remove animation class after animation completes
         setTimeout(() => {
-            if (selectSection.classList) {
-                selectSection.classList.remove('screen-transition');
+            if (enemySection.classList) {
+                enemySection.classList.remove('screen-transition');
             }
         }, 500);
     }
@@ -155,15 +289,44 @@ function backToSelect() {
     console.log('Returned to enemy selection');
 }
 
+// Back to location selection
+function backToLocationSelect() {
+    const sections = ['enemy-info-section', 'battle-section', 'select-enemy-section'];
+    const locationSection = document.getElementById('select-location-section');
+    
+    sections.forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.classList.remove('active');
+            section.classList.add('screen-transition');
+        }
+    });
+    
+    if (locationSection) {
+        locationSection.classList.add('active');
+        locationSection.classList.add('screen-transition');
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            if (locationSection.classList) {
+                locationSection.classList.remove('screen-transition');
+            }
+        }, 500);
+    }
+    
+    selectedLocation = null;
+    selectedEnemyIndex = null;
+    console.log('Returned to location selection');
+}
+
 // Start attack with enhanced validation
 function startAttack() {
-    if (selectedEnemyIndex === null) {
-        console.error('No enemy selected');
-        alert('Lỗi: Chưa chọn quái vật!');
+    if (selectedEnemyIndex === null || selectedLocation === null) {
+        console.error('No enemy or location selected');
+        alert('Lỗi: Chưa chọn quái vật hoặc địa điểm!');
         return;
     }
     
-    console.log('Starting enhanced battle with enemy index:', selectedEnemyIndex);
+    console.log('Starting enhanced battle with enemy index:', selectedEnemyIndex, 'at location:', selectedLocation);
     
     // Switch to battle section with animation
     const enemyInfoSection = document.getElementById('enemy-info-section');
@@ -187,11 +350,11 @@ function startAttack() {
     
     // Start enhanced battle with canvas
     if (typeof window.startBattle === 'function') {
-        window.startBattle(selectedEnemyIndex);
+        window.startBattle(selectedEnemyIndex, selectedLocation);
     } else {
         console.error('startBattle function not available');
         alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
-        backToSelect();
+        backToEnemySelect();
     }
 }
 
@@ -199,76 +362,58 @@ function startAttack() {
 function initializeClickEvents() {
     console.log('Initializing enhanced click events...');
     
-    // Enemy selection events
-    const enemy0 = document.getElementById('enemy-0');
-    const enemy1 = document.getElementById('enemy-2');
+    // Location selection events
+    document.querySelectorAll('.location-option').forEach((option, index) => {
+        option.addEventListener('click', () => {
+            const locationType = option.getAttribute('data-location');
+            showEnemySelection(locationType);
+        });
+    });
     
-    if (enemy0) {
-        enemy0.removeEventListener('click', handleEnemy0Click);
-        enemy0.addEventListener('click', handleEnemy0Click);
-        console.log('Added enhanced click event for enemy-0');
-    } else {
-        console.warn('Enemy-0 element not found');
+    // Back to location button
+    const backToLocationBtn = document.getElementById('back-to-location-btn');
+    if (backToLocationBtn) {
+        backToLocationBtn.addEventListener('click', backToLocationSelect);
     }
     
-    if (enemy1) {
-        enemy1.removeEventListener('click', handleEnemy1Click);
-        enemy1.addEventListener('click', handleEnemy1Click);
-        console.log('Added enhanced click event for enemy-2');
-    } else {
-        console.warn('Enemy-2 element not found');
+    // Back to enemy selection button
+    const backToSelectBtn = document.getElementById('back-to-select-btn');
+    if (backToSelectBtn) {
+        backToSelectBtn.addEventListener('click', backToEnemySelect);
     }
     
-    // Battle action events
+    // Attack button
     const attackBtn = document.getElementById('attack-btn');
-    const backBtn = document.getElementById('back-to-select-btn');
-    const returnBtn = document.getElementById('return-btn');
-    
     if (attackBtn) {
-        attackBtn.removeEventListener('click', startAttack);
         attackBtn.addEventListener('click', startAttack);
-        console.log('Added enhanced click event for attack-btn');
-    } else {
-        console.warn('Attack button not found');
     }
     
-    if (backBtn) {
-        backBtn.removeEventListener('click', backToSelect);
-        backBtn.addEventListener('click', backToSelect);
-        console.log('Added enhanced click event for back-to-select-btn');
-    } else {
-        console.warn('Back button not found');
-    }
-    
+    // Return button from battle
+    const returnBtn = document.getElementById('return-btn');
     if (returnBtn) {
-        returnBtn.removeEventListener('click', backToSelect);
-        returnBtn.addEventListener('click', backToSelect);
-        console.log('Added enhanced click event for return-btn');
-    } else {
-        console.warn('Return button not found');
+        returnBtn.addEventListener('click', backToEnemySelect);
     }
     
     console.log('Enhanced click events initialized successfully');
 }
 
-// Event handlers to prevent duplicate listeners
-function handleEnemy0Click() {
-    console.log('Enemy 0 clicked');
-    showEnemyInfo(0);
-}
+// Event handlers to prevent duplicate listeners - no longer needed
+// function handleEnemy0Click() {
+//     console.log('Enemy 0 clicked');
+//     showEnemyInfo(0);
+// }
 
-function handleEnemy1Click() {
-    console.log('Enemy 1 clicked');
-    showEnemyInfo(1);
-}
+// function handleEnemy1Click() {
+//     console.log('Enemy 1 clicked');
+//     showEnemyInfo(1);
+// }
 
 // Enhanced function checking with detailed logging
 function checkRequiredFunctions() {
     const requiredFunctions = [
         'initializeGameState', 
         'updateDisplay',
-        'startBattle',
-        'battleEnemies'
+        'startBattle'
     ];
     const missingFunctions = [];
     const availableFunctions = [];
@@ -325,7 +470,7 @@ function initializeGame() {
         // Update displays
         console.log('Updating displays...');
         window.updateDisplay();
-        updateEnemySelectionDisplay();
+        // updateEnemySelectionDisplay(); // This function is no longer needed
         
         gameInitialized = true;
         console.log('Enhanced game initialization complete successfully');
@@ -400,7 +545,7 @@ function showInitializationError() {
     const missingItems = [];
     if (typeof window.initializeGameState !== 'function') missingItems.push('Game State');
     if (typeof window.startBattle !== 'function') missingItems.push('Battle System');
-    if (typeof window.battleEnemies === 'undefined') missingItems.push('Enemy Data');
+    if (typeof window.getEnemies !== 'function') missingItems.push('Enemy System');
     
     errorDiv.innerHTML = `
         <h3>Lỗi khởi tạo game nâng cao</h3>
@@ -440,7 +585,7 @@ function showInitializationError() {
             <p>Thông tin debug:</p>
             <p>Game State: ${typeof window.initializeGameState === 'function' ? 'OK' : 'Missing'}</p>
             <p>Battle System: ${typeof window.startBattle === 'function' ? 'OK' : 'Missing'}</p>
-            <p>Enemy Data: ${typeof window.battleEnemies !== 'undefined' ? 'OK' : 'Missing'}</p>
+            <p>Enemy System: ${typeof window.getEnemies === 'function' ? 'OK' : 'Missing'}</p>
         </div>
     `;
     
@@ -526,13 +671,15 @@ function showLoadingIndicator() {
     }, 5000);
 }
 
-// Make functions globally accessible
+// Make functions and variables globally accessible
 window.showEnemyInfo = showEnemyInfo;
-window.backToSelect = backToSelect;
+window.backToSelect = backToEnemySelect; // Renamed to backToEnemySelect
 window.startAttack = startAttack;
 window.initializeGame = initializeGame;
 window.retryInitialization = retryInitialization;
-window.updateEnemySelectionDisplay = updateEnemySelectionDisplay;
+window.getEnemies = getEnemies;
+window.locations = locations;
+// window.updateEnemySelectionDisplay = updateEnemySelectionDisplay; // This function is no longer needed
 
 // Enhanced initialization strategies with better logging
 console.log('Setting up enhanced initialization triggers...');

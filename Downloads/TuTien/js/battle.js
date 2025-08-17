@@ -73,18 +73,29 @@ function calculateDamage(attacker, defender, useMagic = false) {
 }
 
 // Start battle function
-function startBattle(index) {
-    console.log('Bắt đầu chiến đấu với quái:', index);
+function startBattle(index, locationType) {
+    console.log('Bắt đầu chiến đấu với quái:', index, 'tại địa điểm:', locationType);
     
-    if (index < 0 || index >= battleEnemies.length) {
+    // Get enemies from main.js based on location
+    let enemies;
+    if (typeof window.getEnemies === 'function') {
+        enemies = window.getEnemies(locationType);
+    } else {
+        console.error('getEnemies function not available');
+        alert('Lỗi: Không thể tải thông tin quái vật!');
+        return;
+    }
+    
+    if (index < 0 || index >= enemies.length) {
         console.error('Lỗi: Chỉ số quái không hợp lệ:', index);
         alert('Lỗi: Không thể chọn quái vật!');
         return;
     }
 
     // Create enemy copy and reset HP
-    enemy = { ...battleEnemies[index] };
+    enemy = { ...enemies[index] };
     enemy.hp = enemy.maxHp;
+    window.selectedLocation = locationType;
     battleActive = true;
     battleLog = [];
     damageDisplay = [];
@@ -256,46 +267,53 @@ function endBattle(playerWon) {
     }
     
     if (playerWon) {
-        // Add rewards
-        gameState.gold += enemy.goldReward;
-        gameState.spiritStones += enemy.spiritStonesReward;
+        // Add rewards based on location type ONLY
+        const location = window.locations ? window.locations[window.selectedLocation] : null;
+        let rewardMessage = '';
         
-        // Check material drop
-        if (Math.random() < enemy.materialDrop.chance) {
-            if (!gameState.materials) {
-                gameState.materials = {};
-            }
-            gameState.materials[enemy.materialDrop.name] = (gameState.materials[enemy.materialDrop.name] || 0) + enemy.materialDrop.amount;
-            battleLog.push({ text: `Nhận được ${enemy.materialDrop.amount} ${enemy.materialDrop.name}!`, type: 'reward' });
-        }
-        
-        // Gain experience
-        if (typeof window.gainExp === 'function') {
-            window.gainExp(enemy.expReward);
-        } else {
-            // Fallback exp gain
-            gameState.exp = (gameState.exp || 0) + enemy.expReward;
-            while (gameState.exp >= gameState.maxExp) {
-                gameState.level = (gameState.level || 1) + 1;
-                gameState.exp -= gameState.maxExp;
-                gameState.potentialPoints = (gameState.potentialPoints || 0) + 5;
-                // Update level tier and maxExp based on new level
-                if (gameState.level <= 13) {
-                    gameState.levelTier = "Luyện Khí";
-                    gameState.levelSubTier = `Tầng ${gameState.level}`;
-                    gameState.maxExp = gameState.level * 100;
+        if (location) {
+            // Add ONLY location-specific reward (no base rewards)
+            if (location.rewardType === 'Huyền Thiết') {
+                if (!gameState.materials) {
+                    gameState.materials = {};
                 }
+                gameState.materials[location.rewardType] = (gameState.materials[location.rewardType] || 0) + enemy.materialDrop.amount;
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
+                
+                // Show item reward popup
+                showItemRewardPopup(location.rewardType, enemy.materialDrop.amount);
+                
+            } else if (location.rewardType === 'Vàng') {
+                gameState.gold += enemy.materialDrop.amount;
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
+                
+                // Show item reward popup
+                showItemRewardPopup(location.rewardType, enemy.materialDrop.amount);
+                
+            } else if (location.rewardType === 'Kinh Nghiệm') {
+                if (typeof window.gainExp === 'function') {
+                    window.gainExp(enemy.materialDrop.amount);
+                } else {
+                    gameState.exp = (gameState.exp || 0) + enemy.materialDrop.amount;
+                }
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
+                
+                // Show item reward popup
+                showItemRewardPopup(location.rewardType, enemy.materialDrop.amount);
             }
+            
+            battleLog.push({ text: rewardMessage, type: 'reward' });
         }
+        
+        // Create reward message (only the main reward)
+        let fullRewardMessage = rewardMessage;
         
         battleLog.push({ 
-            text: `Bạn nhận được ${enemy.goldReward} Kim tệ, ${enemy.spiritStonesReward} Linh thạch, và ${enemy.expReward} kinh nghiệm!`, 
+            text: fullRewardMessage, 
             type: 'reward' 
         });
         
-        setTimeout(() => {
-            alert(`Chiến thắng! Nhận được ${enemy.goldReward} Kim tệ, ${enemy.spiritStonesReward} Linh thạch, ${enemy.expReward} kinh nghiệm!`);
-        }, 1000);
+        // Bỏ thông báo alert
     } else {
         setTimeout(() => {
             alert('Thất bại! Bạn đã bị đánh bại.');
@@ -310,11 +328,9 @@ function endBattle(playerWon) {
         window.updateDisplay();
     }
 
-    // Show return button and auto return after 3 seconds
+    // Show return button but don't auto return
     showReturnButton();
-    setTimeout(() => {
-        returnToSelection();
-    }, 3000);
+    // Không tự động thoát, người chơi phải nhấn nút X hoặc nút return
 }
 
 // Show return button
@@ -322,6 +338,15 @@ function showReturnButton() {
     let returnBtn = document.getElementById('return-btn');
     if (returnBtn && returnBtn.style) {
         returnBtn.style.display = 'block';
+        
+        // Add click event to return button
+        returnBtn.onclick = function() {
+            if (typeof window.backToEnemySelect === 'function') {
+                window.backToEnemySelect();
+            } else {
+                returnToSelection();
+            }
+        };
     }
 }
 
@@ -336,6 +361,11 @@ function returnToSelection() {
         battleSection.classList.remove('active');
         enemyInfoSection.classList.remove('active');
         selectSection.classList.add('active');
+    }
+    
+    // Hide return button
+    if (returnBtn) {
+        returnBtn.style.display = 'none';
     }
     
     if (returnBtn && returnBtn.style) {
@@ -375,6 +405,197 @@ function updateBattleLogDisplay() {
 // P5.js functions - Enhanced visual system
 let backgroundLoaded = false;
 let playerImg, enemy1Img, enemy2Img;
+
+// Handle canvas click for character info
+function handleCanvasClick() {
+    if (!battleActive) return;
+    
+    // Check if clicked on enemy (top area)
+    if (mouseY >= 80 && mouseY <= 200 && mouseX >= 190 && mouseX <= 310) {
+        showEnemyInfoInBattle();
+    }
+    
+    // Check if clicked on player (bottom area)
+    if (mouseY >= height - 180 && mouseY <= height - 80 && mouseX >= 200 && mouseX <= 300) {
+        showPlayerInfoInBattle();
+    }
+}
+
+// Show enemy info in battle
+function showEnemyInfoInBattle() {
+    if (!enemy) return;
+    
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'battle-character-info';
+    infoDiv.innerHTML = `
+        <div class="character-info-header">
+            <h4>${enemy.name}</h4>
+            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+        <div class="character-info-content">
+            <div class="character-image">
+                <img src="${enemy.image}" alt="${enemy.name}" onerror="this.style.display='none'; this.parentNode.innerHTML='${enemy.name}';">
+            </div>
+            <div class="character-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Vật Lý:</span>
+                    <span class="stat-value">${enemy.physicalDamage}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Phép Thuật:</span>
+                    <span class="stat-value">${enemy.magicDamage}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Chí mạng:</span>
+                    <span class="stat-value">${enemy.criticalChance}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sát thương chí mạng:</span>
+                    <span class="stat-value">${enemy.criticalDamage}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sinh lực:</span>
+                    <span class="stat-value">${enemy.hp}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Vật Lý:</span>
+                    <span class="stat-value">${enemy.physicalDefense}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                    <span class="stat-value">${enemy.magicDefense}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Nhanh nhẹn:</span>
+                    <span class="stat-value">${enemy.agility}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing info
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(infoDiv);
+    }
+}
+
+// Show player info in battle
+function showPlayerInfoInBattle() {
+    if (!player) return;
+    
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'battle-character-info';
+    infoDiv.innerHTML = `
+        <div class="character-info-header">
+            <h4>Thông Tin Người Chơi</h4>
+            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+        <div class="character-info-content">
+            <div class="character-image">
+                <img src="images/player_1.png" alt="Người chơi" onerror="this.style.display='none'; this.parentNode.innerHTML='Người chơi';">
+            </div>
+            <div class="character-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Vật Lý:</span>
+                    <span class="stat-value">${player.physicalDamage || 100}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Phép Thuật:</span>
+                    <span class="stat-value">${player.magicDamage || 50}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Chí mạng:</span>
+                    <span class="stat-value">${player.criticalChance || 10}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sát thương chí mạng:</span>
+                    <span class="stat-value">${player.criticalDamage || 200}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sinh lực:</span>
+                    <span class="stat-value">${player.hp}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Vật Lý:</span>
+                    <span class="stat-value">${player.physicalDefense || 20}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                    <span class="stat-value">${player.magicDefense || 15}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Nhanh nhẹn:</span>
+                    <span class="stat-value">${player.agility || 1.0}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing info
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(infoDiv);
+    }
+}
+
+// Show item reward popup
+function showItemRewardPopup(itemType, amount) {
+    const popupDiv = document.createElement('div');
+    popupDiv.className = 'item-reward-popup';
+    
+    let itemImage = '';
+    let itemName = '';
+    
+    // Set item image and name based on type
+    if (itemType === 'Huyền Thiết') {
+        itemImage = 'images/huyen_thiet.png';
+        itemName = 'Huyền Thiết';
+    } else if (itemType === 'Vàng') {
+        itemImage = 'images/vang.png';
+        itemName = 'Vàng';
+    } else if (itemType === 'Kinh Nghiệm') {
+        itemImage = 'images/exp.png';
+        itemName = 'Kinh Nghiệm';
+    }
+    
+    popupDiv.innerHTML = `
+        <div class="item-reward-content">
+            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <div class="item-image">
+                <img src="${itemImage}" alt="${itemName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${itemName}';">
+                <div class="item-amount">${amount}</div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing popup
+    const existingPopup = document.querySelector('.item-reward-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(popupDiv);
+    }
+    
+    // Không tự động ẩn, người dùng phải click X để thoát
+    // Popup sẽ hiển thị cho đến khi người chơi nhấn nút X
+}
 
 // Store raw HTML images
 let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
@@ -455,6 +676,9 @@ function setup() {
         const canvas = createCanvas(500, 600);
         canvas.parent('battle-canvas');
         console.log('Canvas created successfully');
+        
+        // Add click event for character info
+        canvas.mouseClicked(handleCanvasClick);
         
         // Assets will be loaded separately via HTML
         console.log('Canvas ready, assets loading handled separately');
@@ -610,7 +834,7 @@ function drawHealthBars() {
     fill(255);
     textAlign(LEFT, TOP);
     textSize(12);
-    text(`${enemy.name}: ${Math.floor(enemy.hp)}/${Math.floor(enemy.maxHp)}`, enemyBarX, enemyBarY - 18);
+    text(`${enemy.name}: ${Math.floor(enemy.hp)}`, enemyBarX, enemyBarY - 18);
 
     // Player health bar (below player image)
     let playerBarX = 50;
@@ -627,7 +851,7 @@ function drawHealthBars() {
     
     // Health text
     textAlign(LEFT, BOTTOM);
-    text(`Người chơi: ${Math.floor(player.hp)}/${Math.floor(player.maxHp)}`, playerBarX, playerBarY - 2);
+    text(`Người chơi: ${Math.floor(player.hp)}`, playerBarX, playerBarY - 2);
 }
 
 function drawDamageNumbers() {
