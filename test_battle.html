@@ -3,143 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Battle Canvas</title>
+    <title>Trận Đấu - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/information.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background: #232136;
             color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        
+        .battle-container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .battle-scene {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .battle-info {
+            width: 350px;
+            background: rgba(0, 0, 0, 0.8);
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .battle-info h2 {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .player-section, .enemy-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #4ecdc4;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid rgba(76, 205, 196, 0.3);
+            padding-bottom: 5px;
+        }
+        
+        .character-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .character-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .character-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .character-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            margin-right: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .character-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .character-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        
+        .character-level {
+            color: #4ecdc4;
+            font-size: 0.9rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 8px;
             text-align: center;
         }
-        #battle-canvas {
-            border: 2px solid #4ecdc4;
+        
+        .stat-label {
+            color: #888888;
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+        }
+        
+        .stat-value {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .hp-bar {
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            margin: 20px auto;
-            display: block;
+            height: 20px;
+            overflow: hidden;
+            margin-bottom: 10px;
         }
-        .test-buttons {
-            margin: 20px 0;
+        
+        .hp-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4444, #ff6666);
+            border-radius: 10px;
+            transition: width 0.3s ease;
         }
-        .btn {
-            background: #4ecdc4;
+        
+        .hp-text {
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .battle-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .action-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44e08f);
             color: white;
             border: none;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 25px;
             margin: 5px;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
-        .btn:hover {
-            background: #44e08f;
+        
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
         }
-        .status {
-            background: rgba(255,255,255,0.1);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            text-align: left;
+        
+        .action-btn:disabled {
+            background: rgba(255, 255, 255, 0.3);
+            cursor: not-allowed;
+        }
+        
+        #defaultCanvas0 {
+            width: 100% !important;
+            height: 100% !important;
+            display: block !important;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Test Battle Canvas</h1>
-        <p>Kiểm tra xem battle canvas có hoạt động không</p>
-        
-        <div class="status" id="status">
-            Đang tải...
+    <div class="battle-container">
+        <div class="battle-scene">
+            <div id="defaultCanvas0"></div>
         </div>
         
-        <div id="battle-canvas"></div>
-        
-        <div class="test-buttons">
-            <button class="btn" onclick="testLoadAssets()">Load Assets</button>
-            <button class="btn" onclick="testStartBattle()">Start Battle</button>
-            <button class="btn" onclick="testShowImages()">Show Image Status</button>
+        <div class="battle-info">
+            <h2>Thông Tin Trận Đấu</h2>
+            
+            <div class="player-section">
+                <div class="section-title">Người Chơi</div>
+                <div class="character-card">
+                    <div class="character-header">
+                        <div class="character-avatar">
+                            <img src="images/player_1.png" alt="Player" id="player-avatar">
+                        </div>
+                        <div>
+                            <div class="character-name" id="player-name">Tu Tiên Sĩ</div>
+                            <div class="character-level">Cấp 1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hp-text">
+                        <span id="player-hp-text">1000/1000</span>
+                    </div>
+                    <div class="hp-bar">
+                        <div class="hp-fill" id="player-hp-bar" style="width: 100%"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Tấn Công</div>
+                            <div class="stat-value" id="player-attack">150</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Phòng Thủ</div>
+                            <div class="stat-value" id="player-defense">80</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Tốc Độ</div>
+                            <div class="stat-value" id="player-speed">120</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Linh Lực</div>
+                            <div class="stat-value" id="player-mp">500</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enemy-section">
+                <div class="section-title">Quái Vật</div>
+                <div class="character-card">
+                    <div class="character-header">
+                        <div class="character-avatar">
+                            <img src="images/dungeon_1.png" alt="Enemy" id="enemy-avatar">
+                        </div>
+                        <div>
+                            <div class="character-name" id="enemy-name">Quái Vật Cấp 1</div>
+                            <div class="character-level">Cấp 1</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hp-text">
+                        <span id="enemy-hp-text">800/800</span>
+                    </div>
+                    <div class="hp-bar">
+                        <div class="hp-fill" id="enemy-hp-bar" style="width: 100%"></div>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Tấn Công</div>
+                            <div class="stat-value" id="enemy-attack">120</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Phòng Thủ</div>
+                            <div class="stat-value" id="enemy-defense">60</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Tốc Độ</div>
+                            <div class="stat-value" id="enemy-speed">100</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Linh Lực</div>
+                            <div class="stat-value" id="enemy-mp">300</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="battle-actions">
+                <button class="action-btn" onclick="attack()">Tấn Công</button>
+                <button class="action-btn" onclick="useSkill()">Kỹ Năng</button>
+                <button class="action-btn" onclick="useItem()">Vật Phẩm</button>
+                <button class="action-btn" onclick="escape()">Bỏ Chạy</button>
+            </div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <script>
-        // Simple battle variables for testing
-        let player = { hp: 1000, maxHp: 1000 };
-        let enemy = { name: 'Quái Vật Cấp 1', hp: 800, maxHp: 800 };
+        // Battle variables
+        let player = { 
+            hp: 1000, 
+            maxHp: 1000, 
+            attack: 150, 
+            defense: 80, 
+            speed: 120, 
+            mp: 500,
+            maxMp: 500
+        };
+        
+        let enemy = { 
+            name: 'Quái Vật Cấp 1', 
+            hp: 800, 
+            maxHp: 800, 
+            attack: 120, 
+            defense: 60, 
+            speed: 100, 
+            mp: 300,
+            maxMp: 300
+        };
+        
         let battleActive = false;
         let backgroundLoaded = false;
-        let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
-
-        // Helper function to safely draw HTML images
-        function drawHTMLImage(htmlImg, x, y, w, h) {
-            if (!htmlImg || !htmlImg.complete || htmlImg.naturalWidth === 0) {
-                return false;
-            }
-            
-            try {
-                const p5Canvas = document.querySelector('#battle-canvas canvas');
-                if (p5Canvas) {
-                    const ctx = p5Canvas.getContext('2d');
-                    ctx.drawImage(htmlImg, x, y, w, h);
-                    return true;
-                }
-            } catch (error) {
-                console.error('Error drawing HTML image:', error);
-            }
-            return false;
-        }
-
-        function loadBattleAssets() {
-            console.log('Loading battle assets...');
-            updateStatus('Đang load ảnh...');
-            
-            // Load background
-            bgHTMLImg = new Image();
-            bgHTMLImg.onload = function() {
-                console.log('Background image loaded successfully');
-                backgroundLoaded = true;
-                updateStatus('Background loaded ✓');
-            };
-            bgHTMLImg.onerror = function() {
-                console.error('Failed to load background image');
-                updateStatus('Background failed ✗');
-            };
-            bgHTMLImg.src = 'images/phong_canh_1.png';
-            
-            // Load player image
-            playerHTMLImg = new Image();
-            playerHTMLImg.onload = function() {
-                console.log('Player image loaded');
-                updateStatus('Player image loaded ✓');
-            };
-            playerHTMLImg.onerror = function() {
-                console.error('Failed to load player image');
-                updateStatus('Player image failed ✗');
-            };
-            playerHTMLImg.src = 'images/player_1.png';
-            
-            // Load enemy image
-            enemy1HTMLImg = new Image();
-            enemy1HTMLImg.onload = function() {
-                console.log('Enemy 1 image loaded');
-                updateStatus('Enemy image loaded ✓');
-            };
-            enemy1HTMLImg.onerror = function() {
-                console.error('Failed to load enemy 1 image');
-                updateStatus('Enemy image failed ✗');
-            };
-            enemy1HTMLImg.src = 'images/dungeon_1.png';
-        }
+        let bgHTMLImg, playerHTMLImg, enemyHTMLImg;
 
         function setup() {
-            console.log('Setting up canvas...');
-            const canvas = createCanvas(500, 600);
-            canvas.parent('battle-canvas');
-            updateStatus('Canvas created ✓');
+            console.log('Setting up battle canvas...');
+            const canvas = createCanvas(800, 600);
+            canvas.parent('defaultCanvas0');
+            loadBattleAssets();
+            updateBattleUI();
         }
 
         function draw() {
@@ -150,7 +331,7 @@
                 fill(255, 255, 255, 100);
                 textAlign(CENTER, CENTER);
                 textSize(18);
-                text('Nhấn Start Battle để test', width/2, height/2);
+                text('Trận đấu sắp bắt đầu...', width/2, height/2);
                 return;
             }
             
@@ -162,25 +343,16 @@
                 
                 if (scaledWidth >= width) {
                     let offsetX = (scaledWidth - width) / 2;
-                    drawHTMLImage(bg, -offsetX, 0, scaledWidth, height);
+                    image(bg, -offsetX, 0, scaledWidth, height);
                 } else {
                     let offsetX = (width - scaledWidth) / 2;
-                    drawHTMLImage(bg, offsetX, 0, scaledWidth, height);
+                    image(bg, offsetX, 0, scaledWidth, height);
                 }
             }
             
             // Draw enemy
-            if (enemy1HTMLImg && enemy1HTMLImg.complete && enemy1HTMLImg.naturalWidth > 0) {
-                let success = drawHTMLImage(enemy1HTMLImg, (width - 120) / 2, 80, 120, 120);
-                if (!success) {
-                    // Fallback
-                    fill(255, 100, 100, 100);
-                    rect((width - 120) / 2, 80, 120, 120, 10);
-                    textAlign(CENTER, CENTER);
-                    textSize(14);
-                    fill(255);
-                    text('Enemy', width/2, 140);
-                }
+            if (enemyHTMLImg && enemyHTMLImg.complete && enemyHTMLImg.naturalWidth > 0) {
+                image(enemyHTMLImg, (width - 120) / 2, 80, 120, 120);
             } else {
                 // Fallback
                 fill(255, 100, 100, 100);
@@ -193,16 +365,7 @@
             
             // Draw player
             if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
-                let success = drawHTMLImage(playerHTMLImg, (width - 100) / 2, height - 180, 100, 100);
-                if (!success) {
-                    // Fallback
-                    fill(100, 200, 255, 100);
-                    rect((width - 100) / 2, height - 180, 100, 100, 10);
-                    textAlign(CENTER, CENTER);
-                    textSize(12);
-                    fill(100, 200, 255);
-                    text('Player', width/2, height - 130);
-                }
+                image(playerHTMLImg, (width - 100) / 2, height - 180, 100, 100);
             } else {
                 // Fallback
                 fill(100, 200, 255, 100);
@@ -214,33 +377,122 @@
             }
         }
 
-        function updateStatus(message) {
-            const status = document.getElementById('status');
-            status.innerHTML += '<br>' + message;
+        function loadBattleAssets() {
+            console.log('Loading battle assets...');
+            
+            // Load background
+            bgHTMLImg = loadImage('images/phong_canh_1.png', 
+                () => {
+                    console.log('Background loaded successfully');
+                    backgroundLoaded = true;
+                },
+                () => {
+                    console.error('Failed to load background image');
+                }
+            );
+            
+            // Load player image
+            playerHTMLImg = loadImage('images/player_1.png', 
+                () => console.log('Player image loaded'),
+                () => console.error('Failed to load player image')
+            );
+            
+            // Load enemy image
+            enemyHTMLImg = loadImage('images/dungeon_1.png', 
+                () => console.log('Enemy image loaded'),
+                () => console.error('Failed to load enemy image')
+            );
         }
 
-        function testLoadAssets() {
-            loadBattleAssets();
+        function updateBattleUI() {
+            // Update player stats
+            document.getElementById('player-hp-text').textContent = `${player.hp}/${player.maxHp}`;
+            document.getElementById('player-hp-bar').style.width = `${(player.hp / player.maxHp) * 100}%`;
+            document.getElementById('player-attack').textContent = player.attack;
+            document.getElementById('player-defense').textContent = player.defense;
+            document.getElementById('player-speed').textContent = player.speed;
+            document.getElementById('player-mp').textContent = player.mp;
+            
+            // Update enemy stats
+            document.getElementById('enemy-hp-text').textContent = `${enemy.hp}/${enemy.maxHp}`;
+            document.getElementById('enemy-hp-bar').style.width = `${(enemy.hp / enemy.maxHp) * 100}%`;
+            document.getElementById('enemy-attack').textContent = enemy.attack;
+            document.getElementById('enemy-defense').textContent = enemy.defense;
+            document.getElementById('enemy-speed').textContent = enemy.speed;
+            document.getElementById('enemy-mp').textContent = enemy.mp;
         }
 
-        function testStartBattle() {
-            battleActive = !battleActive;
-            updateStatus(battleActive ? 'Battle started!' : 'Battle stopped!');
+        function attack() {
+            if (!battleActive) {
+                battleActive = true;
+                return;
+            }
+            
+            // Player attacks enemy
+            let damage = Math.max(1, player.attack - enemy.defense);
+            enemy.hp = Math.max(0, enemy.hp - damage);
+            
+            // Enemy counter-attack if still alive
+            if (enemy.hp > 0) {
+                let enemyDamage = Math.max(1, enemy.attack - player.defense);
+                player.hp = Math.max(0, player.hp - enemyDamage);
+            }
+            
+            updateBattleUI();
+            
+            // Check battle end
+            if (enemy.hp <= 0) {
+                alert('Chiến thắng! Quái vật đã bị đánh bại!');
+                resetBattle();
+            } else if (player.hp <= 0) {
+                alert('Thất bại! Bạn đã bị đánh bại!');
+                resetBattle();
+            }
         }
 
-        function testShowImages() {
-            let status = 'Image Status:<br>';
-            status += 'Background: ' + (bgHTMLImg && bgHTMLImg.complete ? '✓ Loaded' : '✗ Not loaded') + '<br>';
-            status += 'Player: ' + (playerHTMLImg && playerHTMLImg.complete ? '✓ Loaded' : '✗ Not loaded') + '<br>';
-            status += 'Enemy: ' + (enemy1HTMLImg && enemy1HTMLImg.complete ? '✓ Loaded' : '✗ Not loaded');
-            updateStatus(status);
+        function useSkill() {
+            if (player.mp >= 100) {
+                player.mp -= 100;
+                let damage = Math.max(1, player.attack * 1.5 - enemy.defense);
+                enemy.hp = Math.max(0, enemy.hp - damage);
+                updateBattleUI();
+                alert(`Kỹ năng gây ${damage} sát thương!`);
+            } else {
+                alert('Không đủ linh lực!');
+            }
         }
 
-        // Auto load assets when page loads
+        function useItem() {
+            if (player.hp < player.maxHp) {
+                player.hp = Math.min(player.maxHp, player.hp + 200);
+                updateBattleUI();
+                alert('Sử dụng vật phẩm hồi máu!');
+            } else {
+                alert('Máu đã đầy!');
+            }
+        }
+
+        function escape() {
+            if (confirm('Bạn có chắc muốn bỏ chạy?')) {
+                alert('Đã bỏ chạy khỏi trận đấu!');
+                resetBattle();
+            }
+        }
+
+        function resetBattle() {
+            player.hp = player.maxHp;
+            player.mp = player.maxMp;
+            enemy.hp = enemy.maxHp;
+            enemy.mp = enemy.maxMp;
+            battleActive = false;
+            updateBattleUI();
+        }
+
+        // Auto start battle after assets load
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
-                loadBattleAssets();
-            }, 1000);
+                battleActive = true;
+            }, 2000);
         });
     </script>
 </body>
