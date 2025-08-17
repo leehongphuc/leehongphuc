@@ -513,11 +513,8 @@ function showEnemyInfoInBattle() {
         existingInfo.remove();
     }
     
-    // Add to battle section
-    const battleSection = document.getElementById('battle-section');
-    if (battleSection) {
-        battleSection.appendChild(infoDiv);
-    }
+    // Add to body for proper modal display
+    document.body.appendChild(infoDiv);
 }
 
 // Show player info in battle
@@ -578,11 +575,8 @@ function showPlayerInfoInBattle() {
         existingInfo.remove();
     }
     
-    // Add to battle section
-    const battleSection = document.getElementById('battle-section');
-    if (battleSection) {
-        battleSection.appendChild(infoDiv);
-    }
+    // Add to body for proper modal display
+    document.body.appendChild(infoDiv);
 }
 
 // Show item reward popup
@@ -745,6 +739,18 @@ function draw() {
         text('Sẵn sàng chiến đấu', width/2, height/2);
         return;
     }
+    
+    // Debug: Check if we have player and enemy
+    if (!player || !enemy) {
+        background(50, 20, 20);
+        fill(255, 200, 200);
+        textAlign(CENTER, CENTER);
+        textSize(16);
+        text('Đang tải dữ liệu chiến đấu...', width/2, height/2);
+        text(`Player: ${player ? 'OK' : 'Missing'}`, width/2, height/2 + 30);
+        text(`Enemy: ${enemy ? 'OK' : 'Missing'}`, width/2, height/2 + 60);
+        return;
+    }
 
     // Draw background
     if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
@@ -783,6 +789,7 @@ function draw() {
     // Draw enemy image at top with shake effect
     if (enemy) {
         let enemyHTMLImg = enemy.name.includes('Cấp 1') ? enemy1HTMLImg : enemy2HTMLImg;
+        console.log('Drawing enemy:', enemy.name, 'Image loaded:', !!enemyHTMLImg);
         if (enemyHTMLImg && enemyHTMLImg.complete && enemyHTMLImg.naturalWidth > 0) {
             let enemySize = 120;
             let enemyX = (width - enemySize) / 2;
@@ -817,6 +824,7 @@ function draw() {
     }
     
     // Draw player image at bottom with shake effect
+    console.log('Drawing player, Image loaded:', !!playerHTMLImg);
     if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
         let playerSize = 100;
         let playerX = (width - playerSize) / 2;
