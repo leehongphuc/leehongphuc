@@ -25,24 +25,42 @@
             </div>
         </div>
 
+        <!-- Màn hình chọn địa điểm -->
+        <div class="section active" id="select-location-section">
+            <h3>Chọn Địa Điểm Tu Luyện</h3>
+            <div class="location-select">
+                <div class="location-option" id="location-0" data-location="huyen_thiet">
+                    <div class="location-img">
+                        <img src="images/huyen_thiet.png" alt="Cổ Mạch Khoáng">
+                    </div>
+                    <span>Cổ Mạch Khoáng</span>
+                    <div class="location-desc">Rơi ra Huyền Thiết</div>
+                </div>
+                <div class="location-option" id="location-1" data-location="vang">
+                    <div class="location-img">
+                        <img src="images/vang.png" alt="Kim Long Bảo Tàng">
+                    </div>
+                    <span>Kim Long Bảo Tàng</span>
+                    <div class="location-desc">Rơi ra Vàng</div>
+                </div>
+                <div class="location-option" id="location-2" data-location="exp">
+                    <div class="location-img">
+                        <img src="images/exp.png" alt="Thông Thiên Tháp">
+                    </div>
+                    <span>Thông Thiên Tháp</span>
+                    <div class="location-desc">Rơi ra Kinh Nghiệm</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Màn hình chọn quái -->
-        <div class="section active" id="select-enemy-section">
-            <h3>Chọn Quái Vật Để Chiến Đấu</h3>
-            <div class="enemy-select">
-                <div class="enemy-option" id="enemy-0">
-                    <div class="enemy-img">
-                        <img src="images/dungeon_1.png" alt="Quái Vật Cấp 1" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 1';">
-                    </div>
-                    <span>Quái Vật Cấp 1</span>
-                    <div class="enemy-stats">HP: 800 | Damage: 80</div>
-                </div>
-                <div class="enemy-option" id="enemy-2">
-                    <div class="enemy-img">
-                        <img src="images/dungeon_2.png" alt="Quái Vật Cấp 2" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 2';">
-                    </div>
-                    <span>Quái Vật Cấp 2</span>
-                    <div class="enemy-stats">HP: 1200 | Damage: 120</div>
-                </div>
+        <div class="section" id="select-enemy-section">
+            <h3 id="location-title">Chọn Quái Vật Để Chiến Đấu</h3>
+            <div class="enemy-select" id="enemy-container">
+                <!-- Quái vật sẽ được tạo động bằng JavaScript -->
+            </div>
+            <div class="battle-actions">
+                <button class="battle-action-btn secondary" id="back-to-location-btn">← Quay lại chọn địa điểm</button>
             </div>
         </div>
 
@@ -105,3 +123,5 @@
             }
         });
     </script>
+</body>
+</html>

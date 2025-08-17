@@ -10,6 +10,7 @@ let currentTurn = null;
 let damageDisplay = [];
 let playerShake = false;
 let enemyShake = false;
+let selectedLocation = null;
 
 // Enhanced Enemy data with detailed stats
 const battleEnemies = [
@@ -73,18 +74,29 @@ function calculateDamage(attacker, defender, useMagic = false) {
 }
 
 // Start battle function
-function startBattle(index) {
-    console.log('Bắt đầu chiến đấu với quái:', index);
+function startBattle(index, locationType) {
+    console.log('Bắt đầu chiến đấu với quái:', index, 'tại địa điểm:', locationType);
     
-    if (index < 0 || index >= battleEnemies.length) {
+    // Get enemies from main.js based on location
+    let enemies;
+    if (typeof window.getEnemies === 'function') {
+        enemies = window.getEnemies(locationType);
+    } else {
+        console.error('getEnemies function not available');
+        alert('Lỗi: Không thể tải thông tin quái vật!');
+        return;
+    }
+    
+    if (index < 0 || index >= enemies.length) {
         console.error('Lỗi: Chỉ số quái không hợp lệ:', index);
         alert('Lỗi: Không thể chọn quái vật!');
         return;
     }
 
     // Create enemy copy and reset HP
-    enemy = { ...battleEnemies[index] };
+    enemy = { ...enemies[index] };
     enemy.hp = enemy.maxHp;
+    selectedLocation = locationType;
     battleActive = true;
     battleLog = [];
     damageDisplay = [];
@@ -256,20 +268,38 @@ function endBattle(playerWon) {
     }
     
     if (playerWon) {
-        // Add rewards
-        gameState.gold += enemy.goldReward;
-        gameState.spiritStones += enemy.spiritStonesReward;
+        // Add rewards based on location type
+        const location = window.locations ? window.locations[selectedLocation] : null;
+        let rewardMessage = '';
         
-        // Check material drop
-        if (Math.random() < enemy.materialDrop.chance) {
-            if (!gameState.materials) {
-                gameState.materials = {};
+        if (location) {
+            // Add base rewards
+            gameState.gold += enemy.goldReward;
+            gameState.spiritStones += enemy.spiritStonesReward;
+            
+            // Add location-specific reward
+            if (location.rewardType === 'Huyền Thiết') {
+                if (!gameState.materials) {
+                    gameState.materials = {};
+                }
+                gameState.materials[location.rewardType] = (gameState.materials[location.rewardType] || 0) + enemy.materialDrop.amount;
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
+            } else if (location.rewardType === 'Vàng') {
+                gameState.gold += enemy.materialDrop.amount;
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
+            } else if (location.rewardType === 'Kinh Nghiệm') {
+                if (typeof window.gainExp === 'function') {
+                    window.gainExp(enemy.materialDrop.amount);
+                } else {
+                    gameState.exp = (gameState.exp || 0) + enemy.materialDrop.amount;
+                }
+                rewardMessage = `Nhận được ${enemy.materialDrop.amount} ${location.rewardType}!`;
             }
-            gameState.materials[enemy.materialDrop.name] = (gameState.materials[enemy.materialDrop.name] || 0) + enemy.materialDrop.amount;
-            battleLog.push({ text: `Nhận được ${enemy.materialDrop.amount} ${enemy.materialDrop.name}!`, type: 'reward' });
+            
+            battleLog.push({ text: rewardMessage, type: 'reward' });
         }
         
-        // Gain experience
+        // Gain base experience
         if (typeof window.gainExp === 'function') {
             window.gainExp(enemy.expReward);
         } else {
@@ -288,13 +318,19 @@ function endBattle(playerWon) {
             }
         }
         
+        // Create comprehensive reward message
+        let fullRewardMessage = `Bạn nhận được ${enemy.goldReward} Kim tệ, ${enemy.spiritStonesReward} Linh thạch, ${enemy.expReward} kinh nghiệm!`;
+        if (rewardMessage) {
+            fullRewardMessage += ` ${rewardMessage}`;
+        }
+        
         battleLog.push({ 
-            text: `Bạn nhận được ${enemy.goldReward} Kim tệ, ${enemy.spiritStonesReward} Linh thạch, và ${enemy.expReward} kinh nghiệm!`, 
+            text: fullRewardMessage, 
             type: 'reward' 
         });
         
         setTimeout(() => {
-            alert(`Chiến thắng! Nhận được ${enemy.goldReward} Kim tệ, ${enemy.spiritStonesReward} Linh thạch, ${enemy.expReward} kinh nghiệm!`);
+            alert(`Chiến thắng! ${fullRewardMessage}`);
         }, 1000);
     } else {
         setTimeout(() => {
@@ -313,7 +349,11 @@ function endBattle(playerWon) {
     // Show return button and auto return after 3 seconds
     showReturnButton();
     setTimeout(() => {
-        returnToSelection();
+        if (typeof window.backToEnemySelect === 'function') {
+            window.backToEnemySelect();
+        } else {
+            returnToSelection();
+        }
     }, 3000);
 }
 
@@ -322,6 +362,15 @@ function showReturnButton() {
     let returnBtn = document.getElementById('return-btn');
     if (returnBtn && returnBtn.style) {
         returnBtn.style.display = 'block';
+        
+        // Add click event to return button
+        returnBtn.onclick = function() {
+            if (typeof window.backToEnemySelect === 'function') {
+                window.backToEnemySelect();
+            } else {
+                returnToSelection();
+            }
+        };
     }
 }
 
@@ -336,6 +385,11 @@ function returnToSelection() {
         battleSection.classList.remove('active');
         enemyInfoSection.classList.remove('active');
         selectSection.classList.add('active');
+    }
+    
+    // Hide return button
+    if (returnBtn) {
+        returnBtn.style.display = 'none';
     }
     
     if (returnBtn && returnBtn.style) {
