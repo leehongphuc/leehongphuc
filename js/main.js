@@ -225,11 +225,11 @@ function showEnemyInfo(index) {
             </div>
             <div class="stat-row">
                 <span class="stat-label">Phòng thủ Vật Lý:</span>
-                <span class="stat-value">${enemy.physicalDefense}%</span>
+                <span class="stat-value">${Math.round((enemy.physicalDefense / (enemy.physicalDefense + 100)) * 100)}%</span>
             </div>
             <div class="stat-row">
                 <span class="stat-label">Phòng thủ Phép Thuật:</span>
-                <span class="stat-value">${enemy.magicDefense}%</span>
+                <span class="stat-value">${Math.round((enemy.magicDefense / (enemy.magicDefense + 100)) * 100)}%</span>
             </div>
             <div class="stat-row">
                 <span class="stat-label">Nhanh nhẹn:</span>

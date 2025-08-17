@@ -118,7 +118,7 @@ function updateBattleDisplay() {
     if (enemyHpFill && enemyHpText) {
         const enemyHpPercent = (enemy.hp / enemy.maxHp) * 100;
         enemyHpFill.style.width = enemyHpPercent + '%';
-        enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}/${enemy.maxHp}`;
+        enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}`;
         console.log('✅ Enemy HP updated:', enemyHpPercent + '%');
     } else {
         console.log('❌ Enemy HP elements not found');
@@ -131,7 +131,7 @@ function updateBattleDisplay() {
     if (playerHpFill && playerHpText) {
         const playerHpPercent = (player.hp / player.maxHp) * 100;
         playerHpFill.style.width = playerHpPercent + '%';
-        playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}/${player.maxHp}`;
+        playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}`;
         console.log('✅ Player HP updated:', playerHpPercent + '%');
     } else {
         console.log('❌ Player HP elements not found');
@@ -659,15 +659,15 @@ function showEnemyInfoInBattle() {
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Sinh lực:</span>
-                    <span class="stat-value">${Math.floor(enemy.hp)}/${enemy.maxHp}</span>
+                    <span class="stat-value">${Math.floor(enemy.hp)}</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Phòng thủ Vật Lý:</span>
-                    <span class="stat-value">${enemy.physicalDefense}</span>
+                    <span class="stat-value">${Math.round((enemy.physicalDefense / (enemy.physicalDefense + 100)) * 100)}%</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Phòng thủ Phép Thuật:</span>
-                    <span class="stat-value">${enemy.magicDefense}</span>
+                    <span class="stat-value">${Math.round((enemy.magicDefense / (enemy.magicDefense + 100)) * 100)}%</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Nhanh nhẹn:</span>
@@ -726,15 +726,15 @@ function showPlayerInfoInBattle() {
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Sinh lực:</span>
-                    <span class="stat-value">${Math.floor(player.hp)}/${player.maxHp}</span>
+                    <span class="stat-value">${Math.floor(player.hp)}</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Phòng thủ Vật Lý:</span>
-                    <span class="stat-value">${player.physicalDefense || 20}</span>
+                    <span class="stat-value">${Math.round(((player.physicalDefense || 20) / ((player.physicalDefense || 20) + 100)) * 100)}%</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Phòng thủ Phép Thuật:</span>
-                    <span class="stat-value">${player.magicDefense || 15}</span>
+                    <span class="stat-value">${Math.round(((player.magicDefense || 15) / ((player.magicDefense || 15) + 100)) * 100)}%</span>
                 </div>
                 <div class="stat-row">
                     <span class="stat-label">Nhanh nhẹn:</span>
