@@ -74,6 +74,25 @@
         let backgroundLoaded = false;
         let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
 
+        // Helper function to safely draw HTML images
+        function drawHTMLImage(htmlImg, x, y, w, h) {
+            if (!htmlImg || !htmlImg.complete || htmlImg.naturalWidth === 0) {
+                return false;
+            }
+            
+            try {
+                const p5Canvas = document.querySelector('#battle-canvas canvas');
+                if (p5Canvas) {
+                    const ctx = p5Canvas.getContext('2d');
+                    ctx.drawImage(htmlImg, x, y, w, h);
+                    return true;
+                }
+            } catch (error) {
+                console.error('Error drawing HTML image:', error);
+            }
+            return false;
+        }
+
         function loadBattleAssets() {
             console.log('Loading battle assets...');
             updateStatus('Đang load ảnh...');
@@ -137,28 +156,23 @@
             
             // Draw background if loaded
             if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
-                try {
-                    let bg = bgHTMLImg;
-                    let scale = height / bg.naturalHeight;
-                    let scaledWidth = bg.naturalWidth * scale;
-                    
-                    if (scaledWidth >= width) {
-                        let offsetX = (scaledWidth - width) / 2;
-                        image(bg, -offsetX, 0, scaledWidth, height);
-                    } else {
-                        let offsetX = (width - scaledWidth) / 2;
-                        image(bg, offsetX, 0, scaledWidth, height);
-                    }
-                } catch (error) {
-                    console.error('Error drawing background:', error);
+                let bg = bgHTMLImg;
+                let scale = height / bg.naturalHeight;
+                let scaledWidth = bg.naturalWidth * scale;
+                
+                if (scaledWidth >= width) {
+                    let offsetX = (scaledWidth - width) / 2;
+                    drawHTMLImage(bg, -offsetX, 0, scaledWidth, height);
+                } else {
+                    let offsetX = (width - scaledWidth) / 2;
+                    drawHTMLImage(bg, offsetX, 0, scaledWidth, height);
                 }
             }
             
             // Draw enemy
             if (enemy1HTMLImg && enemy1HTMLImg.complete && enemy1HTMLImg.naturalWidth > 0) {
-                try {
-                    image(enemy1HTMLImg, (width - 120) / 2, 80, 120, 120);
-                } catch (error) {
+                let success = drawHTMLImage(enemy1HTMLImg, (width - 120) / 2, 80, 120, 120);
+                if (!success) {
                     // Fallback
                     fill(255, 100, 100, 100);
                     rect((width - 120) / 2, 80, 120, 120, 10);
@@ -179,9 +193,8 @@
             
             // Draw player
             if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
-                try {
-                    image(playerHTMLImg, (width - 100) / 2, height - 180, 100, 100);
-                } catch (error) {
+                let success = drawHTMLImage(playerHTMLImg, (width - 100) / 2, height - 180, 100, 100);
+                if (!success) {
                     // Fallback
                     fill(100, 200, 255, 100);
                     rect((width - 100) / 2, height - 180, 100, 100, 10);

@@ -379,6 +379,26 @@ let playerImg, enemy1Img, enemy2Img;
 // Store raw HTML images
 let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
 
+// Helper function to safely draw HTML images with p5.js
+function drawHTMLImage(htmlImg, x, y, w, h) {
+    if (!htmlImg || !htmlImg.complete || htmlImg.naturalWidth === 0) {
+        return false;
+    }
+    
+    try {
+        // Get the p5.js canvas context
+        const p5Canvas = document.querySelector('#battle-canvas canvas');
+        if (p5Canvas) {
+            const ctx = p5Canvas.getContext('2d');
+            ctx.drawImage(htmlImg, x, y, w, h);
+            return true;
+        }
+    } catch (error) {
+        console.error('Error drawing HTML image:', error);
+    }
+    return false;
+}
+
 function loadBattleAssets() {
     console.log('Loading battle assets...');
     
@@ -457,21 +477,20 @@ function draw() {
 
     // Draw background
     if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
-        try {
-            let bg = bgHTMLImg;
-            let scale = height / bg.naturalHeight;
-            let scaledWidth = bg.naturalWidth * scale;
-            
-            // Use p5.js image() function with HTML image
-            if (scaledWidth >= width) {
-                let offsetX = (scaledWidth - width) / 2;
-                image(bg, -offsetX, 0, scaledWidth, height);
-            } else {
-                let offsetX = (width - scaledWidth) / 2;
-                image(bg, offsetX, 0, scaledWidth, height);
-            }
-        } catch (error) {
-            console.error('Error drawing background:', error);
+        let bg = bgHTMLImg;
+        let scale = height / bg.naturalHeight;
+        let scaledWidth = bg.naturalWidth * scale;
+        
+        let success = false;
+        if (scaledWidth >= width) {
+            let offsetX = (scaledWidth - width) / 2;
+            success = drawHTMLImage(bg, -offsetX, 0, scaledWidth, height);
+        } else {
+            let offsetX = (width - scaledWidth) / 2;
+            success = drawHTMLImage(bg, offsetX, 0, scaledWidth, height);
+        }
+        
+        if (!success) {
             // Draw fallback background
             background(35, 33, 54);
         }
@@ -494,20 +513,19 @@ function draw() {
     if (enemy) {
         let enemyHTMLImg = enemy.name.includes('Cấp 1') ? enemy1HTMLImg : enemy2HTMLImg;
         if (enemyHTMLImg && enemyHTMLImg.complete && enemyHTMLImg.naturalWidth > 0) {
-            try {
-                let enemySize = 120;
-                let enemyX = (width - enemySize) / 2;
-                let enemyY = 80;
-                
-                // Apply shake effect
-                if (enemyShake) {
-                    enemyX += random(-8, 8);
-                    enemyY += random(-8, 8);
-                }
-                
-                image(enemyHTMLImg, enemyX, enemyY, enemySize, enemySize);
-            } catch (error) {
-                console.error('Error drawing enemy image:', error);
+            let enemySize = 120;
+            let enemyX = (width - enemySize) / 2;
+            let enemyY = 80;
+            
+            // Apply shake effect
+            if (enemyShake) {
+                enemyX += random(-8, 8);
+                enemyY += random(-8, 8);
+            }
+            
+            let success = drawHTMLImage(enemyHTMLImg, enemyX, enemyY, enemySize, enemySize);
+            
+            if (!success) {
                 // Draw fallback
                 fill(255, 100, 100, 100);
                 rect((width - 120) / 2, 80, 120, 120, 10);
@@ -529,20 +547,19 @@ function draw() {
     
     // Draw player image at bottom with shake effect
     if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
-        try {
-            let playerSize = 100;
-            let playerX = (width - playerSize) / 2;
-            let playerY = height - 180;
-            
-            // Apply shake effect
-            if (playerShake) {
-                playerX += random(-8, 8);
-                playerY += random(-8, 8);
-            }
-            
-            image(playerHTMLImg, playerX, playerY, playerSize, playerSize);
-        } catch (error) {
-            console.error('Error drawing player image:', error);
+        let playerSize = 100;
+        let playerX = (width - playerSize) / 2;
+        let playerY = height - 180;
+        
+        // Apply shake effect
+        if (playerShake) {
+            playerX += random(-8, 8);
+            playerY += random(-8, 8);
+        }
+        
+        let success = drawHTMLImage(playerHTMLImg, playerX, playerY, playerSize, playerSize);
+        
+        if (!success) {
             // Draw fallback
             fill(100, 200, 255, 100);
             rect((width - 100) / 2, height - 180, 100, 100, 10);
