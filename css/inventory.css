@@ -295,45 +295,85 @@ h1 {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Quality colors for inventory items */
-.inventory-item.quality-nhất-phẩm {
+/* Quality colors for inventory items - chỉ đổi màu viền ảnh và tên */
+.inventory-item.quality-nhất-phẩm .inventory-image {
     border-color: #ffffff;
 }
 
-.inventory-item.quality-nhị-phẩm {
+.inventory-item.quality-nhất-phẩm .inventory-name {
+    color: #ffffff;
+}
+
+.inventory-item.quality-nhị-phẩm .inventory-image {
     border-color: #00ff00;
 }
 
-.inventory-item.quality-tam-phẩm {
+.inventory-item.quality-nhị-phẩm .inventory-name {
+    color: #00ff00;
+}
+
+.inventory-item.quality-tam-phẩm .inventory-image {
     border-color: #0080ff;
 }
 
-.inventory-item.quality-tứ-phẩm {
+.inventory-item.quality-tam-phẩm .inventory-name {
+    color: #0080ff;
+}
+
+.inventory-item.quality-tứ-phẩm .inventory-image {
     border-color: #800080;
 }
 
-.inventory-item.quality-ngũ-phẩm {
+.inventory-item.quality-tứ-phẩm .inventory-name {
+    color: #800080;
+}
+
+.inventory-item.quality-ngũ-phẩm .inventory-image {
     border-color: #ffa500;
 }
 
-.inventory-item.quality-lục-phẩm {
+.inventory-item.quality-ngũ-phẩm .inventory-name {
+    color: #ffa500;
+}
+
+.inventory-item.quality-lục-phẩm .inventory-image {
     border-color: #ff0000;
 }
 
-.inventory-item.quality-thất-phẩm {
+.inventory-item.quality-lục-phẩm .inventory-name {
+    color: #ff0000;
+}
+
+.inventory-item.quality-thất-phẩm .inventory-image {
     border-color: #ffd700;
 }
 
-.inventory-item.quality-bát-phẩm {
+.inventory-item.quality-thất-phẩm .inventory-name {
+    color: #ffd700;
+}
+
+.inventory-item.quality-bát-phẩm .inventory-image {
     border-color: #00ffff;
 }
 
-.inventory-item.quality-cửu-phẩm {
+.inventory-item.quality-bát-phẩm .inventory-name {
+    color: #00ffff;
+}
+
+.inventory-item.quality-cửu-phẩm .inventory-image {
     border-color: #ff00ff;
 }
 
-.inventory-item.quality-vương-cấp {
+.inventory-item.quality-cửu-phẩm .inventory-name {
+    color: #ff00ff;
+}
+
+.inventory-item.quality-vương-cấp .inventory-image {
     border-color: #9400d3;
+}
+
+.inventory-item.quality-vương-cấp .inventory-name {
+    color: #9400d3;
 }
 
 .inventory-info {
