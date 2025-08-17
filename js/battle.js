@@ -168,9 +168,19 @@ function battleLoop() {
             type: 'enemy'
         });
         
+        // Show damage number on screen
+        showDamageNumber(damage.damage, 250, 150, damage.isCrit, 'enemy');
+        
         // Enemy shake effect
         enemyShake = true;
-        setTimeout(() => { enemyShake = false; }, 500);
+        const enemyElement = document.querySelector('.battle-enemy');
+        if (enemyElement) {
+            enemyElement.classList.add('shake');
+            setTimeout(() => { 
+                enemyElement.classList.remove('shake');
+                enemyShake = false; 
+            }, 500);
+        }
         
         battleLog.push({ 
             text: `Bạn gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho ${enemy.name}!`, 
@@ -218,19 +228,29 @@ function enemyTurn() {
     const damage = calculateDamage(enemy, player);
     player.hp = Math.max(0, player.hp - damage.damage);
     
-    // Add damage display
-    damageDisplay.push({
-        damage: damage.damage,
-        x: 250, // Center of battle scene
-        y: 500, // Above player
-        time: 2,
-        isCrit: damage.isCrit,
-        type: 'player'
-    });
+            // Add damage display
+        damageDisplay.push({
+            damage: damage.damage,
+            x: 250, // Center of battle scene
+            y: 500, // Above player
+            time: 2,
+            isCrit: damage.isCrit,
+            type: 'player'
+        });
+        
+        // Show damage number on screen
+        showDamageNumber(damage.damage, 250, 500, damage.isCrit, 'player');
     
-    // Player shake effect
-    playerShake = true;
-    setTimeout(() => { playerShake = false; }, 500);
+            // Player shake effect
+        playerShake = true;
+        const playerElement = document.querySelector('.battle-player');
+        if (playerElement) {
+            playerElement.classList.add('shake');
+            setTimeout(() => { 
+                playerElement.classList.remove('shake');
+                playerShake = false; 
+            }, 500);
+        }
     
     battleLog.push({ 
         text: `${enemy.name} gây ${damage.damage} sát thương${damage.isCrit ? ' CHÍ MẠNG!' : ''} cho bạn!`, 
@@ -286,6 +306,18 @@ function endBattle(playerWon) {
             // Add spirit stones
             gameState.spiritStones += enemy.spiritStonesReward || 50;
             
+            // Add material drops
+            if (enemy.materialDrop && enemy.materialDrop.name) {
+                if (!gameState.materials) {
+                    gameState.materials = {};
+                }
+                const dropAmount = enemy.materialDrop.amount || 10;
+                gameState.materials[enemy.materialDrop.name] = (gameState.materials[enemy.materialDrop.name] || 0) + dropAmount;
+                
+                // Show material drop popup
+                showMaterialDropPopup(enemy.materialDrop.name, dropAmount);
+            }
+            
             // Update display
             if (typeof window.updateDisplay === 'function') {
                 window.updateDisplay();
@@ -294,11 +326,13 @@ function endBattle(playerWon) {
             console.log('✅ Rewards added successfully:', {
                 exp: enemy.expReward || 50,
                 gold: enemy.goldReward || 100,
-                spiritStones: enemy.spiritStonesReward || 50
+                spiritStones: enemy.spiritStonesReward || 50,
+                material: enemy.materialDrop ? enemy.materialDrop.name : 'none'
             });
         }
         
-        alert(`🎉 Chiến thắng! Bạn nhận được:\nKinh nghiệm: +${enemy.expReward || 50}\nKim tệ: +${enemy.goldReward || 100}\nLinh thạch: +${enemy.spiritStonesReward || 50}`);
+        // Show reward summary
+        showRewardSummary(enemy);
     } else {
         console.log('💀 Player lost the battle!');
         battleLog.push({ 
@@ -464,25 +498,282 @@ function getTurnOrder(playerAgility, enemyAgility) {
     return playerAgility >= enemyAgility ? 'player' : 'enemy';
 }
 
-// Placeholder functions for compatibility
+// Show enemy info in battle
 function showEnemyInfoInBattle() {
-    console.log('Enemy info in battle - placeholder');
+    if (!enemy) return;
+    
+    console.log('📋 Showing enemy info in battle:', enemy.name);
+    
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'battle-character-info';
+    infoDiv.innerHTML = `
+        <div class="character-info-header">
+            <h4>${enemy.name}</h4>
+            <button class="close-btn" onclick="closeEnemyInfoInBattle()">×</button>
+        </div>
+        <div class="character-info-content">
+            <div class="character-image">
+                <img src="${enemy.image}" alt="${enemy.name}" onerror="this.style.display='none'; this.parentNode.innerHTML='${enemy.name}';">
+            </div>
+            <div class="character-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Vật Lý:</span>
+                    <span class="stat-value">${enemy.physicalDamage}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Phép Thuật:</span>
+                    <span class="stat-value">${enemy.magicDamage}</span>
+                </div>
+                <div class="stat-label">Chí mạng:</span>
+                    <span class="stat-value">${enemy.criticalChance}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sát thương chí mạng:</span>
+                    <span class="stat-value">${enemy.criticalDamage}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sinh lực:</span>
+                    <span class="stat-value">${Math.floor(enemy.hp)}/${enemy.maxHp}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Vật Lý:</span>
+                    <span class="stat-value">${enemy.physicalDefense}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                    <span class="stat-value">${enemy.magicDefense}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Nhanh nhẹn:</span>
+                    <span class="stat-value">${enemy.agility}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing info
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(infoDiv);
+    }
 }
 
+// Show player info in battle
 function showPlayerInfoInBattle() {
-    console.log('Player info in battle - placeholder');
+    if (!player) return;
+    
+    console.log('📋 Showing player info in battle');
+    
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'battle-character-info';
+    infoDiv.innerHTML = `
+        <div class="character-info-header">
+            <h4>Thông Tin Người Chơi</h4>
+            <button class="close-btn" onclick="closePlayerInfoInBattle()">×</button>
+        </div>
+        <div class="character-info-content">
+            <div class="character-image">
+                <img src="images/player_1.png" alt="Người chơi" onerror="this.style.display='none'; this.parentNode.innerHTML='Người chơi';">
+            </div>
+            <div class="character-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Vật Lý:</span>
+                    <span class="stat-value">${player.physicalDamage || 100}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Tấn công Phép Thuật:</span>
+                    <span class="stat-value">${player.magicDamage || 50}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Chí mạng:</span>
+                    <span class="stat-value">${player.criticalChance || 10}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sát thương chí mạng:</span>
+                    <span class="stat-value">${player.criticalDamage || 200}%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Sinh lực:</span>
+                    <span class="stat-value">${Math.floor(player.hp)}/${player.maxHp}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Vật Lý:</span>
+                    <span class="stat-value">${player.physicalDefense || 20}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                    <span class="stat-value">${player.magicDefense || 15}</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Nhanh nhẹn:</span>
+                    <span class="stat-value">${player.agility || 1.0}</span>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Remove existing info
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(infoDiv);
+    }
 }
 
 function closeEnemyInfoInBattle() {
-    console.log('Close enemy info in battle - placeholder');
+    console.log('❌ Closing enemy info in battle');
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
 }
 
 function closePlayerInfoInBattle() {
-    console.log('Close player info in battle - placeholder');
+    console.log('❌ Closing player info in battle');
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
+    }
 }
 
 function closeItemRewardPopup() {
     console.log('Close item reward popup - placeholder');
+}
+
+// Show damage number on screen
+function showDamageNumber(damage, x, y, isCrit, type) {
+    const damageDiv = document.createElement('div');
+    damageDiv.className = 'damage-number';
+    damageDiv.style.cssText = `
+        position: absolute;
+        left: ${x}px;
+        top: ${y}px;
+        color: ${isCrit ? '#ff0000' : (type === 'enemy' ? '#ffff00' : '#ff6666')};
+        font-size: ${isCrit ? '28px' : '20px'};
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        z-index: 1000;
+        pointer-events: none;
+        animation: damageFloat 2s ease-out forwards;
+    `;
+    
+    damageDiv.textContent = `-${damage}${isCrit ? ' CRIT!' : ''}`;
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(damageDiv);
+        
+            // Remove after animation
+    setTimeout(() => {
+        if (damageDiv.parentNode) {
+            damageDiv.remove();
+        }
+    }, 2000);
+}
+
+// Show material drop popup
+function showMaterialDropPopup(materialName, amount) {
+    const popupDiv = document.createElement('div');
+    popupDiv.className = 'material-drop-popup';
+    
+    let materialImage = '';
+    if (materialName === 'Huyền Thiết') {
+        materialImage = 'images/huyen_thiet.png';
+    } else if (materialName === 'Vàng') {
+        materialImage = 'images/vang.png';
+    } else if (materialName === 'Kinh Nghiệm') {
+        materialImage = 'images/exp.png';
+    }
+    
+    popupDiv.innerHTML = `
+        <div class="material-drop-content">
+            <div class="material-image">
+                <img src="${materialImage}" alt="${materialName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${materialName}';">
+                <div class="material-amount">+${amount}</div>
+            </div>
+            <div class="material-name">${materialName}</div>
+        </div>
+    `;
+    
+    // Remove existing popup
+    const existingPopup = document.querySelector('.material-drop-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(popupDiv);
+        
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+            if (popupDiv.parentNode) {
+                popupDiv.remove();
+            }
+        }, 3000);
+    }
+}
+
+// Show reward summary
+function showRewardSummary(enemy) {
+    const summaryDiv = document.createElement('div');
+    summaryDiv.className = 'reward-summary';
+    
+    let materialText = '';
+    if (enemy.materialDrop && enemy.materialDrop.name) {
+        materialText = `<div class="reward-item">
+            <span class="reward-label">Vật phẩm:</span>
+            <span class="reward-value">${enemy.materialDrop.name} x${enemy.materialDrop.amount}</span>
+        </div>`;
+    }
+    
+    summaryDiv.innerHTML = `
+        <div class="reward-summary-content">
+            <h3>🎉 Chiến Thắng!</h3>
+            <div class="reward-list">
+                <div class="reward-item">
+                    <span class="reward-label">Kinh nghiệm:</span>
+                    <span class="reward-value">+${enemy.expReward || 50}</span>
+                </div>
+                <div class="reward-item">
+                    <span class="reward-label">Kim tệ:</span>
+                    <span class="reward-value">+${enemy.goldReward || 100}</span>
+                </div>
+                <div class="reward-item">
+                    <span class="reward-label">Linh thạch:</span>
+                    <span class="reward-value">+${enemy.spiritStonesReward || 50}</span>
+                </div>
+                ${materialText}
+            </div>
+            <button class="reward-close-btn" onclick="this.parentElement.parentElement.remove()">Đóng</button>
+        </div>
+    `;
+    
+    // Remove existing summary
+    const existingSummary = document.querySelector('.reward-summary');
+    if (existingSummary) {
+        existingSummary.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(summaryDiv);
+    }
+}
 }
 
 // Export functions to window
