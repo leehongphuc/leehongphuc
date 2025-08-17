@@ -363,18 +363,16 @@ function endBattle(playerWon) {
 
 // Close enemy info in battle
 function closeEnemyInfoInBattle() {
-    const existingInfo = document.querySelector('.battle-character-info');
-    if (existingInfo) {
-        existingInfo.remove();
-    }
+    console.log('Closing enemy info in battle');
+    const existingInfo = document.querySelectorAll('.battle-character-info');
+    existingInfo.forEach(info => info.remove());
 }
 
 // Close player info in battle
 function closePlayerInfoInBattle() {
-    const existingInfo = document.querySelector('.battle-character-info');
-    if (existingInfo) {
-        existingInfo.remove();
-    }
+    console.log('Closing player info in battle');
+    const existingInfo = document.querySelectorAll('.battle-character-info');
+    existingInfo.forEach(info => info.remove());
 }
 
 // Close item reward popup
@@ -421,21 +419,22 @@ function closeItemRewardPopup() {
 // }
 
 // Update battle log display
-function updateBattleLogDisplay() {
-    const logDiv = document.getElementById('battle-log');
-    if (logDiv && battleLog.length > 0) {
-        logDiv.innerHTML = battleLog.slice(-8).map(entry => {
-            let className = 'normal-attack';
-            if (entry.type === 'critical') className = 'critical-attack';
-            else if (entry.type === 'victory') className = 'victory-text';
-            else if (entry.type === 'defeat') className = 'defeat-text';
-            else if (entry.type === 'reward') className = 'reward-text';
-            
-            return `<p class="${className}">${entry.text}</p>`;
-        }).join('');
-        logDiv.scrollTop = logDiv.scrollHeight;
-    }
-}
+// Update battle log display - REMOVED: Battle log no longer needed
+// function updateBattleLogDisplay() {
+//     const logDiv = document.getElementById('battle-log');
+//     if (logDiv && battleLog.length > 0) {
+//         logDiv.innerHTML = battleLog.slice(-8).map(entry => {
+//             let className = 'normal-attack';
+//             if (entry.type === 'critical') className = 'critical-attack';
+//             else if (entry.type === 'victory') className = 'victory-text';
+//             else if (entry.type === 'defeat') className = 'defeat-text';
+//             else if (entry.type === 'reward') className = 'reward-text';
+//             
+//             return `<p class="${className}">${entry.text}</p>`;
+//         }).join('');
+//         logDiv.scrollTop = logDiv.scrollHeight;
+//     }
+// }
 
 // P5.js functions - Enhanced visual system
 let backgroundLoaded = false;
@@ -708,8 +707,21 @@ function preload() {
 function setup() {
     console.log('Khởi tạo canvas chiến đấu...');
     try {
+        // Clear any existing canvas first
+        const battleCanvasDiv = document.getElementById('battle-canvas');
+        if (battleCanvasDiv) {
+            battleCanvasDiv.innerHTML = '';
+        }
+        
         const canvas = createCanvas(500, 600);
         canvas.parent('battle-canvas');
+        
+        // Set canvas ID to something meaningful instead of defaultCanvas0
+        const canvasElement = document.querySelector('#battle-canvas canvas');
+        if (canvasElement) {
+            canvasElement.id = 'game-canvas';
+        }
+        
         console.log('Canvas created successfully');
         
         // Add click event for character info
@@ -844,7 +856,7 @@ function draw() {
     drawDamageNumbers();
     
     // Update battle log
-    updateBattleLogDisplay();
+    // updateBattleLogDisplay(); // REMOVED: Battle log no longer needed
 }
 
 function drawHealthBars() {
@@ -934,6 +946,9 @@ window.preload = preload;
 window.setup = setup;
 window.draw = draw;
 window.battleActive = () => battleActive;
+window.closeEnemyInfoInBattle = closeEnemyInfoInBattle;
+window.closePlayerInfoInBattle = closePlayerInfoInBattle;
+window.closeItemRewardPopup = closeItemRewardPopup;
 
 console.log('✅ Enhanced battle.js loaded successfully');
 console.log('🔧 startBattle function exported:', typeof window.startBattle === 'function');
