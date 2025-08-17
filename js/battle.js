@@ -376,91 +376,57 @@ function updateBattleLogDisplay() {
 let backgroundLoaded = false;
 let playerImg, enemy1Img, enemy2Img;
 
+// Store raw HTML images
+let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
+
 function loadBattleAssets() {
     console.log('Loading battle assets...');
     
     // Load background image using regular Image objects
-    const bgImg = new Image();
-    bgImg.onload = function() {
+    bgHTMLImg = new Image();
+    bgHTMLImg.onload = function() {
         console.log('Background image loaded successfully');
         backgroundLoaded = true;
-        // Convert to p5.js image when p5 is ready
-        if (typeof loadImage === 'function') {
-            loadImage('images/phong_canh_1.png', (img) => {
-                window.battleBackground = img;
-            });
-        }
     };
-    bgImg.onerror = function() {
+    bgHTMLImg.onerror = function() {
         console.error('Failed to load background image');
         backgroundLoaded = false;
     };
-    bgImg.src = 'images/phong_canh_1.png';
+    bgHTMLImg.src = 'images/phong_canh_1.png';
     
     // Load player image
-    const playerImage = new Image();
-    playerImage.onload = function() {
+    playerHTMLImg = new Image();
+    playerHTMLImg.onload = function() {
         console.log('Player image loaded');
-        if (typeof loadImage === 'function') {
-            loadImage('images/player_1.png', (img) => {
-                playerImg = img;
-            });
-        }
     };
-    playerImage.onerror = function() {
+    playerHTMLImg.onerror = function() {
         console.error('Failed to load player image');
     };
-    playerImage.src = 'images/player_1.png';
+    playerHTMLImg.src = 'images/player_1.png';
     
     // Load enemy images
-    const enemy1Image = new Image();
-    enemy1Image.onload = function() {
+    enemy1HTMLImg = new Image();
+    enemy1HTMLImg.onload = function() {
         console.log('Enemy 1 image loaded');
-        if (typeof loadImage === 'function') {
-            loadImage('images/dungeon_1.png', (img) => {
-                enemy1Img = img;
-            });
-        }
     };
-    enemy1Image.onerror = function() {
+    enemy1HTMLImg.onerror = function() {
         console.error('Failed to load enemy 1 image');
     };
-    enemy1Image.src = 'images/dungeon_1.png';
+    enemy1HTMLImg.src = 'images/dungeon_1.png';
     
-    const enemy2Image = new Image();
-    enemy2Image.onload = function() {
+    enemy2HTMLImg = new Image();
+    enemy2HTMLImg.onload = function() {
         console.log('Enemy 2 image loaded');
-        if (typeof loadImage === 'function') {
-            loadImage('images/dungeon_2.png', (img) => {
-                enemy2Img = img;
-            });
-        }
     };
-    enemy2Image.onerror = function() {
+    enemy2HTMLImg.onerror = function() {
         console.error('Failed to load enemy 2 image');
     };
-    enemy2Image.src = 'images/dungeon_2.png';
+    enemy2HTMLImg.src = 'images/dungeon_2.png';
 }
 
 function preload() {
-    // This will be called by p5.js if available
-    if (typeof loadImage === 'function') {
-        console.log('Using p5.js preload...');
-        loadImage('images/phong_canh_1.png', 
-            (img) => {
-                window.battleBackground = img;
-                backgroundLoaded = true;
-                console.log('Background loaded via p5.js');
-            },
-            (err) => {
-                console.error('Failed to load background via p5.js:', err);
-            }
-        );
-        
-        loadImage('images/player_1.png', (img) => { playerImg = img; });
-        loadImage('images/dungeon_1.png', (img) => { enemy1Img = img; });
-        loadImage('images/dungeon_2.png', (img) => { enemy2Img = img; });
-    }
+    // p5.js preload is no longer needed since we use HTML images
+    console.log('p5.js preload called, but using HTML images instead');
 }
 
 function setup() {
@@ -470,10 +436,8 @@ function setup() {
         canvas.parent('battle-canvas');
         console.log('Canvas created successfully');
         
-        // Load assets after canvas is ready
-        setTimeout(() => {
-            loadBattleAssets();
-        }, 100);
+        // Assets will be loaded separately via HTML
+        console.log('Canvas ready, assets loading handled separately');
     } catch (error) {
         console.error('Error creating canvas:', error);
     }
@@ -492,12 +456,13 @@ function draw() {
     }
 
     // Draw background
-    if (backgroundLoaded && window.battleBackground && window.battleBackground.width) {
+    if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
         try {
-            let bg = window.battleBackground;
-            let scale = height / bg.height;
-            let scaledWidth = bg.width * scale;
+            let bg = bgHTMLImg;
+            let scale = height / bg.naturalHeight;
+            let scaledWidth = bg.naturalWidth * scale;
             
+            // Use p5.js image() function with HTML image
             if (scaledWidth >= width) {
                 let offsetX = (scaledWidth - width) / 2;
                 image(bg, -offsetX, 0, scaledWidth, height);
@@ -527,8 +492,8 @@ function draw() {
 
     // Draw enemy image at top with shake effect
     if (enemy) {
-        let enemyImg = enemy.name.includes('Cấp 1') ? enemy1Img : enemy2Img;
-        if (enemyImg && enemyImg.width) {
+        let enemyHTMLImg = enemy.name.includes('Cấp 1') ? enemy1HTMLImg : enemy2HTMLImg;
+        if (enemyHTMLImg && enemyHTMLImg.complete && enemyHTMLImg.naturalWidth > 0) {
             try {
                 let enemySize = 120;
                 let enemyX = (width - enemySize) / 2;
@@ -540,7 +505,7 @@ function draw() {
                     enemyY += random(-8, 8);
                 }
                 
-                image(enemyImg, enemyX, enemyY, enemySize, enemySize);
+                image(enemyHTMLImg, enemyX, enemyY, enemySize, enemySize);
             } catch (error) {
                 console.error('Error drawing enemy image:', error);
                 // Draw fallback
@@ -563,7 +528,7 @@ function draw() {
     }
     
     // Draw player image at bottom with shake effect
-    if (playerImg && playerImg.width) {
+    if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
         try {
             let playerSize = 100;
             let playerX = (width - playerSize) / 2;
@@ -575,7 +540,7 @@ function draw() {
                 playerY += random(-8, 8);
             }
             
-            image(playerImg, playerX, playerY, playerSize, playerSize);
+            image(playerHTMLImg, playerX, playerY, playerSize, playerSize);
         } catch (error) {
             console.error('Error drawing player image:', error);
             // Draw fallback

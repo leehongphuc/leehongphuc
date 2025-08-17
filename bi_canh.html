@@ -93,15 +93,15 @@
             console.log('HTML fully loaded, checking script availability:');
             console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
-            console.log('- loadImage:', typeof window.loadImage !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
             
-            // Initialize battle assets if not already loaded
+            // Load battle assets immediately to avoid CORS issues
             if (typeof window.loadBattleAssets === 'function') {
-                setTimeout(() => {
-                    window.loadBattleAssets();
-                }, 500);
+                console.log('Loading battle assets...');
+                window.loadBattleAssets();
+            } else {
+                console.error('loadBattleAssets function not found');
             }
         });
     </script>

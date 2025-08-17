@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Battle Canvas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #232136;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #battle-canvas {
+            border: 2px solid #4ecdc4;
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+        }
+        .test-buttons {
+            margin: 20px 0;
+        }
+        .btn {
+            background: #4ecdc4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #44e08f;
+        }
+        .status {
+            background: rgba(255,255,255,0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Battle Canvas</h1>
+        <p>Kiểm tra xem battle canvas có hoạt động không</p>
+        
+        <div class="status" id="status">
+            Đang tải...
+        </div>
+        
+        <div id="battle-canvas"></div>
+        
+        <div class="test-buttons">
+            <button class="btn" onclick="testLoadAssets()">Load Assets</button>
+            <button class="btn" onclick="testStartBattle()">Start Battle</button>
+            <button class="btn" onclick="testShowImages()">Show Image Status</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script>
+        // Simple battle variables for testing
+        let player = { hp: 1000, maxHp: 1000 };
+        let enemy = { name: 'Quái Vật Cấp 1', hp: 800, maxHp: 800 };
+        let battleActive = false;
+        let backgroundLoaded = false;
+        let bgHTMLImg, playerHTMLImg, enemy1HTMLImg, enemy2HTMLImg;
+
+        function loadBattleAssets() {
+            console.log('Loading battle assets...');
+            updateStatus('Đang load ảnh...');
+            
+            // Load background
+            bgHTMLImg = new Image();
+            bgHTMLImg.onload = function() {
+                console.log('Background image loaded successfully');
+                backgroundLoaded = true;
+                updateStatus('Background loaded ✓');
+            };
+            bgHTMLImg.onerror = function() {
+                console.error('Failed to load background image');
+                updateStatus('Background failed ✗');
+            };
+            bgHTMLImg.src = 'images/phong_canh_1.png';
+            
+            // Load player image
+            playerHTMLImg = new Image();
+            playerHTMLImg.onload = function() {
+                console.log('Player image loaded');
+                updateStatus('Player image loaded ✓');
+            };
+            playerHTMLImg.onerror = function() {
+                console.error('Failed to load player image');
+                updateStatus('Player image failed ✗');
+            };
+            playerHTMLImg.src = 'images/player_1.png';
+            
+            // Load enemy image
+            enemy1HTMLImg = new Image();
+            enemy1HTMLImg.onload = function() {
+                console.log('Enemy 1 image loaded');
+                updateStatus('Enemy image loaded ✓');
+            };
+            enemy1HTMLImg.onerror = function() {
+                console.error('Failed to load enemy 1 image');
+                updateStatus('Enemy image failed ✗');
+            };
+            enemy1HTMLImg.src = 'images/dungeon_1.png';
+        }
+
+        function setup() {
+            console.log('Setting up canvas...');
+            const canvas = createCanvas(500, 600);
+            canvas.parent('battle-canvas');
+            updateStatus('Canvas created ✓');
+        }
+
+        function draw() {
+            // Clear background
+            background(35, 33, 54);
+            
+            if (!battleActive) {
+                fill(255, 255, 255, 100);
+                textAlign(CENTER, CENTER);
+                textSize(18);
+                text('Nhấn Start Battle để test', width/2, height/2);
+                return;
+            }
+            
+            // Draw background if loaded
+            if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
+                try {
+                    let bg = bgHTMLImg;
+                    let scale = height / bg.naturalHeight;
+                    let scaledWidth = bg.naturalWidth * scale;
+                    
+                    if (scaledWidth >= width) {
+                        let offsetX = (scaledWidth - width) / 2;
+                        image(bg, -offsetX, 0, scaledWidth, height);
+                    } else {
+                        let offsetX = (width - scaledWidth) / 2;
+                        image(bg, offsetX, 0, scaledWidth, height);
+                    }
+                } catch (error) {
+                    console.error('Error drawing background:', error);
+                }
+            }
+            
+            // Draw enemy
+            if (enemy1HTMLImg && enemy1HTMLImg.complete && enemy1HTMLImg.naturalWidth > 0) {
+                try {
+                    image(enemy1HTMLImg, (width - 120) / 2, 80, 120, 120);
+                } catch (error) {
+                    // Fallback
+                    fill(255, 100, 100, 100);
+                    rect((width - 120) / 2, 80, 120, 120, 10);
+                    textAlign(CENTER, CENTER);
+                    textSize(14);
+                    fill(255);
+                    text('Enemy', width/2, 140);
+                }
+            } else {
+                // Fallback
+                fill(255, 100, 100, 100);
+                rect((width - 120) / 2, 80, 120, 120, 10);
+                textAlign(CENTER, CENTER);
+                textSize(14);
+                fill(255);
+                text('Enemy', width/2, 140);
+            }
+            
+            // Draw player
+            if (playerHTMLImg && playerHTMLImg.complete && playerHTMLImg.naturalWidth > 0) {
+                try {
+                    image(playerHTMLImg, (width - 100) / 2, height - 180, 100, 100);
+                } catch (error) {
+                    // Fallback
+                    fill(100, 200, 255, 100);
+                    rect((width - 100) / 2, height - 180, 100, 100, 10);
+                    textAlign(CENTER, CENTER);
+                    textSize(12);
+                    fill(100, 200, 255);
+                    text('Player', width/2, height - 130);
+                }
+            } else {
+                // Fallback
+                fill(100, 200, 255, 100);
+                rect((width - 100) / 2, height - 180, 100, 100, 10);
+                textAlign(CENTER, CENTER);
+                textSize(12);
+                fill(100, 200, 255);
+                text('Player', width/2, height - 130);
+            }
+        }
+
+        function updateStatus(message) {
+            const status = document.getElementById('status');
+            status.innerHTML += '<br>' + message;
+        }
+
+        function testLoadAssets() {
+            loadBattleAssets();
+        }
+
+        function testStartBattle() {
+            battleActive = !battleActive;
+            updateStatus(battleActive ? 'Battle started!' : 'Battle stopped!');
+        }
+
+        function testShowImages() {
+            let status = 'Image Status:<br>';
+            status += 'Background: ' + (bgHTMLImg && bgHTMLImg.complete ? '✓ Loaded' : '✗ Not loaded') + '<br>';
+            status += 'Player: ' + (playerHTMLImg && playerHTMLImg.complete ? '✓ Loaded' : '✗ Not loaded') + '<br>';
+            status += 'Enemy: ' + (enemy1HTMLImg && enemy1HTMLImg.complete ? '✓ Loaded' : '✗ Not loaded');
+            updateStatus(status);
+        }
+
+        // Auto load assets when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                loadBattleAssets();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
