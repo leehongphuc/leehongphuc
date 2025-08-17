@@ -5,8 +5,7 @@ function setup() {
   let canvas = createCanvas(800, 600);
   canvas.parent('start-screen');
   console.log('Setup hoàn tất: Canvas được tạo với kích thước 800x600.');
-  
-  // Tạo nút Tham gia
+
   thamGiaButton = createButton('Tham gia');
   thamGiaButton.position(width / 2 - 50, height / 2);
   thamGiaButton.mousePressed(startGame);
@@ -19,14 +18,13 @@ function setup() {
 
 function draw() {
   if (gameState === 'start') {
-    background(0); // Nền màu đen
+    background(0);
     console.log('Vẽ khung hình: gameState = start');
     textSize(32);
     textAlign(CENTER);
-    fill(255); // Chữ màu trắng
+    fill(255);
     text('Trò Chơi Tu Tiên', width / 2, height / 2 - 50);
     textSize(20);
-    fill(255);
     text('Nhấn "Tham gia" để bắt đầu', width / 2, height / 2 + 100);
   }
 }

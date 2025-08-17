@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng - Tu Tiên</title>
+    <link rel="stylesheet" href="css/shop.css">
+        <link rel="stylesheet" href="css/information.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cửa Hàng</h1>
+        <div class="resources">
+            <div class="resource-item">
+                <img src="images/vang.png" alt="Vàng" class="resource-icon" onerror="this.src='images/placeholder.png'">
+                <span id="gold-amount">100</span>
+            </div>
+            <div class="resource-item">
+                <img src="images/linh_thach.png" alt="Linh Thạch" class="resource-icon" onerror="this.src='images/placeholder.png'">
+                <span id="spirit-stones-amount">50</span>
+            </div>
+        </div>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="showShopSection('gold')">Vàng</button>
+                <button class="tab-button" onclick="showShopSection('spiritStones')">Linh Thạch</button>
+            </div>
+            <div id="gold-section" class="section active">
+                <h3>Vàng</h3>
+                <div class="shop-grid" id="gold-shop-grid">
+                    <div class="shop-item quality-1">
+                        <div class="shop-image">
+                            <img src="images/vang.png" alt="Vàng" onerror="this.src='images/placeholder.png'">
+                        </div>
+                        <div class="shop-info">
+                            <div class="shop-name">
+                                <img src="images/vang.png" alt="Vàng" class="shop-name-icon" onerror="this.src='images/placeholder.png'">
+                            </div>
+                            <div class="shop-price">50 Vàng</div>
+                        </div>
+                        <button class="buy-btn" onclick="openGiftBox('gold', 50, 1)">Mua</button>
+                    </div>
+                </div>
+            </div>
+            <div id="spiritStones-section" class="section">
+                <h3>Linh Thạch</h3>
+                <div class="shop-grid" id="spiritStones-shop-grid">
+                    <div class="shop-item quality-2">
+                        <div class="shop-image">
+                            <img src="images/linh_thach.png" alt="Linh Thạch" onerror="this.src='images/placeholder.png'">
+                        </div>
+                        <div class="shop-info">
+                            <div class="shop-name">
+                                <img src="images/linh_thach.png" alt="Linh Thạch" class="shop-name-icon" onerror="this.src='images/placeholder.png'">
+                            </div>
+                            <div class="shop-price">20 Linh Thạch</div>
+                        </div>
+                        <button class="buy-btn" onclick="openGiftBox('spiritStones', 20, 2)">Mua</button>
+                    </div>
+                    <div class="shop-item quality-2">
+                        <div class="shop-image">
+                            <img src="images/qua.png" alt="Túi Quà Nhị Phẩm" onerror="this.src='images/placeholder.png'">
+                        </div>
+                        <div class="shop-info">
+                            <div class="shop-name">
+                                <img src="images/linh_thach.png" alt="Túi Quà Nhị Phẩm" class="shop-name-icon" onerror="this.src='images/placeholder.png'">
+                            </div>
+                            <div class="shop-price">20 Linh Thạch</div>
+                        </div>
+                        <button class="buy-btn" onclick="openGiftBox('spiritStones', 20, 3)">Mua</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="index.html" class="action-btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+    <div class="modal" id="item-details-modal">
+        <div class="modal-content">
+            <div id="item-details-content"></div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/items.js"></script>
+</body>
+</html>

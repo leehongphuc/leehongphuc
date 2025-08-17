@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quà Tân Thủ - Tu Tiên</title>
+    <link rel="stylesheet" href="css/gift.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quà Tân Thủ</h1>
+        <div class="gift-container">
+            <div class="gift-item quality-2" id="gift-o">
+                <div class="gift-image">
+                    <img src="images/qua.png" alt="Vũ khí Nhị Phẩm" onerror="this.src='images/placeholder.png'">
+                </div>
+                <div class="gift-info">
+                    <div class="gift-name">Vũ khí Nhị Phẩm (Khóa)</div>
+                </div>
+                <button class="claim-btn" id="claim-o" onclick="claimGift('weapon', 'Vũ khí Nhị Phẩm', 'images/vu_khi_o.png', 'Tam Phẩm', 'Nhị Phẩm', true)">Nhận</button>
+            </div>
+            <div class="gift-item quality-1" id="gift-necklace">
+                <div class="gift-image">
+                    <img src="images/day_chuyen.png" alt="Dây chuyền Nhất Phẩm" onerror="this.src='images/placeholder.png'">
+                </div>
+                <div class="gift-info">
+                    <div class="gift-name">Dây chuyền Nhất Phẩm</div>
+                </div>
+                <button class="claim-btn" id="claim-necklace" onclick="claimGift('necklace', 'Dây chuyền Nhất Phẩm', 'images/day_chuyen.png', 'Hạ Phẩm', 'Nhất Phẩm', false)">Nhận</button>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="index.html" class="action-btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>
