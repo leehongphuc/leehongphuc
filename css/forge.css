@@ -73,6 +73,152 @@
     margin-top: 20px;
 }
 
+/* Giao diện chi tiết vật phẩm chế tạo */
+.item-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    object-fit: contain;
+}
+
+.item-basic-info {
+    flex: 1;
+}
+
+.item-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.item-quality, .item-tier {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.item-stats-section {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-stats-section h4 {
+    color: #4ecdc4;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.item-stats {
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.craft-materials-section {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.craft-materials-section h4 {
+    color: #4ecdc4;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.craft-materials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.material-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.material-item.insufficient {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.material-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.material-info {
+    flex: 1;
+}
+
+.material-name {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.material-amount {
+    font-size: 0.9rem;
+    color: #00ff00;
+}
+
+.material-amount.insufficient {
+    color: #ff6666;
+}
+
+.craft-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.craft-btn:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
+}
+
+.craft-btn.disabled {
+    background: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
 @media (max-width: 768px) {
     .equipment-grid,
     .modal-grid {
@@ -83,5 +229,30 @@
         width: 95%;
         margin: 10% auto;
         padding: 15px;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .item-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .craft-materials {
+        gap: 10px;
+    }
+    
+    .material-item {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .material-image {
+        width: 30px;
+        height: 30px;
     }
 }

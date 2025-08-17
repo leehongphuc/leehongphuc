@@ -185,36 +185,78 @@ function showCraftItemDetails(index) {
 
     const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
     
+    // Tạo thông tin stats của vật phẩm
+    let statsText = '';
+    if (item.stats) {
+        const statsArray = [];
+        Object.entries(item.stats).forEach(([stat, value]) => {
+            const statName = stat === 'physicalDamage' ? 'Tấn công Vật Lý' :
+                stat === 'magicDamage' ? 'Tấn công Phép Thuật' :
+                stat === 'criticalChance' ? 'Chí mạng' :
+                stat === 'criticalDamage' ? 'Sát thương chí mạng' :
+                stat === 'hp' ? 'Sinh lực' :
+                stat === 'physicalDefense' ? 'Phòng thủ vật lý' :
+                stat === 'magicDefense' ? 'Phòng thủ phép thuật' : 'Nhanh nhẹn';
+            
+            const statValue = ['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat) ? 
+                `${value}%` : stat === 'agility' ? value : value;
+            
+            statsArray.push(`${statName}: ${statValue}`);
+        });
+        statsText = statsArray.join('<br>');
+    }
+
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
         <div class="item-detail ${item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g, '-')}` : ''}">
-            <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" 
-                 class="item-image" onerror="this.src='images/placeholder.png'">
-            <div class="item-info">
-                <div class="item-name" ${qualityStyle}>${item.name}</div>
-                <div class="item-quality">Phẩm chất: ${item.quality}</div>
-                <div class="item-tier">Cấp bậc: ${item.tier}</div>
-                <div class="craft-cost">
-                    <div class="resource-item ${gameState.gold < craftCost.gold ? 'disabled-resource' : ''}">
-                        <img src="images/vang.png" alt="Kim tệ" class="resource-image" 
+            <div class="item-header">
+                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" 
+                     class="item-image" onerror="this.src='images/placeholder.png'">
+                <div class="item-basic-info">
+                    <div class="item-name" ${qualityStyle}>${item.name}</div>
+                    <div class="item-quality">Phẩm chất: ${item.quality}</div>
+                    <div class="item-tier">Cấp bậc: ${item.tier}</div>
+                </div>
+            </div>
+            
+            <div class="item-stats-section">
+                <h4>Thông tin vật phẩm:</h4>
+                <div class="item-stats">${statsText}</div>
+            </div>
+            
+            <div class="craft-materials-section">
+                <h4>Vật phẩm cần chế tạo:</h4>
+                <div class="craft-materials">
+                    <div class="material-item ${gameState.gold < craftCost.gold ? 'insufficient' : ''}">
+                        <img src="images/vang.png" alt="Kim tệ" class="material-image" 
                              onerror="this.src='images/placeholder.png'">
-                        <span>${gameState.gold}/${craftCost.gold}</span>
+                        <div class="material-info">
+                            <div class="material-name">Kim tệ</div>
+                            <div class="material-amount ${gameState.gold < craftCost.gold ? 'insufficient' : ''}">${gameState.gold}/${craftCost.gold}</div>
+                        </div>
                     </div>
-                    <div class="resource-item ${gameState.spiritStones < craftCost.spiritStones ? 'disabled-resource' : ''}">
-                        <img src="images/linh_thach.png" alt="Linh thạch" class="resource-image" 
+                    <div class="material-item ${gameState.spiritStones < craftCost.spiritStones ? 'insufficient' : ''}">
+                        <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" 
                              onerror="this.src='images/placeholder.png'">
-                        <span>${gameState.spiritStones}/${craftCost.spiritStones}</span>
+                        <div class="material-info">
+                            <div class="material-name">Linh thạch</div>
+                            <div class="material-amount ${gameState.spiritStones < craftCost.spiritStones ? 'insufficient' : ''}">${gameState.spiritStones}/${craftCost.spiritStones}</div>
+                        </div>
                     </div>
-                    <div class="resource-item ${(gameState.materials['Huyền Thiết'] || 0) < craftCost.huyenThiet ? 'disabled-resource' : ''}">
-                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="resource-image" 
+                    <div class="material-item ${(gameState.materials['Huyền Thiết'] || 0) < craftCost.huyenThiet ? 'insufficient' : ''}">
+                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" 
                              onerror="this.src='images/placeholder.png'">
-                        <span>${gameState.materials['Huyền Thiết'] || 0}/${craftCost.huyenThiet}</span>
+                        <div class="material-info">
+                            <div class="material-name">Huyền Thiết</div>
+                            <div class="material-amount ${(gameState.materials['Huyền Thiết'] || 0) < craftCost.huyenThiet ? 'insufficient' : ''}">${gameState.materials['Huyền Thiết'] || 0}/${craftCost.huyenThiet}</div>
+                        </div>
                     </div>
                 </div>
-                <button class="equip-btn ${!canAfford ? 'disabled disabled-item' : ''}" onclick="craftItem(${index})" ${canAfford ? '' : 'disabled'}>
-                    Chế Tạo
-                </button>
             </div>
+            
+            <button class="craft-btn ${!canAfford ? 'disabled' : ''}" onclick="craftItem(${index})" ${canAfford ? '' : 'disabled'}>
+                ${canAfford ? 'Chế Tạo' : 'Thiếu nguyên liệu'}
+            </button>
         </div>
     `;
     
