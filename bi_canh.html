@@ -147,27 +147,46 @@
     <script src="js/common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <script src="js/game.js"></script>
-    <script src="js/battle.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/battle.js" onload="console.log('✅ battle.js loaded successfully')" onerror="console.error('❌ Failed to load battle.js')"></script>
+    <script src="js/main.js" onload="console.log('✅ main.js loaded successfully')" onerror="console.error('❌ Failed to load main.js')"></script>
     
     <!-- Initialize battle system after all scripts loaded -->
     <script>
         // Wait for all scripts to load
+        let scriptCheckRetryCount = 0;
+        const maxScriptCheckRetries = 20;
+        
         function checkScriptLoadStatus() {
-            console.log('Checking script load status:');
+            scriptCheckRetryCount++;
+            console.log(`Checking script load status (attempt ${scriptCheckRetryCount}/${maxScriptCheckRetries}):`);
             console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- getEnemies:', typeof window.getEnemies !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- initializeGameState:', typeof window.initializeGameState !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- battleJSLoaded flag:', window.battleJSLoaded ? '✅ true' : '❌ false');
+            
+            // Check if we've exceeded max retries
+            if (scriptCheckRetryCount >= maxScriptCheckRetries) {
+                console.error('❌ Maximum script check retries reached. Some functions may not be available.');
+                return;
+            }
             
             // Load battle assets if available
             if (typeof window.loadBattleAssets === 'function') {
                 console.log('Loading battle assets...');
-                window.loadBattleAssets();
+                try {
+                    window.loadBattleAssets();
+                    console.log('✅ Battle assets loaded successfully');
+                } catch (error) {
+                    console.error('❌ Error loading battle assets:', error);
+                }
             } else {
-                console.error('loadBattleAssets function not found');
+                console.warn('⚠️ loadBattleAssets function not found, will retry...');
+                // Retry after a short delay
+                setTimeout(checkScriptLoadStatus, 500);
+                return;
             }
             
             // Additional check for startBattle function
