@@ -287,6 +287,13 @@ function backToEnemySelect() {
     
     selectedEnemyIndex = null;
     
+    // Xóa popup vật phẩm từ trận đấu trước (nếu có)
+    const existingMaterialPopup = document.querySelector('.material-drop-popup');
+    if (existingMaterialPopup) {
+        existingMaterialPopup.remove();
+        console.log('🧹 Đã xóa popup vật phẩm khi quay lại chọn quái');
+    }
+    
     // Show title and stats again when returning from battle
     const mainTitle = document.getElementById('main-title');
     const statsDisplay = document.getElementById('stats-display');
@@ -322,6 +329,13 @@ function backToLocationSelect() {
     
     selectedLocation = null;
     selectedEnemyIndex = null;
+    
+    // Xóa popup vật phẩm từ trận đấu trước (nếu có)
+    const existingMaterialPopup = document.querySelector('.material-drop-popup');
+    if (existingMaterialPopup) {
+        existingMaterialPopup.remove();
+        console.log('🧹 Đã xóa popup vật phẩm khi quay lại chọn địa điểm');
+    }
     
     // Show title and stats again when returning to location selection
     const mainTitle = document.getElementById('main-title');

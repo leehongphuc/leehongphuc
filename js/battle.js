@@ -335,6 +335,11 @@ function endBattle(playerWon) {
                 showMaterialDropPopup(enemy.materialDrop.name, dropAmount);
             }
             
+            // Save game state
+            if (typeof window.saveGameState === 'function') {
+                window.saveGameState();
+            }
+            
             // Update display
             if (typeof window.updateDisplay === 'function') {
                 window.updateDisplay();
@@ -347,11 +352,6 @@ function endBattle(playerWon) {
                 material: enemy.materialDrop ? enemy.materialDrop.name : 'none'
             });
         }
-        
-        // Chỉ hiển thị popup vật phẩm rớt ra, không hiển thị bảng phần thưởng
-        if (enemy.materialDrop && enemy.materialDrop.name) {
-            showMaterialDropPopup(enemy.materialDrop.name, enemy.materialDrop.amount);
-        }
     } else {
         console.log('💀 Player lost the battle!');
         battleLog.push({ 
@@ -361,9 +361,11 @@ function endBattle(playerWon) {
         alert('💀 Bạn đã thua! Hãy thử lại!');
     }
     
-    // Return to enemy selection after a delay
+    // Return to enemy selection after a delay (chỉ khi không có popup vật phẩm)
     setTimeout(() => {
-        if (typeof window.backToEnemySelect === 'function') {
+        // Kiểm tra xem có popup vật phẩm nào đang hiển thị không
+        const materialPopup = document.querySelector('.material-drop-popup');
+        if (!materialPopup && typeof window.backToEnemySelect === 'function') {
             window.backToEnemySelect();
         }
     }, 2000);
@@ -593,6 +595,13 @@ function startBattle(index, locationType) {
     damageDisplay = [];
     playerShake = false;
     enemyShake = false;
+    
+    // Xóa popup vật phẩm từ trận đấu trước (nếu có)
+    const existingMaterialPopup = document.querySelector('.material-drop-popup');
+    if (existingMaterialPopup) {
+        existingMaterialPopup.remove();
+        console.log('🧹 Đã xóa popup vật phẩm từ trận đấu trước');
+    }
 
     // Get game state
     let gameState;
