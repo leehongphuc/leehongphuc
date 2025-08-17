@@ -1,6 +1,7 @@
 // battle.js - Enhanced Battle System with Detailed Enemy Stats
 
-console.log('battle.js được tải');
+console.log('🎮 battle.js được tải - bắt đầu khởi tạo battle system');
+console.log('📍 Current script loading time:', new Date().toISOString());
 
 // Battle System Variables
 let player, enemy;
@@ -410,14 +411,14 @@ function closeItemRewardPopup() {
 //     battleActive = false;
 //     battleLog = [];
 //     damageDisplay = [];
-    player = null;
-    enemy = null;
-    currentTurn = null;
-    playerShake = false;
-    enemyShake = false;
-    
-    console.log('Quay lại màn chọn quái');
-}
+//     player = null;
+//     enemy = null;
+//     currentTurn = null;
+//     playerShake = false;
+//     enemyShake = false;
+//     
+//     console.log('Quay lại màn chọn quái');
+// }
 
 // Update battle log display
 function updateBattleLogDisplay() {
@@ -934,5 +935,6 @@ window.setup = setup;
 window.draw = draw;
 window.battleActive = () => battleActive;
 
-console.log('Enhanced battle.js loaded successfully');
-console.log('startBattle function exported:', typeof window.startBattle === 'function');
+console.log('✅ Enhanced battle.js loaded successfully');
+console.log('🔧 startBattle function exported:', typeof window.startBattle === 'function');
+console.log('🎯 All battle functions ready for use');
