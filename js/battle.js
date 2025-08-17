@@ -120,12 +120,22 @@ function updateBattleDisplay() {
         enemyHpFill.style.width = enemyHpPercent + '%';
         enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}`;
         
-        // Ẩn thanh máu khi quái chết
+        // Ẩn hoàn toàn thanh máu khi quái chết
         if (enemy.hp <= 0) {
             enemyHpFill.style.display = 'none';
             enemyHpText.textContent = `${enemy.name}: Đã chết`;
+            // Ẩn cả thanh máu nền
+            const enemyHpBar = document.querySelector('.enemy-hp-bar');
+            if (enemyHpBar) {
+                enemyHpBar.style.display = 'none';
+            }
         } else {
             enemyHpFill.style.display = 'block';
+            // Hiện lại thanh máu nền
+            const enemyHpBar = document.querySelector('.enemy-hp-bar');
+            if (enemyHpBar) {
+                enemyHpBar.style.display = 'block';
+            }
         }
         
         console.log('✅ Enemy HP updated:', enemyHpPercent + '%');
@@ -142,12 +152,22 @@ function updateBattleDisplay() {
         playerHpFill.style.width = playerHpPercent + '%';
         playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}`;
         
-        // Ẩn thanh máu khi người chơi chết
+        // Ẩn hoàn toàn thanh máu khi người chơi chết
         if (player.hp <= 0) {
             playerHpFill.style.display = 'none';
             playerHpText.textContent = `Người chơi: Đã chết`;
+            // Ẩn cả thanh máu nền
+            const playerHpBar = document.querySelector('.player-hp-bar');
+            if (playerHpBar) {
+                playerHpBar.style.display = 'none';
+            }
         } else {
             playerHpFill.style.display = 'block';
+            // Hiện lại thanh máu nền
+            const playerHpBar = document.querySelector('.player-hp-bar');
+            if (playerHpBar) {
+                playerHpBar.style.display = 'block';
+            }
         }
         
         console.log('✅ Player HP updated:', playerHpPercent + '%');
@@ -230,7 +250,7 @@ function showMaterialDropPopup(materialName, amount) {
         <div class="material-drop-content">
             <div class="material-drop-header">
                 <h4>🎁 Vật Phẩm Rớt Ra!</h4>
-                <button class="material-close-btn" onclick="this.closest('.material-drop-popup').remove()">×</button>
+                <button class="material-close-btn" onclick="closeMaterialDropPopup()">×</button>
             </div>
             <div class="material-drop-body">
                 <div class="material-image">
@@ -855,6 +875,15 @@ function closePlayerInfoInBattle() {
     }
 }
 
+// Đóng popup vật phẩm rớt ra
+function closeMaterialDropPopup() {
+    console.log('❌ Closing material drop popup');
+    const existingPopup = document.querySelector('.material-drop-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+}
+
 function closeItemRewardPopup() {
     console.log('Close item reward popup - placeholder');
 }
@@ -865,6 +894,7 @@ window.loadBattleAssets = loadBattleAssets;
 window.battleActive = () => battleActive;
 window.closeEnemyInfoInBattle = closeEnemyInfoInBattle;
 window.closePlayerInfoInBattle = closePlayerInfoInBattle;
+window.closeMaterialDropPopup = closeMaterialDropPopup;
 window.closeItemRewardPopup = closeItemRewardPopup;
 
 // Add a global flag to verify the script loaded

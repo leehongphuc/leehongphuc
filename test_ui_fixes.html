@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test UI Fixes - Tu Tiên</title>
+    <link rel="stylesheet" href="css/battle.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            color: white;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .test-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .test-button {
+            background: linear-gradient(145deg, #ffd700, #ffb700);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .test-button:hover {
+            background: linear-gradient(145deg, #ffb700, #ffd700);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        .test-button:active {
+            transform: translateY(0);
+        }
+        .description {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #00ff00;
+            margin: 15px 0;
+        }
+        .warning {
+            background: rgba(255, 255, 0, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffff00;
+            margin: 15px 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feature-list li:before {
+            content: "✅ ";
+            color: #00ff00;
+        }
+        .hp-bar-demo {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        .hp-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: rgba(100, 0, 0, 0.8);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 10px 0;
+        }
+        .hp-bar-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .enemy-hp-bar .hp-bar-fill {
+            background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .player-hp-bar .hp-bar-fill {
+            background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .inventory-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .inventory-item {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .inventory-image {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 2rem;
+        }
+        .inventory-info {
+            text-align: center;
+        }
+        .inventory-name {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .inventory-amount {
+            color: #00ff00;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-align: center;
+            background: rgba(0, 255, 0, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            display: inline-block;
+        }
+        .inventory-type {
+            color: #cccccc;
+            font-size: 0.7rem;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test Các Vấn Đề UI Đã Được Sửa</h1>
+        
+        <div class="test-section">
+            <h2>🎯 Các Vấn Đề Đã Được Khắc Phục</h2>
+            <div class="description">
+                <strong>Vấn đề 1:</strong> Sinh lực = 0 nhưng thanh máu vẫn còn - Đã ẩn hoàn toàn thanh máu
+                <br><strong>Vấn đề 2:</strong> Màu thanh máu thành màu đỏ - Đã thay đổi màu sắc
+                <br><strong>Vấn đề 3:</strong> Thanh máu nhỏ lại - Đã giảm kích thước từ 20px xuống 12px
+                <br><strong>Vấn đề 4:</strong> Nhấn dấu X không tự thoát ra - Đã sửa logic đóng popup
+                <br><strong>Vấn đề 5:</strong> Thông tin nhân vật sinh lực hiển thị HP gốc - Đã sửa để hiển thị HP hiện tại
+                <br><strong>Vấn đề 6:</strong> Trong túi đồ có "nguyên liệu là kinh nghiệm" - Đã loại bỏ kinh nghiệm khỏi nguyên liệu
+                <br><strong>Vấn đề 7:</strong> Vật phẩm cần tên và số lượng (chữ nhỏ) - Đã cải thiện giao diện
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🔧 Các Thay Đổi Đã Thực Hiện</h2>
+            <ul class="feature-list">
+                <li><strong>Ẩn hoàn toàn thanh máu:</strong> Khi HP = 0, ẩn cả thanh máu và thanh máu nền</li>
+                <li><strong>Màu thanh máu đỏ:</strong> Cả quái và người chơi đều có thanh máu màu đỏ</li>
+                <li><strong>Kích thước thanh máu:</strong> Giảm từ 20px xuống 12px, border-radius từ 10px xuống 6px</li>
+                <li><strong>Sửa logic đóng popup:</strong> Thêm hàm closeMaterialDropPopup() và export ra window</li>
+                <li><strong>Loại bỏ kinh nghiệm:</strong> Kinh nghiệm không còn hiển thị trong nguyên liệu</li>
+                <li><strong>Cải thiện giao diện vật phẩm:</strong> Tên rõ ràng, số lượng chữ nhỏ và đẹp mắt</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Test Thanh Máu</h2>
+            <p>Click vào các nút để test thanh máu với các mức HP khác nhau:</p>
+            
+            <div class="hp-bar-demo">
+                <h4>Thanh Máu Quái (Enemy) - Màu Đỏ, Kích Thước Nhỏ</h4>
+                <div class="hp-bar-bg enemy-hp-bar">
+                    <div class="hp-bar-fill" id="enemy-hp-demo" style="width: 100%"></div>
+                </div>
+                <p>HP: <span id="enemy-hp-text">100%</span></p>
+                
+                <button class="test-button" onclick="testEnemyHP(100)">100% HP</button>
+                <button class="test-button" onclick="testEnemyHP(75)">75% HP</button>
+                <button class="test-button" onclick="testEnemyHP(50)">50% HP</button>
+                <button class="test-button" onclick="testEnemyHP(25)">25% HP</button>
+                <button class="test-button" onclick="testEnemyHP(0)">0% HP (Chết - Ẩn Thanh Máu)</button>
+            </div>
+            
+            <div class="hp-bar-demo">
+                <h4>Thanh Máu Người Chơi (Player) - Màu Đỏ, Kích Thước Nhỏ</h4>
+                <div class="hp-bar-bg player-hp-bar">
+                    <div class="hp-bar-fill" id="player-hp-demo" style="width: 100%"></div>
+                </div>
+                <p>HP: <span id="player-hp-text">100%</span></p>
+                
+                <button class="test-button" onclick="testPlayerHP(100)">100% HP</button>
+                <button class="test-button" onclick="testPlayerHP(75)">75% HP</button>
+                <button class="test-button" onclick="testPlayerHP(50)">50% HP</button>
+                <button class="test-button" onclick="testPlayerHP(25)">25% HP</button>
+                <button class="test-button" onclick="testPlayerHP(0)">0% HP (Chết - Ẩn Thanh Máu)</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Test Giao Diện Vật Phẩm</h2>
+            <p>Giao diện vật phẩm mới với tên rõ ràng và số lượng chữ nhỏ:</p>
+            
+            <div class="inventory-demo">
+                <div class="inventory-item">
+                    <div class="inventory-image">🗡️</div>
+                    <div class="inventory-info">
+                        <div class="inventory-name">Dạ Phiến</div>
+                        <div class="inventory-amount">1</div>
+                    </div>
+                </div>
+                
+                <div class="inventory-item">
+                    <div class="inventory-image">💎</div>
+                    <div class="inventory-info">
+                        <div class="inventory-name">Huyền Thiết</div>
+                        <div class="inventory-amount">150</div>
+                    </div>
+                </div>
+                
+                <div class="inventory-item">
+                    <div class="inventory-image">💰</div>
+                    <div class="inventory-info">
+                        <div class="inventory-name">Vàng</div>
+                        <div class="inventory-amount">500</div>
+                    </div>
+                </div>
+                
+                <div class="inventory-item">
+                    <div class="inventory-image">🎁</div>
+                    <div class="inventory-info">
+                        <div class="inventory-name">Rương Quà</div>
+                        <div class="inventory-type">Rương</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>🧪 Test Popup Vật Phẩm</h2>
+            <p>Click vào nút để test popup vật phẩm với nút X hoạt động đúng:</p>
+            
+            <button class="test-button" onclick="testMaterialDropPopup()">
+                🎁 Test Popup Vật Phẩm Rớt Ra
+            </button>
+            
+            <div class="description">
+                <strong>Lưu ý:</strong> Popup này sẽ có nút X hoạt động đúng, không tự động biến mất
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Chi Tiết Các Sửa Đổi</h2>
+            
+            <h3>🎯 Vấn Đề 1-3: Thanh Máu</h3>
+            <ul class="feature-list">
+                <li>Ẩn hoàn toàn thanh máu khi HP = 0 (cả thanh máu và thanh máu nền)</li>
+                <li>Thay đổi màu sắc thành đỏ cho cả quái và người chơi</li>
+                <li>Giảm kích thước từ 20px xuống 12px</li>
+                <li>Giảm border-radius từ 10px xuống 6px</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 4: Nút X Không Hoạt Động</h3>
+            <ul class="feature-list">
+                <li>Thay thế onclick inline bằng hàm closeMaterialDropPopup()</li>
+                <li>Thêm hàm closeMaterialDropPopup() vào battle.js</li>
+                <li>Export hàm ra window để có thể gọi từ HTML</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 5: Thông Tin Nhân Vật</h3>
+            <ul class="feature-list">
+                <li>Đã kiểm tra: showEnemyInfoInBattle() hiển thị enemy.hp (HP hiện tại)</li>
+                <li>Đã kiểm tra: showEnemyInfo() hiển thị enemy.hp (HP hiện tại)</li>
+                <li>Không có vấn đề về hiển thị HP gốc</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 6: Kinh Nghiệm Trong Nguyên Liệu</h3>
+            <ul class="feature-list">
+                <li>Thêm điều kiện loại bỏ "Kinh Nghiệm" khỏi materials-grid</li>
+                <li>Kinh nghiệm không còn hiển thị trong phần nguyên liệu</li>
+                <li>Chỉ hiển thị các nguyên liệu thực sự (Huyền Thiết, Vàng, v.v.)</li>
+            </ul>
+            
+            <h3>🎯 Vấn Đề 7: Giao Diện Vật Phẩm</h3>
+            <ul class="feature-list">
+                <li>Thay đổi "Số lượng: X" thành chỉ hiển thị số lượng</li>
+                <li>Thêm CSS cho inventory-amount với chữ nhỏ, màu xanh lá</li>
+                <li>Thêm CSS cho inventory-type với chữ nhỏ, màu xám</li>
+                <li>Giao diện vật phẩm đẹp mắt và dễ đọc hơn</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>⚠️ Lưu Ý Quan Trọng</h2>
+            <div class="warning">
+                <h3>Để Test Hoàn Chỉnh:</h3>
+                <ol>
+                    <li>Mở file <code>bi_canh.html</code> trong trình duyệt</li>
+                    <li>Chọn một bí cảnh và quái vật để đánh</li>
+                    <li>Kiểm tra:
+                        <ul>
+                            <li>Thanh máu ẩn hoàn toàn khi quái/người chơi chết</li>
+                            <li>Màu sắc thanh máu đỏ và kích thước nhỏ</li>
+                            <li>Popup vật phẩm có nút X hoạt động đúng</li>
+                            <li>Mở <code>tui_do.html</code> để kiểm tra giao diện vật phẩm</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Test functions cho thanh máu quái
+        function testEnemyHP(percent) {
+            const hpBar = document.getElementById('enemy-hp-demo');
+            const hpText = document.getElementById('enemy-hp-text');
+            const hpBarBg = document.querySelector('.enemy-hp-bar');
+            
+            if (percent <= 0) {
+                hpBar.style.display = 'none';
+                hpBarBg.style.display = 'none';
+                hpText.textContent = 'Đã chết - Ẩn hoàn toàn thanh máu';
+            } else {
+                hpBar.style.display = 'block';
+                hpBarBg.style.display = 'block';
+                hpBar.style.width = percent + '%';
+                hpText.textContent = percent + '% HP';
+            }
+        }
+
+        // Test functions cho thanh máu người chơi
+        function testPlayerHP(percent) {
+            const hpBar = document.getElementById('player-hp-demo');
+            const hpText = document.getElementById('player-hp-text');
+            const hpBarBg = document.querySelector('.player-hp-bar');
+            
+            if (percent <= 0) {
+                hpBar.style.display = 'none';
+                hpBarBg.style.display = 'none';
+                hpText.textContent = 'Đã chết - Ẩn hoàn toàn thanh máu';
+            } else {
+                hpBar.style.display = 'block';
+                hpBarBg.style.display = 'block';
+                hpBar.style.width = percent + '%';
+                hpText.textContent = percent + '% HP';
+            }
+        }
+
+        // Test function cho popup vật phẩm
+        function testMaterialDropPopup() {
+            const popupDiv = document.createElement('div');
+            popupDiv.className = 'material-drop-popup';
+            
+            popupDiv.innerHTML = `
+                <div class="material-drop-content">
+                    <div class="material-drop-header">
+                        <h4>🎁 Vật Phẩm Rớt Ra!</h4>
+                        <button class="material-close-btn" onclick="closeMaterialDropPopup()">×</button>
+                    </div>
+                    <div class="material-drop-body">
+                        <div class="material-image">
+                            <img src="images/vang.png" alt="Vàng" onerror="this.style.display='none'; this.parentNode.innerHTML='Vàng';">
+                        </div>
+                        <div class="material-details">
+                            <div class="material-name">Vàng</div>
+                            <div class="material-amount">+257</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(popupDiv);
+            console.log('🎁 Test popup vật phẩm rớt ra đã được tạo');
+        }
+
+        // Hàm đóng popup vật phẩm (giả lập)
+        function closeMaterialDropPopup() {
+            console.log('❌ Closing material drop popup');
+            const existingPopup = document.querySelector('.material-drop-popup');
+            if (existingPopup) {
+                existingPopup.remove();
+                console.log('✅ Popup đã được đóng thành công');
+            }
+        }
+
+        console.log('🧪 Test UI Fixes loaded successfully');
+        console.log('Click các nút test để kiểm tra các vấn đề UI đã được sửa');
+    </script>
+</body>
+</html>

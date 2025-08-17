@@ -894,10 +894,10 @@ function updateInventoryDisplay() {
                         <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" 
                              onerror="this.src='images/placeholder.png'" onclick="showItemDetails(${globalIndex})">
                     </div>
-                    <div class="inventory-info">
-                        <div class="inventory-name" ${qualityStyle}>${item.name}</div>
-                        <div class="inventory-status">Rương</div>
-                    </div>
+                                    <div class="inventory-info">
+                    <div class="inventory-name" ${qualityStyle}>${item.name}</div>
+                    <div class="inventory-type">Rương</div>
+                </div>
                     <div class="inventory-actions">
                         ${item.locked ? `<button class="lock-btn" onclick="toggleLock(${globalIndex})">🔒</button>` : `
                             <button class="lock-btn" onclick="toggleLock(${globalIndex})">🔓</button>
@@ -913,6 +913,9 @@ function updateInventoryDisplay() {
     if (materialsGrid) {
         materialsGrid.innerHTML = '';
         Object.entries(gameState.materials).forEach(([name, count], index) => {
+            // Loại bỏ "Kinh Nghiệm" khỏi nguyên liệu
+            if (name === 'Kinh Nghiệm') return;
+            
             const material = window.giftBoxItems.find(item => item.type === 'material' && item.name === name);
             const qualityNum = material ? Object.keys(qualityColors).indexOf(material.quality) + 1 : 1;
             const qualityStyle = material && qualityColors[material.quality] ? `style="color: ${qualityColors[material.quality]}"` : '';
@@ -925,7 +928,7 @@ function updateInventoryDisplay() {
                 </div>
                 <div class="inventory-info">
                     <div class="inventory-name" ${qualityStyle}>${name}</div>
-                    <div class="inventory-status">Số lượng: ${count}</div>
+                    <div class="inventory-amount">${count}</div>
                 </div>
             `;
             materialsGrid.appendChild(materialItem);
