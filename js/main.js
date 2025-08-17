@@ -388,11 +388,11 @@ function initializeClickEvents() {
         attackBtn.addEventListener('click', startAttack);
     }
     
-    // Return button from battle
-    const returnBtn = document.getElementById('return-btn');
-    if (returnBtn) {
-        returnBtn.addEventListener('click', backToEnemySelect);
-    }
+    // Return button from battle - REMOVED: No longer needed
+    // const returnBtn = document.getElementById('return-btn');
+    // if (returnBtn) {
+    //     returnBtn.addEventListener('click', backToEnemySelect);
+    // }
     
     console.log('Enhanced click events initialized successfully');
 }

@@ -292,8 +292,14 @@ function showItemDetails(index, isEquipped = false, fromCharacterEquip = false) 
     let actionButton = '';
     if (item.type === 'giftBag' && !isEquipped) {
         actionButton = `<button class="open-gift-btn" onclick="openGiftBag(${index})">Mở Rương</button>`;
-    } else if (!isEquipped && item.type !== 'giftBag' && item.type !== 'material' && fromCharacterEquip) {
-        actionButton = `<button class="equip-btn" onclick="equipItem(${index})">Mang</button>`;
+    } else if (!isEquipped && item.type !== 'giftBag' && item.type !== 'material') {
+        if (item.equipped) {
+            actionButton = `<button class="unequip-btn" onclick="unequip('${item.type}')">Tháo</button>`;
+        } else if (fromCharacterEquip) {
+            actionButton = `<button class="equip-btn" onclick="equipItem(${index})">Mang</button>`;
+        } else {
+            actionButton = `<button class="equip-btn" onclick="equipItem(${index})">Mang</button>`;
+        }
     }
     const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
     modalContent.innerHTML = `
@@ -343,6 +349,13 @@ function equipItem(index) {
     if (gameState.equipment[item.type].equipped) {
         const currentItem = { ...gameState.equipment[item.type] };
         delete currentItem.equipped;
+        // Tìm vật phẩm cũ trong túi đồ và đánh dấu không trang bị
+        for (let i = 0; i < gameState.inventory.length; i++) {
+            if (gameState.inventory[i].type === item.type && gameState.inventory[i].equipped) {
+                gameState.inventory[i].equipped = false;
+                break;
+            }
+        }
         gameState.inventory.push(currentItem);
     }
 
@@ -356,7 +369,8 @@ function equipItem(index) {
         stats: { ...item.stats },
         enhanceLevel: item.enhanceLevel || 0
     };
-    gameState.inventory.splice(index, 1);
+    // Đánh dấu vật phẩm là đã trang bị thay vì xóa khỏi túi đồ
+    gameState.inventory[index].equipped = true;
 
     saveGameState();
     updateEquipmentBonuses();
@@ -384,9 +398,13 @@ function unequip(type) {
     const item = gameState.equipment[type];
     console.log(`Tháo vật phẩm: ${type}`, JSON.stringify(item, null, 2));
 
-    const inventoryItem = { ...item };
-    delete inventoryItem.equipped;
-    gameState.inventory.push(inventoryItem);
+    // Tìm vật phẩm trong túi đồ và đánh dấu không trang bị
+    for (let i = 0; i < gameState.inventory.length; i++) {
+        if (gameState.inventory[i].type === type && gameState.inventory[i].equipped) {
+            gameState.inventory[i].equipped = false;
+            break;
+        }
+    }
 
     gameState.equipment[type] = {
         name: "",
@@ -798,7 +816,7 @@ function updateInventoryEquipmentGrid() {
                     </div>
                     <div class="inventory-info">
                         <div class="inventory-name" ${qualityStyle}>${item.name}</div>
-                        <div class="inventory-status">Trong Túi Đồ</div>
+                        <div class="inventory-status">${item.equipped ? 'Đã Trang Bị' : 'Trong Túi Đồ'}</div>
                     </div>
                     <div class="inventory-actions">
                         ${actionsHtml}

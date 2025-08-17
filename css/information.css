@@ -116,6 +116,24 @@
     cursor: not-allowed;
 }
 
+.unequip-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.unequip-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
 /* Weapon Grid Styles */
 .weapon-grid {
     display: flex;

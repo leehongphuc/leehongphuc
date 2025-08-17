@@ -328,54 +328,76 @@ function endBattle(playerWon) {
         window.updateDisplay();
     }
 
-    // Show return button but don't auto return
-    showReturnButton();
-    // Không tự động thoát, người chơi phải nhấn nút X hoặc nút return
+    // Không tự động thoát, người chơi phải nhấn nút X để đóng thông tin
 }
 
-// Show return button
-function showReturnButton() {
-    let returnBtn = document.getElementById('return-btn');
-    if (returnBtn && returnBtn.style) {
-        returnBtn.style.display = 'block';
-        
-        // Add click event to return button
-        returnBtn.onclick = function() {
-            if (typeof window.backToEnemySelect === 'function') {
-                window.backToEnemySelect();
-            } else {
-                returnToSelection();
-            }
-        };
+// Show return button - REMOVED: No longer needed
+// function showReturnButton() {
+//     let returnBtn = document.getElementById('return-btn');
+//     if (returnBtn && returnBtn.style) {
+//         returnBtn.style.display = 'block';
+//         
+//         // Add click event to return button
+//         returnBtn.onclick = function() {
+//             if (typeof window.backToEnemySelect === 'function') {
+//                 window.backToEnemySelect();
+//             } else {
+//                 returnToSelection();
+//             }
+//         };
+//     }
+// }
+
+// Close enemy info in battle
+function closeEnemyInfoInBattle() {
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
     }
 }
 
-// Return to selection
-function returnToSelection() {
-    const selectSection = document.getElementById('select-enemy-section');
-    const battleSection = document.getElementById('battle-section');
-    const enemyInfoSection = document.getElementById('enemy-info-section');
-    const returnBtn = document.getElementById('return-btn');
-    
-    if (selectSection && battleSection && enemyInfoSection) {
-        battleSection.classList.remove('active');
-        enemyInfoSection.classList.remove('active');
-        selectSection.classList.add('active');
+// Close player info in battle
+function closePlayerInfoInBattle() {
+    const existingInfo = document.querySelector('.battle-character-info');
+    if (existingInfo) {
+        existingInfo.remove();
     }
-    
-    // Hide return button
-    if (returnBtn) {
-        returnBtn.style.display = 'none';
+}
+
+// Close item reward popup
+function closeItemRewardPopup() {
+    const existingPopup = document.querySelector('.item-reward-popup');
+    if (existingPopup) {
+        existingPopup.remove();
     }
-    
-    if (returnBtn && returnBtn.style) {
-        returnBtn.style.display = 'none';
-    }
-    
-    // Reset battle state
-    battleActive = false;
-    battleLog = [];
-    damageDisplay = [];
+}
+
+// Return to selection - REMOVED: No longer needed as return button is removed
+// function returnToSelection() {
+//     const selectSection = document.getElementById('select-enemy-section');
+//     const battleSection = document.getElementById('battle-section');
+//     const enemyInfoSection = document.getElementById('enemy-info-section');
+//     const returnBtn = document.getElementById('return-btn');
+//     
+//     if (selectSection && battleSection && enemyInfoSection) {
+//         battleSection.classList.remove('active');
+//         enemyInfoSection.classList.remove('active');
+//         selectSection.classList.add('active');
+//     }
+//     
+//     // Hide return button
+//     if (returnBtn) {
+//         returnBtn.style.display = 'none';
+//     }
+//     
+//     if (returnBtn && returnBtn.style) {
+//         returnBtn.style.display = 'none';
+//     }
+//     
+//     // Reset battle state
+//     battleActive = false;
+//     battleLog = [];
+//     damageDisplay = [];
     player = null;
     enemy = null;
     currentTurn = null;
@@ -430,7 +452,7 @@ function showEnemyInfoInBattle() {
     infoDiv.innerHTML = `
         <div class="character-info-header">
             <h4>${enemy.name}</h4>
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closeEnemyInfoInBattle()">×</button>
         </div>
         <div class="character-info-content">
             <div class="character-image">
@@ -495,7 +517,7 @@ function showPlayerInfoInBattle() {
     infoDiv.innerHTML = `
         <div class="character-info-header">
             <h4>Thông Tin Người Chơi</h4>
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closePlayerInfoInBattle()">×</button>
         </div>
         <div class="character-info-content">
             <div class="character-image">
@@ -573,7 +595,7 @@ function showItemRewardPopup(itemType, amount) {
     
     popupDiv.innerHTML = `
         <div class="item-reward-content">
-            <button class="close-btn" onclick="this.parentElement.parentElement.remove()">×</button>
+            <button class="close-btn" onclick="closeItemRewardPopup()">×</button>
             <div class="item-image">
                 <img src="${itemImage}" alt="${itemName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${itemName}';">
                 <div class="item-amount">${amount}</div>
