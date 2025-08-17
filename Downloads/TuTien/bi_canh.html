@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bí Cảnh - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/battle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
+        <h1>Bí Cảnh - Tu Tiên</h1>
+        
+        <div class="stats-display">
+            <div class="stats-row">
+                <span>Cấp độ: <span id="level-display">Luyện Khí Tầng 1 (Cấp 1)</span></span>
+                <span>Kinh nghiệm: <span id="exp-display">0/100</span></span>
+            </div>
+            <div class="stats-row">
+                <span>Kim tệ: <span id="gold-display">1000</span></span>
+                <span>Linh thạch: <span id="spirit-display">3000</span></span>
+            </div>
+        </div>
+
+        <!-- Màn hình chọn quái -->
+        <div class="section active" id="select-enemy-section">
+            <h3>Chọn Quái Vật Để Chiến Đấu</h3>
+            <div class="enemy-select">
+                <div class="enemy-option" id="enemy-0">
+                    <div class="enemy-img">
+                        <img src="images/dungeon_1.png" alt="Quái Vật Cấp 1" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 1';">
+                    </div>
+                    <span>Quái Vật Cấp 1</span>
+                    <div class="enemy-stats">HP: 800 | Damage: 80</div>
+                </div>
+                <div class="enemy-option" id="enemy-2">
+                    <div class="enemy-img">
+                        <img src="images/dungeon_2.png" alt="Quái Vật Cấp 2" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 2';">
+                    </div>
+                    <span>Quái Vật Cấp 2</span>
+                    <div class="enemy-stats">HP: 1200 | Damage: 120</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn hình thông tin quái và nút tấn công -->
+        <div class="section" id="enemy-info-section">
+            <h3>Thông Tin Quái Vật</h3>
+            <div class="enemy-info-card">
+                <div class="enemy-info-img" id="selected-enemy-img">
+                    <img src="images/dungeon_1.png" alt="Quái Vật Cấp 1" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 1';">
+                </div>
+                <div class="enemy-info-details">
+                    <h4 id="selected-enemy-name">Quái Vật Cấp 1</h4>
+                    <div class="enemy-detailed-stats" id="selected-enemy-stats">
+                        <p>HP: <span>800/800</span></p>
+                        <p>Damage: <span>80</span></p>
+                        <p>Critical Chance: <span>5%</span></p>
+                        <p>Defense: <span>15</span></p>
+                        <p>Agility: <span>0.8</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="battle-actions">
+                <button class="battle-action-btn" id="attack-btn">🗡️ Tấn Công</button>
+                <button class="battle-action-btn secondary" id="back-to-select-btn">← Quay lại</button>
+            </div>
+        </div>
+
+        <!-- Màn hình chiến đấu -->
+        <div class="section" id="battle-section">
+            <div id="battle-canvas"></div>
+            <div id="battle-controls">
+                <div id="battle-log" class="battle-log"></div>
+                <button class="battle-action-btn" id="return-btn" style="display: none;">← Quay lại chọn quái</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts in proper order -->
+    <script src="js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/battle.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Initialize battle system after all scripts loaded -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('HTML fully loaded, checking script availability:');
+            console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
+            
+            // Load battle assets immediately to avoid CORS issues
+            if (typeof window.loadBattleAssets === 'function') {
+                console.log('Loading battle assets...');
+                window.loadBattleAssets();
+            } else {
+                console.error('loadBattleAssets function not found');
+            }
+        });
+    </script>
