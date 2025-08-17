@@ -73,6 +73,48 @@ function calculateDamage(attacker, defender, useMagic = false) {
     };
 }
 
+// Update HTML battle display
+function updateBattleDisplay() {
+    if (!player || !enemy) return;
+    
+    // Update enemy image and HP
+    const enemyImg = document.getElementById('enemy-img');
+    const enemyHpFill = document.getElementById('enemy-hp-fill');
+    const enemyHpText = document.getElementById('enemy-hp-text');
+    
+    if (enemyImg) {
+        enemyImg.src = enemy.image;
+        enemyImg.style.display = 'block';
+    }
+    
+    if (enemyHpFill && enemyHpText) {
+        const enemyHpPercent = (enemy.hp / enemy.maxHp) * 100;
+        enemyHpFill.style.width = enemyHpPercent + '%';
+        enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}/${enemy.maxHp}`;
+    }
+    
+    // Update player HP
+    const playerHpFill = document.getElementById('player-hp-fill');
+    const playerHpText = document.getElementById('player-hp-text');
+    
+    if (playerHpFill && playerHpText) {
+        const playerHpPercent = (player.hp / player.maxHp) * 100;
+        playerHpFill.style.width = playerHpPercent + '%';
+        playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}/${player.maxHp}`;
+    }
+}
+
+// Add shake effect to elements
+function addShakeEffect(elementSelector) {
+    const element = document.querySelector(elementSelector);
+    if (element) {
+        element.classList.add('shake');
+        setTimeout(() => {
+            element.classList.remove('shake');
+        }, 500);
+    }
+}
+
 // Start battle function
 function startBattle(index, locationType) {
     console.log('Bắt đầu chiến đấu với quái:', index, 'tại địa điểm:', locationType);
@@ -143,6 +185,21 @@ function startBattle(index, locationType) {
         type: 'normal' 
     });
 
+    // Update HTML display
+    updateBattleDisplay();
+    
+    // Add click events for character info
+    const enemyImg = document.getElementById('enemy-img');
+    const playerImg = document.getElementById('player-img');
+    
+    if (enemyImg) {
+        enemyImg.onclick = () => showEnemyInfoInBattle();
+    }
+    
+    if (playerImg) {
+        playerImg.onclick = () => showPlayerInfoInBattle();
+    }
+    
     // Start battle loop with delay
     setTimeout(() => {
         if (battleActive) {
@@ -171,10 +228,7 @@ function playerAttack() {
     if (!battleActive || currentTurn !== 'player') return;
 
     // Enemy shake effect
-    enemyShake = true;
-    setTimeout(() => {
-        enemyShake = false;
-    }, 500);
+    addShakeEffect('.battle-enemy');
 
     // Calculate damage
     const useMagic = Math.random() < 0.3 && player.magicDamage > 0;
@@ -189,15 +243,8 @@ function playerAttack() {
         type: isCrit ? 'critical' : 'normal' 
     });
     
-    // Damage display position: enemy is on top, so damage shows at top
-    damageDisplay.push({ 
-        damage, 
-        isCrit, 
-        x: 250, 
-        y: 180, 
-        time: 2.0,
-        type: 'enemy'
-    });
+    // Update display
+    updateBattleDisplay();
 
     // Check if enemy is dead
     if (enemy.hp <= 0) {
@@ -220,10 +267,7 @@ function enemyAttack() {
     if (!battleActive || currentTurn !== 'enemy') return;
 
     // Player shake effect
-    playerShake = true;
-    setTimeout(() => {
-        playerShake = false;
-    }, 500);
+    addShakeEffect('.battle-player');
 
     // Calculate damage - enemies can use both physical and magic damage
     const useMagic = enemy.magicDamage > 0 && Math.random() < 0.4;
@@ -238,15 +282,8 @@ function enemyAttack() {
         type: isCrit ? 'critical' : 'normal' 
     });
     
-    // Damage display position: player is at bottom, so damage shows at bottom
-    damageDisplay.push({ 
-        damage, 
-        isCrit, 
-        x: 250, 
-        y: 480, 
-        time: 2.0,
-        type: 'player'
-    });
+    // Update display
+    updateBattleDisplay();
 
     // Check if player is dead
     if (player.hp <= 0) {
@@ -699,27 +736,8 @@ function preload() {
 }
 
 function setup() {
-    console.log('Khởi tạo canvas chiến đấu...');
-    try {
-        // Clear any existing canvas first
-        const battleCanvasDiv = document.getElementById('battle-canvas');
-        if (battleCanvasDiv) {
-            battleCanvasDiv.innerHTML = '';
-        }
-        
-        const canvas = createCanvas(500, 600);
-        canvas.parent('battle-canvas');
-        
-        // Set canvas ID to something meaningful instead of defaultCanvas0
-        const canvasElement = document.querySelector('#battle-canvas canvas');
-        if (canvasElement) {
-            canvasElement.id = 'game-canvas';
-        }
-        
-        console.log('Canvas created successfully');
-        
-        // Add click event for character info
-        canvas.mouseClicked(handleCanvasClick);
+    console.log('Canvas system disabled - using HTML/CSS display');
+    // Canvas system disabled, using HTML elements instead
         
         // Assets will be loaded separately via HTML
         console.log('Canvas ready, assets loading handled separately');
@@ -729,29 +747,10 @@ function setup() {
 }
 
 function draw() {
-    // Only draw when battle is active
-    if (!battleActive) {
-        // Blank screen when not battling
-        background(20, 20, 30);
-        fill(255, 255, 255, 100);
-        textAlign(CENTER, CENTER);
-        textSize(18);
-        text('Sẵn sàng chiến đấu', width/2, height/2);
-        return;
-    }
+    // Canvas system disabled - using HTML/CSS display instead
+    // All rendering now handled by updateBattleDisplay() function
     
-    // Debug: Check if we have player and enemy
-    if (!player || !enemy) {
-        background(50, 20, 20);
-        fill(255, 200, 200);
-        textAlign(CENTER, CENTER);
-        textSize(16);
-        text('Đang tải dữ liệu chiến đấu...', width/2, height/2);
-        text(`Player: ${player ? 'OK' : 'Missing'}`, width/2, height/2 + 30);
-        text(`Enemy: ${enemy ? 'OK' : 'Missing'}`, width/2, height/2 + 60);
-        return;
-    }
-
+    /*
     // Draw background
     if (backgroundLoaded && bgHTMLImg && bgHTMLImg.complete && bgHTMLImg.naturalWidth > 0) {
         let bg = bgHTMLImg;
@@ -865,6 +864,7 @@ function draw() {
     
     // Update battle log
     // updateBattleLogDisplay(); // REMOVED: Battle log no longer needed
+    */
 }
 
 function drawHealthBars() {

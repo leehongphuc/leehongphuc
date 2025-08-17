@@ -117,7 +117,29 @@
 
         <!-- Màn hình chiến đấu -->
         <div class="section" id="battle-section">
-            <div id="battle-canvas"></div>
+            <div class="battle-scene">
+                <div class="battle-background">
+                    <img id="battle-bg" src="images/phong_canh_1.png" alt="Battle Background">
+                </div>
+                <div class="battle-enemy">
+                    <img id="enemy-img" src="" alt="Enemy" style="display: none;">
+                    <div class="enemy-hp-bar">
+                        <div class="hp-bar-bg">
+                            <div id="enemy-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="enemy-hp-text" class="hp-text"></div>
+                    </div>
+                </div>
+                <div class="battle-player">
+                    <img id="player-img" src="images/player_1.png" alt="Player">
+                    <div class="player-hp-bar">
+                        <div class="hp-bar-bg">
+                            <div id="player-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="player-hp-text" class="hp-text"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

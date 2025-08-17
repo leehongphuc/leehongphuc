@@ -361,16 +361,126 @@
     background: linear-gradient(45deg, #777, #666);
 }
 
-/* Battle Screen */
-#battle-canvas {
+/* Battle Scene */
+.battle-scene {
+    position: relative;
+    width: 500px;
+    height: 600px;
+    margin: 20px auto;
     border: 2px solid rgba(255, 215, 0, 0.3);
     border-radius: 10px;
-    margin: 20px auto;
-    display: block;
+    overflow: hidden;
     background: rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
+}
+
+.battle-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.battle-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.battle-enemy {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.battle-enemy img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    transition: transform 0.1s ease;
     cursor: pointer;
+    border-radius: 8px;
+}
+
+.battle-enemy img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5);
+}
+
+.battle-enemy.shake img {
+    animation: shake 0.5s ease-in-out;
+}
+
+.battle-player {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.battle-player img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.battle-player img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(76, 205, 196, 0.5);
+}
+
+.battle-player.shake img {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, -5px); }
+    50% { transform: translate(5px, -5px); }
+    75% { transform: translate(-5px, 5px); }
+}
+
+/* Health Bars */
+.enemy-hp-bar, .player-hp-bar {
+    margin-top: 10px;
+    width: 200px;
+    margin-left: -40px; /* Center the wider health bar */
+}
+
+.hp-bar-bg {
+    width: 100%;
+    height: 20px;
+    background: rgba(100, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #00ff00);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    width: 100%;
+}
+
+.hp-text {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Character Info Popup in Battle - Redesigned like Item Details */
