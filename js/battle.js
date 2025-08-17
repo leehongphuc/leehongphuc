@@ -282,6 +282,98 @@ function enemyTurn() {
     console.log('👹 Enemy turn completed, next turn scheduled...');
 }
 
+// Show material drop popup
+function showMaterialDropPopup(materialName, amount) {
+    const popupDiv = document.createElement('div');
+    popupDiv.className = 'material-drop-popup';
+    
+    let materialImage = '';
+    if (materialName === 'Huyền Thiết') {
+        materialImage = 'images/huyen_thiet.png';
+    } else if (materialName === 'Vàng') {
+        materialImage = 'images/vang.png';
+    } else if (materialName === 'Kinh Nghiệm') {
+        materialImage = 'images/exp.png';
+    }
+    
+    popupDiv.innerHTML = `
+        <div class="material-drop-content">
+            <div class="material-image">
+                <img src="${materialImage}" alt="${materialName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${materialName}';">
+                <div class="material-amount">+${amount}</div>
+            </div>
+            <div class="material-name">${materialName}</div>
+        </div>
+    `;
+    
+    // Remove existing popup
+    const existingPopup = document.querySelector('.material-drop-popup');
+    if (existingPopup) {
+        existingPopup.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(popupDiv);
+        
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+            if (popupDiv.parentNode) {
+                popupDiv.remove();
+            }
+        }, 3000);
+    }
+}
+
+// Show reward summary
+function showRewardSummary(enemy) {
+    const summaryDiv = document.createElement('div');
+    summaryDiv.className = 'reward-summary';
+    
+    let materialText = '';
+    if (enemy.materialDrop && enemy.materialDrop.name) {
+        materialText = `<div class="reward-item">
+            <span class="reward-label">Vật phẩm:</span>
+            <span class="reward-value">${enemy.materialDrop.name} x${enemy.materialDrop.amount}</span>
+        </div>`;
+    }
+    
+    summaryDiv.innerHTML = `
+        <div class="reward-summary-content">
+            <h3>🎉 Chiến Thắng!</h3>
+            <div class="reward-list">
+                <div class="reward-item">
+                    <span class="reward-label">Kinh nghiệm:</span>
+                    <span class="reward-value">+${enemy.expReward || 50}</span>
+                </div>
+                <div class="reward-item">
+                    <span class="reward-label">Kim tệ:</span>
+                    <span class="reward-value">+${enemy.goldReward || 100}</span>
+                </div>
+                <div class="reward-item">
+                    <span class="reward-label">Linh thạch:</span>
+                    <span class="reward-value">+${enemy.spiritStonesReward || 50}</span>
+                </div>
+                ${materialText}
+            </div>
+            <button class="reward-close-btn" onclick="this.parentElement.parentElement.remove()">Đóng</button>
+        </div>
+    `;
+    
+    // Remove existing summary
+    const existingSummary = document.querySelector('.reward-summary');
+    if (existingSummary) {
+        existingSummary.remove();
+    }
+    
+    // Add to battle section
+    const battleSection = document.getElementById('battle-section');
+    if (battleSection) {
+        battleSection.appendChild(summaryDiv);
+    }
+}
+
 // End battle function
 function endBattle(playerWon) {
     console.log('🏁 Ending battle, playerWon:', playerWon);
@@ -773,7 +865,6 @@ function showRewardSummary(enemy) {
     if (battleSection) {
         battleSection.appendChild(summaryDiv);
     }
-}
 }
 
 // Export functions to window
