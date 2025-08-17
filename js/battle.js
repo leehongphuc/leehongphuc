@@ -150,6 +150,10 @@ function startBattle(index, locationType) {
     }, 1000);
 }
 
+// Export startBattle immediately after definition
+window.startBattle = startBattle;
+console.log('startBattle function exported immediately');
+
 // Battle loop
 function battleLoop() {
     if (!battleActive) return;

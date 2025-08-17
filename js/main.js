@@ -348,14 +348,25 @@ function startAttack() {
         }, 800);
     }
     
-    // Start enhanced battle with canvas
-    if (typeof window.startBattle === 'function') {
-        window.startBattle(selectedEnemyIndex, selectedLocation);
-    } else {
-        console.error('startBattle function not available');
-        alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
-        backToEnemySelect();
+    // Start enhanced battle with canvas - with retry mechanism
+    console.log('Attempting to start battle, checking startBattle availability...');
+    console.log('window.startBattle type:', typeof window.startBattle);
+    
+    function tryStartBattle(retryCount = 0) {
+        if (typeof window.startBattle === 'function') {
+            console.log('startBattle found, starting battle...');
+            window.startBattle(selectedEnemyIndex, selectedLocation);
+        } else if (retryCount < 10) {
+            console.log(`startBattle not ready, retrying... (${retryCount + 1}/10)`);
+            setTimeout(() => tryStartBattle(retryCount + 1), 100);
+        } else {
+            console.error('startBattle function not available after retries');
+            alert('Lỗi: Chức năng chiến đấu chưa sẵn sàng!');
+            backToEnemySelect();
+        }
     }
+    
+    tryStartBattle();
 }
 
 // Initialize click events with enhanced error handling

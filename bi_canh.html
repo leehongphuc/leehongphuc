@@ -133,20 +133,37 @@
     
     <!-- Initialize battle system after all scripts loaded -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('HTML fully loaded, checking script availability:');
+        // Wait for all scripts to load
+        function checkScriptLoadStatus() {
+            console.log('Checking script load status:');
             console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
             console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- getEnemies:', typeof window.getEnemies !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- initializeGameState:', typeof window.initializeGameState !== 'undefined' ? 'loaded' : 'not loaded');
             
-            // Load battle assets immediately to avoid CORS issues
+            // Load battle assets if available
             if (typeof window.loadBattleAssets === 'function') {
                 console.log('Loading battle assets...');
                 window.loadBattleAssets();
             } else {
                 console.error('loadBattleAssets function not found');
             }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('HTML fully loaded, checking script availability...');
+            checkScriptLoadStatus();
+            
+            // Also check after a short delay to catch any late-loading scripts
+            setTimeout(checkScriptLoadStatus, 500);
+        });
+        
+        // Also check when window finishes loading
+        window.addEventListener('load', function() {
+            console.log('Window fully loaded, final script check:');
+            checkScriptLoadStatus();
         });
     </script>
 </body>
