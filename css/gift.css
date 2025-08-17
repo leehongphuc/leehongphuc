@@ -1,7 +1,6 @@
 /* Gift page specific styles */
 .container {
     max-width: 700px;
-    animation: fadeInUp 0.8s ease-out;
 }
 
 /* fadeInUp animation is now in common.css */

@@ -376,61 +376,107 @@ function updateBattleLogDisplay() {
 let backgroundLoaded = false;
 let playerImg, enemy1Img, enemy2Img;
 
-function preload() {
+function loadBattleAssets() {
     console.log('Loading battle assets...');
-    try {
-        // Load background image
+    
+    // Load background image using regular Image objects
+    const bgImg = new Image();
+    bgImg.onload = function() {
+        console.log('Background image loaded successfully');
+        backgroundLoaded = true;
+        // Convert to p5.js image when p5 is ready
+        if (typeof loadImage === 'function') {
+            loadImage('images/phong_canh_1.png', (img) => {
+                window.battleBackground = img;
+            });
+        }
+    };
+    bgImg.onerror = function() {
+        console.error('Failed to load background image');
+        backgroundLoaded = false;
+    };
+    bgImg.src = 'images/phong_canh_1.png';
+    
+    // Load player image
+    const playerImage = new Image();
+    playerImage.onload = function() {
+        console.log('Player image loaded');
+        if (typeof loadImage === 'function') {
+            loadImage('images/player_1.png', (img) => {
+                playerImg = img;
+            });
+        }
+    };
+    playerImage.onerror = function() {
+        console.error('Failed to load player image');
+    };
+    playerImage.src = 'images/player_1.png';
+    
+    // Load enemy images
+    const enemy1Image = new Image();
+    enemy1Image.onload = function() {
+        console.log('Enemy 1 image loaded');
+        if (typeof loadImage === 'function') {
+            loadImage('images/dungeon_1.png', (img) => {
+                enemy1Img = img;
+            });
+        }
+    };
+    enemy1Image.onerror = function() {
+        console.error('Failed to load enemy 1 image');
+    };
+    enemy1Image.src = 'images/dungeon_1.png';
+    
+    const enemy2Image = new Image();
+    enemy2Image.onload = function() {
+        console.log('Enemy 2 image loaded');
+        if (typeof loadImage === 'function') {
+            loadImage('images/dungeon_2.png', (img) => {
+                enemy2Img = img;
+            });
+        }
+    };
+    enemy2Image.onerror = function() {
+        console.error('Failed to load enemy 2 image');
+    };
+    enemy2Image.src = 'images/dungeon_2.png';
+}
+
+function preload() {
+    // This will be called by p5.js if available
+    if (typeof loadImage === 'function') {
+        console.log('Using p5.js preload...');
         loadImage('images/phong_canh_1.png', 
             (img) => {
                 window.battleBackground = img;
                 backgroundLoaded = true;
-                console.log('Background loaded successfully');
+                console.log('Background loaded via p5.js');
             },
             (err) => {
-                console.error('Failed to load background:', err);
-                backgroundLoaded = false;
+                console.error('Failed to load background via p5.js:', err);
             }
         );
         
-        // Load character images
-        loadImage('images/player_1.png',
-            (img) => {
-                playerImg = img;
-                console.log('Player image loaded');
-            },
-            (err) => {
-                console.error('Failed to load player image:', err);
-            }
-        );
-        
-        loadImage('images/dungeon_1.png',
-            (img) => {
-                enemy1Img = img;
-                console.log('Enemy 1 image loaded');
-            },
-            (err) => {
-                console.error('Failed to load enemy 1 image:', err);
-            }
-        );
-        
-        loadImage('images/dungeon_2.png',
-            (img) => {
-                enemy2Img = img;
-                console.log('Enemy 2 image loaded');
-            },
-            (err) => {
-                console.error('Failed to load enemy 2 image:', err);
-            }
-        );
-    } catch (error) {
-        console.error('Error in preload:', error);
+        loadImage('images/player_1.png', (img) => { playerImg = img; });
+        loadImage('images/dungeon_1.png', (img) => { enemy1Img = img; });
+        loadImage('images/dungeon_2.png', (img) => { enemy2Img = img; });
     }
 }
 
 function setup() {
     console.log('Khởi tạo canvas chiến đấu...');
-    const canvas = createCanvas(500, 600);
-    canvas.parent('battle-canvas');
+    try {
+        const canvas = createCanvas(500, 600);
+        canvas.parent('battle-canvas');
+        console.log('Canvas created successfully');
+        
+        // Load assets after canvas is ready
+        setTimeout(() => {
+            loadBattleAssets();
+        }, 100);
+    } catch (error) {
+        console.error('Error creating canvas:', error);
+    }
 }
 
 function draw() {
@@ -446,21 +492,28 @@ function draw() {
     }
 
     // Draw background
-    if (backgroundLoaded && window.battleBackground) {
-        let bg = window.battleBackground;
-        let scale = height / bg.height;
-        let scaledWidth = bg.width * scale;
-        
-        if (scaledWidth >= width) {
-            let offsetX = (scaledWidth - width) / 2;
-            image(bg, -offsetX, 0, scaledWidth, height);
-        } else {
-            let offsetX = (width - scaledWidth) / 2;
-            image(bg, offsetX, 0, scaledWidth, height);
+    if (backgroundLoaded && window.battleBackground && window.battleBackground.width) {
+        try {
+            let bg = window.battleBackground;
+            let scale = height / bg.height;
+            let scaledWidth = bg.width * scale;
+            
+            if (scaledWidth >= width) {
+                let offsetX = (scaledWidth - width) / 2;
+                image(bg, -offsetX, 0, scaledWidth, height);
+            } else {
+                let offsetX = (width - scaledWidth) / 2;
+                image(bg, offsetX, 0, scaledWidth, height);
+            }
+        } catch (error) {
+            console.error('Error drawing background:', error);
+            // Draw fallback background
+            background(35, 33, 54);
         }
     } else {
         // Fallback gradient background
-        for (let y = 0; y < height; y++) {
+        background(35, 33, 54);
+        for (let y = 0; y < height; y += 2) {
             let inter = map(y, 0, height, 0, 1);
             let c = lerpColor(color(50, 50, 80), color(20, 30, 60), inter);
             stroke(c);
@@ -475,45 +528,71 @@ function draw() {
     // Draw enemy image at top with shake effect
     if (enemy) {
         let enemyImg = enemy.name.includes('Cấp 1') ? enemy1Img : enemy2Img;
-        if (enemyImg) {
-            let enemySize = 120;
-            let enemyX = (width - enemySize) / 2;
-            let enemyY = 80;
-            
-            // Apply shake effect
-            if (enemyShake) {
-                enemyX += random(-8, 8);
-                enemyY += random(-8, 8);
+        if (enemyImg && enemyImg.width) {
+            try {
+                let enemySize = 120;
+                let enemyX = (width - enemySize) / 2;
+                let enemyY = 80;
+                
+                // Apply shake effect
+                if (enemyShake) {
+                    enemyX += random(-8, 8);
+                    enemyY += random(-8, 8);
+                }
+                
+                image(enemyImg, enemyX, enemyY, enemySize, enemySize);
+            } catch (error) {
+                console.error('Error drawing enemy image:', error);
+                // Draw fallback
+                fill(255, 100, 100, 100);
+                rect((width - 120) / 2, 80, 120, 120, 10);
+                textAlign(CENTER, CENTER);
+                textSize(14);
+                fill(255);
+                text(enemy.name, width/2, 140);
             }
-            
-            image(enemyImg, enemyX, enemyY, enemySize, enemySize);
         } else {
             // Fallback if image not loaded
+            fill(255, 100, 100, 100);
+            rect((width - 120) / 2, 80, 120, 120, 10);
             textAlign(CENTER, CENTER);
-            textSize(16);
+            textSize(14);
             fill(255);
             text(enemy.name, width/2, 140);
         }
     }
     
     // Draw player image at bottom with shake effect
-    if (playerImg) {
-        let playerSize = 100;
-        let playerX = (width - playerSize) / 2;
-        let playerY = height - 180;
-        
-        // Apply shake effect
-        if (playerShake) {
-            playerX += random(-8, 8);
-            playerY += random(-8, 8);
+    if (playerImg && playerImg.width) {
+        try {
+            let playerSize = 100;
+            let playerX = (width - playerSize) / 2;
+            let playerY = height - 180;
+            
+            // Apply shake effect
+            if (playerShake) {
+                playerX += random(-8, 8);
+                playerY += random(-8, 8);
+            }
+            
+            image(playerImg, playerX, playerY, playerSize, playerSize);
+        } catch (error) {
+            console.error('Error drawing player image:', error);
+            // Draw fallback
+            fill(100, 200, 255, 100);
+            rect((width - 100) / 2, height - 180, 100, 100, 10);
+            textAlign(CENTER, CENTER);
+            textSize(12);
+            fill(100, 200, 255);
+            text('Người chơi', width/2, height - 130);
         }
-        
-        image(playerImg, playerX, playerY, playerSize, playerSize);
     } else {
         // Fallback if image not loaded
+        fill(100, 200, 255, 100);
+        rect((width - 100) / 2, height - 180, 100, 100, 10);
         textAlign(CENTER, CENTER);
-        textSize(16);
-        fill(255);
+        textSize(12);
+        fill(100, 200, 255);
         text('Người chơi', width/2, height - 130);
     }
 
@@ -609,6 +688,7 @@ function getTurnOrder(playerAgility, enemyAgility) {
 // Export functions to window
 window.startBattle = startBattle;
 window.returnToSelection = returnToSelection;
+window.loadBattleAssets = loadBattleAssets;
 window.preload = preload;
 window.setup = setup;
 window.draw = draw;

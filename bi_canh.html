@@ -80,20 +80,28 @@
         </div>
     </div>
 
-    <!-- Load scripts in proper order - p5.js first, then game.js, then battle.js, then main.js -->
+    <!-- Load scripts in proper order -->
+    <script src="js/common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <script src="js/game.js"></script>
     <script src="js/battle.js"></script>
     <script src="js/main.js"></script>
     
-    <!-- Debug script to check loading order -->
+    <!-- Initialize battle system after all scripts loaded -->
     <script>
-        console.log('HTML fully loaded, checking script availability:');
-        console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
-        console.log('- initializeGameState:', typeof window.initializeGameState !== 'undefined' ? 'loaded' : 'not loaded');
-        console.log('- updateDisplay:', typeof window.updateDisplay !== 'undefined' ? 'loaded' : 'not loaded');
-        console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
-        console.log('- battleEnemies:', typeof window.battleEnemies !== 'undefined' ? 'loaded' : 'not loaded');
-        console.log('All scripts loaded in order');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('HTML fully loaded, checking script availability:');
+            console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- loadImage:', typeof window.loadImage !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
+            
+            // Initialize battle assets if not already loaded
+            if (typeof window.loadBattleAssets === 'function') {
+                setTimeout(() => {
+                    window.loadBattleAssets();
+                }, 500);
+            }
+        });
     </script>
-    <script src="js/common.js"></script>
