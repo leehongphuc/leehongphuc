@@ -143,123 +143,123 @@
 }
 
 /* Quality colors for equipment items */
-.equipment-item.quality-1 {
+.equipment-item.quality-nhất-phẩm {
     border-color: #ffffff;
 }
 
-.equipment-item.quality-1 .equipment-image {
+.equipment-item.quality-nhất-phẩm .equipment-image {
     border-color: #ffffff;
 }
 
-.equipment-item.quality-1 .equipment-type,
-.equipment-item.quality-1 .equipment-quality {
+.equipment-item.quality-nhất-phẩm .equipment-type,
+.equipment-item.quality-nhất-phẩm .equipment-quality {
     color: #ffffff;
 }
 
-.equipment-item.quality-2 {
+.equipment-item.quality-nhị-phẩm {
     border-color: #00ff00;
 }
 
-.equipment-item.quality-2 .equipment-image {
+.equipment-item.quality-nhị-phẩm .equipment-image {
     border-color: #00ff00;
 }
 
-.equipment-item.quality-2 .equipment-type,
-.equipment-item.quality-2 .equipment-quality {
+.equipment-item.quality-nhị-phẩm .equipment-type,
+.equipment-item.quality-nhị-phẩm .equipment-quality {
     color: #00ff00;
 }
 
-.equipment-item.quality-3 {
+.equipment-item.quality-tam-phẩm {
     border-color: #0080ff;
 }
 
-.equipment-item.quality-3 .equipment-image {
+.equipment-item.quality-tam-phẩm .equipment-image {
     border-color: #0080ff;
 }
 
-.equipment-item.quality-3 .equipment-type,
-.equipment-item.quality-3 .equipment-quality {
+.equipment-item.quality-tam-phẩm .equipment-type,
+.equipment-item.quality-tam-phẩm .equipment-quality {
     color: #00ff00;
 }
 
-.equipment-item.quality-4 {
+.equipment-item.quality-tứ-phẩm {
     border-color: #800080;
 }
 
-.equipment-item.quality-4 .equipment-image {
+.equipment-item.quality-tứ-phẩm .equipment-image {
     border-color: #800080;
 }
 
-.equipment-item.quality-4 .equipment-type,
-.equipment-item.quality-4 .equipment-quality {
+.equipment-item.quality-tứ-phẩm .equipment-type,
+.equipment-item.quality-tứ-phẩm .equipment-quality {
     color: #800080;
 }
 
-.equipment-item.quality-5 {
+.equipment-item.quality-ngũ-phẩm {
     border-color: #ffa500;
 }
 
-.equipment-item.quality-5 .equipment-image {
+.equipment-item.quality-ngũ-phẩm .equipment-image {
     border-color: #ffa500;
 }
 
-.equipment-item.quality-5 .equipment-type,
-.equipment-item.quality-5 .equipment-quality {
+.equipment-item.quality-ngũ-phẩm .equipment-type,
+.equipment-item.quality-ngũ-phẩm .equipment-quality {
     color: #800080;
 }
 
-.equipment-item.quality-6 {
+.equipment-item.quality-lục-phẩm {
     border-color: #ff0000;
 }
 
-.equipment-item.quality-6 .equipment-image {
+.equipment-item.quality-lục-phẩm .equipment-image {
     border-color: #ff0000;
 }
 
-.equipment-item.quality-6 .equipment-type,
-.equipment-item.quality-6 .equipment-quality {
+.equipment-item.quality-lục-phẩm .equipment-type,
+.equipment-item.quality-lục-phẩm .equipment-quality {
     color: #ffd700;
 }
 
-.equipment-item.quality-7 {
+.equipment-item.quality-thất-phẩm {
     border-color: #ffd700;
 }
 
-.equipment-item.quality-7 .equipment-image {
+.equipment-item.quality-thất-phẩm .equipment-image {
     border-color: #ffd700;
 }
 
-.equipment-item.quality-7 .equipment-type,
-.equipment-item.quality-7 .equipment-quality {
+.equipment-item.quality-thất-phẩm .equipment-type,
+.equipment-item.quality-thất-phẩm .equipment-quality {
     color: #ffd700;
 }
 
-.equipment-item.quality-8 {
+.equipment-item.quality-bát-phẩm {
     border-color: #00ffff;
 }
 
-.equipment-item.quality-8 .equipment-image {
+.equipment-item.quality-bát-phẩm .equipment-image {
     border-color: #00ffff;
 }
 
-.equipment-item.quality-8 .equipment-type,
-.equipment-item.quality-8 .equipment-quality {
+.equipment-item.quality-bát-phẩm .equipment-type,
+.equipment-item.quality-bát-phẩm .equipment-quality {
     color: #ffa500;
 }
 
-.equipment-item.quality-9 {
+.equipment-item.quality-cửu-phẩm {
     border-color: #ff00ff;
 }
 
-.equipment-item.quality-9 .equipment-image {
+.equipment-item.quality-cửu-phẩm .equipment-image {
     border-color: #ff00ff;
 }
 
-.equipment-item.quality-10 {
+.equipment-item.quality-vương-cấp {
     border-color: #9400d3;
 }
 
-.equipment-item.quality-10 .equipment-image {
+.equipment-item.quality-vương-cấp .equipment-image {
     border-color: #9400d3;
 }
 

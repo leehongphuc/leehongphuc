@@ -838,10 +838,10 @@ function updateInventoryEquipmentGrid() {
             .filter(item => ['weapon', 'necklace', 'ring', 'gloves', 'boots', 'armor', 'helmet', 'belt', 'jade', 'artifact'].includes(item.type))
             .forEach((item, index) => {
                 const globalIndex = gameState.inventory.indexOf(item);
-                const qualityNum = Object.keys(qualityColors).indexOf(item.quality) + 1;
+                const qualityClass = item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g, '-')}` : '';
                 const inventoryItem = document.createElement('div');
                 const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
-                inventoryItem.className = `inventory-item quality-${qualityNum}`;
+                inventoryItem.className = `inventory-item ${qualityClass}`;
 
                 let actionsHtml = '';
                 if (item.locked) {
@@ -885,10 +885,10 @@ function updateInventoryDisplay() {
             .filter(item => item.type === 'giftBag')
             .forEach((item, index) => {
                 const globalIndex = gameState.inventory.indexOf(item);
-                const qualityNum = Object.keys(qualityColors).indexOf(item.quality) + 1;
+                const qualityClass = item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g, '-')}` : '';
                 const inventoryItem = document.createElement('div');
                 const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
-                inventoryItem.className = `inventory-item quality-${qualityNum}`;
+                inventoryItem.className = `inventory-item ${qualityClass}`;
                 inventoryItem.innerHTML = `
                     <div class="inventory-image">
                         <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" 
@@ -917,10 +917,10 @@ function updateInventoryDisplay() {
             if (name === 'Kinh Nghiệm') return;
             
             const material = window.giftBoxItems.find(item => item.type === 'material' && item.name === name);
-            const qualityNum = material ? Object.keys(qualityColors).indexOf(material.quality) + 1 : 1;
+            const qualityClass = material && material.quality ? `quality-${material.quality.toLowerCase().replace(/\s+/g, '-')}` : '';
             const qualityStyle = material && qualityColors[material.quality] ? `style="color: ${qualityColors[material.quality]}"` : '';
             const materialItem = document.createElement('div');
-            materialItem.className = `inventory-item quality-${qualityNum}`;
+            materialItem.className = `inventory-item ${qualityClass}`;
             materialItem.innerHTML = `
                 <div class="inventory-image">
                     <img src="${material ? material.image : 'images/placeholder.png'}" alt="${name}" 

@@ -295,6 +295,47 @@ h1 {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Quality colors for inventory items */
+.inventory-item.quality-nhất-phẩm {
+    border-color: #ffffff;
+}
+
+.inventory-item.quality-nhị-phẩm {
+    border-color: #00ff00;
+}
+
+.inventory-item.quality-tam-phẩm {
+    border-color: #0080ff;
+}
+
+.inventory-item.quality-tứ-phẩm {
+    border-color: #800080;
+}
+
+.inventory-item.quality-ngũ-phẩm {
+    border-color: #ffa500;
+}
+
+.inventory-item.quality-lục-phẩm {
+    border-color: #ff0000;
+}
+
+.inventory-item.quality-thất-phẩm {
+    border-color: #ffd700;
+}
+
+.inventory-item.quality-bát-phẩm {
+    border-color: #00ffff;
+}
+
+.inventory-item.quality-cửu-phẩm {
+    border-color: #ff00ff;
+}
+
+.inventory-item.quality-vương-cấp {
+    border-color: #9400d3;
+}
+
 .inventory-info {
     display: flex;
     flex-direction: column;

@@ -55,9 +55,9 @@ function updateForgeDisplay() {
     console.log('Số lượng vật phẩm duy nhất để chế tạo:', uniqueItems.length);
 
     uniqueItems.forEach((item, index) => {
-        const qualityNum = Object.keys(qualityColors).indexOf(item.quality) + 1;
+        const qualityClass = item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g, '-')}` : '';
         const equipmentItem = document.createElement('div');
-        equipmentItem.className = `equipment-item quality-${qualityNum}`;
+        equipmentItem.className = `equipment-item ${qualityClass}`;
         equipmentItem.setAttribute('data-index', index);
 
         const craftCost = calculateCraftCost(item.quality);
@@ -187,7 +187,7 @@ function showCraftItemDetails(index) {
     
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
-        <div class="item-detail quality-${Object.keys(qualityColors).indexOf(item.quality) + 1}">
+        <div class="item-detail ${item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g, '-')}` : ''}">
             <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" 
                  class="item-image" onerror="this.src='images/placeholder.png'">
             <div class="item-info">
