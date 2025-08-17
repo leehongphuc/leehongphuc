@@ -71,31 +71,57 @@ function calculateDamage(attacker, defender, useMagic = false) {
         damage *= (attacker.criticalDamage || 200) / 100;
     }
     
-    return {
+    const result = {
         damage: Math.floor(damage),
         isCrit,
         damageType: useMagic ? 'magic' : 'physical'
     };
+    
+    console.log('⚔️ Damage calculation:', {
+        attacker: attacker.name || 'Player',
+        baseDamage,
+        defense,
+        finalDamage: result.damage,
+        isCrit: result.isCrit
+    });
+    
+    return result;
 }
 
 // Update HTML battle display
 function updateBattleDisplay() {
-    if (!player || !enemy) return;
+    console.log('🖼️ Updating battle display...');
+    if (!player || !enemy) {
+        console.log('❌ Cannot update display: player or enemy missing');
+        return;
+    }
     
     // Update enemy image and HP
     const enemyImg = document.getElementById('enemy-img');
     const enemyHpFill = document.getElementById('enemy-hp-fill');
     const enemyHpText = document.getElementById('enemy-hp-text');
     
+    console.log('🔍 HTML elements found:', {
+        enemyImg: !!enemyImg,
+        enemyHpFill: !!enemyHpFill,
+        enemyHpText: !!enemyHpText
+    });
+    
     if (enemyImg) {
         enemyImg.src = enemy.image;
         enemyImg.style.display = 'block';
+        console.log('✅ Enemy image updated:', enemy.image);
+    } else {
+        console.log('❌ Enemy image element not found');
     }
     
     if (enemyHpFill && enemyHpText) {
         const enemyHpPercent = (enemy.hp / enemy.maxHp) * 100;
         enemyHpFill.style.width = enemyHpPercent + '%';
         enemyHpText.textContent = `${enemy.name}: ${Math.floor(enemy.hp)}/${enemy.maxHp}`;
+        console.log('✅ Enemy HP updated:', enemyHpPercent + '%');
+    } else {
+        console.log('❌ Enemy HP elements not found');
     }
     
     // Update player HP
@@ -106,14 +132,28 @@ function updateBattleDisplay() {
         const playerHpPercent = (player.hp / player.maxHp) * 100;
         playerHpFill.style.width = playerHpPercent + '%';
         playerHpText.textContent = `Người chơi: ${Math.floor(player.hp)}/${player.maxHp}`;
+        console.log('✅ Player HP updated:', playerHpPercent + '%');
+    } else {
+        console.log('❌ Player HP elements not found');
     }
+    
+    console.log('✅ Battle display updated successfully');
+    console.log('📊 Current status - Player HP:', player.hp, '/', player.maxHp, 'Enemy HP:', enemy.hp, '/', enemy.maxHp);
 }
 
 // Battle loop function
 function battleLoop() {
-    if (!battleActive || !player || !enemy) return;
+    console.log('🔄 Battle loop called, battleActive:', battleActive, 'player:', !!player, 'enemy:', !!enemy);
+    
+    if (!battleActive || !player || !enemy) {
+        console.log('❌ Battle loop stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
+        return;
+    }
+    
+    console.log('⚔️ Current turn:', currentTurn, 'Player HP:', player.hp, 'Enemy HP:', enemy.hp);
     
     if (currentTurn === 'player') {
+        console.log('👤 Player turn - calculating damage...');
         // Player's turn
         const damage = calculateDamage(player, enemy);
         enemy.hp = Math.max(0, enemy.hp - damage.damage);
@@ -146,24 +186,34 @@ function battleLoop() {
         }
         
         // Enemy's turn after a delay
+        console.log('⏰ Scheduling enemy turn in 1 second...');
         setTimeout(() => {
             if (battleActive) {
+                console.log('👹 Executing scheduled enemy turn...');
                 enemyTurn();
+            } else {
+                console.log('❌ Battle no longer active, enemy turn cancelled');
             }
         }, 1000);
         
     } else {
         // Enemy's turn
+        console.log('👹 Executing immediate enemy turn...');
         enemyTurn();
     }
     
     // Update display
     updateBattleDisplay();
+    console.log('🔄 Battle loop completed, updating display...');
 }
 
 // Enemy turn function
 function enemyTurn() {
-    if (!battleActive || !player || !enemy) return;
+    console.log('👹 Enemy turn - calculating damage...');
+    if (!battleActive || !player || !enemy) {
+        console.log('❌ Enemy turn stopped: battleActive =', battleActive, 'player =', !!player, 'enemy =', !!enemy);
+        return;
+    }
     
     const damage = calculateDamage(enemy, player);
     player.hp = Math.max(0, player.hp - damage.damage);
@@ -191,19 +241,34 @@ function enemyTurn() {
     
     // Check if player is defeated
     if (player.hp <= 0) {
+        console.log('💀 Player defeated, ending battle...');
         endBattle(false);
         return;
     }
     
+    // Schedule next player turn
+    console.log('⏰ Scheduling next player turn in 1 second...');
+    setTimeout(() => {
+        if (battleActive) {
+            console.log('👤 Executing scheduled player turn...');
+            battleLoop();
+        } else {
+            console.log('❌ Battle no longer active, player turn cancelled');
+        }
+    }, 1000);
+    
     // Update display
     updateBattleDisplay();
+    console.log('👹 Enemy turn completed, next turn scheduled...');
 }
 
 // End battle function
 function endBattle(playerWon) {
+    console.log('🏁 Ending battle, playerWon:', playerWon);
     battleActive = false;
     
     if (playerWon) {
+        console.log('🎉 Player won the battle!');
         battleLog.push({ 
             text: `🎉 Bạn đã đánh bại ${enemy.name}!`, 
             type: 'victory' 
@@ -212,18 +277,30 @@ function endBattle(playerWon) {
         // Add rewards
         const gameState = window.gameState || window.initializeGameState();
         if (gameState) {
-            gameState.stats.exp.current += enemy.expReward || 50;
-            gameState.stats.gold.current += enemy.goldReward || 100;
-            gameState.stats.spiritStones.current += enemy.spiritStonesReward || 50;
+            // Add experience
+            gameState.exp += enemy.expReward || 50;
+            
+            // Add gold
+            gameState.gold += enemy.goldReward || 100;
+            
+            // Add spirit stones
+            gameState.spiritStones += enemy.spiritStonesReward || 50;
             
             // Update display
             if (typeof window.updateDisplay === 'function') {
                 window.updateDisplay();
             }
+            
+            console.log('✅ Rewards added successfully:', {
+                exp: enemy.expReward || 50,
+                gold: enemy.goldReward || 100,
+                spiritStones: enemy.spiritStonesReward || 50
+            });
         }
         
         alert(`🎉 Chiến thắng! Bạn nhận được:\nKinh nghiệm: +${enemy.expReward || 50}\nKim tệ: +${enemy.goldReward || 100}\nLinh thạch: +${enemy.spiritStonesReward || 50}`);
     } else {
+        console.log('💀 Player lost the battle!');
         battleLog.push({ 
             text: `💀 Bạn đã bị ${enemy.name} đánh bại!`, 
             type: 'defeat' 
@@ -371,9 +448,13 @@ function startBattle(index, locationType) {
     }
     
     // Start battle loop with delay
+    console.log('🚀 Starting battle loop in 1 second...');
     setTimeout(() => {
         if (battleActive) {
+            console.log('⚔️ Battle loop starting, current turn:', currentTurn);
             battleLoop();
+        } else {
+            console.log('❌ Battle not active, cannot start loop');
         }
     }, 1000);
 }
