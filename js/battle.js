@@ -190,11 +190,19 @@ function showMaterialDropPopup(materialName, amount) {
     
     popupDiv.innerHTML = `
         <div class="material-drop-content">
-            <div class="material-image">
-                <img src="${materialImage}" alt="${materialName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${materialName}';">
-                <div class="material-amount">+${amount}</div>
+            <div class="material-drop-header">
+                <h4>🎁 Vật Phẩm Rớt Ra!</h4>
+                <button class="material-close-btn" onclick="this.closest('.material-drop-popup').remove()">×</button>
             </div>
-            <div class="material-name">${materialName}</div>
+            <div class="material-drop-body">
+                <div class="material-image">
+                    <img src="${materialImage}" alt="${materialName}" onerror="this.style.display='none'; this.parentNode.innerHTML='${materialName}';">
+                </div>
+                <div class="material-details">
+                    <div class="material-name">${materialName}</div>
+                    <div class="material-amount">+${amount}</div>
+                </div>
+            </div>
         </div>
     `;
     
@@ -208,13 +216,6 @@ function showMaterialDropPopup(materialName, amount) {
     const battleSection = document.getElementById('battle-section');
     if (battleSection) {
         battleSection.appendChild(popupDiv);
-        
-        // Auto-hide after 3 seconds
-        setTimeout(() => {
-            if (popupDiv.parentNode) {
-                popupDiv.remove();
-            }
-        }, 3000);
     }
 }
 
@@ -223,33 +224,65 @@ function showRewardSummary(enemy) {
     const summaryDiv = document.createElement('div');
     summaryDiv.className = 'reward-summary';
     
-    let materialText = '';
+    // Tạo danh sách vật phẩm rớt ra
+    let materialItems = '';
     if (enemy.materialDrop && enemy.materialDrop.name) {
-        materialText = `<div class="reward-item">
-            <span class="reward-label">Vật phẩm:</span>
-            <span class="reward-value">${enemy.materialDrop.name} x${enemy.materialDrop.amount}</span>
-        </div>`;
+        materialItems = `
+            <div class="material-drop-item">
+                <div class="material-icon">
+                    <img src="images/${enemy.materialDrop.name === 'Huyền Thiết' ? 'huyen_thiet' : enemy.materialDrop.name === 'Vàng' ? 'vang' : 'exp'}.png" 
+                         alt="${enemy.materialDrop.name}" 
+                         onerror="this.style.display='none'; this.parentNode.innerHTML='${enemy.materialDrop.name}';">
+                </div>
+                <div class="material-info">
+                    <div class="material-name">${enemy.materialDrop.name}</div>
+                    <div class="material-amount">+${enemy.materialDrop.amount}</div>
+                </div>
+            </div>`;
     }
     
     summaryDiv.innerHTML = `
         <div class="reward-summary-content">
-            <h3>🎉 Chiến Thắng!</h3>
-            <div class="reward-list">
-                <div class="reward-item">
-                    <span class="reward-label">Kinh nghiệm:</span>
-                    <span class="reward-value">+${enemy.expReward || 50}</span>
-                </div>
-                <div class="reward-item">
-                    <span class="reward-label">Kim tệ:</span>
-                    <span class="reward-value">+${enemy.goldReward || 100}</span>
-                </div>
-                <div class="reward-item">
-                    <span class="reward-label">Linh thạch:</span>
-                    <span class="reward-value">+${enemy.spiritStonesReward || 50}</span>
-                </div>
-                ${materialText}
+            <div class="reward-header">
+                <h3>🎉 Chiến Thắng!</h3>
+                <button class="reward-close-btn" onclick="this.closest('.reward-summary').remove()">×</button>
             </div>
-            <button class="reward-close-btn" onclick="this.parentElement.parentElement.remove()">Đóng</button>
+            
+            <div class="reward-section">
+                <h4>Phần Thưởng Cơ Bản</h4>
+                <div class="reward-list">
+                    <div class="reward-item">
+                        <div class="reward-icon">📚</div>
+                        <div class="reward-info">
+                            <div class="reward-label">Kinh nghiệm</div>
+                            <div class="reward-value">+${enemy.expReward || 50}</div>
+                        </div>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon">💰</div>
+                        <div class="reward-info">
+                            <div class="reward-label">Kim tệ</div>
+                            <div class="reward-value">+${enemy.goldReward || 100}</div>
+                        </div>
+                    </div>
+                    <div class="reward-item">
+                        <div class="reward-icon">💎</div>
+                        <div class="reward-info">
+                            <div class="reward-label">Linh thạch</div>
+                            <div class="reward-value">+${enemy.spiritStonesReward || 50}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            ${enemy.materialDrop && enemy.materialDrop.name ? `
+            <div class="reward-section">
+                <h4>Vật Phẩm Rớt Ra</h4>
+                <div class="material-drops">
+                    ${materialItems}
+                </div>
+            </div>
+            ` : ''}
         </div>
     `;
     
