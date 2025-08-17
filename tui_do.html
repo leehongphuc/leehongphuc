@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Túi Đồ - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/inventory.css">
     <link rel="stylesheet" href="css/information.css">
 
 </head>
 <body>
     <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
         <h1>Túi Đồ</h1>
         <div class="tab-container">
             <div class="tab-buttons">
-                <button class="tab-button active" onclick="showSection('equipment')">Trang bị</button>
-                <button class="tab-button" onclick="showSection('items')">Vật phẩm</button>
-                <button class="tab-button" onclick="showSection('materials')">Nguyên liệu</button>
-                <button class="tab-button" onclick="showSection('resources')">Tài nguyên</button>
+                <button class="tab-button active" data-section="equipment">Trang bị</button>
+                <button class="tab-button" data-section="items">Vật phẩm</button>
+                <button class="tab-button" data-section="materials">Nguyên liệu</button>
+                <button class="tab-button" data-section="resources">Tài nguyên</button>
             </div>
             <div id="equipment-section" class="section active">
                 <h3>Trang bị</h3>
@@ -53,16 +57,8 @@
             showSection('equipment');
         };
 
-        function showSection(sectionName) {
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.getElementById(sectionName + '-section').classList.add('active');
-            document.querySelector(`button[onclick="showSection('${sectionName}')"]`).classList.add('active');
-        }
+        // showSection function is now in common.js
     </script>
+    <script src="js/common.js"></script>
 </body>
 </html>

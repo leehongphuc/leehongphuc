@@ -1,34 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Noto Sans', sans-serif;
-    background: #232136;
-    color: #ffffff;
-    min-height: 100vh;
-    padding: 20px;
-    overflow-x: hidden;
-}
-
+/* Character page specific styles */
 .container {
     max-width: 700px;
-    margin: 0 auto;
 }
 
 h1 {
     font-size: 1.6rem;
-    font-weight: 700;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
-    text-align: center;
-    text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
 }
 
 .character-avatar {

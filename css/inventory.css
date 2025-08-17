@@ -1,19 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Noto Sans', sans-serif;
-    background: #232136;
-    color: #ffffff;
-    min-height: 100vh;
-    padding: 20px;
-    overflow-x: hidden;
-}
+/* Inventory page specific styles */
 
 /* Chuẩn hóa kích cỡ ảnh cho tất cả phần tử, khớp với túi đồ */
 .game-image {

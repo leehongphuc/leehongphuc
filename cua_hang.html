@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cửa Hàng - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/shop.css">
-        <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/information.css">
 
 </head>
 <body>
     <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
         <h1>Cửa Hàng</h1>
         <div class="resources">
             <div class="resource-item">
@@ -23,8 +27,8 @@
         </div>
         <div class="tab-container">
             <div class="tab-buttons">
-                <button class="tab-button active" onclick="showShopSection('gold')">Vàng</button>
-                <button class="tab-button" onclick="showShopSection('spiritStones')">Linh Thạch</button>
+                <button class="tab-button active" data-section="gold">Vàng</button>
+                <button class="tab-button" data-section="spiritStones">Linh Thạch</button>
             </div>
             <div id="gold-section" class="section active">
                 <h3>Vàng</h3>
@@ -82,6 +86,7 @@
             <div id="item-details-content"></div>
         </div>
     </div>
+    <script src="js/common.js"></script>
     <script src="js/game.js"></script>
     <script src="js/shop.js"></script>
     <script src="js/items.js"></script>
