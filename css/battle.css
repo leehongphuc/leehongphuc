@@ -927,29 +927,18 @@
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
-/* Thanh máu quái - màu đỏ */
+/* Thanh máu quái - màu đen */
 .enemy-hp-bar .hp-bar-fill {
-    background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     transition: width 0.3s ease;
 }
 
-/* Thanh máu người chơi - màu đỏ */
+/* Thanh máu người chơi - màu đen */
 .player-hp-bar .hp-bar-fill {
-    background: linear-gradient(90deg, #ff0000, #cc0000, #990000, #660000);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     transition: width 0.3s ease;
-}
-
-/* Thanh máu khi HP thấp - chuyển thành màu đen */
-.hp-bar-fill[style*="width: 0%"],
-.hp-bar-fill[style*="width: 1%"],
-.hp-bar-fill[style*="width: 2%"],
-.hp-bar-fill[style*="width: 3%"],
-.hp-bar-fill[style*="width: 4%"],
-.hp-bar-fill[style*="width: 5%"] {
-    background: #000000 !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
 }
 
 .hp-text {
