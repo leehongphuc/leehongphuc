@@ -744,56 +744,48 @@ function showEnemyInfoInBattle() {
             </div>
             <div class="character-stats">
                 <div class="stat-item">
-                    <div class="stat-icon">⚔️</div>
                     <div class="stat-info">
                         <div class="stat-name">Tấn công Vật Lý</div>
                         <div class="stat-value">${enemy.physicalDamage}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🔮</div>
                     <div class="stat-info">
                         <div class="stat-name">Tấn công Phép Thuật</div>
                         <div class="stat-value">${enemy.magicDamage}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">💥</div>
                     <div class="stat-info">
                         <div class="stat-name">Chí mạng</div>
                         <div class="stat-value">${enemy.criticalChance}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">⚡</div>
                     <div class="stat-info">
                         <div class="stat-name">Sát thương chí mạng</div>
                         <div class="stat-value">${enemy.criticalDamage}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">❤️</div>
                     <div class="stat-info">
                         <div class="stat-name">Sinh lực</div>
                         <div class="stat-value">${Math.floor(enemy.hp)}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🛡️</div>
                     <div class="stat-info">
                         <div class="stat-name">Phòng thủ Vật Lý</div>
                         <div class="stat-value">${Math.round((enemy.physicalDefense / (enemy.physicalDefense + 100)) * 100)}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🔒</div>
                     <div class="stat-info">
                         <div class="stat-name">Phòng thủ Phép Thuật</div>
                         <div class="stat-value">${Math.round((enemy.magicDefense / (enemy.magicDefense + 100)) * 100)}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">⚡</div>
                     <div class="stat-info">
                         <div class="stat-name">Nhanh nhẹn</div>
                         <div class="stat-value">${enemy.agility}</div>
@@ -835,56 +827,48 @@ function showPlayerInfoInBattle() {
             </div>
             <div class="character-stats">
                 <div class="stat-item">
-                    <div class="stat-icon">⚔️</div>
                     <div class="stat-info">
                         <div class="stat-name">Tấn công Vật Lý</div>
                         <div class="stat-value">${player.physicalDamage || 100}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🔮</div>
                     <div class="stat-info">
                         <div class="stat-name">Tấn công Phép Thuật</div>
                         <div class="stat-value">${player.magicDamage || 50}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">💥</div>
                     <div class="stat-info">
                         <div class="stat-name">Chí mạng</div>
                         <div class="stat-value">${player.criticalChance || 10}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">⚡</div>
                     <div class="stat-info">
                         <div class="stat-name">Sát thương chí mạng</div>
                         <div class="stat-value">${player.criticalDamage || 200}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">❤️</div>
                     <div class="stat-info">
                         <div class="stat-name">Sinh lực</div>
                         <div class="stat-value">${Math.floor(player.hp)}</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🛡️</div>
                     <div class="stat-info">
                         <div class="stat-name">Phòng thủ Vật Lý</div>
                         <div class="stat-value">${Math.round(((player.physicalDefense || 20) / ((player.physicalDefense || 20) + 100)) * 100)}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">🔒</div>
                     <div class="stat-info">
                         <div class="stat-name">Phòng thủ Phép Thuật</div>
                         <div class="stat-value">${Math.round(((player.magicDefense || 15) / ((player.magicDefense || 15) + 100)) * 100)}%</div>
                     </div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-icon">⚡</div>
                     <div class="stat-info">
                         <div class="stat-name">Nhanh nhẹn</div>
                         <div class="stat-value">${player.agility || 1.0}</div>
