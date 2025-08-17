@@ -250,7 +250,7 @@ function showMaterialDropPopup(materialName, amount) {
         <div class="material-drop-content">
             <div class="material-drop-header">
                 <h4>🎁 Vật Phẩm Rớt Ra!</h4>
-                <button class="material-close-btn" onclick="closeMaterialDropPopup()">×</button>
+                <button class="material-close-btn" onclick="closeMaterialDropPopup()" style="z-index: 1001;">×</button>
             </div>
             <div class="material-drop-body">
                 <div class="material-image">
@@ -881,6 +881,9 @@ function closeMaterialDropPopup() {
     const existingPopup = document.querySelector('.material-drop-popup');
     if (existingPopup) {
         existingPopup.remove();
+        console.log('✅ Popup đã được đóng thành công');
+    } else {
+        console.log('❌ Không tìm thấy popup để đóng');
     }
 }
 

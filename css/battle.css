@@ -966,8 +966,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.95);
-    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    border: none;
     border-radius: 12px;
     padding: 20px;
     max-width: 400px;
@@ -975,8 +975,8 @@
     max-height: 80vh;
     overflow-y: auto;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: none;
+    box-shadow: none;
     animation: popupSlideIn 0.3s ease-out;
 }
 
@@ -1082,7 +1082,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    border: 2px solid transparent;
+    border: none;
     overflow: hidden;
 }
 
