@@ -104,7 +104,16 @@
     margin-bottom: 8px;
 }
 
+.item-stats {
+    color: #ffffff;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-top: 15px;
+}
 
+.stat-line {
+    margin-bottom: 5px;
+}
 
 .craft-materials-section {
     padding: 20px;
@@ -209,7 +218,10 @@
         margin-bottom: 6px;
     }
     
-
+    .item-stats {
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
     
     .craft-materials {
         gap: 20px;

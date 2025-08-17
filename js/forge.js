@@ -185,8 +185,35 @@ function showCraftItemDetails(index) {
 
     const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
     
-    // Không hiển thị stats
+    // Tạo thông tin stats của vật phẩm với format mới
     let statsText = '';
+    if (item.stats) {
+        Object.entries(item.stats).forEach(([stat, value]) => {
+            const statName = stat === 'physicalDamage' ? 'Tấn công Vật Lý' :
+                stat === 'magicDamage' ? 'Tấn công Phép Thuật' :
+                stat === 'criticalChance' ? 'Chí mạng' :
+                stat === 'criticalDamage' ? 'Sát thương chí mạng' :
+                stat === 'hp' ? 'Sinh lực' :
+                stat === 'physicalDefense' ? 'Phòng thủ vật lý' :
+                stat === 'magicDefense' ? 'Phòng thủ phép thuật' : 'Nhanh nhẹn';
+            
+            // Format giá trị theo yêu cầu (ví dụ: 0.88 ~ 1.2)
+            let statValue;
+            if (stat === 'agility') {
+                // Nhanh nhẹn hiển thị dạng range
+                const baseValue = parseFloat(value);
+                const minValue = (baseValue * 0.8).toFixed(2);
+                const maxValue = (baseValue * 1.2).toFixed(2);
+                statValue = `${minValue} ~ ${maxValue}`;
+            } else if (['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat)) {
+                statValue = `${value}%`;
+            } else {
+                statValue = value;
+            }
+            
+            statsText += `<div class="stat-line">${statName}: ${statValue}</div>`;
+        });
+    }
 
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
@@ -196,6 +223,7 @@ function showCraftItemDetails(index) {
                     <div class="item-name" ${qualityStyle}>${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
                     <div class="item-quality">Phẩm chất: ${item.quality}</div>
+                    <div class="item-stats">${statsText}</div>
                 </div>
             </div>
             
