@@ -147,6 +147,9 @@ function showCraftItemDetails(index) {
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
         <div class="item-detail">
             <div class="item-header">
+                <div class="item-image-section">
+                    <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-detail-image" onerror="this.src='images/placeholder.png'">
+                </div>
                 <div class="item-basic-info">
                     <div class="item-name" style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>

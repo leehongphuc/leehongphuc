@@ -140,14 +140,29 @@
 }
 
 .item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
     padding: 20px;
     background: transparent;
     border-radius: 12px;
     border: none;
 }
 
+.item-image-section {
+    flex-shrink: 0;
+}
+
+.item-detail-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 .item-basic-info {
-    text-align: center;
+    flex: 1;
+    text-align: left;
 }
 
 .item-name {
