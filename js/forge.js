@@ -184,36 +184,47 @@ function showCraftItemDetails(index) {
                      (gameState.materials['Huyền Thiết'] || 0) >= craftCost.huyenThiet;
 
     const qualityStyle = qualityColors[item.quality] ? `style="color: ${qualityColors[item.quality]}"` : '';
-    
-    // Tạo thông tin stats của vật phẩm với format mới
+
+    // Build stat display using qualityRanges to ensure ranges are shown
     let statsText = '';
-    if (item.stats) {
+    const ranges = (window.qualityRanges && window.qualityRanges[item.quality]) || null;
+    if (ranges && item.type) {
+        const isWeaponLike = ['weapon', 'artifact', 'necklace', 'ring', 'gloves', 'boots'].includes(item.type);
+        const isArmorLike = ['armor', 'helmet', 'belt', 'jade'].includes(item.type);
+        const maybeAdd = (label, key, isPercent = false, precision = 0) => {
+            if (!ranges[key]) return;
+            const [minV, maxV] = ranges[key];
+            const fmt = (v) => isPercent ? `${Number(v).toFixed(2)}%` : Number(v).toFixed(precision);
+            statsText += `<div class="stat-line">${label}: ${fmt(minV)} ~ ${fmt(maxV)}</div>`;
+        };
+        if (isWeaponLike) {
+            // show both physical and magic ranges; actual roll may pick one but UI shows potential
+            maybeAdd('Tấn công Vật Lý', 'physicalDamage', false, 0);
+            maybeAdd('Tấn công Phép Thuật', 'magicDamage', false, 0);
+            maybeAdd('Chí mạng', 'criticalChance', true, 2);
+            maybeAdd('Nhanh nhẹn', 'agility', false, 2);
+        }
+        if (isArmorLike) {
+            maybeAdd('Sinh lực', 'hp', false, 0);
+            maybeAdd('Phòng thủ vật lý', 'physicalDefense', true, 2);
+            maybeAdd('Phòng thủ phép thuật', 'magicDefense', true, 2);
+        }
+    } else if (item.stats) {
+        // Fallback to single values if ranges unavailable
         Object.entries(item.stats).forEach(([stat, value]) => {
-            const statName = stat === 'physicalDamage' ? 'Tấn công Vật Lý' :
+            const label = stat === 'physicalDamage' ? 'Tấn công Vật Lý' :
                 stat === 'magicDamage' ? 'Tấn công Phép Thuật' :
                 stat === 'criticalChance' ? 'Chí mạng' :
                 stat === 'criticalDamage' ? 'Sát thương chí mạng' :
                 stat === 'hp' ? 'Sinh lực' :
                 stat === 'physicalDefense' ? 'Phòng thủ vật lý' :
                 stat === 'magicDefense' ? 'Phòng thủ phép thuật' : 'Nhanh nhẹn';
-            
-            // Format giá trị theo yêu cầu (ví dụ: 0.88 ~ 1.2)
-            let statValue;
-            if (stat === 'agility') {
-                // Nhanh nhẹn hiển thị dạng range
-                const baseValue = parseFloat(value);
-                const minValue = (baseValue * 0.8).toFixed(2);
-                const maxValue = (baseValue * 1.2).toFixed(2);
-                statValue = `${minValue} ~ ${maxValue}`;
-            } else if (['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat)) {
-                statValue = `${value}%`;
-            } else {
-                statValue = value;
-            }
-            
-            statsText += `<div class="stat-line">${statName}: ${statValue}</div>`;
+            const val = ['criticalChance', 'physicalDefense', 'magicDefense'].includes(stat) ? `${value}%` : value;
+            statsText += `<div class="stat-line">${label}: ${val}</div>`;
         });
     }
+    // 5% note for extra random line
+    statsText += `<div class="stat-line">Tỷ lệ 5%: Thêm 1 dòng chỉ số ngẫu nhiên</div>`;
 
     modalContent.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
@@ -231,19 +242,19 @@ function showCraftItemDetails(index) {
                 <h4>Vật phẩm cần chế tạo:</h4>
                 <div class="craft-materials">
                     <div class="material-item ${gameState.gold < craftCost.gold ? 'insufficient' : ''}">
-                        <img src="images/vang.png" alt="Kim tệ" class="material-image" 
-                             onerror="this.src='images/placeholder.png'">
+                        <img src="images/vang.png" alt="Kim tệ" class="material-image" onerror="this.src='images/placeholder.png'">
                         <div class="material-name">Kim tệ</div>
+                        <div class="material-amount ${gameState.gold < craftCost.gold ? 'insufficient' : ''}">${gameState.gold}/${craftCost.gold}</div>
                     </div>
                     <div class="material-item ${gameState.spiritStones < craftCost.spiritStones ? 'insufficient' : ''}">
-                        <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" 
-                             onerror="this.src='images/placeholder.png'">
+                        <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" onerror="this.src='images/placeholder.png'">
                         <div class="material-name">Linh thạch</div>
+                        <div class="material-amount ${gameState.spiritStones < craftCost.spiritStones ? 'insufficient' : ''}">${gameState.spiritStones}/${craftCost.spiritStones}</div>
                     </div>
                     <div class="material-item ${(gameState.materials['Huyền Thiết'] || 0) < craftCost.huyenThiet ? 'insufficient' : ''}">
-                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" 
-                             onerror="this.src='images/placeholder.png'">
+                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
                         <div class="material-name">Huyền Thiết</div>
+                        <div class="material-amount ${(gameState.materials['Huyền Thiết'] || 0) < craftCost.huyenThiet ? 'insufficient' : ''}">${gameState.materials['Huyền Thiết'] || 0}/${craftCost.huyenThiet}</div>
                     </div>
                 </div>
             </div>

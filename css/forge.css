@@ -167,6 +167,16 @@
     text-align: center;
 }
 
+.material-amount {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.material-amount.insufficient {
+    color: #ff6666;
+}
+
 .craft-btn {
     background: linear-gradient(45deg, #4ecdc4, #44e08f);
     color: #ffffff;

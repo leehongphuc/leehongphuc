@@ -108,6 +108,11 @@ const qualityRanges = {
     'Vương Cấp': { physicalDamage: [2000, 3000], magicDamage: [2000, 3000], criticalChance: [25, 50], agility: [0.93, 2.4], hp: [11000, 23000], physicalDefense: [80, 140], magicDefense: [80, 140] }
 };
 
+// Expose quality ranges for other modules (e.g., forge) to render display ranges
+if (typeof window !== 'undefined') {
+    window.qualityRanges = qualityRanges;
+}
+
 function getRandomStatForType(type, quality) {
     const ranges = qualityRanges[quality] || qualityRanges['Nhất Phẩm'];
     const weaponStats = [
