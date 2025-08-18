@@ -131,21 +131,20 @@
 .craft-materials {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: nowrap;
 }
 
 .material-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: all 0.3s ease;
-    min-width: 80px;
+    gap: 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    min-width: 70px;
 }
 
 .material-item.insufficient {
@@ -234,13 +233,14 @@
     }
     
     .craft-materials {
-        gap: 20px;
+        gap: 16px;
         justify-content: center;
+        flex-wrap: nowrap;
     }
     
     .material-item {
-        padding: 10px;
-        gap: 8px;
+        padding: 0;
+        gap: 6px;
         min-width: 60px;
     }
     
@@ -250,6 +250,10 @@
     }
     
     .material-name {
+        font-size: 0.8rem;
+    }
+    
+    .material-amount {
         font-size: 0.8rem;
     }
 }
