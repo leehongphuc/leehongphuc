@@ -1082,11 +1082,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeGameState();
     const equipmentGrid = document.getElementById('equipment-grid');
     const isShopPage = document.getElementById('gold-section') || document.getElementById('spiritStones-section');
-    if (equipmentGrid && !isShopPage) {
+    const isForgePage = document.querySelector('.forge-section');
+    if (equipmentGrid && !isShopPage && !isForgePage) {
         console.log('Khởi tạo trang nhân vật...');
         updateDisplay();
         updateEquipmentDisplay();
-    } else if (!isShopPage) {
+    } else if (!isShopPage && !isForgePage) {
         console.log('Khởi tạo trang túi đồ...');
         updateInventoryDisplay();
     }
