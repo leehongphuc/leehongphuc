@@ -1,0 +1,123 @@
+{
+    "element" : {
+        "metal" : {
+            "natural" : 125,
+            "water" : 75
+        },"natural" : {
+            "earth" : 125,
+            "fire" : 75
+        },"water" : {
+            "fire": 125,
+            "natural": 75
+        },"fire" : {
+            "metal": 125,
+            "earth": 75
+        },"earth" : {
+            "water": 125,
+            "metal": 75
+        },"wind" : {
+            "thunder": 125,
+            "ice": 75
+        },"thunder" : {
+            "ice": 125,
+            "wind": 75
+        },"ice" : {
+            "wind": 125,
+            "thunder": 75
+        },"light" : {
+            "dark": 125,
+            "light": 75
+        },"dark" : {
+            "light": 125,
+            "dark": 75
+        }
+    },
+    "weapon" : {
+        "medium_scimitar" : {
+            "battle_axe" : 150,
+            "zither" : 125,
+            "rope_whip" : 125
+        },"battle_axe" : {
+            "zither" : 150,
+            "rope_whip" : 125,
+            "sword" : 125
+        },"zither" : {
+            "rope_whip" : 150,
+            "sword" : 125,
+            "scimitar" : 125
+        },"rope_whip" : {
+            "sword" : 150,
+            "scimitar" : 125,
+            "spear" : 125
+        },"sword" : {
+            "scimitar" : 150,
+            "spear" : 125,
+            "pen" : 125
+        },"scimitar" : {
+            "spear" : 150,
+            "pen" : 125,
+            "mini_scimitar" : 125
+        },"spear" : {
+            "pen" : 150,
+            "mini_scimitar" : 125,
+            "umbrella" : 125
+        },"pen" : {
+            "mini_scimitar" : 150,
+            "umbrella" : 125,
+            "moon_blade" : 125
+        },"mini_scimitar" : {
+            "umbrella" : 150,
+            "moon_blade" : 125,
+            "crescents" : 125
+        },"umbrella" : {
+            "moon_blade" : 150,
+            "crescents" : 125,
+            "claw" : 125
+        },"moon_blade" : {
+            "crescents" : 150,
+            "claw" : 125,
+            "harp" : 125
+        },"crescents" : {
+            "claw" : 150,
+            "harp" : 125,
+            "flute" : 125
+        },"claw" : {
+            "harp" : 150,
+            "flute" : 125,
+            "robot" : 125
+        },"harp" : {
+            "flute" : 150,
+            "robot" : 125,
+            "fan" : 125
+        },"flute" : {
+            "robot" : 150,
+            "fan" : 125,
+            "dual_sword" : 125
+        },"robot" : {
+            "fan" : 150,
+            "dual_sword" : 125,
+            "bow" : 125
+        },"fan" : {
+            "dual_sword" : 150,
+            "bow" : 125,
+            "stick" : 125
+        },"dual_sword" : {
+            "bow" : 150,
+            "stick" : 125,
+            "lute" : 125
+        },"bow" : {
+            "stick" : 150,
+            "lute" : 125,
+            "medium_scimitar" : 125
+        },"stick" : {
+            "lute" : 150,
+            "medium_scimitar" : 125,
+            "battle_axe" : 125
+        },"lute" : {
+            "medium_scimitar" : 150,
+            "battle_axe" : 125,
+            "zither" : 125
+        }
+
+    }
+}

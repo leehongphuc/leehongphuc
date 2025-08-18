@@ -1,0 +1,653 @@
+{
+    "data": {
+        "none": {
+            "target": "enemy",
+            "area": 1,
+            "mp": 9999,
+            "value": 1
+        },
+        "damage_single_60": {
+            "target": "enemy",
+            "area": 1,
+            "mp": 60,
+            "value": 100
+        },
+        "damage_single_90": {
+            "target": "enemy",
+            "area": 1,
+            "mp": 90,
+            "value": 200
+        },
+        "damage_triple_60": {
+            "target": "enemy",
+            "area": 3,
+            "mp": 60,
+            "value": 55
+        },
+        "damage_triple_90": {
+            "target": "enemy",
+            "area": 3,
+            "mp": 90,
+            "value": 110
+        },
+        "damage_aoe_60": {
+            "target": "enemy",
+            "area": 6,
+            "mp": 60,
+            "value": 40
+        },
+        "damage_aoe_90": {
+            "target": "enemy",
+            "area": 6,
+            "mp": 90,
+            "value": 80
+        },"heal_single_60" : {
+            "target" : "team",
+            "area" : 1,
+            "mp" : 60,
+            "value" : 100
+        },"heal_single_90" : {
+            "target" : "team",
+            "area" : 1,
+            "mp" : 90,
+            "value" : 200
+        },"heal_triple_60" : {
+            "target" : "team",
+            "area" : 3,
+            "mp" : 60,
+            "value" : 55
+        },"heal_triple_90" : {
+            "target" : "team",
+            "area" : 3,
+            "mp" : 90,
+            "value" : 110
+        },"heal_aoe_60" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 60,
+            "value" : 40
+        },"heal_aoe_90" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 90,
+            "value" : 80
+        },"curse_aoe_60" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "curse",
+                    "value" : 10,
+                    "turn" : 2
+                }
+            }
+        },"curse_aoe_90" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 90,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "curse",
+                    "value" : 20,
+                    "turn" : 2
+                }
+            }
+        },"weaken_aoe_60" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "weaken",
+                    "value" : 10,
+                    "turn" : 2
+                }
+            }
+        },"weaken_aoe_90" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 90,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "weaken",
+                    "value" : 20,
+                    "turn" : 2
+                }
+            }
+        },"defend_aoe_60" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "defend",
+                    "value" : 10,
+                    "turn" : 2
+                }
+            }
+        },"defend_aoe_90" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 90,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "defend",
+                    "value" : 20,
+                    "turn" : 2
+                }
+            }
+        },"attack_aoe_60" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "attack",
+                    "value" : 10,
+                    "turn" : 2
+                }
+            }
+        },"attack_aoe_90" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 90,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "attack",
+                    "value" : 20,
+                    "turn" : 2
+                }
+            }
+        },"shield_self_60" : {
+            "target" : "self",
+            "area" : 1,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "defend",
+                    "value" : 25,
+                    "turn" : 2
+                },"2" : {
+                    "sign" : "taunt",
+                    "value" : 100,
+                    "turn" : 1
+                }
+            }
+        },"return_self_60" : {
+            "target" : "self",
+            "area" : 1,
+            "mp" : 60,
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "damageReturn",
+                    "value" : 25,
+                    "turn" : 2
+                },"2" : {
+                    "sign" : "taunt",
+                    "value" : 100,
+                    "turn" : 1
+                }
+            }
+        },"disarm_aoe" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 75,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "disarm",
+                    "value" : 100,
+                    "turn" : 2
+                }
+            }
+        },"silent_aoe" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 75,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "silent",
+                    "value" : 100,
+                    "turn" : 2
+                }
+            }
+        },"mp_buff" : {
+            "target" : "team",
+            "area" : 6,
+            "mp" : 60,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "mpBuff",
+                    "value" : 100,
+                    "turn" : 2
+                }
+            }
+        },"mp_stop" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 75,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "mpStop",
+                    "value" : 100,
+                    "turn" : 2
+                }
+            }
+        },"heal_reduce" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 40,
+            "value" : 30,
+            "effect" : {
+                "1" : {
+                    "sign" : "hpRestoreReduce",
+                    "value" : 100,
+                    "turn" : 3
+                }
+            }
+        },"stun_aoe" : {
+            "target" : "enemy",
+            "area" : 6,
+            "mp" : 75,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "disarm",
+                    "value" : 100,
+                    "turn" : 1
+                },"2" : {
+                    "sign" : "silent",
+                    "value" : 100,
+                    "turn" : 1
+                }
+            }
+        },"anti_effect_team" : {
+            "target" : "team",
+            "removeEffect" : "yes",
+            "area" : 6,
+            "mp" : 60,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "antiEffect",
+                    "value" : 100,
+                    "turn" : 3
+                }
+            }
+        },"anti_effect_enemy" : {
+            "target" : "enemy",
+            "removeEffect" : "yes",
+            "area" : 6,
+            "mp" : 60,
+            "mp_reduce" : "yes",
+            "value" : 0,
+            "effect" : {
+                "1" : {
+                    "sign" : "antiEffect",
+                    "value" : 100,
+                    "turn" : 2
+                }
+            }
+        }
+    },
+    "profile": {
+        "none": {
+            "element": "metal",
+            "rare": 1,
+            "sign": "none"
+        },"metal_basic_1": {
+            "element": "metal",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "metal_basic_2": {
+            "element": "metal",
+            "rare": 2,
+            "sign": "damage_single_60"
+        },
+        "metal_basic_3": {
+            "element": "metal",
+            "rare": 3,
+            "sign": "damage_aoe_60"
+        },
+        "metal_basic_4": {
+            "element": "metal",
+            "rare": 4,
+            "sign": "damage_single_60"
+        },
+        "natural_hp_seal": {
+            "element": "natural",
+            "rare": 1,
+            "sign": "heal_reduce"
+        },
+        "natural_basic_1": {
+            "element": "natural",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "natural_basic_2": {
+            "element": "natural",
+            "rare": 2,
+            "sign": "damage_single_60"
+        },
+        "natural_spike": {
+            "element": "natural",
+            "rare": 2,
+            "sign": "return_self_60"
+        },
+        "natural_basic_3": {
+            "element": "natural",
+            "rare": 3,
+            "sign": "weaken_aoe_60"
+        },
+        "natural_basic_4": {
+            "element": "natural",
+            "rare": 4,
+            "sign": "damage_triple_60"
+        },
+        "water_basic_1": {
+            "element": "water",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "water_basic_2": {
+            "element": "water",
+            "rare": 2,
+            "sign": "damage_triple_60"
+        },
+        "water_basic_3": {
+            "element": "water",
+            "rare": 3,
+            "sign": "defend_aoe_60"
+        },
+        "water_basic_4": {
+            "element": "water",
+            "rare": 4,
+            "sign": "damage_aoe_60"
+        },
+        "fire_basic_1": {
+            "element": "fire",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "fire_basic_2": {
+            "element": "fire",
+            "rare": 2,
+            "sign": "damage_triple_60"
+        },
+        "fire_basic_3": {
+            "element": "fire",
+            "rare": 3,
+            "sign": "damage_single_60"
+        },
+        "fire_basic_4": {
+            "element": "fire",
+            "rare": 4,
+            "sign": "attack_aoe_60"
+        },
+        "earth_basic_1": {
+            "element": "earth",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "earth_basic_2": {
+            "element": "earth",
+            "rare": 2,
+            "sign": "shield_self_60"
+        },
+        "earth_basic_3": {
+            "element": "earth",
+            "rare": 3,
+            "sign": "damage_triple_60"
+        },
+        "earth_basic_4": {
+            "element": "earth",
+            "rare": 4,
+            "sign": "damage_single_60"
+        },
+        "light_basic_damage_1": {
+            "element": "light",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "light_basic_1": {
+            "element": "light",
+            "rare": 1,
+            "sign": "heal_single_60"
+        },
+        "light_basic_2": {
+            "element": "light",
+            "rare": 2,
+            "sign": "heal_triple_60"
+        },
+        "light_anti_effect": {
+            "element": "light",
+            "rare": 2,
+            "sign": "anti_effect_team"
+        },
+        "light_basic_3": {
+            "element": "light",
+            "rare": 3,
+            "sign": "damage_single_60"
+        },
+        "light_basic_4": {
+            "element": "light",
+            "rare": 4,
+            "sign": "heal_aoe_90"
+        },
+        "dark_basic_1": {
+            "element": "dark",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dark_basic_2": {
+            "element": "dark",
+            "rare": 2,
+            "sign": "curse_aoe_60"
+        },"dark_silent": {
+            "element": "dark",
+            "rare": 2,
+            "sign": "silent_aoe"
+        },
+        "dark_basic_3": {
+            "element": "dark",
+            "rare": 3,
+            "sign": "damage_triple_60"
+        },
+        "dark_basic_4": {
+            "element": "dark",
+            "rare": 4,
+            "sign": "damage_single_60"
+        },
+        "wind_basic_1": {
+            "element": "wind",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "wind_basic_2": {
+            "element": "wind",
+            "rare": 2,
+            "sign": "damage_single_60"
+        },
+        "wind_basic_3": {
+            "element": "wind",
+            "rare": 3,
+            "sign": "damage_aoe_60"
+        },
+        "wind_basic_4": {
+            "element": "wind",
+            "rare": 4,
+            "sign": "damage_triple_60"
+        },
+        "thunder_basic_1": {
+            "element": "thunder",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "thunder_basic_2": {
+            "element": "thunder",
+            "rare": 2,
+            "sign": "stun_aoe"
+        },
+        "thunder_basic_3": {
+            "element": "thunder",
+            "rare": 3,
+            "sign": "damage_triple_60"
+        },
+        "thunder_basic_4": {
+            "element": "thunder",
+            "rare": 4,
+            "sign": "damage_aoe_60"
+        },
+        "ice_basic_1": {
+            "element": "ice",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "ice_basic_2": {
+            "element": "ice",
+            "rare": 2,
+            "sign": "disarm_aoe"
+        },
+        "ice_basic_3": {
+            "element": "ice",
+            "rare": 3,
+            "sign": "damage_single_60"
+        },
+        "ice_basic_4": {
+            "element": "ice",
+            "rare": 4,
+            "sign": "damage_aoe_60"
+        },
+        "dungeon_1": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dungeon_2": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dungeon_3": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dungeon_4": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dungeon_5": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },
+        "dungeon_6": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"dungeon_7": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"dungeon_8": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_90"
+        },"dragon_tomb": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"angel": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"ad_angel": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"ad_devil": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_1": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_2": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_3": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_4": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_5": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"word_6": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"guild_quest_1": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"guild_quest_2": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"guild_boss_1": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"guild_boss_2": {
+            "element": "none",
+            "rare": 1,
+            "sign": "damage_single_60"
+        },"water_one": {
+            "element": "water",
+            "rare": 3,
+            "sign": "damage_single_60"
+        },"thunder_one": {
+            "element": "thunder",
+            "rare": 3,
+            "sign": "damage_single_60"
+        },"wind_one": {
+            "element": "wind",
+            "rare": 4,
+            "sign": "damage_single_60"
+        },"natural_one": {
+            "element": "natural",
+            "rare": 3,
+            "sign": "damage_single_60"
+        }
+    }
+}
