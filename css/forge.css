@@ -146,13 +146,14 @@
 /* Giao diện chi tiết vật phẩm chế tạo */
 .item-detail {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
 }
 
 .item-image-section {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .item-detail-image {
@@ -163,14 +164,14 @@
 }
 
 .item-header {
-    padding: 20px;
+    padding: 0 0 0 10px;
     background: transparent;
     border-radius: 12px;
     border: none;
 }
 
 .item-basic-info {
-    text-align: center;
+    text-align: left;
 }
 
 .item-name {
@@ -181,9 +182,10 @@
 }
 
 .info-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 24px;
+    align-items: baseline;
     margin-bottom: 8px;
     font-size: 1.1rem;
     font-family: 'Courier New', monospace;
@@ -192,6 +194,7 @@
 .info-label {
     color: #ffffff;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .info-value {
@@ -204,9 +207,15 @@
     font-size: 1rem;
     margin-top: 15px;
     margin-bottom: 20px;
+    max-height: none;
+    overflow: visible;
 }
 
 .stat-line {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 24px;
+    align-items: baseline;
     margin-bottom: 5px;
 }
 
@@ -312,9 +321,10 @@
 
 /* Stats alignment */
 .stat-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 24px;
+    align-items: baseline;
     margin-bottom: 5px;
     font-family: 'Courier New', monospace;
 }
@@ -422,4 +432,46 @@
     .material-amount {
         font-size: 0.8rem;
     }
+}
+
+/* Forge item details modal overrides (higher specificity to beat information.css) */
+#item-details-modal .modal-content {
+    max-height: none;
+    overflow: visible;
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+#item-details-modal .item-detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#item-details-modal .item-header {
+    padding: 0 0 0 8px;
+}
+
+#item-details-modal .item-basic-info {
+    text-align: left;
+}
+
+#item-details-modal .info-line {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 28px;
+    align-items: baseline;
+}
+
+#item-details-modal .item-stats {
+    max-height: none;
+    overflow: visible;
+}
+
+#item-details-modal .stat-line {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 28px;
+    align-items: baseline;
 }
