@@ -58,7 +58,8 @@ function updateForgeDisplay() {
 
     unique.forEach((item, idx) => {
         const card = document.createElement('div');
-        card.className = 'equipment-item';
+        const qClass = item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g,'-')}` : '';
+        card.className = `equipment-item ${qClass}`;
         card.innerHTML = `
             <div class="equipment-image">
                 <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
