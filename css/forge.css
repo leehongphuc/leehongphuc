@@ -89,18 +89,17 @@
 
 .modal-content {
     background: #232136;
-    margin: 10% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     width: 90%;
     max-width: 600px;
-    max-height: none;
+    max-height: 90vh;
     overflow-y: visible;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
 }
 
 .close-modal {
@@ -225,6 +224,60 @@
 
 .material-amount.insufficient {
     color: #ff6666;
+}
+
+/* Modal header layout */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.item-info-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex: 1;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.craft-button-right {
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+/* Stats container with scrollbar */
+.item-stats-container {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+/* Stats alignment */
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+.stat-name {
+    flex: 0 0 auto;
+    text-align: left;
+}
+
+.stat-value {
+    flex: 0 0 auto;
+    text-align: right;
 }
 
 .craft-button-section {

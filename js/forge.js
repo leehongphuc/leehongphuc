@@ -106,19 +106,19 @@ function showCraftItemDetails(index) {
         const dmg = ranges.physicalDamage, crit = ranges.criticalChance, agi = ranges.agility;
 
         if (item.type === 'weapon') {
-            statsHtml += `<div class="stat-line">Sát thương vật lý &nbsp;&nbsp;&nbsp; ${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
-            statsHtml += `<div class="stat-line">Sát thương phép thuật &nbsp;&nbsp;&nbsp; ${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
-            statsHtml += `<div class="stat-line">Chí mạng &nbsp;&nbsp;&nbsp; ${fmt(crit[0])}% ~ ${fmt(crit[1])}%</div>`;
-            statsHtml += `<div class="stat-line">Tốc độ &nbsp;&nbsp;&nbsp; ${fmt(agi[0],1)} ~ ${fmt(agi[1],1)}</div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Sát thương vật lý</span><span class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Sát thương phép thuật</span><span class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Chí mạng</span><span class="stat-value">${fmt(crit[0])}% ~ ${fmt(crit[1])}%</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Tốc độ</span><span class="stat-value">${fmt(agi[0],1)} ~ ${fmt(agi[1],1)}</span></div>`;
         } else if (item.type === 'armor') {
-            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])}% ~ ${fmt(pd[1])}%</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])}% ~ ${fmt(pd[1])}%</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])}% ~ ${fmt(md[1])}%</span></div>`;
         } else if (['ring','gloves','boots','necklace'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</span></div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         } else if (item.type === 'artifact') {
             statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí</div>`;
@@ -126,9 +126,9 @@ function showCraftItemDetails(index) {
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng Vũ Khí hoặc Phòng Thủ</div>`;
         } else if (['helmet','belt','jade'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</span></div>`;
+            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</span></div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         }
     }
@@ -141,15 +141,25 @@ function showCraftItemDetails(index) {
 
     content.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
-        <div class="item-detail">
-            <div class="item-header">
+        <div class="modal-header">
+            <div class="item-info-left">
+                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-image" onerror="this.src='images/placeholder.png'">
                 <div class="item-basic-info">
                     <div class="item-name" style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
                     <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
-                    <div class="item-stats">${statsHtml}</div>
                 </div>
             </div>
+            <div class="craft-button-right">
+                <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
+                        onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
+                        ${canGold && canSS && canHT ? '' : 'disabled'}>
+                    ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
+                </button>
+            </div>
+        </div>
+        <div class="item-stats-container">
+            <div class="item-stats">${statsHtml}</div>
         </div>
         <div class="craft-materials-section">
             <h4>Vật phẩm cần chế tạo:</h4>
@@ -166,13 +176,6 @@ function showCraftItemDetails(index) {
                     <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
                     <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
                 </div>
-            </div>
-            <div class="craft-button-section">
-                <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
-                        onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
-                        ${canGold && canSS && canHT ? '' : 'disabled'}>
-                    ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
-                </button>
             </div>
         </div>
     `;
