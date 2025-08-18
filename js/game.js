@@ -108,9 +108,10 @@ const qualityRanges = {
     'Vương Cấp': { physicalDamage: [2000, 3000], magicDamage: [2000, 3000], criticalChance: [18, 36], agility: [1.2, 2.5], hp: [20000, 30000], physicalDefense: [23, 42], magicDefense: [23, 42] }
 };
 
-// Expose quality ranges for other modules (e.g., forge) to render display ranges
+// Expose quality ranges and colors for other modules (e.g., forge) to render display ranges
 if (typeof window !== 'undefined') {
     window.qualityRanges = qualityRanges;
+    window.qualityColors = qualityColors;
 }
 
 function getRandomStatForType(type, quality) {

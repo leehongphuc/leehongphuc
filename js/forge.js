@@ -65,7 +65,7 @@ function updateForgeDisplay() {
                 <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
             </div>
             <div class="equipment-info">
-                <div class="equipment-type" style="color: ${window.qualityColors ? (qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
+                <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
             </div>
         `;
         card.style.cursor = 'pointer';
@@ -141,7 +141,7 @@ function showCraftItemDetails(index) {
                 <div class="item-basic-info">
                     <div class="item-name">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
-                    <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
+                    <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
                     <div class="item-stats">${statsHtml}</div>
                 </div>
             </div>
@@ -161,10 +161,131 @@ function showCraftItemDetails(index) {
                         <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
                     </div>
                 </div>
+                <div class="craft-button-section">
+                    <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
+                            onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
+                            ${canGold && canSS && canHT ? '' : 'disabled'}>
+                        ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
+                    </button>
+                </div>
             </div>
         </div>
     `;
     modal.style.display = 'block';
+}
+
+function craftItem(itemType, itemQuality, itemIndex) {
+    const gameState = ensureGameState();
+    if (!gameState) return alert('Lỗi trạng thái game');
+
+    if (!window.giftBoxItems) return alert('Chưa có danh sách vật phẩm');
+    
+    const equipmentTypes = ['weapon', 'necklace', 'ring', 'gloves', 'boots', 'armor', 'helmet', 'belt', 'jade', 'artifact'];
+    const items = window.giftBoxItems.filter(i => equipmentTypes.includes(i.type));
+    
+    const seen = new Set();
+    const unique = [];
+    for (const it of items) {
+        const key = `${it.type}-${it.quality}`;
+        if (!seen.has(key)) { seen.add(key); unique.push(it); }
+    }
+    
+    const item = unique[itemIndex];
+    if (!item) return alert('Không tìm thấy vật phẩm');
+
+    const cost = calculateCraftCost(itemQuality);
+    
+    // Kiểm tra nguyên liệu
+    const canGold = gameState.gold >= cost.gold;
+    const canSS = gameState.spiritStones >= cost.spiritStones;
+    const haveHT = (gameState.materials['Huyền Thiết'] || 0);
+    const canHT = haveHT >= cost.huyenThiet;
+
+    if (!canGold || !canSS || !canHT) {
+        return alert('Không đủ nguyên liệu để chế tạo!');
+    }
+
+    // Trừ nguyên liệu
+    gameState.gold -= cost.gold;
+    gameState.spiritStones -= cost.spiritStones;
+    gameState.materials['Huyền Thiết'] -= cost.huyenThiet;
+
+    // Tạo vật phẩm mới với stats ngẫu nhiên
+    const newItem = createRandomItem(item.type, item.quality);
+    
+    // Thêm vào inventory
+    if (!gameState.inventory) gameState.inventory = [];
+    gameState.inventory.push(newItem);
+
+    // Lưu game state
+    if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('gameState', JSON.stringify(gameState));
+    }
+
+    alert(`Chế tạo thành công ${newItem.name}!`);
+    closeItemDetails();
+    
+    // Cập nhật hiển thị nếu có
+    if (typeof window.updateCharacterDisplay === 'function') {
+        window.updateCharacterDisplay();
+    }
+}
+
+function createRandomItem(type, quality) {
+    if (!window.giftBoxItems) return null;
+    
+    // Tìm template item
+    const template = window.giftBoxItems.find(item => item.type === type && item.quality === quality);
+    if (!template) return null;
+
+    // Tạo stats ngẫu nhiên dựa trên quality
+    const ranges = window.qualityRanges ? window.qualityRanges[quality] : null;
+    if (!ranges) return { ...template, stats: {} };
+
+    let stats = {};
+    
+    // Tạo stats dựa trên loại trang bị
+    if (type === 'weapon') {
+        // Vũ khí: damage, crit, agility
+        const physicalDamage = Math.floor(Math.random() * (ranges.physicalDamage[1] - ranges.physicalDamage[0] + 1)) + ranges.physicalDamage[0];
+        const criticalChance = (Math.random() * (ranges.criticalChance[1] - ranges.criticalChance[0]) + ranges.criticalChance[0]).toFixed(1);
+        const agility = (Math.random() * (ranges.agility[1] - ranges.agility[0]) + ranges.agility[0]).toFixed(2);
+        
+        stats = {
+            physicalDamage: physicalDamage,
+            criticalChance: parseFloat(criticalChance),
+            agility: parseFloat(agility)
+        };
+    } else if (type === 'armor') {
+        // Giáp: hp, physical defense, magic defense
+        const hp = Math.floor(Math.random() * (ranges.hp[1] - ranges.hp[0] + 1)) + ranges.hp[0];
+        const physicalDefense = (Math.random() * (ranges.physicalDefense[1] - ranges.physicalDefense[0]) + ranges.physicalDefense[0]).toFixed(1);
+        const magicDefense = (Math.random() * (ranges.magicDefense[1] - ranges.magicDefense[0]) + ranges.magicDefense[0]).toFixed(1);
+        
+        stats = {
+            hp: hp,
+            physicalDefense: parseFloat(physicalDefense),
+            magicDefense: parseFloat(magicDefense)
+        };
+    } else {
+        // Các loại khác: ngẫu nhiên 1 stat chính
+        const statTypes = ['hp', 'physicalDefense', 'magicDefense'];
+        const randomStat = statTypes[Math.floor(Math.random() * statTypes.length)];
+        
+        if (randomStat === 'hp') {
+            stats[randomStat] = Math.floor(Math.random() * (ranges.hp[1] - ranges.hp[0] + 1)) + ranges.hp[0];
+        } else {
+            stats[randomStat] = parseFloat((Math.random() * (ranges[randomStat][1] - ranges[randomStat][0]) + ranges[randomStat][0]).toFixed(1));
+        }
+    }
+
+    return {
+        ...template,
+        stats: stats,
+        enhanceLevel: 0,
+        equipped: false,
+        locked: false
+    };
 }
 
 function closeItemDetails() {
@@ -183,5 +304,7 @@ if (typeof window !== 'undefined') {
     window.updateForgeDisplay = updateForgeDisplay;
     window.showCraftItemDetails = showCraftItemDetails;
     window.closeItemDetails = closeItemDetails;
+    window.craftItem = craftItem;
+    window.createRandomItem = createRandomItem;
 }
 
