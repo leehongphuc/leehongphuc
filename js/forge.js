@@ -70,7 +70,7 @@ function updateForgeDisplay() {
                 </div>
             </div>
             <div class="equipment-right">
-                <div class="craft-text">Chế tạo</div>
+                <button class="craft-text-btn">Chế tạo</button>
             </div>
         `;
         card.style.cursor = 'pointer';
@@ -110,19 +110,29 @@ function showCraftItemDetails(index) {
         const dmg = ranges.physicalDamage, crit = ranges.criticalChance, agi = ranges.agility;
 
         if (item.type === 'weapon') {
-            statsHtml += `<div class="stat-line"><span class="stat-name">Sát thương vật lý</span><span class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Sát thương phép thuật</span><span class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Chí mạng</span><span class="stat-value">${fmt(crit[0])}% ~ ${fmt(crit[1])}%</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Tốc độ</span><span class="stat-value">${fmt(agi[0],1)} ~ ${fmt(agi[1],1)}</span></div>`;
+            statsHtml += `<div class="stat-item">Sát thương vật lý</div>`;
+            statsHtml += `<div class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-item">Sát thương phép thuật</div>`;
+            statsHtml += `<div class="stat-value">${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-item">Chí mạng</div>`;
+            statsHtml += `<div class="stat-value">${fmt(crit[0])}% ~ ${fmt(crit[1])}%</div>`;
+            statsHtml += `<div class="stat-item">Tốc độ</div>`;
+            statsHtml += `<div class="stat-value">${fmt(agi[0],1)} ~ ${fmt(agi[1],1)}</div>`;
         } else if (item.type === 'armor') {
-            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])}% ~ ${fmt(pd[1])}%</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])}% ~ ${fmt(md[1])}%</span></div>`;
+            statsHtml += `<div class="stat-item">Sinh lực</div>`;
+            statsHtml += `<div class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ vật lý</div>`;
+            statsHtml += `<div class="stat-value">${fmt(pd[0])}% ~ ${fmt(pd[1])}%</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ phép thuật</div>`;
+            statsHtml += `<div class="stat-value">${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
         } else if (['ring','gloves','boots','necklace'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</span></div>`;
+            statsHtml += `<div class="stat-item">Sinh lực</div>`;
+            statsHtml += `<div class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ vật lý</div>`;
+            statsHtml += `<div class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ phép thuật</div>`;
+            statsHtml += `<div class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         } else if (item.type === 'artifact') {
             statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí</div>`;
@@ -130,9 +140,12 @@ function showCraftItemDetails(index) {
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng Vũ Khí hoặc Phòng Thủ</div>`;
         } else if (['helmet','belt','jade'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Sinh lực</span><span class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ vật lý</span><span class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</span></div>`;
-            statsHtml += `<div class="stat-line"><span class="stat-name">Phòng thủ phép thuật</span><span class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</span></div>`;
+            statsHtml += `<div class="stat-item">Sinh lực</div>`;
+            statsHtml += `<div class="stat-value">${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ vật lý</div>`;
+            statsHtml += `<div class="stat-value">${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-item">Phòng thủ phép thuật</div>`;
+            statsHtml += `<div class="stat-value">${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         }
     }
@@ -146,10 +159,10 @@ function showCraftItemDetails(index) {
     content.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
         <div class="item-detail">
+            <div class="item-image-section">
+                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-detail-image" onerror="this.src='images/placeholder.png'">
+            </div>
             <div class="item-header">
-                <div class="item-image-section">
-                    <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-detail-image" onerror="this.src='images/placeholder.png'">
-                </div>
                 <div class="item-basic-info">
                     <div class="item-name" style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
