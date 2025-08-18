@@ -150,12 +150,8 @@ function showCraftItemDetails(index) {
                     <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
                 </div>
             </div>
-            <div class="craft-button-right">
-                <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
-                        onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
-                        ${canGold && canSS && canHT ? '' : 'disabled'}>
-                    ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
-                </button>
+            <div class="craft-text-right">
+                <span class="craft-label">Chế tạo</span>
             </div>
         </div>
         <div class="item-detail">
@@ -180,6 +176,13 @@ function showCraftItemDetails(index) {
                     <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
                     <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
                 </div>
+            </div>
+            <div class="craft-button-section">
+                <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
+                        onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
+                        ${canGold && canSS && canHT ? '' : 'disabled'}>
+                    ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
+                </button>
             </div>
         </div>
     `;

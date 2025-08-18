@@ -250,9 +250,17 @@
     flex-shrink: 0;
 }
 
-.craft-button-right {
+.craft-text-right {
     flex-shrink: 0;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.craft-label {
+    font-size: 1.2rem;
+    color: #4ecdc4;
+    font-weight: 600;
 }
 
 /* Remove stats container scrollbar */
