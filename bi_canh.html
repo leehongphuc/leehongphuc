@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bí Cảnh - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/battle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
+        <h1 id="main-title">Bí Cảnh - Tu Tiên</h1>
+        
+        <div class="stats-display" id="stats-display">
+            <div class="stats-row">
+                <span>Cấp độ: <span id="level-display">Luyện Khí Tầng 1 (Cấp 1)</span></span>
+                <span>Kinh nghiệm: <span id="exp-display">0/100</span></span>
+            </div>
+            <div class="stats-row">
+                <span>Kim tệ: <span id="gold-display">1000</span></span>
+                <span>Linh thạch: <span id="spirit-display">3000</span></span>
+            </div>
+        </div>
+
+        <!-- Màn hình chọn địa điểm -->
+        <div class="section active" id="select-location-section">
+            <h3>Chọn Địa Điểm Tu Luyện</h3>
+            <div class="location-select">
+                <div class="location-option" id="location-0" data-location="huyen_thiet">
+                    <div class="location-img">
+                        <img src="images/huyen_thiet.png" alt="Cổ Mạch Khoáng">
+                    </div>
+                    <span>Cổ Mạch Khoáng</span>
+                    <div class="location-desc">Rơi ra Huyền Thiết</div>
+                </div>
+                <div class="location-option" id="location-1" data-location="vang">
+                    <div class="location-img">
+                        <img src="images/vang.png" alt="Kim Long Bảo Tàng">
+                    </div>
+                    <span>Kim Long Bảo Tàng</span>
+                    <div class="location-desc">Rơi ra Vàng</div>
+                </div>
+                <div class="location-option" id="location-2" data-location="exp">
+                    <div class="location-img">
+                        <img src="images/exp.png" alt="Thông Thiên Tháp">
+                    </div>
+                    <span>Thông Thiên Tháp</span>
+                    <div class="location-desc">Rơi ra Kinh Nghiệm</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Màn hình chọn quái -->
+        <div class="section" id="select-enemy-section">
+            <h3 id="location-title">Chọn Quái Vật Để Chiến Đấu</h3>
+            <div class="enemy-select" id="enemy-container">
+                <!-- Quái vật sẽ được tạo động bằng JavaScript -->
+            </div>
+            <div class="battle-actions">
+                <button class="battle-action-btn secondary" id="back-to-location-btn">← Quay lại chọn địa điểm</button>
+            </div>
+        </div>
+
+        <!-- Màn hình thông tin quái và nút tấn công -->
+        <div class="section" id="enemy-info-section">
+            <h3>Thông Tin Quái Vật</h3>
+            <div class="enemy-info-card">
+                <div class="enemy-info-img" id="selected-enemy-img">
+                    <img src="images/dungeon_1.png" alt="Quái Vật Cấp 1" onerror="this.style.display='none'; this.parentNode.innerHTML='Dungeon 1';">
+                </div>
+                <div class="enemy-info-details">
+                    <h4 id="selected-enemy-name">Quái Vật Cấp 1</h4>
+                    <div class="enemy-detailed-stats" id="selected-enemy-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Tấn công Vật Lý:</span>
+                            <span class="stat-value" id="enemy-physical-damage">80</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Tấn công Phép Thuật:</span>
+                            <span class="stat-value" id="enemy-magic-damage">40</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Chí mạng:</span>
+                            <span class="stat-value" id="enemy-critical-chance">5%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Sát thương chí mạng:</span>
+                            <span class="stat-value" id="enemy-critical-damage">150%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Sinh lực:</span>
+                            <span class="stat-value" id="enemy-hp">800</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Phòng thủ Vật Lý:</span>
+                            <span class="stat-value" id="enemy-physical-defense">13%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Phòng thủ Phép Thuật:</span>
+                            <span class="stat-value" id="enemy-magic-defense">11%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Nhanh nhẹn:</span>
+                            <span class="stat-value" id="enemy-agility">0.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="battle-actions">
+                <button class="battle-action-btn" id="attack-btn">🗡️ Tấn Công</button>
+                <button class="battle-action-btn secondary" id="back-to-select-btn">← Quay lại</button>
+            </div>
+        </div>
+
+        <!-- Màn hình chiến đấu -->
+        <div class="section" id="battle-section">
+            <div class="battle-scene">
+                <div class="battle-background">
+                    <img id="battle-bg" src="images/phong_canh_1.png" alt="Battle Background">
+                </div>
+                <div class="battle-enemy">
+                    <img id="enemy-img" src="" alt="Enemy" style="display: none;">
+                    <div class="enemy-hp-bar">
+                        <div class="hp-bar-bg">
+                            <div id="enemy-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="enemy-hp-text" class="hp-text"></div>
+                    </div>
+                </div>
+                <div class="battle-player">
+                    <img id="player-img" src="images/player_1.png" alt="Player">
+                    <div class="player-hp-bar">
+                        <div class="hp-bar-bg">
+                            <div id="player-hp-fill" class="hp-bar-fill"></div>
+                        </div>
+                        <div id="player-hp-text" class="hp-text"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load scripts in proper order -->
+    <script src="js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/battle.js" onload="console.log('✅ battle.js loaded successfully')" onerror="console.error('❌ Failed to load battle.js')"></script>
+    <script src="js/main.js" onload="console.log('✅ main.js loaded successfully')" onerror="console.error('❌ Failed to load main.js')"></script>
+    
+    <!-- Initialize battle system after all scripts loaded -->
+    <script>
+        // Wait for all scripts to load
+        let scriptCheckRetryCount = 0;
+        const maxScriptCheckRetries = 20;
+        
+        function checkScriptLoadStatus() {
+            scriptCheckRetryCount++;
+            console.log(`Checking script load status (attempt ${scriptCheckRetryCount}/${maxScriptCheckRetries}):`);
+            console.log('- p5:', typeof window.p5 !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- createCanvas:', typeof window.createCanvas !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- startBattle:', typeof window.startBattle !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- loadBattleAssets:', typeof window.loadBattleAssets !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- getEnemies:', typeof window.getEnemies !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- initializeGameState:', typeof window.initializeGameState !== 'undefined' ? 'loaded' : 'not loaded');
+            console.log('- battleJSLoaded flag:', window.battleJSLoaded ? '✅ true' : '❌ false');
+            
+            // Check if we've exceeded max retries
+            if (scriptCheckRetryCount >= maxScriptCheckRetries) {
+                console.error('❌ Maximum script check retries reached. Some functions may not be available.');
+                return;
+            }
+            
+            // Load battle assets if available
+            if (typeof window.loadBattleAssets === 'function') {
+                console.log('Loading battle assets...');
+                try {
+                    window.loadBattleAssets();
+                    console.log('✅ Battle assets loaded successfully');
+                } catch (error) {
+                    console.error('❌ Error loading battle assets:', error);
+                }
+            } else {
+                console.warn('⚠️ loadBattleAssets function not found, will retry...');
+                // Retry after a short delay
+                setTimeout(checkScriptLoadStatus, 500);
+                return;
+            }
+            
+            // Additional check for startBattle function
+            if (typeof window.startBattle === 'function') {
+                console.log('✅ startBattle function is available and ready');
+            } else {
+                console.warn('⚠️ startBattle function not yet available, will retry...');
+                // Retry after a short delay
+                setTimeout(checkScriptLoadStatus, 500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('HTML fully loaded, checking script availability...');
+            checkScriptLoadStatus();
+            
+            // Also check after a short delay to catch any late-loading scripts
+            setTimeout(checkScriptLoadStatus, 500);
+        });
+        
+        // Also check when window finishes loading
+        window.addEventListener('load', function() {
+            console.log('Window fully loaded, final script check:');
+            checkScriptLoadStatus();
+        });
+    </script>
+</body>
+</html>
