@@ -95,8 +95,8 @@
     border-radius: 15px;
     width: 90%;
     max-width: 600px;
-    max-height: 90vh;
-    overflow-y: visible;
+    max-height: none;
+    overflow: visible;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
@@ -158,6 +158,7 @@
     line-height: 1.8;
     font-size: 1rem;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .stat-line {
@@ -254,13 +255,7 @@
     margin-left: 20px;
 }
 
-/* Stats container with scrollbar */
-.item-stats-container {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-    padding-right: 5px;
-}
+/* Remove stats container scrollbar */
 
 /* Stats alignment */
 .stat-line {

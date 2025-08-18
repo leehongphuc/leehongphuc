@@ -158,8 +158,12 @@ function showCraftItemDetails(index) {
                 </button>
             </div>
         </div>
-        <div class="item-stats-container">
-            <div class="item-stats">${statsHtml}</div>
+        <div class="item-detail">
+            <div class="item-header">
+                <div class="item-basic-info">
+                    <div class="item-stats">${statsHtml}</div>
+                </div>
+            </div>
         </div>
         <div class="craft-materials-section">
             <h4>Vật phẩm cần chế tạo:</h4>
