@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CManga - Kho truyện khổng lồ</title>
+    <meta name="description" content="Web đọc truyện tranh và truyện chữ online lớn nhất, cập nhật liên tục mỗi ngày">
+    <meta name="keywords" content="Manhua, Manga, Truyện Tranh, Manhwa, Truyện, Truyện chữ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="CManga Logo" class="logo-img">
+                        <span class="logo-text">CManga</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/manga" class="nav-link">Truyện Tranh</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/novel" class="nav-link">Truyện Chữ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/game" class="nav-link">Game RPG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/community" class="nav-link">Cộng Đồng</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Tìm kiếm truyện..." class="search-input">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="user-menu">
+                        <button class="btn btn-primary" onclick="openModal('login')">Đăng Nhập</button>
+                        <button class="btn btn-secondary" onclick="openModal('register')">Đăng Ký</button>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Kho truyện khổng lồ</h1>
+                    <p class="hero-subtitle">Cập nhật trong tích tắc - Hơn 10 triệu thành viên</p>
+                    <div class="hero-actions">
+                        <a href="/manga" class="btn btn-primary btn-large">Đọc Truyện Ngay</a>
+                        <a href="/game" class="btn btn-secondary btn-large">Chơi Game RPG</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/images/hero-manga.png" alt="Manga Collection">
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Manga -->
+        <section class="featured">
+            <div class="container">
+                <h2 class="section-title">Truyện Nổi Bật</h2>
+                <div class="manga-grid" id="featuredManga">
+                    <!-- Manga items will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates -->
+        <section class="latest">
+            <div class="container">
+                <h2 class="section-title">Cập Nhật Mới Nhất</h2>
+                <div class="manga-list" id="latestManga">
+                    <!-- Latest manga will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="game-section">
+            <div class="container">
+                <h2 class="section-title">Game RPG Tu Tiên</h2>
+                <div class="game-content">
+                    <div class="game-info">
+                        <h3>Khám phá thế giới tu tiên</h3>
+                        <p>Trải nghiệm game RPG với hệ thống kỹ năng phong phú, trang bị đa dạng và nhiều hoạt động thú vị.</p>
+                        <a href="/game" class="btn btn-primary">Chơi Ngay</a>
+                    </div>
+                    <div class="game-preview">
+                        <img src="assets/images/game-preview.png" alt="Game Preview">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>CManga</h4>
+                    <p>Nền tảng đọc truyện và game online hàng đầu Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="/about">Về Chúng Tôi</a></li>
+                        <li><a href="/contact">Liên Hệ</a></li>
+                        <li><a href="/terms">Điều Khoản</a></li>
+                        <li><a href="/privacy">Bảo Mật</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Theo Dõi</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CManga. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng Nhập</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Mật khẩu</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng Ký</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="registerUsername">Tên người dùng</label>
+                    <input type="text" id="registerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Mật khẩu</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đăng Ký</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/components.js"></script>
+</body>
+</html>
