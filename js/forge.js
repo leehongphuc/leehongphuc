@@ -1,0 +1,186 @@
+console.log('forge.js được tải');
+
+function ensureGameState() {
+    if (typeof initializeGameState !== 'function') {
+        console.error('initializeGameState chưa sẵn sàng');
+        return null;
+    }
+    try {
+        return initializeGameState();
+    } catch (e) {
+        console.error('Lỗi khởi tạo gameState:', e);
+        return null;
+    }
+}
+
+function calculateCraftCost(quality) {
+    const baseCost = { gold: 50, spiritStones: 50, huyenThiet: 50 };
+    const multipliers = {
+        'Nhất Phẩm': 1,
+        'Nhị Phẩm': 1.5,
+        'Tam Phẩm': 2,
+        'Tứ Phẩm': 2.5,
+        'Ngũ Phẩm': 3,
+        'Lục Phẩm': 3.5,
+        'Thất Phẩm': 4,
+        'Bát Phẩm': 4.5,
+        'Cửu Phẩm': 5,
+        'Vương Cấp': 6
+    };
+    const m = multipliers[quality] || 1;
+    return {
+        gold: Math.floor(baseCost.gold * m),
+        spiritStones: Math.floor(baseCost.spiritStones * m),
+        huyenThiet: Math.floor(baseCost.huyenThiet * m)
+    };
+}
+
+function updateForgeDisplay() {
+    const gameState = ensureGameState();
+    if (!gameState) return;
+    if (!window.giftBoxItems) {
+        console.error('giftBoxItems chưa sẵn sàng');
+        return;
+    }
+    const grid = document.getElementById('equipment-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const equipmentTypes = ['weapon', 'necklace', 'ring', 'gloves', 'boots', 'armor', 'helmet', 'belt', 'jade', 'artifact'];
+    const items = window.giftBoxItems.filter(i => equipmentTypes.includes(i.type));
+
+    const seen = new Set();
+    const unique = [];
+    for (const it of items) {
+        const key = `${it.type}-${it.quality}`;
+        if (!seen.has(key)) { seen.add(key); unique.push(it); }
+    }
+
+    unique.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'equipment-item';
+        card.innerHTML = `
+            <div class="equipment-image">
+                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
+            </div>
+            <div class="equipment-info">
+                <div class="equipment-type" style="color: ${window.qualityColors ? (qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
+            </div>
+        `;
+        card.style.cursor = 'pointer';
+        card.onclick = () => showCraftItemDetails(idx);
+        grid.appendChild(card);
+    });
+}
+
+function showCraftItemDetails(index) {
+    if (!window.giftBoxItems) return alert('Chưa có danh sách vật phẩm');
+    const equipmentTypes = ['weapon', 'necklace', 'ring', 'gloves', 'boots', 'armor', 'helmet', 'belt', 'jade', 'artifact'];
+    const items = window.giftBoxItems.filter(i => equipmentTypes.includes(i.type));
+
+    const seen = new Set();
+    const unique = [];
+    for (const it of items) {
+        const key = `${it.type}-${it.quality}`;
+        if (!seen.has(key)) { seen.add(key); unique.push(it); }
+    }
+    const item = unique[index];
+    if (!item) return alert('Không tìm thấy vật phẩm');
+
+    const gameState = ensureGameState();
+    if (!gameState) return;
+
+    const modal = document.getElementById('item-details-modal');
+    const content = document.getElementById('item-details-content');
+    if (!modal || !content) return;
+
+    const fmt = (n, d=0) => Number(n).toFixed(d).replace('.', ',');
+    const dash = ' – ';
+    const ranges = window.qualityRanges ? window.qualityRanges[item.quality] : null;
+
+    let statsHtml = '';
+    if (ranges) {
+        const hp = ranges.hp, pd = ranges.physicalDefense, md = ranges.magicDefense;
+        const dmg = ranges.physicalDamage, crit = ranges.criticalChance, agi = ranges.agility;
+
+        if (item.type === 'weapon') {
+            statsHtml += `<div class="stat-line">Vũ khí  sát thương VL/Phép thuật từ ${fmt(dmg[0])}${dash}${fmt(dmg[1])}   chí mạng ${fmt(crit[0])} ~ ${fmt(crit[1])}%   tốc độ ${fmt(agi[0],1)}${dash}${fmt(agi[1],1)}</div>`;
+        } else if (item.type === 'armor') {
+            statsHtml += `<div class="stat-line">Giáp Máu ${fmt(hp[0])}${dash}${fmt(hp[1])} Phòng thủ vật lý ${fmt(pd[0])}% ~ ${fmt(pd[1])}%, Phòng thủ phép thuật ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
+        } else if (['ring','gloves','boots','necklace'].includes(item.type)) {
+            statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
+        } else if (item.type === 'artifact') {
+            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí (tấn công phép thuật, tấn công vật lý, chí mạng, nhanh nhẹn)</div>`;
+            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Phòng Thủ (Sinh lực, phòng thủ vật lý, phòng thủ phép thuật)</div>`;
+            statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng Vũ Khí hoặc Phòng Thủ</div>`;
+            statsHtml += `<div class="stat-line">Chú ý: đã ra tấn công vật lý thì không ra tấn công phép thuật</div>`;
+        } else if (['helmet','belt','jade'].includes(item.type)) {
+            statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
+        }
+    }
+
+    const cost = calculateCraftCost(item.quality);
+    const canGold = gameState.gold >= cost.gold;
+    const canSS = gameState.spiritStones >= cost.spiritStones;
+    const haveHT = (gameState.materials['Huyền Thiết'] || 0);
+    const canHT = haveHT >= cost.huyenThiet;
+
+    content.innerHTML = `
+        <span class="close-modal" onclick="closeItemDetails()">&times;</span>
+        <div class="item-detail">
+            <div class="item-header">
+                <div class="item-basic-info">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-tier">Cấp bậc: ${item.tier}</div>
+                    <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
+                    <div class="item-stats">${statsHtml}</div>
+                </div>
+            </div>
+            <div class="craft-materials-section">
+                <h4>Vật phẩm cần chế tạo:</h4>
+                <div class="craft-materials">
+                    <div class="material-item ${canGold ? '' : 'insufficient'}">
+                        <img src="images/vang.png" alt="Kim tệ" class="material-image" onerror="this.src='images/placeholder.png'">
+                        <div class="material-amount ${canGold ? '' : 'insufficient'}">${gameState.gold}/${cost.gold}</div>
+                    </div>
+                    <div class="material-item ${canSS ? '' : 'insufficient'}">
+                        <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" onerror="this.src='images/placeholder.png'">
+                        <div class="material-amount ${canSS ? '' : 'insufficient'}">${gameState.spiritStones}/${cost.spiritStones}</div>
+                    </div>
+                    <div class="material-item ${canHT ? '' : 'insufficient'}">
+                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
+                        <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    modal.style.display = 'block';
+}
+
+function closeItemDetails() {
+    const modal = document.getElementById('item-details-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Nếu có lưới lò rèn thì khởi tạo hiển thị lò rèn
+    if (document.querySelector('.forge-section')) {
+        updateForgeDisplay();
+    }
+});
+
+if (typeof window !== 'undefined') {
+    window.updateForgeDisplay = updateForgeDisplay;
+    window.showCraftItemDetails = showCraftItemDetails;
+    window.closeItemDetails = closeItemDetails;
+}
+
