@@ -12,7 +12,7 @@
 
 .equipment-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
     padding: 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -22,13 +22,14 @@
 
 .equipment-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 8px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    min-height: 60px;
 }
 
 .equipment-item:hover {
@@ -36,10 +37,21 @@
     transform: translateY(-2px);
 }
 
+.equipment-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.equipment-right {
+    flex-shrink: 0;
+}
+
 .equipment-image {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 5px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
 }
 
 .equipment-image img {
@@ -50,14 +62,12 @@
 }
 
 .equipment-info {
-    text-align: center;
-    width: 100%;
+    flex: 1;
 }
 
 .equipment-type {
     font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 3px;
     line-height: 1.2;
 }
 

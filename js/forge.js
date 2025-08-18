@@ -61,11 +61,15 @@ function updateForgeDisplay() {
         const qClass = item.quality ? `quality-${item.quality.toLowerCase().replace(/\s+/g,'-')}` : '';
         card.className = `equipment-item ${qClass}`;
         card.innerHTML = `
-            <div class="equipment-image">
-                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
+            <div class="equipment-left">
+                <div class="equipment-image">
+                    <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
+                </div>
+                <div class="equipment-info">
+                    <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
+                </div>
             </div>
-            <div class="equipment-info">
-                <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
+            <div class="equipment-right">
                 <div class="craft-text">Chế tạo</div>
             </div>
         `;
@@ -141,22 +145,12 @@ function showCraftItemDetails(index) {
 
     content.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
-        <div class="modal-header">
-            <div class="item-info-left">
-                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-image" onerror="this.src='images/placeholder.png'">
+        <div class="item-detail">
+            <div class="item-header">
                 <div class="item-basic-info">
                     <div class="item-name" style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
                     <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
-                </div>
-            </div>
-            <div class="craft-text-right">
-                <span class="craft-label">Chế tạo</span>
-            </div>
-        </div>
-        <div class="item-detail">
-            <div class="item-header">
-                <div class="item-basic-info">
                     <div class="item-stats">${statsHtml}</div>
                 </div>
             </div>
