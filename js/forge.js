@@ -105,9 +105,14 @@ function showCraftItemDetails(index) {
         const dmg = ranges.physicalDamage, crit = ranges.criticalChance, agi = ranges.agility;
 
         if (item.type === 'weapon') {
-            statsHtml += `<div class="stat-line">Vũ khí  sát thương VL/Phép thuật từ ${fmt(dmg[0])}${dash}${fmt(dmg[1])}   chí mạng ${fmt(crit[0])} ~ ${fmt(crit[1])}%   tốc độ ${fmt(agi[0],1)}${dash}${fmt(agi[1],1)}</div>`;
+            statsHtml += `<div class="stat-line">Sát thương vật lý: ${fmt(dmg[0])}${dash}${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-line">Sát thương phép thuật: ${fmt(dmg[0])}${dash}${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-line">Chí mạng: ${fmt(crit[0])}% ~ ${fmt(crit[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Tốc độ: ${fmt(agi[0],1)}${dash}${fmt(agi[1],1)}</div>`;
         } else if (item.type === 'armor') {
-            statsHtml += `<div class="stat-line">Giáp Máu ${fmt(hp[0])}${dash}${fmt(hp[1])} Phòng thủ vật lý ${fmt(pd[0])}% ~ ${fmt(pd[1])}%, Phòng thủ phép thuật ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực: ${fmt(hp[0])}${dash}${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý: ${fmt(pd[0])}% ~ ${fmt(pd[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật: ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
         } else if (['ring','gloves','boots','necklace'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
             statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
@@ -115,10 +120,9 @@ function showCraftItemDetails(index) {
             statsHtml += `<div class="stat-line">Phòng thủ phép thuật ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         } else if (item.type === 'artifact') {
-            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí (tấn công phép thuật, tấn công vật lý, chí mạng, nhanh nhẹn)</div>`;
-            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Phòng Thủ (Sinh lực, phòng thủ vật lý, phòng thủ phép thuật)</div>`;
+            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí</div>`;
+            statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Phòng Thủ</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng Vũ Khí hoặc Phòng Thủ</div>`;
-            statsHtml += `<div class="stat-line">Chú ý: đã ra tấn công vật lý thì không ra tấn công phép thuật</div>`;
         } else if (['helmet','belt','jade'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
             statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
@@ -139,35 +143,35 @@ function showCraftItemDetails(index) {
         <div class="item-detail">
             <div class="item-header">
                 <div class="item-basic-info">
-                    <div class="item-name">${item.name}</div>
+                    <div class="item-name" style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.name}</div>
                     <div class="item-tier">Cấp bậc: ${item.tier}</div>
                     <div class="item-quality">Phẩm chất: <span style="color:${window.qualityColors ? (window.qualityColors[item.quality] || '#fff') : '#fff'}">${item.quality}</span></div>
                     <div class="item-stats">${statsHtml}</div>
                 </div>
             </div>
-            <div class="craft-materials-section">
-                <h4>Vật phẩm cần chế tạo:</h4>
-                <div class="craft-materials">
-                    <div class="material-item ${canGold ? '' : 'insufficient'}">
-                        <img src="images/vang.png" alt="Kim tệ" class="material-image" onerror="this.src='images/placeholder.png'">
-                        <div class="material-amount ${canGold ? '' : 'insufficient'}">${gameState.gold}/${cost.gold}</div>
-                    </div>
-                    <div class="material-item ${canSS ? '' : 'insufficient'}">
-                        <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" onerror="this.src='images/placeholder.png'">
-                        <div class="material-amount ${canSS ? '' : 'insufficient'}">${gameState.spiritStones}/${cost.spiritStones}</div>
-                    </div>
-                    <div class="material-item ${canHT ? '' : 'insufficient'}">
-                        <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
-                        <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
-                    </div>
+        </div>
+        <div class="craft-materials-section">
+            <h4>Vật phẩm cần chế tạo:</h4>
+            <div class="craft-materials">
+                <div class="material-item ${canGold ? '' : 'insufficient'}">
+                    <img src="images/vang.png" alt="Kim tệ" class="material-image" onerror="this.src='images/placeholder.png'">
+                    <div class="material-amount ${canGold ? '' : 'insufficient'}">${gameState.gold}/${cost.gold}</div>
                 </div>
-                <div class="craft-button-section">
-                    <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
-                            onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
-                            ${canGold && canSS && canHT ? '' : 'disabled'}>
-                        ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
-                    </button>
+                <div class="material-item ${canSS ? '' : 'insufficient'}">
+                    <img src="images/linh_thach.png" alt="Linh thạch" class="material-image" onerror="this.src='images/placeholder.png'">
+                    <div class="material-amount ${canSS ? '' : 'insufficient'}">${gameState.spiritStones}/${cost.spiritStones}</div>
                 </div>
+                <div class="material-item ${canHT ? '' : 'insufficient'}">
+                    <img src="images/huyen_thiet.png" alt="Huyền Thiết" class="material-image" onerror="this.src='images/placeholder.png'">
+                    <div class="material-amount ${canHT ? '' : 'insufficient'}">${haveHT}/${cost.huyenThiet}</div>
+                </div>
+            </div>
+            <div class="craft-button-section">
+                <button class="craft-btn ${canGold && canSS && canHT ? '' : 'disabled'}" 
+                        onclick="craftItem('${item.type}', '${item.quality}', ${index})" 
+                        ${canGold && canSS && canHT ? '' : 'disabled'}>
+                    ${canGold && canSS && canHT ? 'Chế tạo' : 'Không đủ nguyên liệu'}
+                </button>
             </div>
         </div>
     `;
