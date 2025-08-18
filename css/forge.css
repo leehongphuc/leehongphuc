@@ -180,10 +180,22 @@
     color: #ffffff;
 }
 
-.item-tier, .item-quality {
-    font-size: 1.1rem;
-    color: #cccccc;
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-family: 'Courier New', monospace;
+}
+
+.info-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #cccccc;
 }
 
 .item-stats {
@@ -298,22 +310,28 @@
 
 /* Remove stats container scrollbar */
 
-/* Stats vertical alignment */
+/* Stats alignment */
 .stat-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 5px;
     font-family: 'Courier New', monospace;
 }
 
-.stat-item {
-    font-weight: 600;
+.stat-label {
     color: #ffffff;
-    margin-bottom: 3px;
+    font-weight: 600;
 }
 
 .stat-value {
     color: #cccccc;
-    margin-bottom: 10px;
-    font-family: 'Courier New', monospace;
+}
+
+.stat-desc {
+    color: #cccccc;
+    margin-bottom: 5px;
+    font-style: italic;
 }
 
 .craft-button-section {
