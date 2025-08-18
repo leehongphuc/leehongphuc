@@ -104,8 +104,8 @@ const qualityRanges = {
     'Lục Phẩm': { physicalDamage: [1080, 1630], magicDamage: [1080, 1630], criticalChance: [18.7, 28], agility: [0.7, 0.94], hp: [9700, 14800], physicalDefense: [50.6, 64.6], magicDefense: [50.6, 64.6] },
     'Thất Phẩm': { physicalDamage: [1280, 1930], magicDamage: [1280, 1930], criticalChance: [22.2, 33.3], agility: [0.83, 1.09], hp: [11500, 17500], physicalDefense: [60, 76.6], magicDefense: [60, 76.6] },
     'Bát Phẩm': { physicalDamage: [1480, 2230], magicDamage: [1480, 2230], criticalChance: [25.7, 38.6], agility: [0.96, 1.24], hp: [13300, 20200], physicalDefense: [69.4, 88.6], magicDefense: [69.4, 88.6] },
-    'Cửu Phẩm': { physicalDamage: [1680, 2530], magicDamage: [1680, 2530], criticalChance: [29.2, 43.9], agility: [1.09, 1.39], hp: [15100, 22900], physicalDefense: [78.8, 100.6], magicDefense: [78.8, 100.6] },
-    'Vương Cấp': { physicalDamage: [2000, 3000], magicDamage: [2000, 3000], criticalChance: [25, 50], agility: [0.93, 2.4], hp: [11000, 23000], physicalDefense: [80, 140], magicDefense: [80, 140] }
+    'Cửu Phẩm': { physicalDamage: [1500, 2000], magicDamage: [1500, 2000], criticalChance: [29.2, 43.9], agility: [1.09, 1.39], hp: [15100, 22900], physicalDefense: [78.8, 100.6], magicDefense: [78.8, 100.6] },
+    'Vương Cấp': { physicalDamage: [2000, 3000], magicDamage: [2000, 3000], criticalChance: [18, 36], agility: [1.2, 2.5], hp: [20000, 30000], physicalDefense: [23, 42], magicDefense: [23, 42] }
 };
 
 // Expose quality ranges for other modules (e.g., forge) to render display ranges
