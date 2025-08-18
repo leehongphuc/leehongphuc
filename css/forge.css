@@ -20,6 +20,53 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.equipment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.equipment-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.equipment-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.equipment-info {
+    text-align: center;
+    width: 100%;
+}
+
+.equipment-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+
+.craft-text {
+    font-size: 0.7rem;
+    color: #4ecdc4;
+    font-weight: 500;
+}
+
 .resources-grid {
     display: flex;
     justify-content: center;
@@ -42,15 +89,18 @@
 
 .modal-content {
     background: #232136;
-    margin: 5% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     width: 90%;
     max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
+    max-height: none;
+    overflow-y: visible;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .close-modal {
@@ -126,6 +176,7 @@
     color: #4ecdc4;
     margin-bottom: 15px;
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .craft-materials {

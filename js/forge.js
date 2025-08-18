@@ -66,6 +66,7 @@ function updateForgeDisplay() {
             </div>
             <div class="equipment-info">
                 <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
+                <div class="craft-text">Chế tạo</div>
             </div>
         `;
         card.style.cursor = 'pointer';
@@ -105,19 +106,19 @@ function showCraftItemDetails(index) {
         const dmg = ranges.physicalDamage, crit = ranges.criticalChance, agi = ranges.agility;
 
         if (item.type === 'weapon') {
-            statsHtml += `<div class="stat-line">Sát thương vật lý: ${fmt(dmg[0])}${dash}${fmt(dmg[1])}</div>`;
-            statsHtml += `<div class="stat-line">Sát thương phép thuật: ${fmt(dmg[0])}${dash}${fmt(dmg[1])}</div>`;
-            statsHtml += `<div class="stat-line">Chí mạng: ${fmt(crit[0])}% ~ ${fmt(crit[1])}%</div>`;
-            statsHtml += `<div class="stat-line">Tốc độ: ${fmt(agi[0],1)}${dash}${fmt(agi[1],1)}</div>`;
+            statsHtml += `<div class="stat-line">Sát thương vật lý &nbsp;&nbsp;&nbsp; ${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-line">Sát thương phép thuật &nbsp;&nbsp;&nbsp; ${fmt(dmg[0])} ~ ${fmt(dmg[1])}</div>`;
+            statsHtml += `<div class="stat-line">Chí mạng &nbsp;&nbsp;&nbsp; ${fmt(crit[0])}% ~ ${fmt(crit[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Tốc độ &nbsp;&nbsp;&nbsp; ${fmt(agi[0],1)} ~ ${fmt(agi[1],1)}</div>`;
         } else if (item.type === 'armor') {
-            statsHtml += `<div class="stat-line">Sinh lực: ${fmt(hp[0])}${dash}${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý: ${fmt(pd[0])}% ~ ${fmt(pd[1])}%</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật: ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])}% ~ ${fmt(pd[1])}%</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])}% ~ ${fmt(md[1])}%</div>`;
         } else if (['ring','gloves','boots','necklace'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         } else if (item.type === 'artifact') {
             statsHtml += `<div class="stat-line">Nhận ngẫu nhiên 1 dòng Vũ khí</div>`;
@@ -125,9 +126,9 @@ function showCraftItemDetails(index) {
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng Vũ Khí hoặc Phòng Thủ</div>`;
         } else if (['helmet','belt','jade'].includes(item.type)) {
             statsHtml += `<div class="stat-line">Ngẫu nhiên 1 dòng</div>`;
-            statsHtml += `<div class="stat-line">Sinh lực ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ vật lý ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
-            statsHtml += `<div class="stat-line">Phòng thủ phép thuật ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
+            statsHtml += `<div class="stat-line">Sinh lực &nbsp;&nbsp;&nbsp; ${fmt(hp[0])} ~ ${fmt(hp[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ vật lý &nbsp;&nbsp;&nbsp; ${fmt(pd[0])} ~ ${fmt(pd[1])}</div>`;
+            statsHtml += `<div class="stat-line">Phòng thủ phép thuật &nbsp;&nbsp;&nbsp; ${fmt(md[0])} ~ ${fmt(md[1])}</div>`;
             statsHtml += `<div class="stat-line">Có tỷ lệ 5% ra thêm 1 dòng</div>`;
         }
     }
