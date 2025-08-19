@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Túi Đồ - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="css/information.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
+        <h1>Túi Đồ</h1>
+        <div class="tab-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-section="equipment">Trang bị</button>
+                <button class="tab-button" data-section="items">Vật phẩm</button>
+                <button class="tab-button" data-section="materials">Nguyên liệu</button>
+                <button class="tab-button" data-section="resources">Tài nguyên</button>
+            </div>
+            <div id="equipment-section" class="section active">
+                <h3>Trang bị</h3>
+                <div class="inventory-grid" id="equipment-grid"></div>
+            </div>
+            <div id="items-section" class="section">
+                <h3>Vật phẩm</h3>
+                <div class="inventory-grid" id="items-grid"></div>
+            </div>
+            <div id="materials-section" class="section">
+                <h3>Nguyên liệu</h3>
+                <div class="inventory-grid" id="materials-grid"></div>
+            </div>
+            <div id="resources-section" class="section">
+                <h3>Tài nguyên</h3>
+                <div class="inventory-grid" id="resources-grid"></div>
+            </div>
+        </div>
+        <div class="action-buttons">
+            <a href="index.html" class="action-btn btn-secondary">Quay lại</a>
+        </div>
+    </div>
+    <div class="modal" id="item-details-modal">
+        <div class="modal-content">
+            <div id="item-details-content"></div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/items.js"></script>
+    <script>
+        window.onload = function() {
+            updateInventoryDisplay();
+            showSection('equipment');
+        };
+
+        // showSection function is now in common.js
+    </script>
+    <script src="js/common.js"></script>
+</body>
+</html>

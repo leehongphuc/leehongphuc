@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lò Rèn - Tu Tiên</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/forge.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="index.html" class="back-button">Trang chủ</a>
+        </div>
+        <h1>Lò Rèn</h1>
+        <div class="resources-grid" id="resources-grid"></div>
+        <div class="forge-section">
+            <h2>Chọn trang bị để tinh luyện</h2>
+            <div class="equipment-grid" id="equipment-grid"></div>
+        </div>
+        <div id="item-details-modal" class="modal">
+            <div class="modal-content" id="item-details-content"></div>
+        </div>
+        <div id="inventory-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <div class="modal-grid" id="modal-grid"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/forge.js"></script>
+</body>
+</html>

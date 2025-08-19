@@ -1,0 +1,624 @@
+/* Inventory page specific styles */
+
+/* Chuẩn hóa kích cỡ ảnh cho tất cả phần tử, khớp với túi đồ */
+.game-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+}
+
+/* Áp dụng cho ảnh trong inventory và Lò Rèn */
+.inventory-image {
+    margin-right: 8px;
+    overflow: hidden;
+}
+
+.inventory-image img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Áp dụng cho ảnh trong modal-grid */
+.modal-item img {
+    margin-bottom: 5px;
+}
+
+/* Áp dụng cho ảnh tài nguyên (vang.png, linh_thach.png, huyen_thiet.png) */
+.resource-image {
+    margin-bottom: 5px;
+}
+
+/* Áp dụng cho ảnh trong modal chi tiết */
+.item-detail img {
+    margin-bottom: 5px;
+}
+
+/* Làm mờ ảnh khi không đủ tài nguyên */
+.disabled-item,
+.disabled-resource {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+/* Style cho danh sách tài nguyên trong modal và resources-grid */
+.resource-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.craft-cost {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Đảm bảo nút Chế Tạo trong modal */
+.equip-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.equip-btn.disabled {
+    background: #555555;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Đảm bảo item-detail căn giữa */
+.item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-info {
+    text-align: center;
+}
+
+/* Định nghĩa màu cho các phẩm chất */
+.inventory-item.quality-1 .inventory-image,
+.inventory-item.quality-1 .inventory-name,
+.inventory-item.quality-1 .inventory-quality,
+.modal-item.quality-1 img,
+.item-name.quality-1,
+.item-detail.quality-1 img {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.inventory-item.quality-2 .inventory-image,
+.inventory-item.quality-2 .inventory-name,
+.inventory-item.quality-2 .inventory-quality,
+.modal-item.quality-2 img,
+.item-name.quality-2,
+.item-detail.quality-2 img {
+    border-color: green;
+    color: green;
+}
+
+.inventory-item.quality-3 .inventory-image,
+.inventory-item.quality-3 .inventory-name,
+.inventory-item.quality-3 .inventory-quality,
+.modal-item.quality-3 img,
+.item-name.quality-3,
+.item-detail.quality-3 img {
+    border-color: blue;
+    color: blue;
+}
+
+.inventory-item.quality-4 .inventory-image,
+.inventory-item.quality-4 .inventory-name,
+.inventory-item.quality-4 .inventory-quality,
+.modal-item.quality-4 img,
+.item-name.quality-4,
+.item-detail.quality-4 img {
+    border-color: purple;
+    color: purple;
+}
+
+.inventory-item.quality-5 .inventory-image,
+.inventory-item.quality-5 .inventory-name,
+.inventory-item.quality-5 .inventory-quality,
+.modal-item.quality-5 img,
+.item-name.quality-5,
+.item-detail.quality-5 img {
+    border-color: orange;
+    color: orange;
+}
+
+.inventory-item.quality-6 .inventory-image,
+.inventory-item.quality-6 .inventory-name,
+.inventory-item.quality-6 .inventory-quality,
+.modal-item.quality-6 img,
+.item-name.quality-6,
+.item-detail.quality-6 img {
+    border-color: red;
+    color: red;
+}
+
+.inventory-item.quality-7 .inventory-image,
+.inventory-item.quality-7 .inventory-name,
+.inventory-item.quality-7 .inventory-quality,
+.modal-item.quality-7 img,
+.item-name.quality-7,
+.item-detail.quality-7 img {
+    border-color: gold;
+    color: gold;
+}
+
+.inventory-item.quality-8 .inventory-image,
+.inventory-item.quality-8 .inventory-name,
+.inventory-item.quality-8 .inventory-quality,
+.modal-item.quality-8 img,
+.item-name.quality-8,
+.item-detail.quality-8 img {
+    border-color: cyan;
+    color: cyan;
+}
+
+.inventory-item.quality-9 .inventory-image,
+.inventory-item.quality-9 .inventory-name,
+.inventory-item.quality-9 .inventory-quality,
+.modal-item.quality-9 img,
+.item-name.quality-9,
+.item-detail.quality-9 img {
+    border-color: magenta;
+    color: magenta;
+}
+
+.inventory-item.quality-10 .inventory-image,
+.inventory-item.quality-10 .inventory-name,
+.inventory-item.quality-10 .inventory-quality,
+.modal-item.quality-10 img,
+.item-name.quality-10,
+.item-detail.quality-10 img {
+    border-color: darkviolet;
+    color: darkviolet;
+}
+
+/* Các style khác giữ nguyên */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+}
+
+.tab-container {
+    margin: 30px 0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.tab-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tab-button.active {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    border-color: #4ecdc4;
+    box-shadow: 0 5px 20px rgba(76, 205, 196, 0.4);
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section.active {
+    display: block;
+}
+
+.section h3 {
+    font-size: 1.3rem;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.inventory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.inventory-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Quality colors for inventory items - chỉ đổi màu viền ảnh và tên */
+.inventory-item.quality-nhất-phẩm .inventory-image {
+    border-color: #ffffff;
+}
+
+.inventory-item.quality-nhất-phẩm .inventory-name {
+    color: #ffffff;
+}
+
+.inventory-item.quality-nhị-phẩm .inventory-image {
+    border-color: #00ff00;
+}
+
+.inventory-item.quality-nhị-phẩm .inventory-name {
+    color: #00ff00;
+}
+
+.inventory-item.quality-tam-phẩm .inventory-image {
+    border-color: #0080ff;
+}
+
+.inventory-item.quality-tam-phẩm .inventory-name {
+    color: #0080ff;
+}
+
+.inventory-item.quality-tứ-phẩm .inventory-image {
+    border-color: #800080;
+}
+
+.inventory-item.quality-tứ-phẩm .inventory-name {
+    color: #800080;
+}
+
+.inventory-item.quality-ngũ-phẩm .inventory-image {
+    border-color: #ffa500;
+}
+
+.inventory-item.quality-ngũ-phẩm .inventory-name {
+    color: #ffa500;
+}
+
+.inventory-item.quality-lục-phẩm .inventory-image {
+    border-color: #ff0000;
+}
+
+.inventory-item.quality-lục-phẩm .inventory-name {
+    color: #ff0000;
+}
+
+.inventory-item.quality-thất-phẩm .inventory-image {
+    border-color: #ffd700;
+}
+
+.inventory-item.quality-thất-phẩm .inventory-name {
+    color: #ffd700;
+}
+
+.inventory-item.quality-bát-phẩm .inventory-image {
+    border-color: #00ffff;
+}
+
+.inventory-item.quality-bát-phẩm .inventory-name {
+    color: #00ffff;
+}
+
+.inventory-item.quality-cửu-phẩm .inventory-image {
+    border-color: #ff00ff;
+}
+
+.inventory-item.quality-cửu-phẩm .inventory-name {
+    color: #ff00ff;
+}
+
+.inventory-item.quality-vương-cấp .inventory-image {
+    border-color: #9400d3;
+}
+
+.inventory-item.quality-vương-cấp .inventory-name {
+    color: #9400d3;
+}
+
+.inventory-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.inventory-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.inventory-quality {
+    font-size: 0.8rem;
+}
+
+.inventory-status {
+    display: none;
+}
+
+.inventory-amount {
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.inventory-type {
+    color: #cccccc;
+    font-size: 0.7rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.inventory-actions {
+    width: 120px;
+    text-align: right;
+    display: flex;
+    gap: 8px;
+}
+
+.lock-btn, .delete-btn {
+    color: #ffd93d;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lock-btn:hover, .delete-btn:hover {
+    background: rgba(255, 217, 61, 0.2);
+    transform: scale(1.1);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 205, 196, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: #232136;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+}
+
+.close-modal {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #4ecdc4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.modal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+.modal-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.item-tier {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.item-quality {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.item-enhance {
+    color: #ffd93d;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.item-stats {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.open-gift-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.open-gift-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    .section {
+        width: 100%;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tab-button {
+        width: 200px;
+    }
+    .inventory-grid {
+        grid-template-columns: 1fr;
+    }
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .action-btn {
+        width: 200px;
+        justify-content: center;
+    }
+    .modal-grid {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .modal-item {
+        min-width: 80px;
+    }
+}
