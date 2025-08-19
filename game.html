@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game RPG Tu Tiên - CManga</title>
+    <meta name="description" content="Game RPG tu tiên với hệ thống kỹ năng phong phú và nhiều hoạt động thú vị">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/game.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="game-body">
+    <!-- Game Header -->
+    <header class="game-header">
+        <div class="game-header-container">
+            <div class="game-logo">
+                <a href="/">
+                    <img src="assets/images/logo.png" alt="CManga Logo" class="logo-img">
+                    <span class="logo-text">CManga Game</span>
+                </a>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <i class="fas fa-gem"></i>
+                    <span id="crystalAmount">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-coins"></i>
+                    <span id="goldAmount">0</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    <span id="energyAmount">100</span>
+                </div>
+            </div>
+            
+            <div class="game-user">
+                <div class="user-avatar">
+                    <img src="assets/images/avatar-default.png" alt="Avatar" id="userAvatar">
+                    <div class="user-level" id="userLevel">1</div>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="userName">Người Chơi</div>
+                    <div class="user-exp">
+                        <div class="exp-bar">
+                            <div class="exp-fill" id="expFill"></div>
+                        </div>
+                        <span id="expText">0 / 100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Main Content -->
+    <main class="game-main">
+        <div class="game-container">
+            <!-- Game Menu -->
+            <aside class="game-menu">
+                <nav class="game-nav">
+                    <ul class="game-nav-list">
+                        <li class="game-nav-item active">
+                            <a href="#dashboard" class="game-nav-link">
+                                <i class="fas fa-home"></i>
+                                <span>Trang Chủ</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#character" class="game-nav-link">
+                                <i class="fas fa-user"></i>
+                                <span>Nhân Vật</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#skills" class="game-nav-link">
+                                <i class="fas fa-magic"></i>
+                                <span>Kỹ Năng</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#inventory" class="game-nav-link">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Túi Đồ</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#shop" class="game-nav-link">
+                                <i class="fas fa-store"></i>
+                                <span>Cửa Hàng</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#guild" class="game-nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Tông Môn</span>
+                            </a>
+                        </li>
+                        <li class="game-nav-item">
+                            <a href="#battle" class="game-nav-link">
+                                <i class="fas fa-sword"></i>
+                                <span>Chiến Đấu</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Game Content -->
+            <div class="game-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="game-section active">
+                    <div class="section-header">
+                        <h2>Trang Chủ Game</h2>
+                        <p>Chào mừng bạn đến với thế giới tu tiên</p>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <!-- Character Status -->
+                        <div class="dashboard-card character-status">
+                            <h3>Trạng Thái Nhân Vật</h3>
+                            <div class="status-grid">
+                                <div class="status-item">
+                                    <span class="status-label">Sinh Lực:</span>
+                                    <span class="status-value" id="hpValue">1000/1000</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Nội Lực:</span>
+                                    <span class="status-value" id="mpValue">500/500</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Sát Thương:</span>
+                                    <span class="status-value" id="attackValue">150</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Phòng Thủ:</span>
+                                    <span class="status-value" id="defenseValue">80</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="dashboard-card quick-actions">
+                            <h3>Hành Động Nhanh</h3>
+                            <div class="action-buttons">
+                                <button class="btn btn-primary" onclick="startTraining()">
+                                    <i class="fas fa-dumbbell"></i>
+                                    Luyện Tập
+                                </button>
+                                <button class="btn btn-secondary" onclick="enterDungeon()">
+                                    <i class="fas fa-cave"></i>
+                                    Hầm Ngục
+                                </button>
+                                <button class="btn btn-success" onclick="dailyReward()">
+                                    <i class="fas fa-gift"></i>
+                                    Quà Hàng Ngày
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activities -->
+                        <div class="dashboard-card recent-activities">
+                            <h3>Hoạt Động Gần Đây</h3>
+                            <div class="activity-list" id="activityList">
+                                <div class="activity-item">
+                                    <i class="fas fa-star"></i>
+                                    <span>Hoàn thành nhiệm vụ "Luyện tập cơ bản"</span>
+                                    <span class="activity-time">2 giờ trước</span>
+                                </div>
+                                <div class="activity-item">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Đạt được level 5</span>
+                                    <span class="activity-time">1 ngày trước</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Character Section -->
+                <section id="character" class="game-section">
+                    <div class="section-header">
+                        <h2>Thông Tin Nhân Vật</h2>
+                        <p>Quản lý và phát triển nhân vật của bạn</p>
+                    </div>
+                    
+                    <div class="character-content">
+                        <div class="character-avatar">
+                            <img src="assets/images/character-avatar.png" alt="Character Avatar" id="characterAvatar">
+                            <div class="character-level-badge" id="characterLevelBadge">5</div>
+                        </div>
+                        
+                        <div class="character-details">
+                            <h3 id="characterName">Tên Nhân Vật</h3>
+                            <div class="character-stats">
+                                <div class="stat-row">
+                                    <span class="stat-name">Linh Căn:</span>
+                                    <span class="stat-value" id="talentValue">Kim</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-name">Tu Vi:</span>
+                                    <span class="stat-value" id="cultivationValue">Luyện Khí 5</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-name">Danh Tiếng:</span>
+                                    <span class="stat-value" id="reputationValue">100</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Section -->
+                <section id="skills" class="game-section">
+                    <div class="section-header">
+                        <h2>Kỹ Năng</h2>
+                        <p>Học và nâng cấp các kỹ năng tu tiên</p>
+                    </div>
+                    
+                    <div class="skills-grid" id="skillsGrid">
+                        <!-- Skills will be loaded here -->
+                    </div>
+                </section>
+
+                <!-- Inventory Section -->
+                <section id="inventory" class="game-section">
+                    <div class="section-header">
+                        <h2>Túi Đồ</h2>
+                        <p>Quản lý trang bị và vật phẩm</p>
+                    </div>
+                    
+                    <div class="inventory-tabs">
+                        <button class="tab-btn active" data-tab="equipment">Trang Bị</button>
+                        <button class="tab-btn" data-tab="consumables">Tiêu Hao</button>
+                        <button class="tab-btn" data-tab="materials">Nguyên Liệu</button>
+                    </div>
+                    
+                    <div class="inventory-content">
+                        <div id="equipment" class="tab-content active">
+                            <div class="equipment-grid" id="equipmentGrid">
+                                <!-- Equipment will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Modals -->
+    <div id="skillModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Chi Tiết Kỹ Năng</h2>
+            <div id="skillDetails">
+                <!-- Skill details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/game-data.js"></script>
+    <script src="assets/js/components.js"></script>
+</body>
+</html>
