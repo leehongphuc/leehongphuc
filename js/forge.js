@@ -63,10 +63,10 @@ function updateForgeDisplay() {
         card.innerHTML = `
             <div class="equipment-left">
                 <div class="equipment-image">
-                    <img src="${item.image || 'images/placeholder.png'}" alt="${item.name} +0" onerror="this.src='images/placeholder.png'">
+                    <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" onerror="this.src='images/placeholder.png'">
                 </div>
                 <div class="equipment-info">
-                    <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name} +0</div>
+                    <div class="equipment-type" style="color: ${window.qualityColors ? (window.qualityColors[item.quality] || '#ffffff') : '#ffffff'}">${item.name}</div>
                 </div>
             </div>
             <div class="equipment-right">
@@ -145,12 +145,12 @@ function showCraftItemDetails(index) {
 
     // Tạo tên hiển thị với số lần cường hóa (mặc định 0 cho vật phẩm chưa chế tạo)
     const enhanceLevel = 0; // Vật phẩm chưa chế tạo luôn có enhance level = 0
-    const displayName = `${item.name} +${enhanceLevel}`; // Hiển thị +0 cho vật phẩm chưa chế tạo
+    const displayName = item.name;
     content.innerHTML = `
         <span class="close-modal" onclick="closeItemDetails()">&times;</span>
         <div class="item-detail">
             <div class="item-image-section">
-                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name} +0" class="item-detail-image" onerror="this.src='images/placeholder.png'">
+                <img src="${item.image || 'images/placeholder.png'}" alt="${item.name}" class="item-detail-image" onerror="this.src='images/placeholder.png'">
             </div>
             <div class="item-header">
                 <div class="item-basic-info">

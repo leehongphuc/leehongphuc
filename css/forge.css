@@ -210,10 +210,12 @@
 .info-label {
     color: #ffffff;
     font-weight: 600;
+    width: 30%;
 }
 
 .info-value {
     color: #cccccc;
+    width: 30%;
 }
 
 .item-stats {
@@ -340,10 +342,12 @@
 .stat-label {
     color: #ffffff;
     font-weight: 600;
+    width: 30%;
 }
 
 .stat-value {
     color: #cccccc;
+    width: 30%;
 }
 
 .stat-desc {

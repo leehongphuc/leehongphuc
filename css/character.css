@@ -362,10 +362,12 @@ h1 {
 .info-label {
     color: #ffffff;
     font-weight: 600;
+    width: 30%;
 }
 
 .info-value {
     color: #cccccc;
+    width: 30%;
 }
 
 .stat-line {
@@ -378,8 +380,10 @@ h1 {
 .stat-label {
     color: #ffffff;
     font-weight: 600;
+    width: 30%;
 }
 
 .stat-value {
     color: #cccccc;
+    width: 30%;
 }
