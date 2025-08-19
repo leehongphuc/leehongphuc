@@ -200,8 +200,10 @@
 
 .info-line {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 8px;
     font-size: 1.1rem;
     font-family: 'Courier New', monospace;
@@ -211,11 +213,21 @@
     color: #ffffff;
     font-weight: 600;
     width: 30%;
+    flex: 0 0 30%;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .info-value {
     color: #cccccc;
     width: 30%;
+    flex: 0 0 30%;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .item-stats {
@@ -227,6 +239,11 @@
 }
 
 .stat-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 5px;
 }
 
@@ -343,11 +360,21 @@
     color: #ffffff;
     font-weight: 600;
     width: 30%;
+    flex: 0 0 30%;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .stat-value {
     color: #cccccc;
     width: 30%;
+    flex: 0 0 30%;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .stat-desc {
