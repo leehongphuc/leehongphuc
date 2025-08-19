@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Battle.js</title>
+</head>
+<body>
+    <h1>Testing Battle.js Loading</h1>
+    <div id="status"></div>
+    
+    <script>
+        // Test function to check if battle.js loaded correctly
+        function testBattleJS() {
+            const statusDiv = document.getElementById('status');
+            let status = '<h2>Battle.js Test Results:</h2><ul>';
+            
+            // Check if functions are available
+            const functions = [
+                'startBattle',
+                'loadBattleAssets',
+                'battleActive'
+            ];
+            
+            functions.forEach(funcName => {
+                const isAvailable = typeof window[funcName] === 'function';
+                const statusText = isAvailable ? '✅ Available' : '❌ Missing';
+                status += `<li>${funcName}: ${statusText}</li>`;
+            });
+            
+            status += '</ul>';
+            
+            // Check if variables are available
+            status += '<h3>Variables:</h3><ul>';
+            const variables = [
+                'battleEnemies',
+                'player',
+                'enemy'
+            ];
+            
+            variables.forEach(varName => {
+                const isAvailable = typeof window[varName] !== 'undefined';
+                const statusText = isAvailable ? '✅ Available' : '❌ Missing';
+                status += `<li>${varName}: ${statusText}</li>`;
+            });
+            
+            status += '</ul>';
+            
+            statusDiv.innerHTML = status;
+        }
+        
+        // Wait for page to load
+        window.addEventListener('load', function() {
+            console.log('Page loaded, testing battle.js...');
+            setTimeout(testBattleJS, 1000); // Give scripts time to load
+        });
+    </script>
+    
+    <!-- Load battle.js -->
+    <script src="js/battle.js"></script>
+</body>
+</html>
