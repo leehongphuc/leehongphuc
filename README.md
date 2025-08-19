@@ -28,42 +28,52 @@ CManga là một nền tảng web hiện đại kết hợp giữa **đọc truy
 - **Hệ thống VIP** và premium
 - **Tích điểm** và danh hiệu
 
-## 🚀 **Cách chạy dự án**
+## 🚀 **Cách chạy dự án trên cục bộ**
 
-### **Yêu cầu hệ thống**
-- **Node.js** 16+ hoặc **Python** 3.8+
-- **Trình duyệt web** hiện đại (Chrome, Firefox, Safari, Edge)
-
-### **Phương pháp 1: Sử dụng Python HTTP Server (Khuyến nghị)**
+### **⚡ Setup nhanh (3 bước)**
 
 ```bash
-# Di chuyển vào thư mục dự án
-cd cmanga
+# Bước 1: Kiểm tra Python
+python3 --version
 
-# Khởi động server
-python3 -m http.server 8080
+# Bước 2: Chạy script setup tự động
+./start.sh
 
-# Hoặc với Python 2
-python -m SimpleHTTPServer 8080
+# Bước 3: Hoặc khởi động trực tiếp
+python3 server.py
 ```
 
-**Truy cập**: `http://localhost:8080`
+🎉 **Xong!** Truy cập: `http://localhost:8080`
 
-### **Phương pháp 2: Sử dụng Node.js Live Server**
+### **📖 Hướng dẫn chi tiết**
+
+Xem file [SETUP-LOCAL.md](./SETUP-LOCAL.md) để có hướng dẫn đầy đủ về:
+- Yêu cầu hệ thống
+- Các cách khởi động khác nhau
+- Troubleshooting
+- Development tips
+
+### **🛠️ Development Commands**
 
 ```bash
-# Cài đặt live-server globally
-npm install -g live-server
+# Khởi động server (khuyến nghị)
+python3 server.py
 
-# Khởi động server
-live-server --port=8080
+# Hoặc sử dụng npm scripts
+npm start                    # Khởi động server
+npm run check               # Kiểm tra dự án
+npm run setup               # Setup hoàn chỉnh
+
+# Hoặc sử dụng Makefile
+make start                  # Khởi động server
+make setup                  # Setup + kiểm tra
+make help                   # Xem tất cả commands
 ```
 
-### **Phương pháp 3: Sử dụng XAMPP/WAMP**
-
-1. Copy dự án vào thư mục `htdocs`
-2. Khởi động Apache
-3. Truy cập: `http://localhost/cmanga`
+### **🌐 URLs sau khi khởi động**
+- **Trang chủ**: http://localhost:8080
+- **Game RPG**: http://localhost:8080/game
+- **API Mock**: http://localhost:8080/api/*
 
 ## 📁 **Cấu trúc dự án**
 

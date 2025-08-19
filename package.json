@@ -4,9 +4,11 @@
   "description": "Nền tảng đọc truyện và Game RPG Tu Tiên",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8080",
+    "start": "python3 server.py",
+    "start:simple": "python3 -m http.server 8080",
     "start:node": "live-server --port=8080",
-    "dev": "live-server --port=8080 --open=/",
+    "dev": "python3 server.py --port 8080",
+    "dev:node": "live-server --port=8080 --open=/",
     "build": "npm run build:css && npm run build:js",
     "build:css": "postcss assets/css/main.css -o dist/assets/css/main.min.css",
     "build:js": "terser assets/js/*.js -o dist/assets/js/main.min.js",
@@ -14,7 +16,11 @@
     "lint:fix": "eslint assets/js/*.js --fix",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "test": "echo \"No tests specified\" && exit 0",
-    "serve": "http-server -p 8080 -o"
+    "serve": "http-server -p 8080 -o",
+    "check": "python3 dev-tools.py check",
+    "validate": "python3 dev-tools.py validate",
+    "optimize": "python3 dev-tools.py optimize",
+    "setup": "python3 dev-tools.py all"
   },
   "keywords": [
     "manga",
