@@ -1,0 +1,784 @@
+/* Equipment Grid Styles */
+.equipment-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.equipment-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    min-height: 65px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.equipment-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 2px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    border: none;
+    display: block;
+}
+
+.placeholder-image {
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    border: none;
+}
+
+.equipment-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 3px;
+    min-width: 0;
+}
+
+.equipment-type {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.equipment-status {
+    color: #888888;
+    font-size: 0.8rem;
+}
+
+.equipment-quality, .equipment-tier, .craft-cost {
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.equipment-action {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: auto;
+    min-width: 80px;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.equip-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.equip-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(76, 205, 196, 0.4);
+}
+
+.equip-btn:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+}
+
+.unequip-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.unequip-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+}
+
+/* Weapon Grid Styles */
+.weapon-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Quality colors for equipment items - chỉ đổi màu viền ảnh và tên */
+.equipment-item.quality-nhất-phẩm .equipment-image {
+    border-color: #ffffff;
+}
+
+.equipment-item.quality-nhất-phẩm .equipment-type,
+.equipment-item.quality-nhất-phẩm .equipment-quality {
+    color: #ffffff;
+}
+
+.equipment-item.quality-nhị-phẩm .equipment-image {
+    border-color: #00ff00;
+}
+
+.equipment-item.quality-nhị-phẩm .equipment-type,
+.equipment-item.quality-nhị-phẩm .equipment-quality {
+    color: #00ff00;
+}
+
+.equipment-item.quality-tam-phẩm .equipment-image {
+    border-color: #0080ff;
+}
+
+.equipment-item.quality-tam-phẩm .equipment-type,
+.equipment-item.quality-tam-phẩm .equipment-quality {
+    color: #00ff00;
+}
+
+.equipment-item.quality-tứ-phẩm .equipment-image {
+    border-color: #800080;
+}
+
+.equipment-item.quality-tứ-phẩm .equipment-type,
+.equipment-item.quality-tứ-phẩm .equipment-quality {
+    color: #800080;
+}
+
+.equipment-item.quality-ngũ-phẩm .equipment-image {
+    border-color: #ffa500;
+}
+
+.equipment-item.quality-ngũ-phẩm .equipment-type,
+.equipment-item.quality-ngũ-phẩm .equipment-quality {
+    color: #800080;
+}
+
+.equipment-item.quality-lục-phẩm .equipment-image {
+    border-color: #ff0000;
+}
+
+.equipment-item.quality-lục-phẩm .equipment-type,
+.equipment-item.quality-lục-phẩm .equipment-quality {
+    color: #ffd700;
+}
+
+.equipment-item.quality-thất-phẩm .equipment-image {
+    border-color: #ffd700;
+}
+
+.equipment-item.quality-thất-phẩm .equipment-type,
+.equipment-item.quality-thất-phẩm .equipment-quality {
+    color: #ffd700;
+}
+
+.equipment-item.quality-bát-phẩm .equipment-image {
+    border-color: #00ffff;
+}
+
+.equipment-item.quality-bát-phẩm .equipment-type,
+.equipment-item.quality-bát-phẩm .equipment-quality {
+    color: #ffa500;
+}
+
+.equipment-item.quality-cửu-phẩm .equipment-image {
+    border-color: #ff00ff;
+}
+
+.equipment-item.quality-vương-cấp .equipment-image {
+    border-color: #9400d3;
+}
+
+/* Inventory Grid Styles */
+.inventory-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inventory-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    min-height: 65px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.inventory-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inventory-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 2px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.inventory-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: contain;
+    display: block;
+}
+
+.inventory-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 3px;
+    min-width: 0;
+}
+
+.inventory-name {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inventory-quality {
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+.inventory-status {
+    display: none;
+}
+
+.inventory-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: auto;
+    width: 120px;
+    text-align: right;
+}
+
+.lock-btn, .delete-btn, .open-gift-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.lock-btn, .delete-btn {
+    color: #ffd93d;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lock-btn:hover, .delete-btn:hover {
+    background: rgba(255, 217, 61, 0.2);
+    transform: scale(1.1);
+}
+
+.open-gift-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    border-color: #4ecdc4;
+    color: white;
+    padding: 4px 8px;
+    width: auto;
+    min-width: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.open-gift-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(76, 205, 196, 0.4);
+}
+
+/* Quality colors for inventory items */
+.inventory-item.quality-1 .inventory-image {
+    border-color: #ffffff;
+}
+
+.inventory-item.quality-1 .inventory-name,
+.inventory-item.quality-1 .inventory-quality {
+    color: #ffffff;
+}
+
+.inventory-item.quality-2 .inventory-image {
+    border-color: #00ff00;
+}
+
+.inventory-item.quality-2 .inventory-name,
+.inventory-item.quality-2 .inventory-quality {
+    color: #00ff00;
+}
+
+.inventory-item.quality-3 .inventory-image {
+    border-color: #00ff00;
+}
+
+.inventory-item.quality-3 .inventory-name,
+.inventory-item.quality-3 .inventory-quality {
+    color: #00ff00;
+}
+
+.inventory-item.quality-4 .inventory-image {
+    border-color: #800080;
+}
+
+.inventory-item.quality-4 .inventory-name,
+.inventory-item.quality-4 .inventory-quality {
+    color: #800080;
+}
+
+.inventory-item.quality-5 .inventory-image {
+    border-color: #800080;
+}
+
+.inventory-item.quality-5 .inventory-name,
+.inventory-item.quality-5 .inventory-quality {
+    color: #800080;
+}
+
+.inventory-item.quality-6 .inventory-image {
+    border-color: #ffd700;
+}
+
+.inventory-item.quality-6 .inventory-name,
+.inventory-item.quality-6 .inventory-quality {
+    color: #ffd700;
+}
+
+.inventory-item.quality-7 .inventory-image {
+    border-color: #ffd700;
+}
+
+.inventory-item.quality-7 .inventory-name,
+.inventory-item.quality-7 .inventory-quality {
+    color: #ffd700;
+}
+
+.inventory-item.quality-8 .inventory-image {
+    border-color: #ffa500;
+}
+
+.inventory-item.quality-8 .inventory-name,
+.inventory-item.quality-8 .inventory-quality {
+    color: #ffa500;
+}
+
+/* Fix for items grid and materials grid */
+.items-grid, .materials-grid, .resources-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background: #232136;
+    margin: 0;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 90%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-left: 30%;
+    margin-top: 15%;
+    color: #ffffff;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-modal {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #4ecdc4;
+    text-decoration: none;
+}
+
+.modal-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.modal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+}
+
+.modal-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+}
+
+/* Quality colors for modal items */
+.modal-item.quality-1 {
+    border-color: #ffffff;
+}
+
+.modal-item.quality-2 {
+    border-color: #00ff00;
+}
+
+.modal-item.quality-3 {
+    border-color: #0080ff;
+}
+
+.modal-item.quality-4 {
+    border-color: #800080;
+}
+
+.modal-item.quality-5 {
+    border-color: #ffa500;
+}
+
+.modal-item.quality-6 {
+    border-color: #ff0000;
+}
+
+.modal-item.quality-7 {
+    border-color: #ffd700;
+}
+
+.modal-item.quality-8 {
+    border-color: #00ffff;
+}
+
+.modal-item.quality-9 {
+    border-color: #ff00ff;
+}
+
+.modal-item.quality-10 {
+    border-color: #9400d3;
+}
+
+/* Item details modal */
+.item-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.item-detail img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    object-fit: contain;
+}
+
+.item-info {
+    text-align: center;
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.item-name.quality-1 {
+    color: #ffffff;
+}
+
+.item-name.quality-2,
+.item-name.quality-3 {
+    color: #00ff00;
+}
+
+.item-name.quality-4,
+.item-name.quality-5 {
+    color: #800080;
+}
+
+.item-name.quality-6,
+.item-name.quality-7 {
+    color: #ffd700;
+}
+
+.item-name.quality-8 {
+    color: #ffa500;
+}
+
+.item-tier, .item-quality, .craft-cost {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+.item-stats {
+    font-size: 0.9rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: transparent;
+    border: none;
+}
+
+.equip-btn, .open-gift-btn {
+    background: linear-gradient(45deg, #4ecdc4, #44e08f);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.equip-btn:hover, .open-gift-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 205, 196, 0.4);
+}
+
+/* Quality colors for item details */
+.item-detail.quality-1 img {
+    border-color: #ffffff;
+}
+
+.item-detail.quality-2 img {
+    border-color: #00ff00;
+}
+
+.item-detail.quality-3 img {
+    border-color: #0080ff;
+}
+
+.item-detail.quality-4 img {
+    border-color: #800080;
+}
+
+.item-detail.quality-5 img {
+    border-color: #ffa500;
+}
+
+.item-detail.quality-6 img {
+    border-color: #ff0000;
+}
+
+.item-detail.quality-7 img {
+    border-color: #ffd700;
+}
+
+.item-detail.quality-8 img {
+    border-color: #00ffff;
+}
+
+.item-detail.quality-9 img {
+    border-color: #ff00ff;
+}
+
+.item-detail.quality-10 img {
+    border-color: #9400d3;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .equipment-image, .inventory-image {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+    }
+    
+    .placeholder-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .modal-grid {
+        gap: 10px;
+    }
+    
+    .modal-item {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .modal-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .equipment-info, .inventory-info {
+        gap: 1px;
+    }
+    
+    .equipment-type, .inventory-name {
+        font-size: 0.8rem;
+    }
+    
+    .equipment-status, .inventory-status {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .equipment-info, .inventory-info {
+        gap: 1px;
+    }
+    
+    .equipment-type, .inventory-name {
+        font-size: 0.8rem;
+    }
+    
+    .equipment-status, .inventory-status {
+        font-size: 0.7rem;
+    }
+}   
+/* Thêm các class từ forge.css để đồng bộ giao diện */
+.info-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.info-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #cccccc;
+}
+
+.stat-line {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    padding: 2px 0;
+}
+
+.stat-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.stat-value {
+    color: #cccccc;
+}
