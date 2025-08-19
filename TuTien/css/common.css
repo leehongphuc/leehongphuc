@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap');
 
+/* CSS Variables từ cmaga */
+:root {
+    --main-text-color: #CCCEE3;
+    --highlight-text-color: white;
+    --highlight-weak-text-color: #D9D9D9;
+    --border-color: #e5e7eb47;
+    --background-color: #0C1121;
+    --background-highlight-color: #374151;
+    --background-button: rgba(55, 65, 81);
+    --background-button-hover: rgba(75, 85, 99);
+    --background-input: #2D334F;
+    --background-module: #1B223C;
+    --background-module-2: #1B223B;
+    --purple-color: #6C74FC;
+    --purple-color-2: #222F5C;
+    --purple-color-2-highlight: #4A5693;
+    --purple-color-3: #464A8F;
+    --purple-color-4: #151D35;
+    --input-background: #2A3254;
+    --yellow-color: #e7d700;
+    
+    /* TuTien custom colors */
+    --tutien-primary: #4ecdc4;
+    --tutien-secondary: #44e08f;
+    --tutien-accent: #ff6b6b;
+}
+
 /* Common reset and base styles */
 * {
     margin: 0;
@@ -8,9 +35,11 @@
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
-    background: #232136;
-    color: #ffffff;
+    font-family: Montserrat, Inter, 'Noto Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    font-size: 14px;
+    font-weight: 500;
     min-height: 100vh;
     padding: 20px;
     overflow-x: hidden;
@@ -26,12 +55,12 @@ body {
 h1 {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background: linear-gradient(45deg, var(--purple-color), var(--tutien-primary), var(--yellow-color), var(--tutien-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 20px;
     text-align: center;
-    text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+    text-shadow: 0 0 30px rgba(108, 116, 252, 0.3);
 }
 
 /* Navigation bar */
@@ -48,10 +77,10 @@ h1 {
     align-items: center;
     gap: 8px;
     padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: var(--background-module);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    color: #ffffff;
+    color: var(--highlight-text-color);
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.3s ease;
@@ -59,8 +88,8 @@ h1 {
 }
 
 .back-button:hover {
-    background: linear-gradient(45deg, rgba(78, 205, 196, 0.2), rgba(68, 224, 143, 0.2));
-    border-color: #4ecdc4;
+    background-color: var(--purple-color-2);
+    border-color: var(--purple-color);
     transform: translateY(-2px);
 }
 
@@ -82,8 +111,8 @@ h1 {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: var(--background-module);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 8px 12px;
     backdrop-filter: blur(10px);
@@ -97,7 +126,7 @@ h1 {
 
 .resource-item span {
     font-weight: 600;
-    color: #4ecdc4;
+    color: var(--yellow-color);
 }
 
 /* Common button styles */
@@ -105,8 +134,8 @@ h1 {
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(45deg, #4ecdc4, #44e08f);
-    color: white;
+    background-color: var(--purple-color);
+    color: var(--highlight-text-color);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -117,7 +146,8 @@ h1 {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+    background-color: var(--purple-color-2-highlight);
+    box-shadow: 0 4px 15px rgba(108, 116, 252, 0.4);
 }
 
 .btn:active {
@@ -125,12 +155,13 @@ h1 {
 }
 
 .btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: var(--background-module);
+    border: 1px solid var(--border-color);
+    color: var(--main-text-color);
 }
 
 .btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: var(--background-module-2);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
@@ -149,24 +180,25 @@ h1 {
 
 .tab-button {
     padding: 10px 15px;
-    border: none;
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-module);
+    color: var(--main-text-color);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tab-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background-color: var(--background-module-2);
+    color: var(--highlight-text-color);
 }
 
 .tab-button.active {
-    background: linear-gradient(45deg, #4ecdc4, #44e08f);
-    border-color: #4ecdc4;
-    box-shadow: 0 2px 10px rgba(78, 205, 196, 0.3);
+    background-color: var(--purple-color);
+    border-color: var(--purple-color);
+    color: var(--highlight-text-color);
+    box-shadow: 0 2px 10px rgba(108, 116, 252, 0.3);
 }
 
 .section {

@@ -1,0 +1,213 @@
+/* Game Components từ cmaga */
+
+/* Item Icons */
+.item_icon {
+    height: 24px;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+.item_icon.circle {
+    border-radius: 50%;
+}
+
+/* Ranking Colors */
+.stt_1 {
+    color: #fdcb6e;
+}
+
+.stt_2 {
+    color: #74b9ff;
+}
+
+.stt_3 {
+    color: #ff7675;
+}
+
+.stt_1,
+.stt_2,
+.stt_3 {
+    text-shadow: 0px 0px 7px;
+}
+
+/* Skill Rarity Colors */
+.skill_rare_1 {
+    color: #fff !important;
+    border-color: #0c0c0c !important;
+}
+
+.skill_rare_2 {
+    color: #5bbdff !important;
+    border-color: #5bbdff !important;
+}
+
+.skill_rare_3 {
+    color: #d265ff !important;
+    border-color: #d265ff !important;
+}
+
+.skill_rare_4 {
+    color: #ff6555 !important;
+    border-color: #ff6555 !important;
+}
+
+/* Border Levels */
+.border_level_1 {
+    border-color: #0c0c0c !important;
+}
+
+.border_level_2 {
+    border-color: #34d389 !important;
+}
+
+.border_level_3 {
+    border-color: #5bbdff !important;
+}
+
+.border_level_4 {
+    border-color: #e67e22 !important;
+}
+
+.border_level_5 {
+    border-color: #d265ff !important;
+}
+
+.border_level_6 {
+    border-color: #ff6555 !important;
+}
+
+.border_level_7 {
+    border-color: #ff45b1 !important;
+}
+
+.border_level_8 {
+    position: relative;
+}
+
+.border_level_8::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, rgba(131, 58, 180, 1), rgba(252, 176, 69, 1));
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.border_level_9 {
+    position: relative;
+}
+
+.border_level_9::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: conic-gradient(from 0deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.border_level_9::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: var(--background-color);
+    border-radius: 7px;
+    z-index: 0;
+}
+
+/* Game Item Styles */
+.game-item {
+    background-color: var(--background-module);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.game-item:hover {
+    background-color: var(--background-module-2);
+    border-color: var(--purple-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(108, 116, 252, 0.2);
+}
+
+.game-item.selected {
+    background-color: var(--purple-color-2);
+    border-color: var(--purple-color);
+}
+
+/* Game Stats */
+.game-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: var(--main-text-color);
+}
+
+.game-stat.highlight {
+    color: var(--highlight-text-color);
+    font-weight: 600;
+}
+
+.game-stat.positive {
+    color: var(--tutien-secondary);
+}
+
+.game-stat.negative {
+    color: var(--tutien-accent);
+}
+
+/* Game Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--background-input);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar .progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--purple-color), var(--tutien-primary));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Game Level Badge */
+.level-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    background-color: var(--purple-color);
+    color: var(--highlight-text-color);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Game Currency */
+.currency {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--yellow-color);
+    font-weight: 600;
+}
+
+.currency .icon {
+    width: 16px;
+    height: 16px;
+}
