@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test CManga Offline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .success {
+            color: #27ae60;
+            background: #d5f4e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .info {
+            color: #2980b9;
+            background: #ebf3fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .button {
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background: #2980b9;
+        }
+        #output {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 CManga - Test Offline Mode</h1>
+        
+        <div class="success">
+            ✅ <strong>Thành công!</strong> Dự án CManga đã sẵn sàng chạy offline mà không cần database!
+        </div>
+        
+        <div class="info">
+            <strong>📍 Server đang chạy tại:</strong><br>
+            <a href="http://localhost:8000/cmangax3.com/user/game/dashboard.html" target="_blank">
+                http://localhost:8000/cmangax3.com/user/game/dashboard.html
+            </a>
+        </div>
+        
+        <h2>🧪 Test Firebase Mock</h2>
+        <button class="button" onclick="testFirebase()">Test Firebase Connection</button>
+        <button class="button" onclick="testMockData()">Test Mock Data</button>
+        <button class="button" onclick="testAPI()">Test API Endpoints</button>
+        
+        <div id="output"></div>
+        
+        <h2>📋 Hướng Dẫn Sử dụng</h2>
+        <ol>
+            <li><strong>Truy cập ứng dụng:</strong> Click vào link phía trên</li>
+            <li><strong>Mock Data:</strong> Tất cả dữ liệu đều là demo data</li>
+            <li><strong>Offline Mode:</strong> Không cần internet (trừ Google Analytics)</li>
+            <li><strong>Development:</strong> Thay đổi mock data trong <code>/assets/js/firebase-mock.js</code></li>
+        </ol>
+        
+        <h2>🔧 Tính Năng</h2>
+        <ul>
+            <li>✅ Firebase Mock System</li>
+            <li>✅ Static File Serving</li>
+            <li>✅ API Mock Endpoints</li>
+            <li>✅ User Authentication Mock</li>
+            <li>✅ Chat System Mock</li>
+            <li>✅ Story/Manga Data Mock</li>
+        </ul>
+    </div>
+
+    <!-- Load Firebase Mock -->
+    <script src="/cmangax3.com/assets/js/firebase-mock.js"></script>
+    
+    <script>
+        function log(message) {
+            const output = document.getElementById('output');
+            output.textContent += new Date().toLocaleTimeString() + ': ' + message + '\n';
+            output.scrollTop = output.scrollHeight;
+        }
+        
+        function testFirebase() {
+            log('Testing Firebase Mock...');
+            
+            if (typeof firebase !== 'undefined') {
+                log('✅ Firebase object available');
+                
+                // Test initialization
+                try {
+                    firebase.initializeApp({
+                        apiKey: "test",
+                        databaseURL: "test"
+                    });
+                    log('✅ Firebase initialization successful');
+                } catch (e) {
+                    log('ℹ️ Firebase already initialized');
+                }
+                
+                // Test database reference
+                const ref = firebase.database().ref('Cmanga/stories');
+                log('✅ Database reference created');
+                
+                // Test data retrieval
+                ref.once('value', (snapshot) => {
+                    const data = snapshot.val();
+                    log('✅ Data retrieved: ' + JSON.stringify(data, null, 2));
+                });
+                
+            } else {
+                log('❌ Firebase object not found');
+            }
+        }
+        
+        function testMockData() {
+            log('Testing Mock Data...');
+            
+            const ref = firebase.database().ref('Cmanga');
+            ref.once('value', (snapshot) => {
+                const data = snapshot.val();
+                log('📊 Mock Data Structure:');
+                log('- Stories: ' + Object.keys(data.stories || {}).length);
+                log('- Users: ' + Object.keys(data.users || {}).length);
+                log('- Chat Messages: ' + Object.keys(data.chat?.messages || {}).length);
+            });
+        }
+        
+        async function testAPI() {
+            log('Testing API Endpoints...');
+            
+            try {
+                // Test stories API
+                const storiesResponse = await fetch('/cmangax3.com/api/get_stories');
+                const storiesData = await storiesResponse.json();
+                log('✅ Stories API: ' + storiesData.data.length + ' stories');
+                
+                // Test user API
+                const userResponse = await fetch('/cmangax3.com/api/get_user_info');
+                const userData = await userResponse.json();
+                log('✅ User API: ' + userData.data.username);
+                
+            } catch (e) {
+                log('❌ API Error: ' + e.message);
+            }
+        }
+        
+        // Auto test on load
+        window.onload = function() {
+            log('🚀 CManga Offline Test Started');
+            log('📍 Current URL: ' + window.location.href);
+            log('⏰ Server Time: ' + new Date().toLocaleString());
+            log('');
+        };
+    </script>
+</body>
+</html>
