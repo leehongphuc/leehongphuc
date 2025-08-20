@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCD BOOK - Nhà sách trực tuyến</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo-section">
+                    <div class="header__logo">
+                        <span class="header__logo-NCD">NCD</span>
+                        <span class="header__logo-book">BOOK</span>
+                    </div>
+                    <!-- QR Code Icon -->
+                    <div class="header__qr">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="header__search">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tìm kiếm sản phẩm..." class="search-bar__input">
+                        <button class="search-bar__button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigation Icons -->
+                <div class="header__nav">
+                    <div class="nav-item">
+                        <i class="fas fa-bell"></i>
+                        <span class="nav-item__text">Thông báo</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="nav-item__text">Giỏ hàng</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-item__text">Tài khoản</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__overlay" onclick="closeSidebar()"></div>
+        <div class="sidebar__content">
+            <div class="sidebar__header">
+                <h3>Danh mục sách</h3>
+                <button class="sidebar__close" onclick="closeSidebar()">×</button>
+            </div>
+            <nav class="sidebar__nav">
+                <div class="nav-category">
+                    <h4 class="nav-category__title">VĂN HỌC</h4>
+                    <ul class="nav-category__list">
+                        <li><a href="#">Tiểu thuyết</a></li>
+                        <li><a href="#">Truyện ngắn - Tản văn</a></li>
+                        <li><a href="#">Light Novel</a></li>
+                    </ul>
+                </div>
+                <div class="nav-category">
+                    <h4 class="nav-category__title">THIẾU NHI</h4>
+                    <ul class="nav-category__list">
+                        <li><a href="#">Truyện tranh</a></li>
+                    </ul>
+                </div>
+                <div class="nav-category">
+                    <h4 class="nav-category__title">GIÁO KHOA - THAM KHẢO</h4>
+                    <ul class="nav-category__list">
+                        <li><a href="#">Sách giáo khoa</a></li>
+                        <li><a href="#">Luyện thi THPT Quốc Gia</a></li>
+                    </ul>
+                </div>
+                <div class="nav-category">
+                    <h4 class="nav-category__title">SÁCH MỚI</h4>
+                </div>
+                <div class="nav-category">
+                    <h4 class="nav-category__title">SÁCH BÁN CHẠY</h4>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Menu Toggle Button -->
+    <!-- <button class="menu-toggle" onclick="openSidebar()">
+        <i class="fas fa-bars"></i>
+    </button> -->
+
+    <!-- Main Banner Slider Section -->
+    <main class="main-content">
+        <div class="banner-slider">
+            <!-- Slide 1 -->
+            <div class="banner-slide">
+                <div class="banner">
+                    <!-- Brand Logos Bar -->
+                    <div class="brand-logos">
+                        <div class="brand-logos__container">
+                            <div class="brand-logo brand-logo--thienllong">THIÊN LONG</div>
+                            <div class="brand-logo brand-logo--deli">deli</div>
+                            <div class="brand-logo brand-logo--connect">CONNECT</div>
+                            <div class="brand-logo brand-logo--fahasa">FAHASA</div>
+                            <div class="brand-logo brand-logo--kimdong">NXB KIM ĐỒNG</div>
+                            <div class="brand-logo brand-logo--omega">OMEGA</div>
+                            <div class="brand-logo brand-logo--espro">ESPRO</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="banner__content">
+                        <!-- Left Side - Books -->
+                        <div class="banner__books">
+                            <div class="book-card book-card--rotate-left">
+                                <img src="/placeholder.svg?height=120&width=80&text=Hoàng+Tử+Bé" alt="Hoàng Tử Bé" class="book-card__image">
+                                <p class="book-card__title">Hoàng Tử Bé</p>
+                            </div>
+                            <div class="book-card book-card--rotate-right">
+                                <img src="/placeholder.svg?height=120&width=80&text=Chiến+Hạm" alt="Chiến Hạm" class="book-card__image">
+                                <p class="book-card__title">Chiến Hạm Cầu Vồng</p>
+                            </div>
+                            <div class="book-card book-card--rotate-slight">
+                                <img src="/placeholder.svg?height=120&width=80&text=Kim+Dung" alt="Kim Dung" class="book-card__image">
+                                <p class="book-card__title">Truyện Kim Dung</p>
+                            </div>
+                        </div>
+
+                        <!-- Center - Main Text and Discount -->
+                        <div class="banner__center">
+                            <h1 class="banner__title">
+                                Háo Hức <span class="banner__title--highlight">Đón Trăng</span>
+                            </h1>
+                            <h2 class="banner__subtitle">Ngàn Deal Quà Tặng</h2>
+                            
+                            <!-- Discount Badge -->
+                            <div class="discount-badge">
+                                <div class="discount-badge__content">
+                                    <p class="discount-badge__text">GIẢM ĐẾN</p>
+                                    <p class="discount-badge__number">99<span class="discount-badge__percent">%</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Characters -->
+                        <div class="banner__characters">
+                            <img src="/placeholder.svg?height=100&width=100&text=Doraemon" alt="Doraemon" class="character-image">
+                            <img src="/placeholder.svg?height=80&width=80&text=Nobita" alt="Nobita" class="character-image">
+                            <div class="book-stack">
+                                <div class="book-stack__item book-stack__item--red"></div>
+                                <div class="book-stack__item book-stack__item--green"></div>
+                                <div class="book-stack__item book-stack__item--orange"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="decoration decoration--star decoration--top-left">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="decoration decoration--star decoration--top-right">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="decoration decoration--cloud decoration--bottom-left">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="decoration decoration--cloud decoration--bottom-right">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    
+                    <!-- Mountain silhouettes -->
+                    <div class="mountains">
+                        <svg viewBox="0 0 1200 200" class="mountains__svg">
+                            <path d="M0,200 L0,100 L200,50 L400,80 L600,40 L800,70 L1000,30 L1200,60 L1200,200 Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="banner-slide">
+                <div class="banner banner--slide2">
+                    <!-- Brand Logos Bar -->
+                    <div class="brand-logos">
+                        <div class="brand-logos__container">
+                            <div class="brand-logo brand-logo--thienllong">THIÊN LONG</div>
+                            <div class="brand-logo brand-logo--deli">deli</div>
+                            <div class="brand-logo brand-logo--connect">CONNECT</div>
+                            <div class="brand-logo brand-logo--fahasa">FAHASA</div>
+                            <div class="brand-logo brand-logo--kimdong">NXB KIM ĐỒNG</div>
+                            <div class="brand-logo brand-logo--omega">OMEGA</div>
+                            <div class="brand-logo brand-logo--espro">ESPRO</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="banner__content">
+                        <!-- Left Side - Books -->
+                        <div class="banner__books">
+                            <div class="book-card book-card--rotate-left">
+                                <img src="/placeholder.svg?height=120&width=80&text=Conan" alt="Conan" class="book-card__image">
+                                <p class="book-card__title">Thám Tử Conan</p>
+                            </div>
+                            <div class="book-card book-card--rotate-right">
+                                <img src="/placeholder.svg?height=120&width=80&text=One+Piece" alt="One Piece" class="book-card__image">
+                                <p class="book-card__title">One Piece</p>
+                            </div>
+                            <div class="book-card book-card--rotate-slight">
+                                <img src="/placeholder.svg?height=120&width=80&text=Naruto" alt="Naruto" class="book-card__image">
+                                <p class="book-card__title">Naruto</p>
+                            </div>
+                        </div>
+
+                        <!-- Center - Main Text and Discount -->
+                        <div class="banner__center">
+                            <h1 class="banner__title">
+                                Manga <span class="banner__title--highlight">Siêu Hot</span>
+                            </h1>
+                            <h2 class="banner__subtitle">Truyện Tranh Nhật Bản</h2>
+                            
+                            <!-- Discount Badge -->
+                            <div class="discount-badge">
+                                <div class="discount-badge__content">
+                                    <p class="discount-badge__text">GIẢM ĐẾN</p>
+                                    <p class="discount-badge__number">50<span class="discount-badge__percent">%</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Characters -->
+                        <div class="banner__characters">
+                            <img src="/placeholder.svg?height=100&width=100&text=Luffy" alt="Luffy" class="character-image">
+                            <img src="/placeholder.svg?height=80&width=80&text=Conan" alt="Conan" class="character-image">
+                            <div class="book-stack">
+                                <div class="book-stack__item book-stack__item--red"></div>
+                                <div class="book-stack__item book-stack__item--green"></div>
+                                <div class="book-stack__item book-stack__item--orange"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="decoration decoration--star decoration--top-left">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="decoration decoration--star decoration--top-right">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="banner-slide">
+                <div class="banner banner--slide3">
+                    <!-- Brand Logos Bar -->
+                    <div class="brand-logos">
+                        <div class="brand-logos__container">
+                            <div class="brand-logo brand-logo--thienllong">THIÊN LONG</div>
+                            <div class="brand-logo brand-logo--deli">deli</div>
+                            <div class="brand-logo brand-logo--connect">CONNECT</div>
+                            <div class="brand-logo brand-logo--fahasa">FAHASA</div>
+                            <div class="brand-logo brand-logo--kimdong">NXB KIM ĐỒNG</div>
+                            <div class="brand-logo brand-logo--omega">OMEGA</div>
+                            <div class="brand-logo brand-logo--espro">ESPRO</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="banner__content">
+                        <!-- Left Side - Books -->
+                        <div class="banner__books">
+                            <div class="book-card book-card--rotate-left">
+                                <img src="/placeholder.svg?height=120&width=80&text=Toán+Học" alt="Toán Học" class="book-card__image">
+                                <p class="book-card__title">Toán Học 12</p>
+                            </div>
+                            <div class="book-card book-card--rotate-right">
+                                <img src="/placeholder.svg?height=120&width=80&text=Văn+Học" alt="Văn Học" class="book-card__image">
+                                <p class="book-card__title">Ngữ Văn 12</p>
+                            </div>
+                            <div class="book-card book-card--rotate-slight">
+                                <img src="/placeholder.svg?height=120&width=80&text=Tiếng+Anh" alt="Tiếng Anh" class="book-card__image">
+                                <p class="book-card__title">Tiếng Anh 12</p>
+                            </div>
+                        </div>
+
+                        <!-- Center - Main Text and Discount -->
+                        <div class="banner__center">
+                            <h1 class="banner__title">
+                                Sách <span class="banner__title--highlight">Giáo Khoa</span>
+                            </h1>
+                            <h2 class="banner__subtitle">Chuẩn Bị Thi THPT</h2>
+                            
+                            <!-- Discount Badge -->
+                            <div class="discount-badge">
+                                <div class="discount-badge__content">
+                                    <p class="discount-badge__text">GIẢM ĐẾN</p>
+                                    <p class="discount-badge__number">30<span class="discount-badge__percent">%</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side - Characters -->
+                        <div class="banner__characters">
+                            <img src="/placeholder.svg?height=100&width=100&text=Học+Sinh" alt="Học Sinh" class="character-image">
+                            <img src="/placeholder.svg?height=80&width=80&text=Giáo+Viên" alt="Giáo Viên" class="character-image">
+                            <div class="book-stack">
+                                <div class="book-stack__item book-stack__item--red"></div>
+                                <div class="book-stack__item book-stack__item--green"></div>
+                                <div class="book-stack__item book-stack__item--orange"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="decoration decoration--star decoration--top-left">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="decoration decoration--star decoration--top-right">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Books Section -->
+    <section class="bestseller-section">
+        <div class="bestseller-section__container">
+            <h2 class="bestseller-section__title">SÁCH MỚI</h2>
+
+            <div class="books-grid">
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Chữa Lành Những Sang Chấn Tuổi Thơ"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Chữa Lành Những Sang Chấn Tuổi Thơ</h4>
+                        <p class="book-item__price">147.400 đ</p>
+                        <p class="book-item__original-price">164.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Thần Chết Làm Thêm 300 Tuổi"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Thần Chết Làm Thêm 300 Tuổi</h4>
+                        <p class="book-item__price">101.150 đ</p>
+                        <p class="book-item__original-price">112.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Tổng Ôn Ngữ Pháp" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Tổng Ôn Ngữ Pháp Tiếng Anh</h4>
+                        <p class="book-item__price">139.000 đ</p>
+                        <p class="book-item__original-price">155.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Lớp Học Tâm Lý Cho Người Lớn"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Lớp Học Tâm Lý Cho Người Lớn</h4>
+                        <p class="book-item__price">107.100 đ</p>
+                        <p class="book-item__original-price">119.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Nhà Giả Kim" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Nhà Giả Kim</h4>
+                        <p class="book-item__price">55.300 đ</p>
+                        <p class="book-item__original-price">62.000 đ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bestseller-section__footer">
+                <button class="view-more-btn view-more-btn--purple">
+                    Xem thêm
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kim Dong Publishing Section -->
+    <section class="publisher-section">
+        <div class="publisher-section__banner">
+            <h2 class="publisher-section__title">NHÀ XUẤT BẢN KIM ĐỒNG</h2>
+        </div>
+        <div class="publisher-section__container">
+            <h2 class="publisher-section__subtitle">NHÀ XUẤT BẢN KIM ĐỒNG</h2>
+            <div class="books-grid books-grid--publisher">
+                <!-- Same 5 books as in new books section -->
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/sach_de_me_phieu_luu_ki.jpg?height=300&width=200" alt="Để Mèn Phiêu Lưu Ký"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Để Mèn Phiêu Lưu Ký</h4>
+                        <p class="book-item__price">120.000 đ</p>
+                        <p class="book-item__original-price">140.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Thám Tử Lừng Danh Conan"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Thám Tử Lừng Danh Conan - Tập 101</h4>
+                        <p class="book-item__price">23.750 đ</p>
+                        <p class="book-item__original-price">25.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Thám Tử Lừng Danh Conan"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Thám Tử Lừng Danh Conan - Tập 100</h4>
+                        <p class="book-item__price">23.750 đ</p>
+                        <p class="book-item__original-price">25.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Hoàng Tử Bé" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Hoàng Tử Bé</h4>
+                        <p class="book-item__price">33.250 đ</p>
+                        <p class="book-item__original-price">35.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Hồi Ký Vanitas" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Hồi Ký Vanitas - Tập 9</h4>
+                        <p class="book-item__price">34.200 đ</p>
+                        <p class="book-item__original-price">36.000 đ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="publisher-section__footer">
+                <button class="view-more-btn view-more-btn--purple">
+                    Xem thêm
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Books Section -->
+    <section class="bestseller-section">
+        <div class="bestseller-section__container">
+            <h2 class="bestseller-section__title">SÁCH BÁN CHẠY</h2>
+
+            <div class="books-grid">
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Chữa Lành Những Sang Chấn Tuổi Thơ"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Chữa Lành Những Sang Chấn Tuổi Thơ</h4>
+                        <p class="book-item__price">147.400 đ</p>
+                        <p class="book-item__original-price">164.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Thần Chết Làm Thêm 300 Tuổi"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Thần Chết Làm Thêm 300 Tuổi</h4>
+                        <p class="book-item__price">101.150 đ</p>
+                        <p class="book-item__original-price">112.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Tổng Ôn Ngữ Pháp" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Tổng Ôn Ngữ Pháp Tiếng Anh</h4>
+                        <p class="book-item__price">139.000 đ</p>
+                        <p class="book-item__original-price">155.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Lớp Học Tâm Lý Cho Người Lớn"
+                            class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Lớp Học Tâm Lý Cho Người Lớn</h4>
+                        <p class="book-item__price">107.100 đ</p>
+                        <p class="book-item__original-price">119.000 đ</p>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-item__cover">
+                        <img src="./images/bia-truyen-tranh-conan-1.jpg?height=300&width=200" alt="Nhà Giả Kim" class="book-cover-img">
+                    </div>
+                    <div class="book-item__info">
+                        <h4 class="book-item__title">Nhà Giả Kim</h4>
+                        <p class="book-item__price">55.300 đ</p>
+                        <p class="book-item__original-price">62.000 đ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bestseller-section__footer">
+                <button class="view-more-btn view-more-btn--purple">
+                    Xem thêm
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="footer__logo">
+                        <span class="footer__logo-NCD">NCD</span>
+                        <span class="footer__logo-book">BOOK</span>
+                    </div>
+                    <div class="footer__contact">
+                        <p>Đường Hàn Thuyên, khu phố 6,</p>
+                        <p>Thủ Đức, Thành phố Hồ Chí Minh</p>
+                        <p>Hotline: 0123456789</p>
+                        <p>NCDbook@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Kết nối mạng xã hội</h3>
+                    <div class="footer__social-icons">
+                        <a href="#" class="social-icon social-icon--facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon social-icon--youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.banner-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 4000,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev"></button>',
+            nextArrow: '<button type="button" class="slick-next"></button>',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        dots: true
+                    }
+                }
+            ]
+        });
+    });
+    </script>
+</body>
+
+</html>

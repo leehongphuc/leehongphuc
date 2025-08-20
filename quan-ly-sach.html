@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sách - NCD BOOK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/quan-ly-sach-styles.css" />
+  </head>
+
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="book-management-header">
+      <div class="book-management-header__container">
+        <div class="book-management-header__content">
+          <div class="book-management-header__logo">
+            <span class="book-management-header__logo-NCD">NCD</span>
+            <span class="book-management-header__logo-book">BOOK</span>
+            <span class="book-management-header__title">Quản lý sách</span>
+          </div>
+
+          <div class="book-management-header__nav">
+            <a href="/index.html" class="book-management-header__link">
+              <i class="fas fa-home"></i>
+              Trang chủ
+            </a>
+            <a
+              href="#"
+              onclick="showDevelopmentAlert(); return false;"
+              class="book-management-header__link"
+            >
+              <i class="fas fa-tachometer-alt"></i>
+              Admin
+            </a>
+            <div class="book-management-header__user">
+              <i class="fas fa-user-shield"></i>
+              <span>Quản trị viên</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="book-management-main">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="page-header__content">
+          <div class="page-header__info">
+            <h1 class="page-header__title">Quản lý sách</h1>
+          </div>
+          <button
+            class="btn btn--primary btn--large"
+            onclick="openAddBookModal()"
+          >
+            <i class="fas fa-plus"></i>
+            Thêm sách mới
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters and Search -->
+      <div class="filter-section">
+        <div class="filter-section__header">
+          <h2 class="filter-section__title">Tìm kiếm và lọc</h2>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-group">
+            <div class="search-box">
+              <input
+                id="keyword"
+                type="text"
+                placeholder="Tìm kiếm theo tên sách, tác giả..."
+                class="search-input"
+              />
+              <button class="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+
+            <select id="filterCategory" class="filter-select">
+              <option value="">Tất cả danh mục</option>
+              <option value="van-hoc">Văn học</option>
+              <option value="thieu-nhi">Thiếu nhi</option>
+              <option value="giao-khoa">Giáo khoa</option>
+            </select>
+
+            <select class="filter-select">
+              <option value="">Tất cả trạng thái</option>
+              <option value="active">Đang bán</option>
+              <option value="inactive">Ngừng bán</option>
+            </select>
+
+            <select class="filter-select">
+              <option value="price-asc">Giá thấp đến cao</option>
+              <option value="price-desc">Giá cao đến thấp</option>
+            </select>
+
+            <button class="btn btn--secondary">
+              <i class="fas fa-undo"></i>
+              Đặt lại
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Books Table -->
+      <div class="books-table-section">
+        <div class="table-header">
+          <h2 class="table-title">Danh sách sách</h2>
+          <div class="table-actions">
+            <button class="btn btn--outline" onclick="showDevelopmentAlert()">
+              <i class="fas fa-download"></i>
+              Xuất Excel
+            </button>
+            <button class="btn btn--outline" onclick="showDevelopmentAlert()">
+              <i class="fas fa-upload"></i>
+              Nhập Excel
+            </button>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Thông tin sách</th>
+                <th>Danh mục</th>
+                <th>Giá bán</th>
+                <th>Trạng thái</th>
+                <th>Ngày tạo</th>
+                <th>Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyBook">
+              <!-- 5 dòng dữ liệu mẫu giữ nguyên -->
+              <tr>
+                <td>
+                  <div class="book-info">
+                    <div class="book-info__details">
+                      <h4 class="book-info__title">Hoàng Tử Bé</h4>
+                      <p class="book-info__author">
+                        Tác giả: Antoine de Saint-Exupéry
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td>Văn học</td>
+                <td><strong>35.000 ₫</strong></td>
+                <td>
+                  <span class="status-badge status-badge--active"
+                    >Đang bán</span
+                  >
+                </td>
+                <td>15/01/2024</td>
+                <td>...</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="book-info">
+                    <div class="book-info__details">
+                      <h4 class="book-info__title">
+                        Thám Tử Lừng Danh Conan - Tập 101
+                      </h4>
+                      <p class="book-info__author">Tác giả: Aoyama Gosho</p>
+                    </div>
+                  </div>
+                </td>
+                <td>Thiếu nhi</td>
+                <td><strong>23.750 ₫</strong></td>
+                <td>
+                  <span class="status-badge status-badge--active"
+                    >Đang bán</span
+                  >
+                </td>
+                <td>10/01/2024</td>
+                <td>...</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="book-info">
+                    <div class="book-info__details">
+                      <h4 class="book-info__title">Toán Học 12 - Nâng Cao</h4>
+                      <p class="book-info__author">Tác giả: Bộ Giáo Dục</p>
+                    </div>
+                  </div>
+                </td>
+                <td>Giáo khoa</td>
+                <td><strong>40.500 ₫</strong></td>
+                <td>
+                  <span class="status-badge status-badge--active"
+                    >Đang bán</span
+                  >
+                </td>
+                <td>05/01/2024</td>
+                <td>...</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="book-info">
+                    <div class="book-info__details">
+                      <h4 class="book-info__title">Nhà Giả Kim</h4>
+                      <p class="book-info__author">Tác giả: Paulo Coelho</p>
+                    </div>
+                  </div>
+                </td>
+                <td>Văn học</td>
+                <td><strong>55.300 ₫</strong></td>
+                <td>
+                  <span class="status-badge status-badge--active"
+                    >Đang bán</span
+                  >
+                </td>
+                <td>01/01/2024</td>
+                <td>...</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="book-info">
+                    <div class="book-info__details">
+                      <h4 class="book-info__title">Dế Mèn Phiêu Lưu Ký</h4>
+                      <p class="book-info__author">Tác giả: Tô Hoài</p>
+                    </div>
+                  </div>
+                </td>
+                <td>Thiếu nhi</td>
+                <td><strong>28.000 ₫</strong></td>
+                <td>
+                  <span class="status-badge status-badge--inactive"
+                    >Ngừng bán</span
+                  >
+                </td>
+                <td>28/12/2023</td>
+                <td>...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination  -->
+        <div class="pagination-container">
+          <div class="pagination-info">Hiển thị 1 - 5 của 1,234 kết quả</div>
+          <div class="pagination">
+            <button class="pagination__btn" disabled>
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="pagination__numbers">
+              <span class="pagination__number pagination__number--active"
+                >1</span
+              >
+              <span class="pagination__number">2</span>
+              <span class="pagination__number">3</span>
+              <span class="pagination__number">4</span>
+              <span class="pagination__number">5</span>
+            </div>
+            <button class="pagination__btn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Book Modal -->
+      <div class="modal" id="addBookModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content modal__content--large">
+          <div class="modal__header">
+            <h2 id="modalTitle">Thêm sách mới</h2>
+            <button class="modal__close" onclick="closeAddBookModal()">
+              ×
+            </button>
+          </div>
+          <div class="modal__body">
+            <form class="book-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Mã sách <span class="required">*</span></label
+                  >
+                  <input
+                    id="bookID"
+                    type="text"
+                    class="form-input"
+                    placeholder="Nhập mã sách"
+                  />
+                  <p id="invalidID" class="text-red-500 text-sm"></p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Tên sách <span class="required">*</span></label
+                  >
+                  <input
+                    id="bookTitle"
+                    type="text"
+                    class="form-input"
+                    placeholder="Nhập tên sách"
+                  />
+                  <p id="invalidTitle" class="text-red-500 text-sm"></p>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Tác giả <span class="required">*</span></label
+                  >
+                  <input
+                    id="bookAuthor"
+                    type="text"
+                    class="form-input"
+                    placeholder="Nhập tên tác giả"
+                  />
+                  <p id="invalidAuthor" class="text-red-500 text-sm"></p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Danh mục <span class="required">*</span></label
+                  >
+                  <select id="bookCategory" class="form-select">
+                    <option value="">Chọn danh mục</option>
+                    <option value="van-hoc">Văn học</option>
+                    <option value="thieu-nhi">Thiếu nhi</option>
+                    <option value="giao-khoa">Giáo khoa</option>
+                  </select>
+                  <p id="invalidCategory" class="text-red-500 text-sm"></p>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Giá bán <span class="required">*</span></label
+                  >
+                  <input
+                    id="bookPrice"
+                    type="number"
+                    class="form-input"
+                    placeholder="Nhập giá bán"
+                  />
+                  <p id="invalidPrice" class="text-red-500 text-sm"></p>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Trạng thái <span class="required">*</span></label
+                  >
+                  <select id="bookStatus" class="form-select">
+                    <option value="active">Đang bán</option>
+                    <option value="inactive">Ngừng bán</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Ngày tạo <span class="required">*</span></label
+                  >
+                  <input id="bookDate" type="date" class="form-input" />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  onclick="closeAddBookModal()"
+                >
+                  Hủy
+                </button>
+                <button type="button" id="btnAddBook" class="btn btn--primary">
+                  Lưu sách
+                </button>
+                <button
+                  type="button"
+                  id="btnUpdateBook"
+                  class="btn btn--primary"
+                  style="display: none"
+                >
+                  Cập nhật
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- View Book Modal -->
+      <div class="modal" id="viewBookModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+          <div class="modal__header">
+            <h2>Chi tiết sách</h2>
+            <button class="modal__close" onclick="closeViewModal()">×</button>
+          </div>
+          <div class="modal__body" id="viewBookContent">
+            <!-- Content will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Book Modal -->
+      <div class="modal" id="editBookModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content modal__content--large">
+          <div class="modal__header">
+            <h2>Chỉnh sửa sách</h2>
+            <button class="modal__close" onclick="closeEditModal()">×</button>
+          </div>
+          <div class="modal__body">
+            <form class="book-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Tên sách <span class="required">*</span></label
+                  >
+                  <input type="text" class="form-input" value="Hoàng Tử Bé" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Tác giả <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-input"
+                    value="Antoine de Saint-Exupéry"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Danh mục <span class="required">*</span></label
+                  >
+                  <select class="form-select">
+                    <option value="van-hoc" selected>Văn học</option>
+                    <option value="thieu-nhi">Thiếu nhi</option>
+                    <option value="giao-khoa">Giáo khoa</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label"
+                    >Giá bán <span class="required">*</span></label
+                  >
+                  <input type="number" class="form-input" value="35000" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label"
+                    >Trạng thái <span class="required">*</span></label
+                  >
+                  <select class="form-select">
+                    <option value="active" selected>Đang bán</option>
+                    <option value="inactive">Ngừng bán</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Ngày tạo</label>
+                  <input type="date" class="form-input" value="2024-01-15" />
+                </div>
+              </div>
+              <div class="form-actions">
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  onclick="closeEditModal()"
+                >
+                  Hủy
+                </button>
+                <button type="submit" class="btn btn--primary">Cập nhật</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

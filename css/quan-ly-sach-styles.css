@@ -1,0 +1,646 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+/* ===== THIẾT LẬP CƠ BẢN ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+/* ===== HEADER - PHẦN ĐẦU TRANG ===== */
+.book-management-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.book-management-header__container {
+  max-width: 100%;
+  padding: 0 2rem;
+}
+.book-management-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+.book-management-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.book-management-header__logo-ctd {
+  color: #3b82f6;
+}
+.book-management-header__logo-book {
+  color: #60a5fa;
+}
+.book-management-header__title {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  border-left: 2px solid #e5e7eb;
+}
+.book-management-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.book-management-header__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #6b7280;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.book-management-header__link:hover {
+  background: #f9fafb;
+  color: #3b82f6;
+}
+.book-management-header__user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+.book-management-header__user i {
+  color: #3b82f6;
+}
+
+/* ===== NỘI DUNG CHÍNH ===== */
+.book-management-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== TIÊU ĐỀ TRANG ===== */
+.page-header {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.page-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-header__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 0.5rem;
+}
+.page-header__subtitle {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== PHẦN LỌC VÀ TÌM KIẾM ===== */
+.filter-section {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.filter-section__header {
+  margin-bottom: 1rem;
+}
+.filter-section__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.filter-bar .filter-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+}
+.search-box .search-input {
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+.search-box .search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.search-box .search-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.search-box .search-btn:hover {
+  color: #3b82f6;
+}
+
+.filter-select {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+.filter-select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ===== BẢNG DANH SÁCH SÁCH ===== */
+.books-table-section {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.table-header .table-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+.table-header .table-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.data-table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+.data-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.data-table td {
+  color: #374151;
+}
+.data-table tr:hover {
+  background: rgba(59, 130, 246, 0.02);
+}
+
+/* ===== THÔNG TIN SÁCH ===== */
+.book-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.book-info__image {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.book-info__details {
+  flex: 1;
+}
+.book-info__title {
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+}
+.book-info__author {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+/* ===== NHÃN TRẠNG THÁI ===== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.status-badge--active {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+.status-badge--inactive {
+  background: rgba(107, 114, 128, 0.1);
+  color: #6b7280;
+}
+.status-badge--low-stock {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+/* ===== NÚT HÀNH ĐỘNG ===== */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+}
+.action-btn--view {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+.action-btn--view:hover {
+  background: rgba(59, 130, 246, 0.2);
+}
+.action-btn--edit {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+.action-btn--edit:hover {
+  background: rgba(16, 185, 129, 0.2);
+}
+.action-btn--delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+.action-btn--delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+/* ===== PHÂN TRANG ===== */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.pagination-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.pagination__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pagination__btn:hover:not(:disabled) {
+  background: #f9fafb;
+  color: #3b82f6;
+}
+.pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pagination__numbers {
+  display: flex;
+  gap: 0.25rem;
+}
+.pagination__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+}
+.pagination__number--active {
+  background: #3b82f6;
+  color: #ffffff;
+}
+.pagination__number:not(.pagination__number--active):hover {
+  background: #f9fafb;
+  color: #3b82f6;
+}
+
+/* ===== CÁC NÚT BẤM ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+.btn--primary {
+  background: #3b82f6;
+  color: #ffffff;
+}
+.btn--primary:hover {
+  background: primary-blue-dark;
+}
+.btn--secondary {
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.btn--secondary:hover {
+  background: #f3f4f6;
+}
+.btn--outline {
+  background: transparent;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.btn--outline:hover {
+  background: #f9fafb;
+}
+.btn--large {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* ===== FORM NHẬP LIỆU ===== */
+.book-form {
+  padding: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+}
+.form-label .required {
+  color: #ef4444;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ===== CỬA SỔ POPUP (MODAL) ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.modal--open {
+  opacity: 1;
+  visibility: visible;
+}
+.modal--open .modal__content {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+.modal__content--large {
+  max-width: 800px;
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.modal__header h2 {
+  margin: 0;
+  color: #374151;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.modal__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: all 0.3s ease;
+}
+.modal__close:hover {
+  color: #374151;
+}
+.modal__body {
+  padding: 1.5rem;
+}
+
+/* ===== CHI TIẾT SÁCH ===== */
+.book-details h3 {
+  color: #374151;
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+.book-details p {
+  margin: 0.5rem 0;
+  color: #6b7280;
+}
+.book-details p strong {
+  color: #374151;
+}
+
+/* ===== THIẾT KẾ RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .book-management-main {
+    padding: 1rem;
+  }
+  .page-header__content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .book-management-header__content {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  .book-management-header__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box {
+    min-width: auto;
+  }
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .data-table {
+    font-size: 0.875rem;
+  }
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  .book-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book-info__image {
+    width: 50px;
+    height: 70px;
+  }
+  .pagination-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}/*# sourceMappingURL=quan-ly-sach-styles.css.map */
